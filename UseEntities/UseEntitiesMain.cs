@@ -18,7 +18,7 @@ namespace UseEntities
         static void Main(string[] args)
         {
             Person person1 = new Person("George", 23423423); //assignment 3 
-            Product product1 = new Product(234234, "Banana", 23); //assignment 3
+            Product product1 = new Product(234234, "Banana", 23); //assignment 3 
 
             Person[] personArray = new Person[5]; //initialize array of the people
             StreamReader reader = new StreamReader(@"C:\Users\chani\source\repos\OOPProject\Entities\Input.txt"); //retrieve data from the source

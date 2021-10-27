@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Manager
+    public class Manager : Employee
     {
-        public int MyProperty { get; set; }
+        public int Experience { get; set; }
+
+        public Manager(int experience, decimal salary, string name, int id) :base(salary, name, id)
+        {
+            Experience = experience;
+        }
     }
 }
