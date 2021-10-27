@@ -1,0 +1,13 @@
+This text file contains text
+The entities program contains person and product objects
+The UseEntities Program uses above objects
+
+Design for project:
+Entities
+fairly straightforward, classes with properties and objects as instructed (also add ToString methods in order to print out)
+
+UseEntities
+create objects of person and product
+create an array of persons (which sounds much better than people)
+to fill array: for loop in which user enters names and id numbers which are used in the creation of person objects stored in the array until the array is full 
+to print array: for loop, print each index in the array

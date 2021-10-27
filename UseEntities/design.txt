@@ -1,0 +1,10 @@
+﻿
+Design for project:
+Entities
+fairly straightforward, classes with properties and objects as instructed (also add ToString methods in order to print out)
+
+UseEntities
+create objects of person and product
+create an array of persons (which sounds much better than people)
+to fill array: for loop which takes input from the input.txt file
+to print array: for loop, print each index in the array
