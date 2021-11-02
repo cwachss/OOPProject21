@@ -8,3 +8,6 @@ create objects of person and product
 create an array of persons (which sounds much better than people)
 to fill array: for loop which takes input from the input.txt file
 to print array: for loop, print each index in the array
+
+Two types of people: customers and employees (two types of employees: manager and Sales Rep)
+Customers have credit cards
