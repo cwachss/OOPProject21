@@ -18,6 +18,7 @@ namespace Entities
             OwnerName = name;
             CardNumber = number;
             ExpirationDate = expiration;
+            Charges = 0;
             
         }
     }
