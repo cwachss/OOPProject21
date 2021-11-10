@@ -11,6 +11,7 @@ namespace Entities
         public int ProductNumber { get; set; }
         public string ProductName { get; set; }
         public decimal CostPerUnit { get; set; }
+        public int AmountInStock { get; set; } //fit this into code via textfile
 
         public Product (int productNumber, string productName, decimal costPerUnit)
         {
@@ -25,5 +26,7 @@ namespace Entities
 
             return $"{ProductNumber} {ProductName} {CostPerUnit}";
         }
+
+        
     }
 }

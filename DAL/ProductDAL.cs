@@ -95,7 +95,7 @@ namespace DAL
             return copyProductList;
         }
 
-        //update method: I'm not sure how to do this... oops. For now, it receives a product and some things to change
+        //update method: receives product number and allows to change product info
         public void Update(int prodNum, string prodName, decimal cost)
         {
             Delete(prodNum);
