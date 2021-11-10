@@ -21,6 +21,8 @@ namespace Entities
 
         public override string ToString()
         {
+            //note to self: format cost as currency
+
             return $"{ProductNumber} {ProductName} {CostPerUnit}";
         }
     }

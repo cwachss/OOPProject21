@@ -11,3 +11,6 @@ to print array: for loop, print each index in the array
 
 Two types of people: customers and employees (two types of employees: manager and Sales Rep)
 Customers have credit cards
+
+DAL Layer:
+ProductDAL class with methods for ititializing list and CRUD methods
