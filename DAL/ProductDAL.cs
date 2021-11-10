@@ -64,7 +64,7 @@ namespace DAL
 
             }//close reader
 
-        }//end intialize list
+        }//end initialize list
 
         //Chani Wachsstock
         //Create method: create a product and add to product list
