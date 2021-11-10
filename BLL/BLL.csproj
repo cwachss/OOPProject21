@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DAL">
+      <HintPath>..\..\..\OOPProject\DAL\bin\Debug\DAL.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductBLL.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="BLLTest.cs" />
+    <Compile Include="ProductNumberOutOfRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

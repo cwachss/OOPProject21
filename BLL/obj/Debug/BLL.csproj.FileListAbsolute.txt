@@ -1,0 +1,7 @@
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\bin\Debug\BLL.exe.config
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\bin\Debug\BLL.exe
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\bin\Debug\BLL.pdb
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.exe
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.pdb

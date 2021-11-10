@@ -7,7 +7,7 @@ using Entities;
 
 namespace DAL
 {
-    class Program
+    class DALTest
     {
         static void Main(string[] args)
         {

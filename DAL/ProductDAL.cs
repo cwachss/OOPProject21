@@ -9,7 +9,7 @@ using System.IO;
 
 namespace DAL
 {
-    class ProductDAL
+    public class ProductDAL
     {
         //Shira Laury
         public ProductDAL()
@@ -76,12 +76,17 @@ namespace DAL
 
         //read method: go through list of products to find correct id number and then return that product 
         public Product Read(int productNum)
-        {
+        { 
             int index = 0;
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
             {
+                if (index<productList.Count)
                 index++;
+                else
+                {
+                    throw new IndexOutOfRangeException();
+                }
             }
 
             Product product = productList[index];
