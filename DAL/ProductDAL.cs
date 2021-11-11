@@ -26,7 +26,7 @@ namespace DAL
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product
         private decimal price;//variable to hold the price of the product
-
+        private int stock;
 
        
         protected int index = 0;//variable to hold the index of the list
@@ -41,11 +41,12 @@ namespace DAL
                 number = int.Parse(reader.ReadLine());//reads the ID number into the variable number
                 name = reader.ReadLine();//reads the name into the variable name
                 price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
+                stock = int.Parse(reader.ReadLine());//reads the amount in stock
 
                 while (name != null) //read until there are no more entries
                 {
 
-                    Product Item = new Product(number, name, price);//creates new Product object 
+                    Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
                     Console.WriteLine(productList[index]);
 
@@ -68,25 +69,20 @@ namespace DAL
 
         //Chani Wachsstock
         //Create method: create a product and add to product list
-        public void Create(int prodNum, string prodName, decimal cost)
+        public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
-            Product product = new Product(prodNum, prodName, cost);
+            Product product = new Product(prodNum, prodName, cost, stock);
             productList.Add(product);
         }
 
         //read method: go through list of products to find correct id number and then return that product 
         public Product Read(int productNum)
-        { 
+        {
             int index = 0;
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
             {
-                if (index<productList.Count)
                 index++;
-                else
-                {
-                    throw new IndexOutOfRangeException();
-                }
             }
 
             Product product = productList[index];
@@ -101,10 +97,10 @@ namespace DAL
         }
 
         //update method: receives product number and allows to change product info
-        public void Update(int prodNum, string prodName, decimal cost)
+        public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
             Delete(prodNum);
-            Create(prodNum, prodName, cost);
+            Create(prodNum, prodName, cost, stock);
 
         }
 

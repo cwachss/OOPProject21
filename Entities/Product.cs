@@ -13,11 +13,12 @@ namespace Entities
         public decimal CostPerUnit { get; set; }
         public int AmountInStock { get; set; } //fit this into code via textfile
 
-        public Product (int productNumber, string productName, decimal costPerUnit)
+        public Product (int productNumber, string productName, decimal costPerUnit, int amountInStock)
         {
             ProductNumber = productNumber;
             ProductName = productName;
             CostPerUnit = costPerUnit;
+            AmountInStock = amountInStock;
         }
 
         public override string ToString()
