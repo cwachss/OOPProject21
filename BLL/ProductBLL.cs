@@ -11,8 +11,10 @@ namespace BLL
     {
         public void Read()
         {
-            ProductDAL 
+            ProductDAL obj = new DAL.ProductDAL();
             Console.WriteLine();
         }
+
+       public void 
     }
 }

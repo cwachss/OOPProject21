@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using System.IO;
+using 
 
 
 namespace DAL
 {
-    public class ProductDAL
+    class ProductDAL
     {
         //Shira Laury
         public ProductDAL()
@@ -81,9 +82,12 @@ namespace DAL
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
             {
-                if (index<productList.Count)
-                index++;
-                else
+                if (index<productList.Count)//checks if the index is
+                                            //still within range of the list
+                {
+                    index++;
+                }
+                else //if it's not, it throws an exception
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -96,6 +100,7 @@ namespace DAL
         //readall method: return a copy of the product list
         public List<Product> ReadAll()
         {
+            
             List<Product> copyProductList = productList;
             return copyProductList;
         }
@@ -103,6 +108,7 @@ namespace DAL
         //update method: receives product number and allows to change product info
         public void Update(int prodNum, string prodName, decimal cost)
         {
+            
             Delete(prodNum);
             Create(prodNum, prodName, cost);
 
@@ -113,6 +119,17 @@ namespace DAL
         {
             Product product = Read(productNum);
             productList.Remove(product);
+        }
+
+        private void CheckRange()
+        {
+            while (index != )
+                if (index < productList.Count)
+                    index++;
+                else
+                {
+                    throw new ProductNumberOutOfRange;
+                }
         }
     }
 
