@@ -18,7 +18,7 @@ namespace DAL
         }
 
         //create list to hold the product information 
-        static List<Product> productList = new List<Product>();
+        static List<Product> productList = new List<Product>(); //question from chani: why is this static?
 
         //create StreamReader object to read the list
         StreamReader reader = new StreamReader("ListOfProducts.txt");
@@ -48,7 +48,7 @@ namespace DAL
 
                     Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                    Console.WriteLine(productList[index]);
+                    
 
                     index++;
 
@@ -61,6 +61,7 @@ namespace DAL
                     number = int.Parse(checkForNull);//reads the ID number into the variable number
                     name = reader.ReadLine();//reads the name into the variable name
                     price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
+                    stock = int.Parse(reader.ReadLine());//reads the amount in stock
                 } //end while
 
             }//close reader
@@ -96,6 +97,8 @@ namespace DAL
             return copyProductList;
         }
 
+        
+
         //update method: receives product number and allows to change product info
         public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
@@ -110,6 +113,8 @@ namespace DAL
             Product product = Read(productNum);
             productList.Remove(product);
         }
+
+
     }
 
 }

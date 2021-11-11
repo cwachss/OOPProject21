@@ -17,10 +17,10 @@ namespace BLL
         }
 
 
-        public void Read()
-        {
-            ProductDAL 
-            Console.WriteLine();
-        }
+        //public void Read()
+        //{
+        //    ProductDAL 
+        //    Console.WriteLine();
+        //}
     }
 }

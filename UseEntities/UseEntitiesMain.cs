@@ -18,7 +18,7 @@ namespace UseEntities
         static void Main(string[] args)
         {
             Person person1 = new Person("George", 23423423); //assignment 3 
-            Product product1 = new Product(234234, "Banana", 23); //assignment 3 
+            Product product1 = new Product(234234, "Banana", 23, 45); //assignment 3 
             Customer customer1 = new Customer("Joe", 23322, 4756, 2025, 4);
             Customer customer2 = new Customer("me", 77777, 3333, 2022, 11);
 
