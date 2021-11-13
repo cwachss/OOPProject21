@@ -15,8 +15,10 @@ namespace DAL
             ProductDAL products = new ProductDAL();
             products.Create(1234, "food", (decimal)4.99, 67);
             Console.WriteLine(products.Read(1234));
+            Console.WriteLine();
 
-           //figure out readall method
+            products.ReadAll();
+            Console.WriteLine();
 
             Console.WriteLine(products.Read(87234));
 

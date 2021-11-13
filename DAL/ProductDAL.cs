@@ -11,9 +11,12 @@ namespace DAL
 {
     public class ProductDAL
     {
+        public int numberOfProducts { get; set; }
+        
         //Shira Laury
         public ProductDAL()
         {
+            numberOfProducts = 0;
             InitializeList();
         }
 
@@ -28,7 +31,7 @@ namespace DAL
         private decimal price;//variable to hold the price of the product
         private int stock;
 
-       
+       //question: why do we need an index?
         protected int index = 0;//variable to hold the index of the list
        
         //method to initialize the list with products' information
@@ -48,9 +51,10 @@ namespace DAL
 
                     Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                    
+                    numberOfProducts++;
 
                     index++;
+
 
                     string checkForNull = reader.ReadLine();
                     if (checkForNull == null)
@@ -91,10 +95,14 @@ namespace DAL
         }
 
         //readall method: return a copy of the product list
-        public List<Product> ReadAll()
+        public void ReadAll()
         {
-            List<Product> copyProductList = productList;
-            return copyProductList;
+            
+            for (int i = 0; i < numberOfProducts; i++)
+            {
+                Console.WriteLine(productList[i]);
+            }
+            
         }
 
         
