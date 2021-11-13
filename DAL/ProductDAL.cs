@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using System.IO;
-using 
 
 
 namespace DAL
@@ -19,7 +18,7 @@ namespace DAL
         }
 
         //create list to hold the product information 
-        static List<Product> productList = new List<Product>();
+        static List<Product> productList = new List<Product>(); //question from chani: why is this static?
 
         //create StreamReader object to read the list
         StreamReader reader = new StreamReader("ListOfProducts.txt");
@@ -27,7 +26,7 @@ namespace DAL
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product
         private decimal price;//variable to hold the price of the product
-
+        private int stock;
 
        
         protected int index = 0;//variable to hold the index of the list
@@ -42,13 +41,14 @@ namespace DAL
                 number = int.Parse(reader.ReadLine());//reads the ID number into the variable number
                 name = reader.ReadLine();//reads the name into the variable name
                 price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
+                stock = int.Parse(reader.ReadLine());//reads the amount in stock
 
                 while (name != null) //read until there are no more entries
                 {
 
-                    Product Item = new Product(number, name, price);//creates new Product object 
+                    Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                    Console.WriteLine(productList[index]);
+                    
 
                     index++;
 
@@ -61,6 +61,7 @@ namespace DAL
                     number = int.Parse(checkForNull);//reads the ID number into the variable number
                     name = reader.ReadLine();//reads the name into the variable name
                     price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
+                    stock = int.Parse(reader.ReadLine());//reads the amount in stock
                 } //end while
 
             }//close reader
@@ -69,25 +70,22 @@ namespace DAL
 
         //Chani Wachsstock
         //Create method: create a product and add to product list
-        public void Create(int prodNum, string prodName, decimal cost)
+        public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
-            Product product = new Product(prodNum, prodName, cost);
+            Product product = new Product(prodNum, prodName, cost, stock);
             productList.Add(product);
         }
 
         //read method: go through list of products to find correct id number and then return that product 
         public Product Read(int productNum)
-        { 
+        {
             int index = 0;
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
             {
-                if (index<productList.Count)//checks if the index is
-                                            //still within range of the list
-                {
-                    index++;
-                }
-                else //if it's not, it throws an exception
+                if (index<productList.Count)
+                index++;
+                else
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -105,12 +103,13 @@ namespace DAL
             return copyProductList;
         }
 
+        
+
         //update method: receives product number and allows to change product info
-        public void Update(int prodNum, string prodName, decimal cost)
+        public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
-            
             Delete(prodNum);
-            Create(prodNum, prodName, cost);
+            Create(prodNum, prodName, cost, stock);
 
         }
 
