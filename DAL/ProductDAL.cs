@@ -9,14 +9,14 @@ using System.IO;
 
 namespace DAL
 {
-    class ProductDAL
+    public class ProductDAL
     {
-        public int numberOfProducts { get; set; }
+        public int NumberOfProducts { get; set; }
         
         //Shira Laury
         public ProductDAL()
         {
-            numberOfProducts = 0;
+            NumberOfProducts = 0;
             InitializeList();
         }
 
@@ -32,7 +32,7 @@ namespace DAL
         private int stock;
 
        //question: why do we need an index?
-        protected int index = 0;//variable to hold the index of the list
+        //protected int index = 0;//variable to hold the index of the list *see comment on index below*
        
         //method to initialize the list with products' information
         public void InitializeList()
@@ -51,9 +51,9 @@ namespace DAL
 
                     Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                    numberOfProducts++;
+                    NumberOfProducts++;
 
-                    index++;
+                    //index++; I like number of products better because index is not really what we care about
 
 
                     string checkForNull = reader.ReadLine();
@@ -100,16 +100,11 @@ namespace DAL
         }
 
         //readall method: return a copy of the product list
-        public List<Product> ReadAll()
-        {
-
-            List<Product> copyProductList = productList;
-            return copyProductList;
-        }
+        
         public void ReadAll()
         {
             
-            for (int i = 0; i < numberOfProducts; i++)
+            for (int i = 0; i < NumberOfProducts; i++)
             {
                 Console.WriteLine(productList[i]);
             }
@@ -135,7 +130,7 @@ namespace DAL
 
         private void CheckRange()
         {
-            while (index != )
+            while (Number != )
                 if (index < productList.Count)
                     index++;
                 else

@@ -23,7 +23,7 @@ namespace BLL
         public void Read(int productNum)
         {
             ProductDAL product2 = new ProductDAL(productNum);
-            for(int i=0; i<productList.Count)
+            for(int i=0; i< productList.Count)
             if (productNum!=productList.)
             product2.Read();
 
