@@ -7,11 +7,13 @@ namespace BLL
 {
     class ProductBLL
     {
+        ProductDAL product = new ProductDAL();
 
         public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
-            ProductDAL product = new ProductDAL();
+            
             product.Create(prodNum, prodName, cost, stock);
+
         }
         /// <summary>
         /// Method that Reads a specific product from the list
@@ -20,12 +22,12 @@ namespace BLL
         public void Read(int productNum)
         {
             int i = 0;
-            ProductDAL product2 = new ProductDAL(productNum);
+           
             for(i=0; i<productList.Count;i++)
             {
                 if (productNum == productList[i])
                 {
-                    product2.Read();
+                    product.Read();
                 }
                 else counter++; 
                
@@ -40,8 +42,8 @@ namespace BLL
 
         public List<Product> ReadAll()
         {
-            ProductDAL product3 = new ProductDAL();
-            product3.ReadAll;
+            
+            product.ReadAll();
         }
 
             /// <summary>
@@ -50,12 +52,10 @@ namespace BLL
             /// <param name="productNum"></param>
             public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
-            ProductDAL product4 = new DAL.ProductDAL();
-
             int i;
             for(i=0; i< productList.Count;i++)
             {
-                if (product4.ProductNumber == prodNum)
+                if (product.ProductNumber == prodNum)
                     break;
             }
             if (i== productList.Count)
@@ -64,7 +64,7 @@ namespace BLL
                 }
                     
            
-            product2.Update(prodNum);
+            product.Update(prodNum,prodName,cost,stock);
         }
 
         /// <summary>
@@ -73,8 +73,7 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Delete(int productNum)
         {
-            ProductDAL product5 = new DAL.ProductDAL(p);
-            product3.Delete;
+            product.Delete(productNum);
         }
 
     }

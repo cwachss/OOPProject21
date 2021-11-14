@@ -9,7 +9,7 @@ using System.IO;
 
 namespace DAL
 {
-    class ProductDAL
+    public class ProductDAL
     {
         public int numberOfProducts { get; set; }
         
