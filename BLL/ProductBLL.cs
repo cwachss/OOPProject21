@@ -1,14 +1,11 @@
-﻿using System;
+﻿using Entities;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
-using Entities;
 
 namespace BLL
 {
-    class ProductBLL 
+    class ProductBLL
     {
 
         public void Create(int prodNum, string prodName, decimal cost, int stock)
@@ -22,10 +19,22 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Read(int productNum)
         {
+            int i = 0;
             ProductDAL product2 = new ProductDAL(productNum);
-            for(int i=0; i<productList.Count)
-            if (productNum!=productList.)
-            product2.Read();
+            for(i=0; i<productList.Count;i++)
+            {
+                if (productNum == productList[i])
+                {
+                    product2.Read();
+                }
+                else counter++; 
+               
+            }
+            if (i == productList.Count)
+            {
+                throw new ProductNumberOutOfRange();
+            }
+                
 
         }
 
@@ -41,8 +50,21 @@ namespace BLL
             /// <param name="productNum"></param>
             public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
-            ProductDAL product4 = new DAL.ProductDAL(prodNum, prodName, cost, stock);
-            product2.Update();
+            ProductDAL product4 = new DAL.ProductDAL();
+
+            int i;
+            for(i=0; i< productList.Count;i++)
+            {
+                if (product4.ProductNumber == prodNum)
+                    break;
+            }
+            if (i== productList.Count)
+                {
+                    throw new ProductNumberOutOfRange();
+                }
+                    
+           
+            product2.Update(prodNum);
         }
 
         /// <summary>
@@ -51,7 +73,7 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Delete(int productNum)
         {
-            ProductDAL product5 = new DAL.ProductDAL(productNum);
+            ProductDAL product5 = new DAL.ProductDAL(p);
             product3.Delete;
         }
 
