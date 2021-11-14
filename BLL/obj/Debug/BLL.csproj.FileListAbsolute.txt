@@ -5,3 +5,10 @@ C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.Assemb
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\DAL.exe
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\Entities.exe
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\Entities.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\Entities.exe.config
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\DAL.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\DAL.exe.config
+C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.CopyComplete

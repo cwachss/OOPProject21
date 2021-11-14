@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductNumberNotFound.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="DALTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

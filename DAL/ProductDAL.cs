@@ -7,16 +7,17 @@ using Entities;
 using System.IO;
 
 
+
 namespace DAL
 {
     public class ProductDAL
     {
-        public int numberOfProducts { get; set; }
+        public int NumberOfProducts { get; set; }
         
         //Shira Laury
         public ProductDAL()
         {
-            numberOfProducts = 0;
+            NumberOfProducts = 0;
             InitializeList();
         }
 
@@ -32,7 +33,7 @@ namespace DAL
         private int stock;
 
        //question: why do we need an index?
-        protected int index = 0;//variable to hold the index of the list
+        //protected int index = 0;//variable to hold the index of the list *see comment on index below*
        
         //method to initialize the list with products' information
         public void InitializeList()
@@ -51,9 +52,9 @@ namespace DAL
 
                     Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                    numberOfProducts++;
+                    NumberOfProducts++;
 
-                    index++;
+                    //index++; I like number of products better because index is not really what we care about
 
 
                     string checkForNull = reader.ReadLine();
@@ -82,7 +83,8 @@ namespace DAL
 
         //read method: go through list of products to find correct id number and then return that product 
         public Product Read(int productNum)
-        {
+        { 
+
             int index = 0;
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
@@ -95,21 +97,16 @@ namespace DAL
                 }
             }
 
-            Product product = productList[index];
+            Product product = productList[index];//did you not want to find the index this way? How else should I find it?
             return product;
         }
 
         //readall method: return a copy of the product list
-        public List<Product> ReadAll()
-        {
-
-            List<Product> copyProductList = productList;
-            return copyProductList;
-        }
+        
         public void ReadAll()
         {
             
-            for (int i = 0; i < numberOfProducts; i++)
+            for (int i = 0; i < NumberOfProducts; i++)
             {
                 Console.WriteLine(productList[i]);
             }
@@ -121,28 +118,44 @@ namespace DAL
         //update method: receives product number and allows to change product info
         public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
-            Delete(prodNum);
-            Create(prodNum, prodName, cost, stock);
+            int i;
+            for (i = 0; i < productList.Count; i++)
+            {
+                if (prodNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
+                {
+                    Delete(prodNum);//if found does, it executes
+                    Create(prodNum, prodName, cost, stock);
+                }
+            }
+            if (i == productList.Count)
+            {
+                throw new ProductNumberNotFound();//if never found product number, it throws an exception.
+            }
+           
 
         }
 
         //delete method: remove product from product list
         public void Delete(int productNum)
         {
-            Product product = Read(productNum);
-            productList.Remove(product);
+            int i;
+            for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
+            {
+                if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
+                {
+                    Product product = Read(productNum);//if found does, it executes
+                    productList.Remove(product);
+                }
+            }
+            if (i == productList.Count)//if never found product number, it throws an exception.
+            {
+                throw new ProductNumberNotFound();
+            }
+           
         }
 
-        private void CheckRange()
-        {
-            while (index != )
-                if (index < productList.Count)
-                    index++;
-                else
-                {
-                    throw new ProductNumberOutOfRange;
-                }
-        }
+
+        
     }
 
 }

@@ -21,26 +21,14 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Read(int productNum)
         {
-            int i = 0;
-           
-            for(i=0; i<productList.Count;i++)
-            {
-                if (productNum == productList[i])
-                {
-                    product.Read();
-                }
-                else counter++; 
+            
+            product.Read(productNum);
                
-            }
-            if (i == productList.Count)
-            {
-                throw new ProductNumberOutOfRange();
-            }
-                
-
         }
-
-        public List<Product> ReadAll()
+        /// <summary>
+        /// method that reads all the products
+        /// </summary>
+        public void ReadAll()
         {
             
             product.ReadAll();
@@ -51,19 +39,7 @@ namespace BLL
             /// </summary>
             /// <param name="productNum"></param>
             public void Update(int prodNum, string prodName, decimal cost, int stock)
-        {
-            int i;
-            for(i=0; i< productList.Count;i++)
-            {
-                if (product.ProductNumber == prodNum)
-                    break;
-            }
-            if (i== productList.Count)
-                {
-                    throw new ProductNumberOutOfRange();
-                }
-                    
-           
+        {            
             product.Update(prodNum,prodName,cost,stock);
         }
 

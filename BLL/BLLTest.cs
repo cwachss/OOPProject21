@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
 
 namespace BLL
 {
@@ -19,11 +20,11 @@ namespace BLL
                 obj.ReadAll();
                 obj.Read(19238);
             }
-            catch(ProductNumberOutOfRange numOut)
+            catch(ProductNumberNotFound numOut)
             {
                 Console.WriteLine(numOut.Message);            
             }
-            catch()
+            //catch()
         }
     }
 }

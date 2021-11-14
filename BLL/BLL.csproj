@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="ProductBLL.cs" />
     <Compile Include="BLLTest.cs" />
-    <Compile Include="ProductNumberOutOfRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
