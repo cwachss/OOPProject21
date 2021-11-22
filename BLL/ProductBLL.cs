@@ -9,12 +9,14 @@ namespace BLL
     {
         ProductDAL product = new ProductDAL();
 
-        public void Create(int prodNum, string prodName, decimal cost, int stock)
+        public ProductDAL Create(int prodNum, string prodName, decimal cost, int stock)
         {
             
-            product.Create(prodNum, prodName, cost, stock);
+           product.Create(prodNum, prodName, cost, stock);
+            return product;
 
         }
+
         /// <summary>
         /// Method that Reads a specific product from the list
         /// </summary>
@@ -23,15 +25,15 @@ namespace BLL
         {
             
             product.Read(productNum);
-               
+            //return product;
         }
         /// <summary>
         /// method that reads all the products
         /// </summary>
         public void ReadAll()
         {
-            
             product.ReadAll();
+                
         }
 
             /// <summary>

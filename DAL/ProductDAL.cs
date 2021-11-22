@@ -78,7 +78,7 @@ namespace DAL
         public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
             Product product = new Product(prodNum, prodName, cost, stock);
-            productList.Add(product);
+            productList.Add(product); 
         }
 
         //read method: go through list of products to find correct id number and then return that product 
