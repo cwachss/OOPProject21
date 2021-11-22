@@ -21,19 +21,19 @@ namespace BLL
         /// Method that Reads a specific product from the list
         /// </summary>
         /// <param name="productNum"></param>
-        public void Read(int productNum)
+        public Product Read(int productNum)
         {
             
-            product.Read(productNum);
-            //return product;
+            return product.Read(productNum);
+               
         }
         /// <summary>
         /// method that reads all the products
         /// </summary>
-        public void ReadAll()
+        public List<Product> ReadAll()
         {
-            product.ReadAll();
-                
+            
+            return product.ReadAll();
         }
 
             /// <summary>

@@ -21,14 +21,14 @@ namespace Entities
             AmountInStock = amountInStock;
         }
 
-        public Product(Product p)//copy constuctor
+        public Product (Product pro)
         {
-            ProductName = p.ProductName;
-            ProductNumber = p.ProductNumber;
-            CostPerUnit = p.CostPerUnit;
-            AmountInStock = p.AmountInStock;
-
+            ProductNumber = pro.ProductNumber;
+            ProductName = pro.ProductName;
+            CostPerUnit = pro.CostPerUnit;
+            AmountInStock = pro.AmountInStock;
         }
+
         public override string ToString()
         {
             //note to self: format cost as currency

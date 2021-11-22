@@ -12,12 +12,12 @@ namespace DAL
 {
     public class ProductDAL
     {
-        public int NumberOfProducts { get; set; }
+        //public int NumberOfProducts { get; set; }
         
         //Shira Laury
         public ProductDAL()
         {
-            NumberOfProducts = 0;
+           // NumberOfProducts = 0;
             InitializeList();
         }
 
@@ -52,7 +52,7 @@ namespace DAL
 
                     Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                    NumberOfProducts++;
+                   //NumberOfProducts++;
 
                     //index++; I like number of products better because index is not really what we care about
 
@@ -78,7 +78,18 @@ namespace DAL
         public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
             Product product = new Product(prodNum, prodName, cost, stock);
-            productList.Add(product); 
+            for(int i = 0; i < productList.Count; i++)
+            {
+                if (prodNum == productList[i].ProductNumber)
+                {
+                    throw new Exception("Product already exists");
+                   //throw new NumberAlreadyExists(); //figure out how to call exceptions... This is confusing...
+                }
+            }
+          
+            productList.Add(product);
+
+
         }
 
         //read method: go through list of products to find correct id number and then return that product 
@@ -89,31 +100,54 @@ namespace DAL
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
             {
-                if (index<productList.Count)
-                index++;
+                if (index < productList.Count)
+                { 
+                    index++; 
+                }
                 else
                 {
-                    throw new IndexOutOfRangeException();
+                    throw new ProductNumberNotFound();
                 }
             }
 
-            Product product = productList[index];//did you not want to find the index this way? How else should I find it?
+            Product product = new Product(productList[index]);//did you not want to find the index this way? How else should I find it?
             return product;
         }
 
-        //readall method: return a copy of the product list
-        
-        public void ReadAll()
+        //readall method: prints out the whole list
+        /* public void PrintAll()
         {
             
-            for (int i = 0; i < NumberOfProducts; i++)
+            for (int i = 0; i < productList.Count; i++)
             {
                 Console.WriteLine(productList[i]);
             }
             
-        }
+        }*/
 
-        
+        //possibly what readall is supposed to:  return a copy of the product list.
+        public List<Product> ReadAll()
+        {
+            if (productList.Count > 0)
+            {
+                List<Product> copyOfList = productList.ConvertAll(pro => new Product(pro.ProductNumber, pro.ProductName,
+                    pro.CostPerUnit, pro.AmountInStock));
+
+                return copyOfList;
+            }
+            else
+            {
+                throw new Exception("No products found");
+            }
+           /* for (int i = 0; i < productList.Count; i++)
+            {
+            copyOfList.Add(productList[i]);
+            }*/
+           //test exception
+        }
+         
+
+
 
         //update method: receives product number and allows to change product info
         public void Update(int prodNum, string prodName, decimal cost, int stock)
