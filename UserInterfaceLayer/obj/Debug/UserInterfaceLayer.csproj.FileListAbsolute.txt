@@ -1,0 +1,9 @@
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.exe.config
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.exe
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.pdb
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.FormProducts.resources
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.Properties.Resources.resources
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.GenerateResource.cache
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.CoreCompileInputs.cache
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.exe
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.pdb
