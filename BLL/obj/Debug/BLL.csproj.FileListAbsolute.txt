@@ -12,3 +12,17 @@ C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\Entities.exe.conf
 C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\DAL.pdb
 C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\bin\Debug\DAL.exe.config
 C:\Users\shira\source\repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\BLL.exe.config
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\BLL.exe
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\BLL.pdb
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\DAL.exe
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\Entities.exe
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\Entities.pdb
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\Entities.exe.config
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\DAL.pdb
+C:\Users\chani\source\repos\OOPProject\BLL\bin\Debug\DAL.exe.config
+C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.exe
+C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.pdb

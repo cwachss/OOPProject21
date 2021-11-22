@@ -18,6 +18,8 @@ namespace DAL
             Console.WriteLine();
 
             products.ReadAll();
+           //add join string method see documentation paper
+           Console.WriteLine(string.Join("\n", products.ReadAll()));
             Console.WriteLine();
 
             Console.WriteLine(products.Read(87234));

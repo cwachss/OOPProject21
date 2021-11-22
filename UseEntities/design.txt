@@ -14,3 +14,10 @@ Customers have credit cards
 
 DAL Layer:
 ProductDAL class with methods for ititializing list and CRUD methods
+
+UIL
+some some ideas for product GUI section:
+	float and dock everything to take up full space called home page.
+	then when you hit one, all of them move to top as a menu, with option to go back to home page
+	view product: enter product number and then pull up info
+	modify allows you to enter a product number and then modify everything else, but initial text is what it is, and then they can change it
