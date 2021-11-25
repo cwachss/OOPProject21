@@ -5,7 +5,7 @@ using DAL;
 
 namespace BLL
 {
-    class ProductBLL
+    public class ProductBLL
     {
         ProductDAL product = new ProductDAL();
 

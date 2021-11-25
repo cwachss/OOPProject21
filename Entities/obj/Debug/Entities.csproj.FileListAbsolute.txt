@@ -1,10 +1,3 @@
-C:\Users\chani\source\repos\OOPProject\Entities\bin\Debug\Entities.exe.config
-C:\Users\chani\source\repos\OOPProject\Entities\bin\Debug\Entities.exe
-C:\Users\chani\source\repos\OOPProject\Entities\bin\Debug\Entities.pdb
-C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
-C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.exe
-C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.pdb
-C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\bin\Debug\Entities.exe.config
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\bin\Debug\Entities.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\bin\Debug\Entities.pdb
@@ -12,3 +5,9 @@ C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\obj\Debug\Entities.csp
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\obj\Debug\Entities.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\Entities\obj\Debug\Entities.pdb
+C:\Users\chani\source\repos\OOPProject\Entities\bin\Debug\Entities.exe.config
+C:\Users\chani\source\repos\OOPProject\Entities\bin\Debug\Entities.exe
+C:\Users\chani\source\repos\OOPProject\Entities\bin\Debug\Entities.pdb
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.exe
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Debug\Entities.pdb

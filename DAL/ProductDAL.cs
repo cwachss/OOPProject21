@@ -22,7 +22,7 @@ namespace DAL
         }
 
         //create list to hold the product information 
-        static List<Product> productList = new List<Product>(); //question from chani: why is this static?
+        List<Product> productList = new List<Product>(); //question from chani: why is this static?
 
         //create StreamReader object to read the list
         StreamReader reader = new StreamReader("ListOfProducts.txt");
