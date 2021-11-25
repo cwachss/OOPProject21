@@ -127,10 +127,10 @@ namespace UserInterfaceLayer
             labelProductMenu.Enabled = true;
         }
 
-        private void textBoxName_TextChanged(object sender, EventArgs e)
+        /*private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
        public void PrintAll()
         {

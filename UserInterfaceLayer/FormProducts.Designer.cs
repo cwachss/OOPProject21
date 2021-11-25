@@ -225,7 +225,7 @@ namespace UserInterfaceLayer
             this.textBoxStock.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxStock.Name = "textBoxStock";
             this.textBoxStock.Size = new System.Drawing.Size(175, 33);
-            this.textBoxStock.TabIndex = 1;
+            this.textBoxStock.TabIndex = 3;
             // 
             // labelPrice
             // 
@@ -265,8 +265,8 @@ namespace UserInterfaceLayer
             this.textBoxName.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(175, 33);
-            this.textBoxName.TabIndex = 3;
-            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
+            this.textBoxName.TabIndex = 1;
+            //this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // labelProductNumber
             // 
