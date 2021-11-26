@@ -17,6 +17,26 @@ namespace UserInterfaceLayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormProducts());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
+
+
+
+
     }
 }
