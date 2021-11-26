@@ -22,12 +22,25 @@ namespace UserInterfaceLayer
             InitializeComponent();
             newBLL = new ProductBLL();
         }
+
         private void buttonCreate_Click(object sender, EventArgs e)
-        {
+        {//n/t imp
             HideMenuButtons();
 
             buttonReturnMenu.Visible = true;
-            labelProductMenu.Text = "Create Product";
+            groupBoxProductDetails.Visible = true;
+            labelProductMenu.Text = "Add Product";
+
+            textBoxPrintProducts.Size = new System.Drawing.Size(413, 365);
+            textBoxPrintProducts.Visible = true;
+            PrintAll();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            newBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
+            textBoxPrintProducts.Clear();
+            PrintAll();
         }
 
         private void buttonReadOne_Click(object sender, EventArgs e)
@@ -36,21 +49,21 @@ namespace UserInterfaceLayer
 
             buttonReturnMenu.Visible = true;
             labelProductMenu.Text = "Find Product";
+
+
         }
 
 
         private void buttonReadAll_Click(object sender, EventArgs e)
         {
             HideMenuButtons();
-            foreach (Product product in newBLL.ReadAll())
-            {
-                textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
-            }
+            PrintAll();
             
             //textBoxShowProduct.AppendText(product.ToString() + "\r\n");
-            textBoxPrintProducts.Visible = true;
-            buttonReturnMenu.Visible = true;
-            labelProductMenu.Text = "All Products";
+            textBoxPrintProducts.Visible = true; //shows the textbox where the list will appear
+            buttonReturnMenu.Visible = true; //shows button that allows you to return to the home page
+           textBoxPrintProducts.Size = new System.Drawing.Size(680, 365); //makes product list text box take up full space
+            labelProductMenu.Text = "All Products"; //change title
 
         }
 
@@ -73,10 +86,11 @@ namespace UserInterfaceLayer
 
         private void buttonReturnMenu_Click(object sender, EventArgs e)
         {
-            UnhideMenuButtons();
+            ResetMainMenu();
             textBoxPrintProducts.Visible = false;
             buttonReturnMenu.Visible = false;
             labelProductMenu.Text = "Product Menu";
+            groupBoxProductDetails.Visible = false;
         }
 
         private void HideMenuButtons()
@@ -86,7 +100,7 @@ namespace UserInterfaceLayer
             buttonReadOne.Visible = false;
             buttonUpdate.Visible = false;
             buttonDelete.Visible = false;
-            labelProductMenu.Visible = false;
+           
             buttonCreate.Enabled = false;
             buttonReadAll.Enabled = false;
             buttonReadOne.Enabled = false;
@@ -95,7 +109,7 @@ namespace UserInterfaceLayer
             labelProductMenu.Enabled = false;
         }
 
-        private void UnhideMenuButtons()
+        private void ResetMainMenu()
         {
             buttonCreate.Visible = true;
             buttonReadAll.Visible = true;
@@ -103,6 +117,8 @@ namespace UserInterfaceLayer
             buttonUpdate.Visible = true;
             buttonDelete.Visible = true;
             labelProductMenu.Visible = true;
+            textBoxPrintProducts.Visible = false;
+            textBoxPrintProducts.Clear();
             buttonCreate.Enabled = true;
             buttonReadAll.Enabled = true;
             buttonReadOne.Enabled = true;
@@ -111,47 +127,17 @@ namespace UserInterfaceLayer
             labelProductMenu.Enabled = true;
         }
 
-
-        //we need a return to home page button
-
-
-        private void CreateGUI()
-        {
-            HideMenuButtons();
-
-            labelID.Visible = true;
-            textBoxID.Visible = true;
-            labelTypeName.Visible = true;
-            textBoxName.Visible = true;
-            labelPrice.Visible = true;
-            textBoxPrice.Visible = true;
-            labelStock.Visible = true;
-            textBoxStock.Visible = true;
-            buttonCreates.Visible = true;
-
-            buttonReturnMenu.Visible = true;
-
-            textBoxID.Text= "109";//generated ID.
-        }
-
-        private void labelStock_Click(object sender, EventArgs e)
+        /*private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
-        private void Modify()
+       public void PrintAll()
         {
-            labelID.Visible = true;
-            textBoxID.Visible = true;
-            labelTypeName.Visible = true;
-            textBoxName.Visible = true;
-            labelPrice.Visible = true;
-            textBoxPrice.Visible = true;
-            labelStock.Visible = true;
-            textBoxStock.Visible = true;
-            buttonCreates.Visible = true;
-
-            buttonReturnMenu.Visible = true;
+            foreach (Product product in newBLL.ReadAll()) //appends each product in the text box
+            {
+                textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
+            }
         }
     }
 }

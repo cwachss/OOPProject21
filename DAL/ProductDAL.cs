@@ -12,12 +12,8 @@ namespace DAL
 {
     public class ProductDAL
     {
-
-        //create list to hold the product information 
-        List<Product> productList = new List<Product>(); 
-
         //public int NumberOfProducts { get; set; }
-
+        
         //Shira Laury
         public ProductDAL()
         {
@@ -25,9 +21,11 @@ namespace DAL
             InitializeList();
         }
 
+        //create list to hold the product information 
+        List<Product> productList = new List<Product>(); //question from chani: why is this static?
 
-        //create StreamReader object to read the list C:\Users\shira\source\repos\cwachss\OOPProject21
-        StreamReader reader = new StreamReader(@"C:\users\shira\souce\repos\cwachss\OOPProject21\Entities\bin\Debug\Input.txt");
+        //create StreamReader object to read the list
+        StreamReader reader = new StreamReader("ListOfProducts.txt");
                
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product
