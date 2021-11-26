@@ -106,7 +106,7 @@ namespace UserInterfaceLayer
             buttonReadOne.Enabled = false;
             buttonUpdate.Enabled = false;
             buttonDelete.Enabled = false;
-            labelProductMenu.Enabled = false;
+            //labelProductMenu.Enabled = false;
         }
 
         private void ResetMainMenu()
@@ -124,7 +124,7 @@ namespace UserInterfaceLayer
             buttonReadOne.Enabled = true;
             buttonUpdate.Enabled = true;
             buttonDelete.Enabled = true;
-            labelProductMenu.Enabled = true;
+            //labelProductMenu.Enabled = true;
         }
 
         /*private void textBoxName_TextChanged(object sender, EventArgs e)
