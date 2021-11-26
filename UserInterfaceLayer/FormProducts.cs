@@ -17,6 +17,7 @@ namespace UserInterfaceLayer
     {
         ProductBLL newBLL;
 
+
         public FormProducts()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace UserInterfaceLayer
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
-        {//n/t imp
+        {
             HideMenuButtons();
 
             buttonReturnMenu.Visible = true;
@@ -138,6 +139,20 @@ namespace UserInterfaceLayer
             {
                 textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
             }
+
         }
+
+
+        //Shira:
+        public void Delete(int input)
+        {
+            newBLL.Delete(input);
+        }
+
+
+
+
+
+
     }
 }
