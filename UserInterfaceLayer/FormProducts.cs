@@ -144,10 +144,16 @@ namespace UserInterfaceLayer
 
 
         //Shira:
-        public void Delete(int input)
+        public void Delete(int input)//same code and thenme as read one.
+                                     //Have a 'show details' button. Read One/find product
+                                     //should  have option of modify product and delete should 
+                                     //
+
         {
             newBLL.Delete(input);
         }
+
+
 
 
 
