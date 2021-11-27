@@ -29,8 +29,6 @@ namespace UserInterfaceLayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonReadAll = new System.Windows.Forms.Button();
             this.buttonReadOne = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
@@ -50,46 +48,16 @@ namespace UserInterfaceLayer
             this.groupBoxProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonDelete.Location = new System.Drawing.Point(600, 41);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(150, 440);
-            this.buttonDelete.TabIndex = 11;
-            this.buttonDelete.Text = "DELETE PRODUCT";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonUpdate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdate.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonUpdate.Location = new System.Drawing.Point(450, 41);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(150, 440);
-            this.buttonUpdate.TabIndex = 10;
-            this.buttonUpdate.Text = "UPDATE PRODUCT";
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
-            // 
             // buttonReadAll
             // 
             this.buttonReadAll.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonReadAll.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonReadAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReadAll.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonReadAll.Location = new System.Drawing.Point(300, 41);
-            this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonReadAll.Location = new System.Drawing.Point(504, 41);
+            this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonReadAll.Name = "buttonReadAll";
-            this.buttonReadAll.Size = new System.Drawing.Size(150, 440);
+            this.buttonReadAll.Size = new System.Drawing.Size(252, 440);
             this.buttonReadAll.TabIndex = 9;
             this.buttonReadAll.Text = "ALL PRODUCTS";
             this.buttonReadAll.UseVisualStyleBackColor = false;
@@ -101,10 +69,10 @@ namespace UserInterfaceLayer
             this.buttonReadOne.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonReadOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReadOne.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonReadOne.Location = new System.Drawing.Point(150, 41);
-            this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonReadOne.Location = new System.Drawing.Point(252, 41);
+            this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonReadOne.Name = "buttonReadOne";
-            this.buttonReadOne.Size = new System.Drawing.Size(150, 440);
+            this.buttonReadOne.Size = new System.Drawing.Size(252, 440);
             this.buttonReadOne.TabIndex = 8;
             this.buttonReadOne.Text = "FIND PRODUCT";
             this.buttonReadOne.UseVisualStyleBackColor = false;
@@ -117,9 +85,9 @@ namespace UserInterfaceLayer
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Palatino Linotype", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreate.Location = new System.Drawing.Point(0, 41);
-            this.buttonCreate.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(150, 440);
+            this.buttonCreate.Size = new System.Drawing.Size(252, 440);
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "NEW PRODUCT";
             this.buttonCreate.UseVisualStyleBackColor = false;
@@ -130,8 +98,8 @@ namespace UserInterfaceLayer
             this.buttonReturnMenu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonReturnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturnMenu.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReturnMenu.Location = new System.Drawing.Point(0, 443);
-            this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonReturnMenu.Location = new System.Drawing.Point(-1, 440);
+            this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonReturnMenu.Name = "buttonReturnMenu";
             this.buttonReturnMenu.Size = new System.Drawing.Size(751, 41);
             this.buttonReturnMenu.TabIndex = 13;
@@ -148,7 +116,7 @@ namespace UserInterfaceLayer
             this.labelProductMenu.Location = new System.Drawing.Point(0, 0);
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelProductMenu.Name = "labelProductMenu";
-            this.labelProductMenu.Size = new System.Drawing.Size(750, 41);
+            this.labelProductMenu.Size = new System.Drawing.Size(751, 41);
             this.labelProductMenu.TabIndex = 6;
             this.labelProductMenu.Text = "Product Menu";
             this.labelProductMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,9 +145,9 @@ namespace UserInterfaceLayer
             this.groupBoxProductDetails.Controls.Add(this.labelProductNumber);
             this.groupBoxProductDetails.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxProductDetails.Location = new System.Drawing.Point(476, 57);
-            this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(1);
+            this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupBoxProductDetails.Name = "groupBoxProductDetails";
-            this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupBoxProductDetails.Size = new System.Drawing.Size(234, 363);
             this.groupBoxProductDetails.TabIndex = 15;
             this.groupBoxProductDetails.TabStop = false;
@@ -190,7 +158,7 @@ namespace UserInterfaceLayer
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Location = new System.Drawing.Point(30, 307);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(173, 33);
             this.buttonAdd.TabIndex = 9;
@@ -202,7 +170,7 @@ namespace UserInterfaceLayer
             // 
             this.textBoxProductNumber.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductNumber.Location = new System.Drawing.Point(30, 52);
-            this.textBoxProductNumber.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxProductNumber.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxProductNumber.Name = "textBoxProductNumber";
             this.textBoxProductNumber.Size = new System.Drawing.Size(175, 33);
             this.textBoxProductNumber.TabIndex = 0;
@@ -222,7 +190,7 @@ namespace UserInterfaceLayer
             // 
             this.textBoxStock.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStock.Location = new System.Drawing.Point(30, 251);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxStock.Name = "textBoxStock";
             this.textBoxStock.Size = new System.Drawing.Size(175, 33);
             this.textBoxStock.TabIndex = 3;
@@ -242,7 +210,7 @@ namespace UserInterfaceLayer
             // 
             this.textBoxPrice.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrice.Location = new System.Drawing.Point(30, 180);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(175, 33);
             this.textBoxPrice.TabIndex = 2;
@@ -262,11 +230,10 @@ namespace UserInterfaceLayer
             // 
             this.textBoxName.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(30, 114);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(175, 33);
             this.textBoxName.TabIndex = 1;
-            //this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // labelProductNumber
             // 
@@ -283,17 +250,16 @@ namespace UserInterfaceLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 481);
+            this.ClientSize = new System.Drawing.Size(751, 481);
             this.Controls.Add(this.textBoxPrintProducts);
             this.Controls.Add(this.groupBoxProductDetails);
             this.Controls.Add(this.buttonReturnMenu);
-            this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonReadAll);
             this.Controls.Add(this.buttonReadOne);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.labelProductMenu);
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FormProducts";
             this.Text = "Product Window";
             this.groupBoxProductDetails.ResumeLayout(false);
@@ -304,9 +270,6 @@ namespace UserInterfaceLayer
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonReadAll;
         private System.Windows.Forms.Button buttonReadOne;
         private System.Windows.Forms.Button buttonCreate;

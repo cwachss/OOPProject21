@@ -31,9 +31,9 @@ namespace UserInterfaceLayer
             groupBoxProductDetails.Visible = true;
             labelProductMenu.Text = "Add Product";
 
-            textBoxPrintProducts.Size = new System.Drawing.Size(413, 365);
+            textBoxPrintProducts.Size = new System.Drawing.Size(413, 365); //resize text box to make room for add panel
             textBoxPrintProducts.Visible = true;
-            PrintAll();
+            PrintAll(); //prints all the products already in the system
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -49,8 +49,8 @@ namespace UserInterfaceLayer
 
             buttonReturnMenu.Visible = true;
             labelProductMenu.Text = "Find Product";
-
-
+                        
+           // newBLL.ReadOne();
         }
 
 
@@ -67,21 +67,7 @@ namespace UserInterfaceLayer
 
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            HideMenuButtons();
-
-            buttonReturnMenu.Visible = true;
-            labelProductMenu.Text = "Update Product";
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            HideMenuButtons();
-
-            buttonReturnMenu.Visible = true;
-            labelProductMenu.Text = "Delete Product";
-        }
+     
 
 
         private void buttonReturnMenu_Click(object sender, EventArgs e)
@@ -98,14 +84,11 @@ namespace UserInterfaceLayer
             buttonCreate.Visible = false;
             buttonReadAll.Visible = false;
             buttonReadOne.Visible = false;
-            buttonUpdate.Visible = false;
-            buttonDelete.Visible = false;
            
             buttonCreate.Enabled = false;
             buttonReadAll.Enabled = false;
             buttonReadOne.Enabled = false;
-            buttonUpdate.Enabled = false;
-            buttonDelete.Enabled = false;
+          
             //labelProductMenu.Enabled = false;
         }
 
@@ -114,16 +97,14 @@ namespace UserInterfaceLayer
             buttonCreate.Visible = true;
             buttonReadAll.Visible = true;
             buttonReadOne.Visible = true;
-            buttonUpdate.Visible = true;
-            buttonDelete.Visible = true;
+         
             labelProductMenu.Visible = true;
             textBoxPrintProducts.Visible = false;
             textBoxPrintProducts.Clear();
             buttonCreate.Enabled = true;
             buttonReadAll.Enabled = true;
             buttonReadOne.Enabled = true;
-            buttonUpdate.Enabled = true;
-            buttonDelete.Enabled = true;
+        
             //labelProductMenu.Enabled = true;
         }
 
