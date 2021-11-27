@@ -38,6 +38,8 @@ namespace UserInterfaceLayer
             this.labelProductMenu = new System.Windows.Forms.Label();
             this.textBoxPrintProducts = new System.Windows.Forms.TextBox();
             this.groupBoxProductDetails = new System.Windows.Forms.GroupBox();
+            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttondelete2 = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxProductNumber = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
@@ -158,7 +160,7 @@ namespace UserInterfaceLayer
             this.textBoxPrintProducts.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxPrintProducts.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxPrintProducts.Location = new System.Drawing.Point(44, 70);
-            this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrintProducts.Multiline = true;
             this.textBoxPrintProducts.Name = "textBoxPrintProducts";
             this.textBoxPrintProducts.ReadOnly = true;
@@ -170,6 +172,8 @@ namespace UserInterfaceLayer
             // groupBoxProductDetails
             // 
             this.groupBoxProductDetails.AutoSize = true;
+            this.groupBoxProductDetails.Controls.Add(this.buttonModify);
+            this.groupBoxProductDetails.Controls.Add(this.buttondelete2);
             this.groupBoxProductDetails.Controls.Add(this.buttonAdd);
             this.groupBoxProductDetails.Controls.Add(this.textBoxProductNumber);
             this.groupBoxProductDetails.Controls.Add(this.labelStock);
@@ -189,6 +193,29 @@ namespace UserInterfaceLayer
             this.groupBoxProductDetails.TabStop = false;
             this.groupBoxProductDetails.Text = "PRODUCT DETAILS";
             this.groupBoxProductDetails.Visible = false;
+            // 
+            // buttonModify
+            // 
+            this.buttonModify.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModify.Location = new System.Drawing.Point(186, 378);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(86, 41);
+            this.buttonModify.TabIndex = 11;
+            this.buttonModify.Text = "MODIFY";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            // 
+            // buttondelete2
+            // 
+            this.buttondelete2.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttondelete2.Location = new System.Drawing.Point(40, 378);
+            this.buttondelete2.Margin = new System.Windows.Forms.Padding(1);
+            this.buttondelete2.Name = "buttondelete2";
+            this.buttondelete2.Size = new System.Drawing.Size(86, 41);
+            this.buttondelete2.TabIndex = 10;
+            this.buttondelete2.Text = "DELETE";
+            this.buttondelete2.UseVisualStyleBackColor = true;
+            this.buttondelete2.Click += new System.EventHandler(this.buttondelete2_Click);
             // 
             // buttonAdd
             // 
@@ -326,6 +353,8 @@ namespace UserInterfaceLayer
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelProductNumber;
+        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Button buttondelete2;
     }
 }
 
