@@ -47,8 +47,6 @@ namespace UserInterfaceLayer
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelProductNumber = new System.Windows.Forms.Label();
-            this.buttonDelete2 = new System.Windows.Forms.Button();
-            this.textBoxProductNumber2 = new System.Windows.Forms.TextBox();
             this.groupBoxProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -274,29 +272,11 @@ namespace UserInterfaceLayer
             this.labelProductNumber.TabIndex = 5;
             this.labelProductNumber.Text = "Product Number";
             // 
-            // buttonDelete2
-            // 
-            this.buttonDelete2.Location = new System.Drawing.Point(783, 280);
-            this.buttonDelete2.Name = "buttonDelete2";
-            this.buttonDelete2.Size = new System.Drawing.Size(284, 107);
-            this.buttonDelete2.TabIndex = 16;
-            this.buttonDelete2.Text = "button1";
-            this.buttonDelete2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxProductNumber2
-            // 
-            this.textBoxProductNumber2.Location = new System.Drawing.Point(774, 474);
-            this.textBoxProductNumber2.Name = "textBoxProductNumber2";
-            this.textBoxProductNumber2.Size = new System.Drawing.Size(292, 38);
-            this.textBoxProductNumber2.TabIndex = 17;
-            // 
             // FormProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1984, 1147);
-            this.Controls.Add(this.textBoxProductNumber2);
-            this.Controls.Add(this.buttonDelete2);
             this.Controls.Add(this.textBoxPrintProducts);
             this.Controls.Add(this.groupBoxProductDetails);
             this.Controls.Add(this.buttonReturnMenu);
@@ -334,8 +314,6 @@ namespace UserInterfaceLayer
         private System.Windows.Forms.Label labelProductNumber;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonUpdateProduct;
-        private System.Windows.Forms.Button buttonDelete2;
-        private System.Windows.Forms.TextBox textBoxProductNumber2;
     }
 }
 
