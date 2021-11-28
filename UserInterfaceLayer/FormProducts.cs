@@ -25,22 +25,32 @@ namespace UserInterfaceLayer
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            HideMenuButtons();
+            HideMenuButtons(); //leave main menu page
 
-            buttonReturnMenu.Visible = true;
-            groupBoxProductDetails.Visible = true;
-            labelProductMenu.Text = "Add Product";
+            buttonReturnMenu.Visible = true; //open up button that returns you to main menu
+            groupBoxProductDetails.Visible = true; //open up group box to enter in new product info
+            labelProductMenu.Text = "Add Product"; //change title of page
 
             textBoxPrintProducts.Size = new System.Drawing.Size(413, 365); //resize text box to make room for add panel
-            textBoxPrintProducts.Visible = true;
+            textBoxPrintProducts.Visible = true; //allow you to see what products already exist
             PrintAll(); //prints all the products already in the system
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            newBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
+            try
+            {
+                newBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //adds a product to the list
+                textBoxPrintProducts.Clear(); //empty list box to reprint with new product added
+                PrintAll(); //reprint list with new product added
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Product information is invalid."); //maybe we should have different error messages depending on what is invalid (product number in use, price is not valid, etc)
+            }
+            /*newBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
             textBoxPrintProducts.Clear();
-            PrintAll();
+            PrintAll();*/
         }
 
         private void buttonReadOne_Click(object sender, EventArgs e)
@@ -67,7 +77,30 @@ namespace UserInterfaceLayer
 
         }
 
-     
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            labelProductMenu.Text = "Modify Product"; //change title
+
+            //open up all text boxes except product number to be edited
+            textBoxName.ReadOnly = false; 
+            textBoxPrice.ReadOnly = false;
+            textBoxStock.ReadOnly = false;
+            buttonModify.Visible = false; //we have gone to the modify page and no longer need this button
+            //buttonDelete.Visible = false; //we have gone to the modify page and no longer need this button
+            buttonUpdateProduct.Visible = true;
+
+            newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
+
+        }
+
+        private void buttonUpdateProduct_Click(object sender, EventArgs e)
+        {
+            newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
+            //return to find object page, this code is not done:
+            buttonUpdateProduct.Visible = false;
+            //buttonDelete.Visible = true;
+            buttonModify.Visible = true;
+        }
 
 
         private void buttonReturnMenu_Click(object sender, EventArgs e)
@@ -120,5 +153,7 @@ namespace UserInterfaceLayer
                 textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
             }
         }
+
+        
     }
 }
