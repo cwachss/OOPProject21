@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
 using BLL;
+using DAL;
 
 
 namespace UserInterfaceLayer
@@ -99,6 +100,9 @@ namespace UserInterfaceLayer
             buttonReturnMenu.Visible = false;
             labelProductMenu.Text = "Product Menu";
             groupBoxProductDetails.Visible = false;
+            buttonDelete2.Visible = false;
+            buttonDelete2.Enabled = false;
+            
         }
 
         private void HideMenuButtons()
@@ -168,38 +172,52 @@ namespace UserInterfaceLayer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttondelete2_Click(object sender, EventArgs e)
-        {
-            //buttonModify.Visible = false;
-            //buttonModify.Enabled = false;
-                
-            newBLL.Delete(int.Parse(textBoxProductNumber.Text));
-
-            textBoxName.Text = null;
-            textBoxPrice.Text = null;
-            textBoxProductNumber.Text = null;
-            textBoxStock.Text = null;
-        }
+      
         /// <summary>
         /// displays details of certain product
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonListDetails_Click(object sender, EventArgs e)
+        private void buttonListDetails_Click_1(object sender, EventArgs e)
         {
             groupBoxProductDetails.Visible = true;
+            labelEnterNumber.Visible = false;
+            textBoxProductNumber2.Visible = false;
+            buttonListDetails.Visible = false;
             groupBoxProductDetails.Enabled = false;
-            textBoxProductNumber = textBoxProductNumber2;//this will be hopefully extra
-            Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
-            textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
-            textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
-            textBoxName.Text = Convert.ToString(newProduct.ProductName);
+            buttonDelete2.Visible = true;
+            buttonDelete2.Enabled = true;
 
+            textBoxProductNumber.Text = textBoxProductNumber2.Text;
+            try
+            {
+                Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
+                textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
+                textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
+                textBoxName.Text = Convert.ToString(newProduct.ProductName);
 
-           // newBLL.Read(int.Parse(textBoxProductNumber2.Text).;
-           // textBoxPrintProducts.Text = 
+            }
+            catch(ProductNumberNotFound num)
+            {
+                MessageBox.Show(num.Message);
+            }
         }
 
-        
+       
+
+        private void buttonDelete2_Click(object sender, EventArgs e)
+        {
+            //buttonModify.Visible = false;
+            //buttonModify.Enabled = false;
+
+            newBLL.Delete(int.Parse(textBoxProductNumber.Text));
+
+            textBoxProductNumber2.Visible = true;
+            textBoxName.Text = null;
+            textBoxPrice.Text = null;
+            textBoxProductNumber.Text = null;
+            textBoxStock.Text = null;
+            buttonListDetails.Visible = true;
+        }
     }
 }
