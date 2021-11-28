@@ -95,7 +95,7 @@ namespace DAL
         //read method: go through list of products to find correct id number and then return that product 
         public Product Read(int productNum)
         { 
-
+            //if(productNum)
             int index = 0;
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
@@ -189,6 +189,24 @@ namespace DAL
            
         }
 
+        //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...
+        //public int CheckNum(int prodNum)
+        //{
+        //    int i;
+        //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
+        //    {
+        //        if (prodNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
+        //        {
+        //            return prodNum;
+
+        //        }
+        //    }
+        //    if (i == productList.Count)//if never found product number, it throws an exception.
+        //    {
+        //        throw new ProductNumberNotFound();  
+        //    }
+        //    return 0;
+        //}
 
         
     }

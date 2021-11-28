@@ -56,7 +56,8 @@ namespace UserInterfaceLayer
             buttonReturnMenu.Visible = true;
             labelProductMenu.Text = "Find Product";
             labelEnterNumber.Visible = true;
-            textBoxProductNumber2.Visible= true; 
+            textBoxProductNumber2.Visible= true;
+            textBoxProductNumber2.Enabled = true;
             buttonListDetails.Visible = true;
             buttonListDetails.Enabled = true;
         }
@@ -102,6 +103,10 @@ namespace UserInterfaceLayer
             groupBoxProductDetails.Visible = false;
             buttonDelete2.Visible = false;
             buttonDelete2.Enabled = false;
+            buttonListDetails.Enabled = false;
+            buttonListDetails.Visible = false;
+            textBoxProductNumber2.Enabled = false;
+            textBoxProductNumber2.Visible = false;
             
         }
 
@@ -156,17 +161,6 @@ namespace UserInterfaceLayer
 
         }
 
-
-        //Shira:                                //My personal notes:
-        //public void Delete(int input)//same code and them as read one.
-        //                             //Have a 'show details' button. Read One/find product
-        //                             //should  have option of modify product and delete should 
-        //                             //enable imaginary buttonModify and real delete button
-
-        //{
-        //    newBLL.Delete(input);
-        //}
-
         /// <summary>
         /// Deletes a product from the list
         /// </summary>
@@ -179,29 +173,28 @@ namespace UserInterfaceLayer
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonListDetails_Click_1(object sender, EventArgs e)
-        {
-            groupBoxProductDetails.Visible = true;
-            buttonAdd.Visible = false;
-            labelEnterNumber.Visible = false;
-            textBoxProductNumber2.Visible = false;
-            buttonListDetails.Visible = false;
-            groupBoxProductDetails.Enabled = false;
-
-            buttonDelete2.Visible = true;
-            buttonDelete2.Enabled = true;
-
-            textBoxProductNumber.Text = textBoxProductNumber2.Text;
+        {   
             try
             {
+                groupBoxProductDetails.Visible = true;
+                buttonAdd.Visible = false;
+                labelEnterNumber.Visible = false;
+                textBoxProductNumber2.Visible = false;
+                buttonListDetails.Visible = false;
+                groupBoxProductDetails.Enabled = false;
+
+                buttonDelete2.Visible = true;
+                buttonDelete2.Enabled = true;
+
+                textBoxProductNumber.Text = textBoxProductNumber2.Text;
                 Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
                 textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
                 textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
                 textBoxName.Text = Convert.ToString(newProduct.ProductName);
-
             }
-            catch(ProductNumberNotFound num)
+            catch(ProductNumberNotFound prodNum)
             {
-                MessageBox.Show(num.Message);
+                MessageBox.Show(prodNum.Message);
             }
         }
 
@@ -211,16 +204,23 @@ namespace UserInterfaceLayer
         {
             //buttonModify.Visible = false;
             //buttonModify.Enabled = false;
-            newBLL.Delete(int.Parse(textBoxProductNumber.Text));
+            try
+            {
+                newBLL.Delete(int.Parse(textBoxProductNumber.Text));
+            }
+            catch(ProductNumberNotFound prodNum)
+            {
+                MessageBox.Show(prodNum.Message);
+            }
 
-            textBoxProductNumber2.Visible = true;
-            textBoxName.Text = null;
-            textBoxPrice.Text = null;
-            textBoxProductNumber.Text = null;
-            textBoxStock.Text = null;
+           // textBoxProductNumber2.Visible = true;
+            //textBoxName.Text = null;
+            //textBoxPrice.Text = null;
+            //textBoxProductNumber.Text = null;
+            //textBoxStock.Text = null;
             buttonListDetails.Visible = true;
-        }
 
+        }
 
 
     }
