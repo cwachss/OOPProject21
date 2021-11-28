@@ -181,10 +181,12 @@ namespace UserInterfaceLayer
         private void buttonListDetails_Click_1(object sender, EventArgs e)
         {
             groupBoxProductDetails.Visible = true;
+            buttonAdd.Visible = false;
             labelEnterNumber.Visible = false;
             textBoxProductNumber2.Visible = false;
             buttonListDetails.Visible = false;
             groupBoxProductDetails.Enabled = false;
+
             buttonDelete2.Visible = true;
             buttonDelete2.Enabled = true;
 
@@ -209,7 +211,6 @@ namespace UserInterfaceLayer
         {
             //buttonModify.Visible = false;
             //buttonModify.Enabled = false;
-
             newBLL.Delete(int.Parse(textBoxProductNumber.Text));
 
             textBoxProductNumber2.Visible = true;
@@ -219,5 +220,8 @@ namespace UserInterfaceLayer
             textBoxStock.Text = null;
             buttonListDetails.Visible = true;
         }
+
+
+
     }
 }

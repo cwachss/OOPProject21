@@ -38,6 +38,7 @@ namespace UserInterfaceLayer
             this.labelProductMenu = new System.Windows.Forms.Label();
             this.textBoxPrintProducts = new System.Windows.Forms.TextBox();
             this.groupBoxProductDetails = new System.Windows.Forms.GroupBox();
+            this.buttonDelete2 = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxProductNumber = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace UserInterfaceLayer
             this.labelEnterNumber = new System.Windows.Forms.Label();
             this.textBoxProductNumber2 = new System.Windows.Forms.TextBox();
             this.buttonListDetails = new System.Windows.Forms.Button();
-            this.buttonDelete2 = new System.Windows.Forms.Button();
             this.groupBoxProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,11 +188,23 @@ namespace UserInterfaceLayer
             this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(1);
             this.groupBoxProductDetails.Name = "groupBoxProductDetails";
             this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBoxProductDetails.Size = new System.Drawing.Size(312, 447);
+            this.groupBoxProductDetails.Size = new System.Drawing.Size(312, 442);
             this.groupBoxProductDetails.TabIndex = 15;
             this.groupBoxProductDetails.TabStop = false;
             this.groupBoxProductDetails.Text = "PRODUCT DETAILS";
             this.groupBoxProductDetails.Visible = false;
+            // 
+            // buttonDelete2
+            // 
+            this.buttonDelete2.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold);
+            this.buttonDelete2.Location = new System.Drawing.Point(168, 260);
+            this.buttonDelete2.Name = "buttonDelete2";
+            this.buttonDelete2.Size = new System.Drawing.Size(96, 58);
+            this.buttonDelete2.TabIndex = 17;
+            this.buttonDelete2.Text = "Delete";
+            this.buttonDelete2.UseVisualStyleBackColor = true;
+            this.buttonDelete2.Visible = false;
+            this.buttonDelete2.Click += new System.EventHandler(this.buttonDelete2_Click);
             // 
             // buttonAdd
             // 
@@ -322,18 +334,6 @@ namespace UserInterfaceLayer
             this.buttonListDetails.Visible = false;
             this.buttonListDetails.Click += new System.EventHandler(this.buttonListDetails_Click_1);
             // 
-            // buttonDelete2
-            // 
-            this.buttonDelete2.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold);
-            this.buttonDelete2.Location = new System.Drawing.Point(445, 447);
-            this.buttonDelete2.Name = "buttonDelete2";
-            this.buttonDelete2.Size = new System.Drawing.Size(96, 42);
-            this.buttonDelete2.TabIndex = 17;
-            this.buttonDelete2.Text = "Delete";
-            this.buttonDelete2.UseVisualStyleBackColor = true;
-            this.buttonDelete2.Visible = false;
-            this.buttonDelete2.Click += new System.EventHandler(this.buttonDelete2_Click);
-            // 
             // FormProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -373,7 +373,6 @@ namespace UserInterfaceLayer
         private System.Windows.Forms.Label labelProductMenu;
         private System.Windows.Forms.TextBox textBoxPrintProducts;
         private System.Windows.Forms.GroupBox groupBoxProductDetails;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.TextBox textBoxProductNumber;
         private System.Windows.Forms.Label labelStock;
         private System.Windows.Forms.TextBox textBoxStock;
@@ -386,6 +385,7 @@ namespace UserInterfaceLayer
         private System.Windows.Forms.TextBox textBoxProductNumber2;
         private System.Windows.Forms.Button buttonListDetails;
         private System.Windows.Forms.Button buttonDelete2;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
 

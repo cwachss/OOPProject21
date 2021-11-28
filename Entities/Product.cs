@@ -33,7 +33,7 @@ namespace Entities
         {
             //note to self: format cost as currency
 
-            return $"{ProductNumber} \t {ProductName} \t {CostPerUnit}";
+            return $"{ProductNumber} \t {ProductName} \t {CostPerUnit} \t {AmountInStock}";
         }
 
         

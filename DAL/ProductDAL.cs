@@ -179,6 +179,7 @@ namespace DAL
                 {
                     Product product = Read(productNum);//if found does, it executes
                     productList.Remove(product);
+                    
                 }
             }
             if (i == productList.Count)//if never found product number, it throws an exception.
