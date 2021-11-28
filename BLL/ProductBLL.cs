@@ -11,8 +11,8 @@ namespace BLL
 
         public ProductDAL Create(int prodNum, string prodName, decimal cost, int stock)
         {
-            
-           product.Create(prodNum, prodName, cost, stock);
+
+             product.Create(prodNum, prodName, cost, stock);
             return product;
 
         }

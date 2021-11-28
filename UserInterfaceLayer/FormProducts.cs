@@ -43,15 +43,21 @@ namespace UserInterfaceLayer
             textBoxPrintProducts.Clear();
             PrintAll();
         }
-
+        /// <summary>
+        /// method that brings user to find product interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonReadOne_Click(object sender, EventArgs e)
         {
             HideMenuButtons();
 
             buttonReturnMenu.Visible = true;
             labelProductMenu.Text = "Find Product";
-
-
+            labelEnterNumber.Visible = true;
+            textBoxProductNumber2.Visible= true; 
+            buttonListDetails.Visible = true;
+            buttonListDetails.Enabled = true;
         }
 
 
@@ -88,6 +94,7 @@ namespace UserInterfaceLayer
         private void buttonReturnMenu_Click(object sender, EventArgs e)
         {
             ResetMainMenu();
+           
             textBoxPrintProducts.Visible = false;
             buttonReturnMenu.Visible = false;
             labelProductMenu.Text = "Product Menu";
@@ -108,10 +115,12 @@ namespace UserInterfaceLayer
             buttonUpdate.Enabled = false;
             buttonDelete.Enabled = false;
             labelProductMenu.Enabled = false;
+            buttonReturnMenu.Visible = true;
         }
 
         private void ResetMainMenu()
         {
+            labelEnterNumber.Visible = false;
             buttonCreate.Visible = true;
             buttonReadAll.Visible = true;
             buttonReadOne.Visible = true;
@@ -119,6 +128,7 @@ namespace UserInterfaceLayer
             buttonDelete.Visible = true;
             labelProductMenu.Visible = true;
             textBoxPrintProducts.Visible = false;
+            //buttonReturnMenu.Visible = true;
             textBoxPrintProducts.Clear();
             buttonCreate.Enabled = true;
             buttonReadAll.Enabled = true;
@@ -143,19 +153,53 @@ namespace UserInterfaceLayer
         }
 
 
-        //Shira:
-        //public void Delete(int input)//same code and thenme as read one.
+        //Shira:                                //My personal notes:
+        //public void Delete(int input)//same code and them as read one.
         //                             //Have a 'show details' button. Read One/find product
         //                             //should  have option of modify product and delete should 
-        //                             //
+        //                             //enable imaginary buttonModify and real delete button
 
         //{
         //    newBLL.Delete(input);
         //}
 
+        /// <summary>
+        /// Deletes a product from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttondelete2_Click(object sender, EventArgs e)
         {
-            newBLL.Delete(int.Parse(textBoxProductNumber.Text)
+            //buttonModify.Visible = false;
+            //buttonModify.Enabled = false;
+                
+            newBLL.Delete(int.Parse(textBoxProductNumber.Text));
+
+            textBoxName.Text = null;
+            textBoxPrice.Text = null;
+            textBoxProductNumber.Text = null;
+            textBoxStock.Text = null;
         }
+        /// <summary>
+        /// displays details of certain product
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonListDetails_Click(object sender, EventArgs e)
+        {
+            groupBoxProductDetails.Visible = true;
+            groupBoxProductDetails.Enabled = false;
+            textBoxProductNumber = textBoxProductNumber2;//this will be hopefully extra
+            Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
+            textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
+            textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
+            textBoxName.Text = Convert.ToString(newProduct.ProductName);
+
+
+           // newBLL.Read(int.Parse(textBoxProductNumber2.Text).;
+           // textBoxPrintProducts.Text = 
+        }
+
+        
     }
 }

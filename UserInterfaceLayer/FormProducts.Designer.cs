@@ -38,7 +38,6 @@ namespace UserInterfaceLayer
             this.labelProductMenu = new System.Windows.Forms.Label();
             this.textBoxPrintProducts = new System.Windows.Forms.TextBox();
             this.groupBoxProductDetails = new System.Windows.Forms.GroupBox();
-            this.buttonModify = new System.Windows.Forms.Button();
             this.buttondelete2 = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxProductNumber = new System.Windows.Forms.TextBox();
@@ -49,6 +48,9 @@ namespace UserInterfaceLayer
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelProductNumber = new System.Windows.Forms.Label();
+            this.labelEnterNumber = new System.Windows.Forms.Label();
+            this.textBoxProductNumber2 = new System.Windows.Forms.TextBox();
+            this.buttonListDetails = new System.Windows.Forms.Button();
             this.groupBoxProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,7 +174,7 @@ namespace UserInterfaceLayer
             // groupBoxProductDetails
             // 
             this.groupBoxProductDetails.AutoSize = true;
-            this.groupBoxProductDetails.Controls.Add(this.buttonModify);
+            this.groupBoxProductDetails.Controls.Add(this.buttonListDetails);
             this.groupBoxProductDetails.Controls.Add(this.buttondelete2);
             this.groupBoxProductDetails.Controls.Add(this.buttonAdd);
             this.groupBoxProductDetails.Controls.Add(this.textBoxProductNumber);
@@ -193,17 +195,6 @@ namespace UserInterfaceLayer
             this.groupBoxProductDetails.TabStop = false;
             this.groupBoxProductDetails.Text = "PRODUCT DETAILS";
             this.groupBoxProductDetails.Visible = false;
-            // 
-            // buttonModify
-            // 
-            this.buttonModify.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModify.Location = new System.Drawing.Point(186, 378);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(86, 41);
-            this.buttonModify.TabIndex = 11;
-            this.buttonModify.Text = "MODIFY";
-            this.buttonModify.UseVisualStyleBackColor = true;
             // 
             // buttondelete2
             // 
@@ -309,11 +300,47 @@ namespace UserInterfaceLayer
             this.labelProductNumber.TabIndex = 5;
             this.labelProductNumber.Text = "Product Number";
             // 
+            // labelEnterNumber
+            // 
+            this.labelEnterNumber.AutoSize = true;
+            this.labelEnterNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelEnterNumber.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnterNumber.Location = new System.Drawing.Point(125, 264);
+            this.labelEnterNumber.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelEnterNumber.Name = "labelEnterNumber";
+            this.labelEnterNumber.Size = new System.Drawing.Size(221, 25);
+            this.labelEnterNumber.TabIndex = 11;
+            this.labelEnterNumber.Text = "Enter Product Number:";
+            this.labelEnterNumber.Visible = false;
+            // 
+            // textBoxProductNumber2
+            // 
+            this.textBoxProductNumber2.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProductNumber2.Location = new System.Drawing.Point(383, 255);
+            this.textBoxProductNumber2.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxProductNumber2.Name = "textBoxProductNumber2";
+            this.textBoxProductNumber2.Size = new System.Drawing.Size(232, 39);
+            this.textBoxProductNumber2.TabIndex = 11;
+            // 
+            // buttonListDetails
+            // 
+            this.buttonListDetails.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListDetails.Location = new System.Drawing.Point(21, 185);
+            this.buttonListDetails.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonListDetails.Name = "buttonListDetails";
+            this.buttonListDetails.Size = new System.Drawing.Size(157, 41);
+            this.buttonListDetails.TabIndex = 11;
+            this.buttonListDetails.Text = "List Details";
+            this.buttonListDetails.UseVisualStyleBackColor = true;
+            this.buttonListDetails.Click += new System.EventHandler(this.buttonListDetails_Click);
+            // 
             // FormProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 592);
+            this.Controls.Add(this.textBoxProductNumber2);
+            this.Controls.Add(this.labelEnterNumber);
             this.Controls.Add(this.textBoxPrintProducts);
             this.Controls.Add(this.groupBoxProductDetails);
             this.Controls.Add(this.buttonReturnMenu);
@@ -353,8 +380,10 @@ namespace UserInterfaceLayer
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelProductNumber;
-        private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttondelete2;
+        private System.Windows.Forms.Label labelEnterNumber;
+        private System.Windows.Forms.TextBox textBoxProductNumber2;
+        private System.Windows.Forms.Button buttonListDetails;
     }
 }
 
