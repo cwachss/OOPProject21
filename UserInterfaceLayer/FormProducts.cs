@@ -139,5 +139,6 @@ namespace UserInterfaceLayer
                 textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
             }
         }
+        ///make delete button hide all the read input things. And clear buttonMosify2 at read one/delete button/modify
     }
 }
