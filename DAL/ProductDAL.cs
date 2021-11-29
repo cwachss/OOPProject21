@@ -185,24 +185,24 @@ namespace DAL
                 {
                     throw new ProductNumberNotFound();
                 }
-
-
-                //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
-                //{
-                //    if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
-                //    {
-                //        Product product = Read(productNum);//if found does, it executes
-                //        productList.Remove(product);
-
-                //    }
-                //}
-
-                //if (i == productList.Count)//if never found product number, it throws an exception.
-                //{
-                //    throw new ProductNumberNotFound();
-                //}
-
+                Product product = Read(productNum);//if found does, it executes
+                    productList.Remove(product);
             }
+            //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
+            //{
+            //    if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
+            //    {
+            //        delete no work(see full list-
+
+            //    }
+            //}
+
+            //if (i == productList.Count)//if never found product number, it throws an exception.
+            //{
+            //    throw new ProductNumberNotFound();
+            //}
+
+        }
 
             //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...
             //public int CheckNum(int prodNum)
@@ -227,4 +227,4 @@ namespace DAL
         }
 
     }
-}
+
