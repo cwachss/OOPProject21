@@ -61,7 +61,7 @@ namespace UserInterfaceLayer
             this.buttonReadAll.Location = new System.Drawing.Point(714, 62);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadAll.Name = "buttonReadAll";
-            this.buttonReadAll.Size = new System.Drawing.Size(347, 599);
+            this.buttonReadAll.Size = new System.Drawing.Size(347, 612);
             this.buttonReadAll.TabIndex = 9;
             this.buttonReadAll.Text = "ALL PRODUCTS";
             this.buttonReadAll.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@ namespace UserInterfaceLayer
             this.buttonReadOne.Location = new System.Drawing.Point(381, 62);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadOne.Name = "buttonReadOne";
-            this.buttonReadOne.Size = new System.Drawing.Size(333, 599);
+            this.buttonReadOne.Size = new System.Drawing.Size(333, 612);
             this.buttonReadOne.TabIndex = 8;
             this.buttonReadOne.Text = "FIND PRODUCT";
             this.buttonReadOne.UseVisualStyleBackColor = false;
@@ -91,7 +91,7 @@ namespace UserInterfaceLayer
             this.buttonCreate.Location = new System.Drawing.Point(0, 62);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(381, 599);
+            this.buttonCreate.Size = new System.Drawing.Size(381, 612);
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "NEW PRODUCT";
             this.buttonCreate.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@ namespace UserInterfaceLayer
             // 
             this.labelStock.AutoSize = true;
             this.labelStock.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStock.Location = new System.Drawing.Point(36, 281);
+            this.labelStock.Location = new System.Drawing.Point(44, 354);
             this.labelStock.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelStock.Name = "labelStock";
             this.labelStock.Size = new System.Drawing.Size(161, 25);
@@ -204,7 +204,7 @@ namespace UserInterfaceLayer
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(36, 194);
+            this.labelPrice.Location = new System.Drawing.Point(44, 247);
             this.labelPrice.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(56, 25);
@@ -224,7 +224,7 @@ namespace UserInterfaceLayer
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(36, 112);
+            this.labelName.Location = new System.Drawing.Point(44, 146);
             this.labelName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(64, 25);
@@ -244,7 +244,7 @@ namespace UserInterfaceLayer
             // 
             this.labelProductNumber.AutoSize = true;
             this.labelProductNumber.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductNumber.Location = new System.Drawing.Point(36, 36);
+            this.labelProductNumber.Location = new System.Drawing.Point(44, 53);
             this.labelProductNumber.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelProductNumber.Name = "labelProductNumber";
             this.labelProductNumber.Size = new System.Drawing.Size(163, 25);
@@ -267,7 +267,7 @@ namespace UserInterfaceLayer
             // textBoxProductNumber2
             // 
             this.textBoxProductNumber2.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductNumber2.Location = new System.Drawing.Point(527, 260);
+            this.textBoxProductNumber2.Location = new System.Drawing.Point(522, 299);
             this.textBoxProductNumber2.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxProductNumber2.Name = "textBoxProductNumber2";
             this.textBoxProductNumber2.Size = new System.Drawing.Size(308, 39);
@@ -277,7 +277,7 @@ namespace UserInterfaceLayer
             // buttonListDetails
             // 
             this.buttonListDetails.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListDetails.Location = new System.Drawing.Point(388, 365);
+            this.buttonListDetails.Location = new System.Drawing.Point(410, 395);
             this.buttonListDetails.Margin = new System.Windows.Forms.Padding(1);
             this.buttonListDetails.Name = "buttonListDetails";
             this.buttonListDetails.Size = new System.Drawing.Size(212, 50);
@@ -292,7 +292,7 @@ namespace UserInterfaceLayer
             this.labelEnterNumber.AutoSize = true;
             this.labelEnterNumber.BackColor = System.Drawing.SystemColors.Window;
             this.labelEnterNumber.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnterNumber.Location = new System.Drawing.Point(183, 271);
+            this.labelEnterNumber.Location = new System.Drawing.Point(269, 305);
             this.labelEnterNumber.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelEnterNumber.Name = "labelEnterNumber";
             this.labelEnterNumber.Size = new System.Drawing.Size(221, 25);
@@ -304,10 +304,10 @@ namespace UserInterfaceLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 661);
+            this.ClientSize = new System.Drawing.Size(1061, 674);
+            this.Controls.Add(this.textBoxProductNumber2);
             this.Controls.Add(this.buttonDelete2);
             this.Controls.Add(this.buttonListDetails);
-            this.Controls.Add(this.textBoxProductNumber2);
             this.Controls.Add(this.labelEnterNumber);
             this.Controls.Add(this.textBoxPrintProducts);
             this.Controls.Add(this.groupBoxProductDetails);
