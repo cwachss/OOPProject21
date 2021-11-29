@@ -23,14 +23,10 @@ namespace BLL
         /// <param name="productNum"></param>
         public Product Read(int productNum)
         {
-            try
-            {
+            
                 return product.Read(productNum);
-            }
-            catch(ProductNumberNotFound prodNum)
-            {
-                throw new ProductNumberNotFound();
-            }
+            
+         
                
         }
         /// <summary>
@@ -46,16 +42,10 @@ namespace BLL
             /// Method that Updates a specific product from the list
             /// </summary>
             /// <param name="productNum"></param>
-            public void Update(int prodNum, string prodName, decimal cost, int stock)
+        public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
-            try
-            {
                 product.Update(prodNum, prodName, cost, stock);
-            }
-            catch (ProductNumberNotFound num)
-            {
-                throw new ProductNumberNotFound();
-            }
+           
         }
 
         /// <summary>
@@ -64,14 +54,8 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Delete(int productNum)
         {
-            try
-            {
-                product.Delete(productNum);
-            }
-            catch(ProductNumberNotFound prodNum)
-            {
-                throw new ProductNumberNotFound();
-            }
+              product.Delete(productNum);
+           
             
         }
 

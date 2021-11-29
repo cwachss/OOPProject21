@@ -83,7 +83,7 @@ namespace DAL
                 if (prodNum == productList[i].ProductNumber)
                 {
                     throw new Exception("Product already exists");
-                   //throw new NumberAlreadyExists(); //figure out how to call exceptions... This is confusing...
+                     //throw new NumberAlreadyExists(); //figure out how to call exceptions... This is confusing...
                 }
             }
           
@@ -106,7 +106,7 @@ namespace DAL
                 }
                 else
                 {
-                    throw new ProductNumberNotFound();
+                   throw new ProductNumberNotFound();
                 }
             }
 
@@ -159,11 +159,12 @@ namespace DAL
                 {
                     Delete(prodNum);//if found does, it executes
                     Create(prodNum, prodName, cost, stock);
+                    break;
                 }
             }
             if (i == productList.Count)
             {
-                throw new ProductNumberNotFound();//if never found product number, it throws an exception.
+               throw new ProductNumberNotFound();//if never found product number, it throws an exception.
             }
            
 

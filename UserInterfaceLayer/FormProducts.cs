@@ -28,9 +28,17 @@ namespace UserInterfaceLayer
         {
             HideMenuButtons(); //leave main menu page
 
+            buttonAdd.Visible = true;
+            buttonAdd.Enabled = true;
             buttonReturnMenu.Visible = true; //open up button that returns you to main menu
             groupBoxProductDetails.Visible = true; //open up group box to enter in new product info
             labelProductMenu.Text = "Add Product"; //change title of page
+            //allows you to type in the new product info:
+            textBoxProductNumber.Enabled = true; 
+            textBoxName.Enabled = true;
+            textBoxPrice.Enabled = true;
+            textBoxStock.Enabled = true;
+
 
             textBoxPrintProducts.Size = new System.Drawing.Size(413, 365); //resize text box to make room for add panel
             textBoxPrintProducts.Visible = true; //allow you to see what products already exist
@@ -58,13 +66,32 @@ namespace UserInterfaceLayer
         {
             HideMenuButtons();
 
-            buttonReturnMenu.Visible = true;
-            labelProductMenu.Text = "Find Product";
-            labelEnterNumber.Visible = true;
-            textBoxProductNumber2.Visible= true;
-            textBoxProductNumber2.Enabled = true;
-            buttonListDetails.Visible = true;
-            buttonListDetails.Enabled = true;
+            buttonReturnMenu.Visible = true; //allows you to return to main menu
+            labelProductMenu.Text = "Find Product"; //changes title
+            labelEnterNumber.Visible = true; //instructions
+            textBoxProductNumber2.Visible= true; //textbox to enter product number you want to find
+            textBoxProductNumber2.Enabled = true; //allows you to use it
+            buttonListDetails.Visible = true; //button prints product details into the textboxes
+            buttonListDetails.Enabled = true; //button is now usable (we need to check if things are not enabled when invisible, because this might be quite redundant
+
+            groupBoxProductDetails.Visible = true; //groupbox where details are printed
+            buttonAdd.Visible = false; //this button is for the create method
+            /*labelEnterNumber.Visible = false;
+            textBoxProductNumber2.Visible = false;
+            buttonListDetails.Visible = false;*/
+
+            //you cannot edit product information in the find product mode
+            textBoxProductNumber.Enabled = false; 
+            textBoxName.Enabled = false;
+            textBoxPrice.Enabled = false;
+            textBoxStock.Enabled = false;
+            
+            //your two options for modify a product is to update the information or to delete it completely:
+            buttonDelete2.Visible = true;
+            buttonDelete2.Enabled = true;
+            buttonModify.Visible = true;
+            buttonModify.Enabled = true;
+
         }
 
 
@@ -76,7 +103,7 @@ namespace UserInterfaceLayer
             //textBoxShowProduct.AppendText(product.ToString() + "\r\n");
             textBoxPrintProducts.Visible = true; //shows the textbox where the list will appear
             buttonReturnMenu.Visible = true; //shows button that allows you to return to the home page
-           textBoxPrintProducts.Size = new System.Drawing.Size(680, 365); //makes product list text box take up full space
+            textBoxPrintProducts.Size = new System.Drawing.Size(680, 365); //makes product list text box take up full space
             labelProductMenu.Text = "All Products"; //change title
 
         }
@@ -84,16 +111,15 @@ namespace UserInterfaceLayer
         private void buttonModify_Click(object sender, EventArgs e)
         {
             labelProductMenu.Text = "Modify Product"; //change title
-
             //open up all text boxes except product number to be edited
-            textBoxName.ReadOnly = false; 
-            textBoxPrice.ReadOnly = false;
-            textBoxStock.ReadOnly = false;
+            textBoxName.Enabled = true; 
+            textBoxPrice.Enabled = true;
+            textBoxStock.Enabled = true;
             buttonModify.Visible = false; //we have gone to the modify page and no longer need this button
-            //buttonDelete.Visible = false; //we have gone to the modify page and no longer need this button
+            buttonDelete2.Visible = false; //we have gone to the modify page and no longer need this button
             buttonUpdateProduct.Visible = true;
+            buttonUpdateProduct.Enabled = true;
 
-            newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
 
         }
 
@@ -102,7 +128,7 @@ namespace UserInterfaceLayer
             newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
             //return to find object page, this code is not done:
             buttonUpdateProduct.Visible = false;
-            //buttonDelete.Visible = true;
+            buttonDelete2.Visible = true;
             buttonModify.Visible = true;
         }
 
@@ -110,7 +136,7 @@ namespace UserInterfaceLayer
         private void buttonReturnMenu_Click(object sender, EventArgs e)
         {
             ResetMainMenu();
-            textBoxPrintProducts.Visible = false;
+            textBoxPrintProducts.Visible = false; 
             buttonReturnMenu.Visible = false;
             labelProductMenu.Text = "Product Menu";
             groupBoxProductDetails.Visible = false;
@@ -120,7 +146,17 @@ namespace UserInterfaceLayer
             buttonListDetails.Visible = false;
             textBoxProductNumber2.Enabled = false;
             textBoxProductNumber2.Visible = false;
-            
+            buttonModify.Visible = false;
+            buttonModify.Enabled = false;
+            textBoxProductNumber.Clear();
+            textBoxName.Clear();
+            textBoxStock.Clear();
+            textBoxPrice.Clear();
+            labelEnterNumber.Visible = false;
+            buttonUpdateProduct.Visible = false;
+            buttonUpdateProduct.Enabled = false;
+            buttonAdd.Enabled = false;
+            buttonAdd.Visible = false;
         }
 
         private void HideMenuButtons()
@@ -179,28 +215,20 @@ namespace UserInterfaceLayer
         /// <param name="e"></param>
         private void buttonListDetails_Click_1(object sender, EventArgs e)
         {   
-            try
-            {
-                groupBoxProductDetails.Visible = true;
-                buttonAdd.Visible = false;
-                labelEnterNumber.Visible = false;
-                textBoxProductNumber2.Visible = false;
-                buttonListDetails.Visible = false;
-                groupBoxProductDetails.Enabled = false;
+           // try
+           // {
+                
 
-                buttonDelete2.Visible = true;
-                buttonDelete2.Enabled = true;
-
-                textBoxProductNumber.Text = textBoxProductNumber2.Text;
                 Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
+                textBoxProductNumber.Text = Convert.ToString(newProduct.ProductNumber);
                 textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
                 textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
                 textBoxName.Text = Convert.ToString(newProduct.ProductName);
-            }
+           /* }
             catch(ProductNumberNotFound prodNum)
             {
                 MessageBox.Show(prodNum.Message);
-            }
+            }*/
         }
 
        
@@ -209,14 +237,9 @@ namespace UserInterfaceLayer
         {
             //buttonModify.Visible = false;
             //buttonModify.Enabled = false;
-            try
-            {
+            
                 newBLL.Delete(int.Parse(textBoxProductNumber.Text));
-            }
-            catch(ProductNumberNotFound prodNum)
-            {
-                MessageBox.Show(prodNum.Message);
-            }
+           
 
            // textBoxProductNumber2.Visible = true;
             //textBoxName.Text = null;
