@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
 using BLL;
+using DAL;
 
 
 namespace UserInterfaceLayer
@@ -59,8 +60,11 @@ namespace UserInterfaceLayer
 
             buttonReturnMenu.Visible = true;
             labelProductMenu.Text = "Find Product";
-                        
-           // newBLL.ReadOne();
+            labelEnterNumber.Visible = true;
+            textBoxProductNumber2.Visible= true;
+            textBoxProductNumber2.Enabled = true;
+            buttonListDetails.Visible = true;
+            buttonListDetails.Enabled = true;
         }
 
 
@@ -110,6 +114,13 @@ namespace UserInterfaceLayer
             buttonReturnMenu.Visible = false;
             labelProductMenu.Text = "Product Menu";
             groupBoxProductDetails.Visible = false;
+            buttonDelete2.Visible = false;
+            buttonDelete2.Enabled = false;
+            buttonListDetails.Enabled = false;
+            buttonListDetails.Visible = false;
+            textBoxProductNumber2.Enabled = false;
+            textBoxProductNumber2.Visible = false;
+            
         }
 
         private void HideMenuButtons()
@@ -152,7 +163,70 @@ namespace UserInterfaceLayer
             {
                 textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
             }
+
         }
-        ///make delete button hide all the read input things. And clear buttonMosify2 at read one/delete button/modify
+
+        /// <summary>
+        /// Deletes a product from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+      
+        /// <summary>
+        /// displays details of certain product
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonListDetails_Click_1(object sender, EventArgs e)
+        {   
+            try
+            {
+                groupBoxProductDetails.Visible = true;
+                buttonAdd.Visible = false;
+                labelEnterNumber.Visible = false;
+                textBoxProductNumber2.Visible = false;
+                buttonListDetails.Visible = false;
+                groupBoxProductDetails.Enabled = false;
+
+                buttonDelete2.Visible = true;
+                buttonDelete2.Enabled = true;
+
+                textBoxProductNumber.Text = textBoxProductNumber2.Text;
+                Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
+                textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
+                textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
+                textBoxName.Text = Convert.ToString(newProduct.ProductName);
+            }
+            catch(ProductNumberNotFound prodNum)
+            {
+                MessageBox.Show(prodNum.Message);
+            }
+        }
+
+       
+
+        private void buttonDelete2_Click(object sender, EventArgs e)
+        {
+            //buttonModify.Visible = false;
+            //buttonModify.Enabled = false;
+            try
+            {
+                newBLL.Delete(int.Parse(textBoxProductNumber.Text));
+            }
+            catch(ProductNumberNotFound prodNum)
+            {
+                MessageBox.Show(prodNum.Message);
+            }
+
+           // textBoxProductNumber2.Visible = true;
+            //textBoxName.Text = null;
+            //textBoxPrice.Text = null;
+            //textBoxProductNumber.Text = null;
+            //textBoxStock.Text = null;
+            buttonListDetails.Visible = true;
+
+        }
+
+
     }
 }
