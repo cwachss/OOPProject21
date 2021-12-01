@@ -55,7 +55,7 @@ namespace UserInterfaceLayer
             }
             catch (Exception)
             {
-                MessageBox.Show($"Product information is invalid."); //maybe we should have different error messages depending on what is invalid (product number in use, price is not valid, etc)
+                MessageBox.Show($"Product information is invalid.","Error"); //maybe we should have different error messages depending on what is invalid (product number in use, price is not valid, etc)
             }
             /*newBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
             textBoxPrintProducts.Clear();
@@ -128,7 +128,7 @@ namespace UserInterfaceLayer
             newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
             //return to find object page, this code is not done:
             buttonUpdateProduct.Visible = false;
-            buttonDelete2.Visible = true;
+            //buttonDelete.Visible = true;
             buttonModify.Visible = true;
         }
 
@@ -138,6 +138,7 @@ namespace UserInterfaceLayer
             ResetMainMenu();
             textBoxPrintProducts.Visible = false; 
             buttonReturnMenu.Visible = false;
+            buttonReturnMenu.Enabled = false;
             labelProductMenu.Text = "Product Menu";
             groupBoxProductDetails.Visible = false;
             buttonDelete2.Visible = false;
@@ -164,10 +165,13 @@ namespace UserInterfaceLayer
             buttonCreate.Visible = false;
             buttonReadAll.Visible = false;
             buttonReadOne.Visible = false;
+        //    buttonUpdate.Visible = false;
+           
            
             buttonCreate.Enabled = false;
             buttonReadAll.Enabled = false;
             buttonReadOne.Enabled = false;
+          //  buttonUpdate.Enabled = false;
           
             //labelProductMenu.Enabled = false;
         }
@@ -177,14 +181,16 @@ namespace UserInterfaceLayer
             buttonCreate.Visible = true;
             buttonReadAll.Visible = true;
             buttonReadOne.Visible = true;
-         
+         //   buttonUpdate.Visible = true;
+           
             labelProductMenu.Visible = true;
             textBoxPrintProducts.Visible = false;
             textBoxPrintProducts.Clear();
             buttonCreate.Enabled = true;
             buttonReadAll.Enabled = true;
             buttonReadOne.Enabled = true;
-        
+        //    buttonUpdate.Enabled = true;
+          
             //labelProductMenu.Enabled = true;
         }
 
@@ -239,14 +245,33 @@ namespace UserInterfaceLayer
             //buttonModify.Enabled = false;
             
                 newBLL.Delete(int.Parse(textBoxProductNumber.Text));
-           
+                MessageBox.Show($"Successfully deleted product number {textBoxProductNumber.Text}","Completed!");
+                ResetMainMenu();
+                buttonDelete2.Enabled = false;
+                buttonDelete2.Visible = false;
+                groupBoxProductDetails.Visible = false;
+                buttonReturnMenu.Enabled = false;
+                buttonReturnMenu.Visible = false;
+
+            }
+            catch(ProductNumberNotFound prodNum)
+            {
+                MessageBox.Show(prodNum.Message);
+                buttonListDetails.Visible = true;
+                textBoxProductNumber2.Enabled = true;
+                textBoxProductNumber2.Visible = true;
+                labelEnterNumber.Visible = true;
+                buttonDelete2.Enabled = false;
+                buttonDelete2.Visible = false;
+                groupBoxProductDetails.Visible = false;
+            }
 
            // textBoxProductNumber2.Visible = true;
             //textBoxName.Text = null;
             //textBoxPrice.Text = null;
             //textBoxProductNumber.Text = null;
             //textBoxStock.Text = null;
-            buttonListDetails.Visible = true;
+           
 
         }
 

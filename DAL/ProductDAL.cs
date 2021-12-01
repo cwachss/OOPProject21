@@ -13,11 +13,11 @@ namespace DAL
     public class ProductDAL
     {
         //public int NumberOfProducts { get; set; }
-        
+
         //Shira Laury
         public ProductDAL()
         {
-           // NumberOfProducts = 0;
+            // NumberOfProducts = 0;
             InitializeList();
         }
 
@@ -26,22 +26,22 @@ namespace DAL
 
         //create StreamReader object to read the list
         StreamReader reader = new StreamReader("ListOfProducts.txt");
-               
+
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product
         private decimal price;//variable to hold the price of the product
         private int stock;
 
-       //question: why do we need an index?
+        //question: why do we need an index?
         //protected int index = 0;//variable to hold the index of the list *see comment on index below*
-       
+
         //method to initialize the list with products' information
         public void InitializeList()
         {
 
             using (reader)
             {
-                
+
                 number = int.Parse(reader.ReadLine());//reads the ID number into the variable number
                 name = reader.ReadLine();//reads the name into the variable name
                 price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
@@ -52,7 +52,7 @@ namespace DAL
 
                     Product Item = new Product(number, name, price, stock);//creates new Product object 
                     productList.Add(Item);//puts the new object into the List
-                   //NumberOfProducts++;
+                                          //NumberOfProducts++;
 
                     //index++; I like number of products better because index is not really what we care about
 
@@ -78,7 +78,7 @@ namespace DAL
         public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
             Product product = new Product(prodNum, prodName, cost, stock);
-            for(int i = 0; i < productList.Count; i++)
+            for (int i = 0; i < productList.Count; i++)
             {
                 if (prodNum == productList[i].ProductNumber)
                 {
@@ -86,7 +86,7 @@ namespace DAL
                      //throw new NumberAlreadyExists(); //figure out how to call exceptions... This is confusing...
                 }
             }
-          
+
             productList.Add(product);
 
 
@@ -94,15 +94,15 @@ namespace DAL
 
         //read method: go through list of products to find correct id number and then return that product 
         public Product Read(int productNum)
-        { 
+        {
             //if(productNum)
             int index = 0;
             //while loop to find id number
             while (productList[index].ProductNumber != productNum)
             {
                 if (index < productList.Count)
-                { 
-                    index++; 
+                {
+                    index++;
                 }
                 else
                 {
@@ -139,13 +139,13 @@ namespace DAL
             {
                 throw new Exception("No products found");
             }
-           /* for (int i = 0; i < productList.Count; i++)
-            {
-            copyOfList.Add(productList[i]);
-            }*/
-           //test exception
+            /* for (int i = 0; i < productList.Count; i++)
+             {
+             copyOfList.Add(productList[i]);
+             }*/
+            //test exception
         }
-         
+
 
 
 
@@ -166,7 +166,7 @@ namespace DAL
             {
                throw new ProductNumberNotFound();//if never found product number, it throws an exception.
             }
-           
+
 
         }
 
@@ -190,26 +190,27 @@ namespace DAL
            
         }
 
-        //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...
-        //public int CheckNum(int prodNum)
-        //{
-        //    int i;
-        //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
-        //    {
-        //        if (prodNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
-        //        {
-        //            return prodNum;
+            //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...
+            //public int CheckNum(int prodNum)
+            //{
+            //    int i;
+            //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
+            //    {
+            //        if (prodNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
+            //        {
+            //            return prodNum;
 
-        //        }
-        //    }
-        //    if (i == productList.Count)//if never found product number, it throws an exception.
-        //    {
-        //        throw new ProductNumberNotFound();  
-        //    }
-        //    return 0;
-        //}
+            //        }
+            //    }
+            //    if (i == productList.Count)//if never found product number, it throws an exception.
+            //    {
+            //        throw new ProductNumberNotFound();  
+            //    }
+            //    return 0;
+            //}
 
-        
+
+        }
+
     }
 
-}
