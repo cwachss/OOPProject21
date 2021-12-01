@@ -40,7 +40,7 @@ namespace UserInterfaceLayer
             textBoxStock.Enabled = true;
 
 
-            textBoxPrintProducts.Size = new System.Drawing.Size(413, 365); //resize text box to make room for add panel
+            textBoxPrintProducts.Size = new System.Drawing.Size(436, 397); //resize text box to make room for add panel
             textBoxPrintProducts.Visible = true; //allow you to see what products already exist
             PrintAll(); //prints all the products already in the system
         }
@@ -67,6 +67,7 @@ namespace UserInterfaceLayer
             HideMenuButtons();
 
             buttonReturnMenu.Visible = true; //allows you to return to main menu
+            buttonReturnMenu.Enabled = true;
             labelProductMenu.Text = "Find Product"; //changes title
             labelEnterNumber.Visible = true; //instructions
             textBoxProductNumber2.Visible= true; //textbox to enter product number you want to find
@@ -118,7 +119,7 @@ namespace UserInterfaceLayer
             buttonModify.Visible = false; //we have gone to the modify page and no longer need this button
             buttonDelete2.Visible = false; //we have gone to the modify page and no longer need this button
             buttonUpdateProduct.Visible = true;
-            buttonUpdateProduct.Enabled = true;
+            
 
 
         }
@@ -127,7 +128,7 @@ namespace UserInterfaceLayer
         {
             newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
             //return to find object page, this code is not done:
-            buttonUpdateProduct.Visible = false;
+            buttonUpdateProduct1.Visible = false;
             //buttonDelete.Visible = true;
             buttonModify.Visible = true;
         }
@@ -138,25 +139,23 @@ namespace UserInterfaceLayer
             ResetMainMenu();
             textBoxPrintProducts.Visible = false; 
             buttonReturnMenu.Visible = false;
-            buttonReturnMenu.Enabled = false;
+            
             labelProductMenu.Text = "Product Menu";
             groupBoxProductDetails.Visible = false;
             buttonDelete2.Visible = false;
-            buttonDelete2.Enabled = false;
-            buttonListDetails.Enabled = false;
+            
             buttonListDetails.Visible = false;
-            textBoxProductNumber2.Enabled = false;
+           
             textBoxProductNumber2.Visible = false;
             buttonModify.Visible = false;
-            buttonModify.Enabled = false;
+          
             textBoxProductNumber.Clear();
             textBoxName.Clear();
             textBoxStock.Clear();
             textBoxPrice.Clear();
             labelEnterNumber.Visible = false;
             buttonUpdateProduct.Visible = false;
-            buttonUpdateProduct.Enabled = false;
-            buttonAdd.Enabled = false;
+          
             buttonAdd.Visible = false;
         }
 
@@ -168,9 +167,6 @@ namespace UserInterfaceLayer
         //    buttonUpdate.Visible = false;
            
            
-            buttonCreate.Enabled = false;
-            buttonReadAll.Enabled = false;
-            buttonReadOne.Enabled = false;
           //  buttonUpdate.Enabled = false;
           
             //labelProductMenu.Enabled = false;
@@ -247,14 +243,14 @@ namespace UserInterfaceLayer
                 newBLL.Delete(int.Parse(textBoxProductNumber.Text));
                 MessageBox.Show($"Successfully deleted product number {textBoxProductNumber.Text}","Completed!");
                 ResetMainMenu();
-                buttonDelete2.Enabled = false;
+             
                 buttonDelete2.Visible = false;
                 groupBoxProductDetails.Visible = false;
-                buttonReturnMenu.Enabled = false;
+                
                 buttonReturnMenu.Visible = false;
 
             }
-            catch(ProductNumberNotFound prodNum)
+            /*catch(ProductNumberNotFound prodNum)
             {
                 MessageBox.Show(prodNum.Message);
                 buttonListDetails.Visible = true;
@@ -264,7 +260,7 @@ namespace UserInterfaceLayer
                 buttonDelete2.Enabled = false;
                 buttonDelete2.Visible = false;
                 groupBoxProductDetails.Visible = false;
-            }
+            }*/
 
            // textBoxProductNumber2.Visible = true;
             //textBoxName.Text = null;
@@ -273,7 +269,7 @@ namespace UserInterfaceLayer
             //textBoxStock.Text = null;
            
 
-        }
+        
 
 
     }
