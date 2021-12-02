@@ -83,7 +83,7 @@ namespace DAL
                 if (prodNum == productList[i].ProductNumber)
                 {
                     throw new Exception("Product already exists");
-                     //throw new NumberAlreadyExists(); //figure out how to call exceptions... This is confusing...
+                     //throw new NumberAlreadyExists();
                 }
             }
 
@@ -173,20 +173,21 @@ namespace DAL
         //delete method: remove product from product list
         public void Delete(int productNum)
         {
-            int i;
-            for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
+            
+            for (int i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
             {
                 if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
                 {
-                    Product product = Read(productNum);//if found does, it executes
-                    productList.Remove(product);
-                    
+                    //Product product = Read(productNum);//if found does, it executes
+                    productList.Remove(productList[i]);
+                    break;
+                }
+                if (i == productList.Count)//if never found product number, it throws an exception.
+                {
+                    throw new ProductNumberNotFound();
                 }
             }
-            if (i == productList.Count)//if never found product number, it throws an exception.
-            {
-                throw new ProductNumberNotFound();
-            }
+           
            
         }
 

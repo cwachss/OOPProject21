@@ -55,7 +55,7 @@ namespace UserInterfaceLayer
             }
             catch (Exception)
             {
-                MessageBox.Show($"Product information is invalid.","Error"); //maybe we should have different error messages depending on what is invalid (product number in use, price is not valid, etc)
+                MessageBox.Show("Product information is invalid.","Error"); //maybe we should have different error messages depending on what is invalid (product number in use, price is not valid, etc)
             }
             /*newBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text));
             textBoxPrintProducts.Clear();
@@ -126,11 +126,22 @@ namespace UserInterfaceLayer
 
         private void buttonUpdateProduct_Click(object sender, EventArgs e)
         {
-            newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
-            //return to find object page, this code is not done:
-            buttonUpdateProduct1.Visible = false;
-            //buttonDelete.Visible = true;
-            buttonModify.Visible = true;
+            try
+            {
+                newBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
+                                                                                                                                                         //return to find object page, this code is not done:
+                buttonUpdateProduct.Visible = false;
+                //buttonDelete.Visible = true;
+                buttonModify.Visible = true;
+                buttonDelete2.Visible = true;
+                textBoxName.Enabled = false;
+                textBoxPrice.Enabled = false;
+                textBoxStock.Enabled = false;
+            }
+            catch
+            {
+                MessageBox.Show("Product information is invalid.", "Error"); 
+            }
         }
 
 
@@ -185,6 +196,9 @@ namespace UserInterfaceLayer
             buttonCreate.Enabled = true;
             buttonReadAll.Enabled = true;
             buttonReadOne.Enabled = true;
+            labelEnterNumber.Visible = false;
+            textBoxProductNumber2.Visible = false;
+            buttonListDetails.Visible = false;
         //    buttonUpdate.Enabled = true;
           
             //labelProductMenu.Enabled = true;
@@ -217,8 +231,8 @@ namespace UserInterfaceLayer
         /// <param name="e"></param>
         private void buttonListDetails_Click_1(object sender, EventArgs e)
         {   
-           // try
-           // {
+           try
+            {
                 
 
                 Product newProduct = (newBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
@@ -226,11 +240,15 @@ namespace UserInterfaceLayer
                 textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
                 textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
                 textBoxName.Text = Convert.ToString(newProduct.ProductName);
-           /* }
+            }
             catch(ProductNumberNotFound prodNum)
             {
                 MessageBox.Show(prodNum.Message);
-            }*/
+            }
+            catch
+            {
+                MessageBox.Show("Product not found.", "Error"); 
+            }
         }
 
        
@@ -242,12 +260,12 @@ namespace UserInterfaceLayer
             
                 newBLL.Delete(int.Parse(textBoxProductNumber.Text));
                 MessageBox.Show($"Successfully deleted product number {textBoxProductNumber.Text}","Completed!");
-                ResetMainMenu();
+                /*ResetMainMenu();
              
                 buttonDelete2.Visible = false;
                 groupBoxProductDetails.Visible = false;
                 
-                buttonReturnMenu.Visible = false;
+                buttonReturnMenu.Visible = false;*/
 
             }
             /*catch(ProductNumberNotFound prodNum)
