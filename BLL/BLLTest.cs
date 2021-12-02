@@ -11,10 +11,14 @@ namespace BLL
     {
         static void Main(string[] args)
         {
+
+
+            ProductBLL obj = new ProductBLL();
             //Shira Laury
+            obj.Delete(78889);
+
             try
             {
-                ProductBLL obj = new ProductBLL();
                 
                 obj.Delete(78889);
                 obj.Update(98342, "fishing rod", (decimal)45.65, 32);

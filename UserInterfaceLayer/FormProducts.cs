@@ -104,7 +104,7 @@ namespace UserInterfaceLayer
             //textBoxShowProduct.AppendText(product.ToString() + "\r\n");
             textBoxPrintProducts.Visible = true; //shows the textbox where the list will appear
             buttonReturnMenu.Visible = true; //shows button that allows you to return to the home page
-            textBoxPrintProducts.Size = new System.Drawing.Size(680, 365); //makes product list text box take up full space
+            textBoxPrintProducts.Size = new System.Drawing.Size(732, 397); //makes product list text box take up full space
             labelProductMenu.Text = "All Products"; //change title
 
         }
