@@ -1,0 +1,7 @@
+C:\Users\chani\source\repos\OOPProject\Entities\bin\Release\Entities.exe.config
+C:\Users\chani\source\repos\OOPProject\Entities\bin\Release\Entities.exe
+C:\Users\chani\source\repos\OOPProject\Entities\bin\Release\Entities.pdb
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Release\Entities.csproj.AssemblyReference.cache
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Release\Entities.csproj.CoreCompileInputs.cache
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Release\Entities.exe
+C:\Users\chani\source\repos\OOPProject\Entities\obj\Release\Entities.pdb

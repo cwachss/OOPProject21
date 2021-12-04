@@ -83,7 +83,7 @@ namespace DAL
                 if (prodNum == productList[i].ProductNumber)
                 {
                     throw new Exception("Product already exists");
-                    //throw new NumberAlreadyExists(); //figure out how to call exceptions... This is confusing...
+                     //throw new NumberAlreadyExists();
                 }
             }
 
@@ -106,7 +106,7 @@ namespace DAL
                 }
                 else
                 {
-                    throw new ProductNumberNotFound();
+                   throw new ProductNumberNotFound();
                 }
             }
 
@@ -159,11 +159,12 @@ namespace DAL
                 {
                     Delete(prodNum);//if found does, it executes
                     Create(prodNum, prodName, cost, stock);
+                    break;
                 }
             }
             if (i == productList.Count)
             {
-                throw new ProductNumberNotFound();//if never found product number, it throws an exception.
+               throw new ProductNumberNotFound();//if never found product number, it throws an exception.
             }
 
 
@@ -172,36 +173,22 @@ namespace DAL
         //delete method: remove product from product list
         public void Delete(int productNum)
         {
-            int index = 0;
-
-
-            while (productList[index].ProductNumber != productNum)
+            
+            for (int i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
             {
-                if (index < productList.Count)
+                if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
                 {
-                    index++;
+                    //Product product = Read(productNum);//if found does, it executes
+                    productList.Remove(productList[i]);
+                    break;
                 }
-                else
+                if (i == productList.Count)//if never found product number, it throws an exception.
                 {
                     throw new ProductNumberNotFound();
                 }
-                Product product = Read(productNum);//if found does, it executes
-                    productList.Remove(product);
             }
-            //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
-            //{
-            //    if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
-            //    {
-            //        delete no work(see full list-
-
-            //    }
-            //}
-
-            //if (i == productList.Count)//if never found product number, it throws an exception.
-            //{
-            //    throw new ProductNumberNotFound();
-            //}
-
+           
+           
         }
 
             //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...

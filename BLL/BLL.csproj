@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerBLL.cs" />
     <Compile Include="ProductBLL.cs" />
     <Compile Include="BLLTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

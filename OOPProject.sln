@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B067A3CD-99A4-4F9E-9261-380AC4070EB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{9E6D432F-F49F-4960-AB74-AC354CCCCBD1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B067A3CD-99A4-4F9E-9261-380AC4070EB1} = {B067A3CD-99A4-4F9E-9261-380AC4070EB1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterfaceLayer", "UserInterfaceLayer\UserInterfaceLayer.csproj", "{93065AB9-0FF8-445A-AB93-860438AB21C0}"
 EndProject
