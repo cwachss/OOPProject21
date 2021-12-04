@@ -13,14 +13,17 @@ Two types of people: customers and employees (two types of employees: manager an
 Customers have credit cards
 
 DAL Layer:
-ProductDAL class with methods for initializing list and CRUD methods
+ProductDAL, customerDAL class with methods for initializing list and CRUD methods
 
 BLL layer:
-Calls DAL layer and throws exception if necessary. DAL layer catches it.
+Calls DAL layer
 
 UIL
-some ideas for product GUI section:
+PRODUCT some ideas for product GUI section:
 	float and dock everything to take up full space called home page.
-	then when you hit one, all of them move to top as a menu, with option to go back to home page
-	view product: enter product number and then pull up info
+	then when you hit one, all of them move to top as a menu, with option to go back to home page (we didn't end up doing this, but it can remain in the idea box)
+	view product: enter product number and then pull up info with options to delete or modify
 	modify allows you to enter a product number and then modify everything else, but initial text is what it is, and then they can change it
+CUSTOMER idea board:
+	fairly similar to the product one, but needs more complex details groupbox to allow for credit card info. but find dhould just show last four digits of creidt card
+	modify should have add.modify/delete credit card option as a sub option, and should be password protected or somethimg
