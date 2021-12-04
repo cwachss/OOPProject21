@@ -99,8 +99,15 @@ namespace UserInterfaceLayer
         private void buttonReadAll_Click(object sender, EventArgs e)
         {
             HideMenuButtons();
-            PrintAll();
-            
+            try
+            {
+                PrintAll();
+            }
+            catch
+            {
+                MessageBox.Show("No products found. Please add to inventory.", "Error");
+            }
+
             //textBoxShowProduct.AppendText(product.ToString() + "\r\n");
             textBoxPrintProducts.Visible = true; //shows the textbox where the list will appear
             buttonReturnMenu.Visible = true; //shows button that allows you to return to the home page
@@ -211,10 +218,13 @@ namespace UserInterfaceLayer
 
        public void PrintAll()
         {
-            foreach (Product product in newBLL.ReadAll()) //appends each product in the text box
-            {
-                textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
-            }
+            
+                foreach (Product product in newBLL.ReadAll()) //appends each product in the text box
+                {
+                    textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
+                }
+            
+            
 
         }
 
