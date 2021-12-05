@@ -97,10 +97,10 @@ namespace UserInterfaceLayer
             this.buttonReadAll.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonReadAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReadAll.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonReadAll.Location = new System.Drawing.Point(536, 50);
+            this.buttonReadAll.Location = new System.Drawing.Point(524, 50);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadAll.Name = "buttonReadAll";
-            this.buttonReadAll.Size = new System.Drawing.Size(260, 494);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 494);
             this.buttonReadAll.TabIndex = 9;
             this.buttonReadAll.Text = "ALL PRODUCTS";
             this.buttonReadAll.UseVisualStyleBackColor = false;
@@ -112,10 +112,10 @@ namespace UserInterfaceLayer
             this.buttonReadOne.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonReadOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReadOne.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonReadOne.Location = new System.Drawing.Point(286, 50);
+            this.buttonReadOne.Location = new System.Drawing.Point(262, 50);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadOne.Name = "buttonReadOne";
-            this.buttonReadOne.Size = new System.Drawing.Size(250, 494);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 494);
             this.buttonReadOne.TabIndex = 8;
             this.buttonReadOne.Text = "FIND PRODUCT";
             this.buttonReadOne.UseVisualStyleBackColor = false;
@@ -130,7 +130,7 @@ namespace UserInterfaceLayer
             this.buttonCreate.Location = new System.Drawing.Point(0, 50);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(286, 494);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 494);
             this.buttonCreate.TabIndex = 7;
             this.buttonCreate.Text = "NEW PRODUCT";
             this.buttonCreate.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@ namespace UserInterfaceLayer
             this.buttonReturnMenu.Location = new System.Drawing.Point(0, 498);
             this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReturnMenu.Name = "buttonReturnMenu";
-            this.buttonReturnMenu.Size = new System.Drawing.Size(796, 49);
+            this.buttonReturnMenu.Size = new System.Drawing.Size(786, 49);
             this.buttonReturnMenu.TabIndex = 13;
             this.buttonReturnMenu.Text = "Main Menu";
             this.buttonReturnMenu.UseVisualStyleBackColor = false;
@@ -159,7 +159,7 @@ namespace UserInterfaceLayer
             this.labelProductMenu.Location = new System.Drawing.Point(0, 0);
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelProductMenu.Name = "labelProductMenu";
-            this.labelProductMenu.Size = new System.Drawing.Size(794, 50);
+            this.labelProductMenu.Size = new System.Drawing.Size(786, 50);
             this.labelProductMenu.TabIndex = 6;
             this.labelProductMenu.Text = "Product Menu";
             this.labelProductMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,6 +215,7 @@ namespace UserInterfaceLayer
             // 
             // buttonModify
             // 
+            this.buttonModify.Enabled = false;
             this.buttonModify.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold);
             this.buttonModify.Location = new System.Drawing.Point(40, 335);
             this.buttonModify.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -228,6 +229,7 @@ namespace UserInterfaceLayer
             // 
             // buttonDelete2
             // 
+            this.buttonDelete2.Enabled = false;
             this.buttonDelete2.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold);
             this.buttonDelete2.Location = new System.Drawing.Point(138, 335);
             this.buttonDelete2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -347,7 +349,7 @@ namespace UserInterfaceLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 544);
+            this.ClientSize = new System.Drawing.Size(786, 544);
             this.Controls.Add(this.textBoxProductNumber2);
             this.Controls.Add(this.buttonListDetails);
             this.Controls.Add(this.labelEnterNumber);

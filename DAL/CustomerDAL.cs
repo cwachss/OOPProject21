@@ -10,7 +10,10 @@ namespace DAL
     public class CustomerDAL
     {
         Customer PloniAlmoni;//generic object of type customer
-
+        public CustomerDAL()
+        {
+            InitializeList();
+        }
         public List<Customer> customerList = new List<Customer>();//creates list to hold all the customer's information
        
         /// <summary>
@@ -70,5 +73,6 @@ namespace DAL
 
 
 
+        }
     }
 }
