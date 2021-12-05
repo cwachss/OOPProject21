@@ -10,10 +10,11 @@ namespace Entities
     {
         //properties, instance variables im not sure what
         public string OwnerName { get; set; }
-        public int CardNumber { get; set; }
+        public long CardNumber { get; set; }
         public DateTime ExpirationDate { get; set; }
         public decimal Charges { get; set; }
-        public CreditCard(string name, int number, DateTime expiration)
+
+        public CreditCard(string name, long number, DateTime expiration)
         {
             OwnerName = name;
             CardNumber = number;

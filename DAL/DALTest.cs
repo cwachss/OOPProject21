@@ -24,13 +24,21 @@ namespace DAL
 
             Console.WriteLine(products.Read(87234));
 
-            products.Update(87234, "no name", (decimal)5.43, 23);*/
-            Console.WriteLine(products.Read(87234));
+            //products.Update(87234, "no name", (decimal)5.43, 23);*/
+            //Console.WriteLine(products.Read(87234));
 
-            products.Delete(87234);
-            Console.WriteLine(products.Read(87234));
-            products.Update(87234, "no name", (decimal)5.43, 23);
-            Console.WriteLine(products.Read(87234));
+            //products.Delete(87234);
+            //Console.WriteLine(products.Read(87234));
+            //products.Update(87234, "no name", (decimal)5.43, 23);
+            //Console.WriteLine(products.Read(87234));
+
+            CustomerDAL try1 = new CustomerDAL();
+
+            try1.Create("Miss Arr", 28392047, 22232123990904, 1997, 12);
+            Console.WriteLine(try1.customerList[0]);
+
+            try1.Update("joe shmo", 28392047, 22232123990904, 1989, 11);
+            Console.WriteLine($"{try1.customerList[0]}" + try1.customerList[1]);
         }
     }
 }

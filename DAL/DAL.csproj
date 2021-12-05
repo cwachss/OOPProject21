@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDAL.cs" />
+    <Compile Include="MonthOutOfRange.cs" />
     <Compile Include="ProductNumberNotFound.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="DALTest.cs" />
