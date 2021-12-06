@@ -27,15 +27,20 @@ namespace DAL
         /// <param name="month"></param>
         public void Create(string name, int idNum, long creditCardNum, int year, int month)
         {
-            if (month <= 12)
+            if (month <= 12 && year < DateTime.Now.Year + 20)
             {
                Customer PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
                 customerList.Add(PloniAlmoni);
             }
-            else
+            else if (month>12)
             {
                 throw new MonthOutOfRange(); //there are more exceptions needed:)
             }
+            else if(year<= DateTime.Now.Year | year> DateTime.Now.Year+20)
+            {
+                throw new Exception("Year out of range.");
+            }
+           
 
         }
         /// <summary>
