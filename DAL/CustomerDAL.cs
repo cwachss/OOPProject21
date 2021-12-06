@@ -92,7 +92,7 @@ namespace DAL
         /// <param name="month"></param>
         public void Update(string name, int idNum, long creditCardNum, int year, int month)
         {
-           customerList.Delete(idNum); //why is this commented out?
+            Delete(idNum);
             PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month); //um im pretty sure create does this...
             customerList.Add(PloniAlmoni);
         }
