@@ -36,6 +36,13 @@ namespace BLL
         //    return misterA.ReadAll();
         //}
 
+
+        public Customer Read(int idNum)
+        {
+           return misterA.Read(idNum);
+        }
+
+
         /// <summary>
         /// method that updates a specified customer's information
         /// </summary>
@@ -48,6 +55,11 @@ namespace BLL
         
         {
             misterA.Update(name, idNum, creditCardNum, year, month);
+        }
+
+        public void Delete(int idNum)
+        {
+            misterA.Delete(idNum);
         }
 
 
