@@ -191,7 +191,7 @@ namespace DAL
            
         }
 
-            //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...
+            //Thought to make check product number easier by making it a method. But, this may not the way to do it...
             //public int CheckNum(int prodNum)
             //{
             //    int i;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities;
+using System.IO;
 
 namespace DAL
 {
@@ -15,7 +16,7 @@ namespace DAL
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
         }
-        
+        public List<Customer> customerList = new List<Customer>();//creates list to hold all the customer's information
        
         /// <summary>
         /// method that adds a customer's information to a list
@@ -27,7 +28,7 @@ namespace DAL
         /// <param name="month"></param>
         public void Create(string name, int idNum, long creditCardNum, int year, int month)
         {
-            if(month<=12)
+            if (month <= 12)
             {
                 PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
                 customerList.Add(PloniAlmoni);
@@ -42,14 +43,19 @@ namespace DAL
         /// method that returns a copy of the customer list
         /// </summary>
         /// <returns></returns>
-        //public List<Customer> ReadAll()
-        //{
-        //    if (customerList.Count > 0)
-        //    {
-        //        List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.mycreditCard);
-        //    }
-        //    return customerList;
-        //}
+        public List<Customer> ReadAll()
+        {
+            if (customerList.Count > 0)
+            {
+                List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.mycreditCard);
+                return customerList;
+
+            }
+            else
+            {
+                throw new Exception("No customers recorded.");
+            }
+        }
 
 
         /// <summary>
@@ -65,7 +71,6 @@ namespace DAL
            // customerList.Delete(idNum); //why is this commented out?
             PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month); //um im pretty sure create does this...
             customerList.Add(PloniAlmoni);
-
         }
 
 
