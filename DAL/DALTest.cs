@@ -22,7 +22,7 @@ namespace DAL
             try1.Update("joe shmo", 28392047, 22232123990904, 1989, 11);
             Console.WriteLine($"{try1.customerList[0]}" + try1.customerList[1]);
 
-            Console.WriteLine(try1.Read(28392047)); 
+            Console.WriteLine(try1.Read(1)); 
         }
     }
 }
