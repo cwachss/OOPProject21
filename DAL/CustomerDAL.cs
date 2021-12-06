@@ -27,7 +27,7 @@ namespace DAL
         /// <param name="month"></param>
         public void Create(string name, int idNum, long creditCardNum, int year, int month)
         {
-            if (month <= 12 && year < DateTime.Now.Year + 20 && )
+            if (month <= 12 && year < DateTime.Now.Year + 20)
             {
                 for (int i = 0; i < customerList.Count; i++)
                 {
