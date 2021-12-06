@@ -10,7 +10,7 @@ namespace DAL
 {
     public class CustomerDAL
     {
-        Customer PloniAlmoni;//generic object of type customer
+       
         public List<Customer> customerList;
         public CustomerDAL()
         {
@@ -29,7 +29,7 @@ namespace DAL
         {
             if (month <= 12)
             {
-                PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
+               Customer PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
                 customerList.Add(PloniAlmoni);
             }
             else
@@ -91,14 +91,16 @@ namespace DAL
         /// <param name="month"></param>
         public void Update(string name, int idNum, long creditCardNum, int year, int month)
         {
-           customerList.Delete(idNum); //why is this commented out?
-            PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month); //um im pretty sure create does this...
-            customerList.Add(PloniAlmoni);
+
+            Delete(idNum);
+            Create(name, idNum, creditCardNum, year, month);
+           
         }
 
         public void Delete(int idNum)
         {
             customerList.Remove(Read(idNum));
+
         }
 
         //public int? Find()
