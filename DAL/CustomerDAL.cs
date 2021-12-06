@@ -10,11 +10,12 @@ namespace DAL
     public class CustomerDAL
     {
         Customer PloniAlmoni;//generic object of type customer
+        public List<Customer> customerList;
         public CustomerDAL()
         {
-            InitializeList();
+            customerList = new List<Customer>();//creates list to hold all the customer's information
         }
-        public List<Customer> customerList = new List<Customer>();//creates list to hold all the customer's information
+        
        
         /// <summary>
         /// method that adds a customer's information to a list
@@ -61,8 +62,8 @@ namespace DAL
         /// <param name="month"></param>
         public void Update(string name, int idNum, long creditCardNum, int year, int month)
         {
-           // customerList.Delete(idNum);
-            PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month);
+           // customerList.Delete(idNum); //why is this commented out?
+            PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month); //um im pretty sure create does this...
             customerList.Add(PloniAlmoni);
 
         }

@@ -178,7 +178,7 @@ namespace DAL
             {
                 if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
                 {
-                    //Product product = Read(productNum);//if found does, it executes
+                    
                     productList.Remove(productList[i]);
                     break;
                 }
