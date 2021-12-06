@@ -17,6 +17,10 @@ namespace Entities
             myCreditCard = new CreditCard(name, creditCardNum, expirationDate);
         }
 
+        public Customer(string name, int idNum, CreditCard aCreditCard) : base(name, idNum)
+        {
+            myCreditCard = aCreditCard;
+        }
         public Customer(Customer realCustomer) : base(realCustomer.Name, realCustomer.ID)
         {
             expirationDate = realCustomer.expirationDate;

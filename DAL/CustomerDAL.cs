@@ -16,8 +16,7 @@ namespace DAL
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
         }
-       
-       
+
         /// <summary>
         /// method that adds a customer's information to a list
         /// </summary>
@@ -35,7 +34,7 @@ namespace DAL
             }
             else
             {
-                throw new MonthOutOfRange();
+                throw new MonthOutOfRange(); //there are more exceptions needed:)
             }
 
         }
@@ -47,7 +46,7 @@ namespace DAL
         {
             if (customerList.Count > 0)
             {
-                List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.mycreditCard);
+                List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.myCreditCard));
                 return customerList;
 
             }
@@ -57,7 +56,27 @@ namespace DAL
             }
         }
 
+        //read method: go through list of products to find correct id number and then return that product 
+        public Customer Read(int idNum)
+        {
+            //if(productNum)
+            int index = 0;
+            //while loop to find id number
+            while (customerList[index].ID != idNum)
+            {
+                if (index < customerList.Count)
+                {
+                    index++;
+                }
+                else
+                {
+                    throw new Exception("Customer not found.");
+                }
+            }
 
+            Customer customer = new Customer(customerList[index]);//did you not want to find the index this way? How else should I find it?
+            return customer;
+        }
         /// <summary>
         /// method that updates a specified customer's information on the customer list
         /// </summary>
@@ -68,17 +87,19 @@ namespace DAL
         /// <param name="month"></param>
         public void Update(string name, int idNum, long creditCardNum, int year, int month)
         {
-           // customerList.Delete(idNum); //why is this commented out?
+            // customerList.Delete(idNum); //why is this commented out?
             PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month); //um im pretty sure create does this...
             customerList.Add(PloniAlmoni);
         }
 
+        //public int? Find()
+        //{
+        //    for (int i=0;)
+        //}
+          
 
 
 
 
-
-
-        }
     }
 }

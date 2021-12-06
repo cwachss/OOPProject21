@@ -27,3 +27,11 @@ PRODUCT some ideas for product GUI section:
 CUSTOMER idea board:
 	fairly similar to the product one, but needs more complex details groupbox to allow for credit card info. but find dhould just show last four digits of creidt card
 	modify should have add.modify/delete credit card option as a sub option, and should be password protected or somethimg
+
+
+
+
+Shira 
+	credit card: have a text box dash text box dash ect. append the input together to make string of number together to check credit card number
+	only show last 4 digit to user unless input password
+
