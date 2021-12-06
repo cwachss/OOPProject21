@@ -19,7 +19,7 @@ namespace Entities
 
         public Customer(string name, int idNum, CreditCard aCreditCard) : base(name, idNum)
         {
-            myCreditCard = aCreditCard;
+           myCreditCard = aCreditCard;
         }
         public Customer(Customer realCustomer) : base(realCustomer.Name, realCustomer.ID)
         {
@@ -36,7 +36,7 @@ namespace Entities
         //}
         public override string ToString()
         {
-            return $"{myCreditCard.OwnerName}\t{myCreditCard.CardNumber}\t{myCreditCard.ExpirationDate}\t" +
+            return $"{myCreditCard.OwnerName}\t{myCreditCard.CardNumber}\t" +
                 $"{expirationDate.Year}\t{expirationDate.Month}\t{expirationDate.Day}" + base.ToString();
         }
 
