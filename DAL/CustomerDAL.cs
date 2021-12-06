@@ -47,7 +47,7 @@ namespace DAL
         {
             if (customerList.Count > 0)
             {
-                List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.mycreditCard));
+                List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.myCreditCard));
                 return customerList;
 
             }
