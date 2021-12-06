@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterfaceLayer", "UserInterfaceLayer\UserInterfaceLayer.csproj", "{93065AB9-0FF8-445A-AB93-860438AB21C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface2.0", "UserInterface2.0\UserInterface2.0.csproj", "{1C3237F7-3707-43E1-931C-627A451C9222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3237F7-3707-43E1-931C-627A451C9222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3237F7-3707-43E1-931C-627A451C9222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3237F7-3707-43E1-931C-627A451C9222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3237F7-3707-43E1-931C-627A451C9222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
