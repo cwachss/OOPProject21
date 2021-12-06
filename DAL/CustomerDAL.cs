@@ -42,7 +42,7 @@ namespace DAL
         /// method that returns a copy of the customer list
         /// </summary>
         /// <returns></returns>
-        public List<Customer> ReadAll()
+        /*public List<Customer> ReadAll()
         {
             if (customerList.Count > 0)
             {
@@ -54,7 +54,7 @@ namespace DAL
             {
                 throw new Exception("No customers recorded.");
             }
-        }
+        }*/
 
         //read method: go through list of products to find correct id number and then return that product 
         public Customer Read(int idNum)
@@ -77,6 +77,10 @@ namespace DAL
             Customer customer = new Customer(customerList[index]);//did you not want to find the index this way? How else should I find it?
             return customer;
         }
+
+
+
+
         /// <summary>
         /// method that updates a specified customer's information on the customer list
         /// </summary>
@@ -87,9 +91,14 @@ namespace DAL
         /// <param name="month"></param>
         public void Update(string name, int idNum, long creditCardNum, int year, int month)
         {
-            // customerList.Delete(idNum); //why is this commented out?
+           customerList.Delete(idNum); //why is this commented out?
             PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month); //um im pretty sure create does this...
             customerList.Add(PloniAlmoni);
+        }
+
+        public void Delete(int idNum)
+        {
+            customerList.Remove(Read(idNum));
         }
 
         //public int? Find()
