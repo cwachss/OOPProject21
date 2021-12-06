@@ -178,7 +178,6 @@ namespace DAL
             {
                 if (productNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
                 {
-                    //Product product = Read(productNum);//if found does, it executes
                     productList.Remove(productList[i]);
                     break;
                 }
@@ -191,7 +190,7 @@ namespace DAL
            
         }
 
-            //Thought to make check product numbmer easir by making it a method. But, this may not the way to do it...
+            //Thought to make check product number easier by making it a method. But, this may not the way to do it...
             //public int CheckNum(int prodNum)
             //{
             //    int i;

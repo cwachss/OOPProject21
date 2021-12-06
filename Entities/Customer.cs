@@ -16,14 +16,15 @@ namespace Entities
             expirationDate = new DateTime(year, month, 1);
             myCreditCard = new CreditCard(name, creditCardNum, expirationDate);
         }
+         
+        public Customer(Customer user)
+        {
+            Name = user.Name;
+            ID = user.ID;
+            myCreditCard = user.myCreditCard;
 
-        //public Customer(Customer user):base (name, id)
-        //{
-        //    Name = user.Name;
-        //    ID = user.ID;
-        //    myCreditCard = user.myCreditCard;
+        }
 
-        //}
         public override string ToString()
         {
             return $"{myCreditCard.OwnerName}\t{myCreditCard.CardNumber}\t{myCreditCard.ExpirationDate}\t" +

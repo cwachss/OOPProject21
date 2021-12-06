@@ -11,6 +11,7 @@ namespace BLL
     class CustomerBLL
     {
         CustomerDAL misterA = new CustomerDAL();//creates generic customer to use
+
         /// <summary>
         /// method that adds a customer's information to the list in the BLL 
         /// </summary>
