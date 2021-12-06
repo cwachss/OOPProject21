@@ -16,7 +16,7 @@ namespace DAL
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
         }
-        public List<Customer> customerList = new List<Customer>();//creates list to hold all the customer's information
+       
        
         /// <summary>
         /// method that adds a customer's information to a list
