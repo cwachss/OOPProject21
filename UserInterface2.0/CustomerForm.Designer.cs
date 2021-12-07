@@ -61,6 +61,10 @@ namespace UserInterface2._0
             this.labelEnterNumber.Size = new System.Drawing.Size(205, 20);
             this.labelEnterNumber.Text = "Enter Customer ID Number:";
             // 
+            // textBoxPrintProducts
+            // 
+            this.textBoxPrintProducts.Location = new System.Drawing.Point(31, 52);
+            // 
             // groupBoxProductDetails
             // 
             this.groupBoxProductDetails.Location = new System.Drawing.Point(502, 52);

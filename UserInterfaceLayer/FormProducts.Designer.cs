@@ -203,7 +203,7 @@ namespace UserInterfaceLayer
             // buttonUpdateProduct
             // 
             this.buttonUpdateProduct.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateProduct.Location = new System.Drawing.Point(42, 335);
+            this.buttonUpdateProduct.Location = new System.Drawing.Point(40, 335);
             this.buttonUpdateProduct.Margin = new System.Windows.Forms.Padding(1);
             this.buttonUpdateProduct.Name = "buttonUpdateProduct";
             this.buttonUpdateProduct.Size = new System.Drawing.Size(172, 41);
