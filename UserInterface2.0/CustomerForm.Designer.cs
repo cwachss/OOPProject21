@@ -47,9 +47,13 @@ namespace UserInterface2._0
             this.textBoxCreditCardNumber = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonEnter = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBoxProductDetails.SuspendLayout();
             this.groupBoxNewCreditCard.SuspendLayout();
             this.SuspendLayout();
@@ -214,9 +218,13 @@ namespace UserInterface2._0
             // groupBoxNewCreditCard
             // 
             this.groupBoxNewCreditCard.AutoSize = true;
+            this.groupBoxNewCreditCard.Controls.Add(this.textBox4);
+            this.groupBoxNewCreditCard.Controls.Add(this.label5);
+            this.groupBoxNewCreditCard.Controls.Add(this.label4);
+            this.groupBoxNewCreditCard.Controls.Add(this.textBox3);
+            this.groupBoxNewCreditCard.Controls.Add(this.label3);
             this.groupBoxNewCreditCard.Controls.Add(this.buttonEnter);
             this.groupBoxNewCreditCard.Controls.Add(this.buttonReturn);
-            this.groupBoxNewCreditCard.Controls.Add(this.dateTimePicker1);
             this.groupBoxNewCreditCard.Controls.Add(this.textBox2);
             this.groupBoxNewCreditCard.Controls.Add(this.label2);
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxCreditCardNumber);
@@ -228,7 +236,7 @@ namespace UserInterface2._0
             this.groupBoxNewCreditCard.Font = new System.Drawing.Font("Nirmala UI", 8.1F);
             this.groupBoxNewCreditCard.Location = new System.Drawing.Point(122, 133);
             this.groupBoxNewCreditCard.Name = "groupBoxNewCreditCard";
-            this.groupBoxNewCreditCard.Size = new System.Drawing.Size(541, 231);
+            this.groupBoxNewCreditCard.Size = new System.Drawing.Size(541, 237);
             this.groupBoxNewCreditCard.TabIndex = 29;
             this.groupBoxNewCreditCard.TabStop = false;
             this.groupBoxNewCreditCard.Text = "NEW CREDIT CARD";
@@ -304,13 +312,6 @@ namespace UserInterface2._0
             this.label2.TabIndex = 7;
             this.label2.Text = "$";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(20, 142);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
             // buttonReturn
             // 
             this.buttonReturn.Location = new System.Drawing.Point(20, 186);
@@ -328,6 +329,50 @@ namespace UserInterface2._0
             this.buttonEnter.TabIndex = 10;
             this.buttonEnter.Text = "Save Credit Card";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(20, 143);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(36, 22);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(74, 143);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(54, 22);
+            this.textBox4.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(56, 137);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 30);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "/";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 8F);
+            this.label4.Location = new System.Drawing.Point(18, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Month";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 8F);
+            this.label5.Location = new System.Drawing.Point(74, 165);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Year";
             // 
             // CustomerForm
             // 
@@ -377,8 +422,12 @@ namespace UserInterface2._0
         private System.Windows.Forms.TextBox textBoxNameOnCard;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelExpirationDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonReturn;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
