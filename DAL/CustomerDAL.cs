@@ -15,6 +15,8 @@ namespace DAL
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
+            Customer aCustomerForTestingPurposes = new Customer("chani", 222, 12323213, 2021, 12);
+            customerList.Add(aCustomerForTestingPurposes);
         }
 
         /// <summary>

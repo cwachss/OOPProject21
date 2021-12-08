@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class CustomerBLL
+    public class CustomerBLL
     {
         CustomerDAL misterA = new CustomerDAL();//creates generic customer to use
 
