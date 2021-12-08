@@ -200,6 +200,7 @@ namespace UserInterface2._0
             // 
             // buttonUpdateCreditCard
             // 
+            this.buttonUpdateCreditCard.Enabled = false;
             this.buttonUpdateCreditCard.Location = new System.Drawing.Point(40, 289);
             this.buttonUpdateCreditCard.Name = "buttonUpdateCreditCard";
             this.buttonUpdateCreditCard.Size = new System.Drawing.Size(107, 23);

@@ -36,15 +36,28 @@ namespace UserInterface2._0
             labelEnterNumber.Visible = true;
             textBoxProductNumber2.Visible = true;
             buttonListDetails.Visible = true;
+            buttonModify.Visible = true;
+            buttonDelete.Visible = true;
+            buttonAdd.Visible = false;
+
         }
 
         public override void buttonListDetails_Click(object sender, EventArgs e) 
         {
-            Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
-            textBoxFirstName.Text = aCustomer.Name; 
-            textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
-            textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
-
+            try
+            {
+                Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
+                textBoxFirstName.Text = aCustomer.Name;
+                textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
+                textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
+                buttonDelete.Enabled = true;
+                buttonModify.Enabled = true;
+                buttonUpdateCreditCard.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Customer not found.");
+            }
         }
 
         protected override void ResetAndHideEverything()
@@ -55,6 +68,15 @@ namespace UserInterface2._0
             labelEnterNumber.Visible = false;
             textBoxProductNumber2.Visible = false;
             buttonListDetails.Visible = false;
+            
+        }
+
+        private void ClearReadOneTextBoxes()
+        {
+            textBoxCustomerID.Clear();
+            textBoxFirstName.Clear();
+            textBoxLastName.Clear();
+
         }
     }
 }
