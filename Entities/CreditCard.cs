@@ -10,7 +10,7 @@ namespace Entities
     {
         //properties, instance variables I'm not sure what
         public string OwnerName { get; set; }
-        protected readonly long CardNumber { get; set; }
+        public long CardNumber { get; set; }
         public DateTime ExpirationDate { get; set; }
         public decimal Charges { get; set; }
 

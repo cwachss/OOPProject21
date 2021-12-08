@@ -34,6 +34,21 @@ namespace UserInterface2._0
         public virtual void buttonDelete_Click(object sender, EventArgs e) { }
 
         public virtual void buttonReturnMenu_Click(object sender, EventArgs e) { }
+
+        public virtual void HideMainMenu()
+        {
+            buttonReadOne.Enabled = false;
+            buttonReadOne.Visible = false;
+            buttonReadAll.Enabled = false;
+            buttonReadAll.Visible=false;
+            buttonCreate.Enabled = false;   
+            buttonCreate.Visible=false;
+        }
+        public virtual void ShowReadOne()
+        {
+            buttonUpdate.Visible = false;    
+
+        }
         
     }
 }

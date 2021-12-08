@@ -20,3 +20,4 @@ C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.csproj.CoreCompileInput
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.exe
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.pdb
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.csproj.SuggestedBindingRedirects.cache

@@ -26,3 +26,4 @@ C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.csproj.CoreCompileInput
 C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.exe
 C:\Users\chani\source\repos\OOPProject\BLL\obj\Debug\BLL.pdb
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\BLL\obj\Debug\BLL.csproj.SuggestedBindingRedirects.cache

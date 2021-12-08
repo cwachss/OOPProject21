@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace UserInterface2._0
 {
@@ -16,6 +17,40 @@ namespace UserInterface2._0
         {
             InitializeComponent();
             labelProductMenu.Text = "Customer Menu";
+        }
+
+        public override void buttonModify_Click(object sender, EventArgs e)
+        {
+            // base.buttonModify_Click(sender, e);
+
+            try
+            {
+                CustomerBLL bLL = new CustomerBLL();
+                bLL.Update(textBoxCustomerName.Text,int.Parse(textBoxCustomerID.Text),
+                    long.Parse(textBoxCCNumber.Text),int.Parse(textBoxCCYear.Text),
+                    int.Parse(textBoxCCMonth.Text));
+            }
+            catch
+            {
+                MessageBox.Show("Incorrect input", "Error");
+            }
+        }
+
+
+        public void Delete()
+        {
+
+        }
+
+        public void ReadOne()
+        {
+
+        }
+
+       
+        public override void buttonReadOne_Click(object sender, EventArgs e) 
+        {
+            HideMainMenu();
 
         }
     }
