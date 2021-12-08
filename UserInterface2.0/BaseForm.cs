@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using Entities;
 
 namespace UserInterface2._0
 {
@@ -33,22 +35,37 @@ namespace UserInterface2._0
 
         public virtual void buttonDelete_Click(object sender, EventArgs e) { }
 
-        public virtual void buttonReturnMenu_Click(object sender, EventArgs e) { }
+        public virtual void buttonReturnMenu_Click(object sender, EventArgs e) 
+        {
+            ResetMainMenu();
+            ResetAndHideEverything();
+        }
+        
 
-        public virtual void HideMainMenu()
+        protected virtual void ResetAndHideEverything() { }
+       
+
+        protected void HideMenuButtons()
         {
             buttonReadOne.Enabled = false;
             buttonReadOne.Visible = false;
             buttonReadAll.Enabled = false;
-            buttonReadAll.Visible=false;
-            buttonCreate.Enabled = false;   
-            buttonCreate.Visible=false;
+            buttonReadAll.Visible = false;
+            buttonCreate.Enabled = false;
+            buttonCreate.Visible = false;
         }
-        public virtual void ShowReadOne()
-        {
-            buttonUpdateProduct.Visible = false;    
 
+        protected void ResetMainMenu()
+        {
+            buttonCreate.Visible = true;
+            buttonReadAll.Visible = true;
+            buttonReadOne.Visible = true;
         }
-        
+
+        //public virtual void ShowReadOne()
+        //{
+        //    buttonUpdateProduct.Visible = false;
+
+        //}
     }
 }
