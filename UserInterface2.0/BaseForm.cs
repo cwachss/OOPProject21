@@ -46,7 +46,7 @@ namespace UserInterface2._0
         }
         public virtual void ShowReadOne()
         {
-            buttonUpdate.Visible = false;    
+            buttonUpdateProduct.Visible = false;    
 
         }
         

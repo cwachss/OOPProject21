@@ -94,7 +94,7 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonAdd, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonDelete, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonModify, 0);
-            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonUpdate, 0);
+            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonUpdateProduct, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxCustomerName, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxCCNumber, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxCCMonth, 0);
@@ -108,7 +108,7 @@ namespace UserInterface2._0
             // 
             // buttonUpdateProduct
             // 
-            this.buttonUpdate.Text = "Update Customer Details";
+            this.buttonUpdateProduct.Text = "Update Customer Details";
             // 
             // buttonAdd
             // 

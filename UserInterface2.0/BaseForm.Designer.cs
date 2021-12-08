@@ -39,7 +39,7 @@ namespace UserInterface2._0
             this.labelEnterNumber = new System.Windows.Forms.Label();
             this.textBoxPrintProducts = new System.Windows.Forms.TextBox();
             this.groupBoxProductDetails = new System.Windows.Forms.GroupBox();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonUpdateProduct = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -169,7 +169,7 @@ namespace UserInterface2._0
             // groupBoxProductDetails
             // 
             this.groupBoxProductDetails.AutoSize = true;
-            this.groupBoxProductDetails.Controls.Add(this.buttonUpdate);
+            this.groupBoxProductDetails.Controls.Add(this.buttonUpdateProduct);
             this.groupBoxProductDetails.Controls.Add(this.buttonModify);
             this.groupBoxProductDetails.Controls.Add(this.buttonDelete);
             this.groupBoxProductDetails.Controls.Add(this.buttonAdd);
@@ -184,18 +184,18 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Text = "________ DETAILS";
             this.groupBoxProductDetails.Visible = false;
             // 
-            // buttonUpdate
+            // buttonUpdateProduct
             // 
-            this.buttonUpdate.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.Location = new System.Drawing.Point(53, 412);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(229, 50);
-            this.buttonUpdate.TabIndex = 18;
-            this.buttonUpdate.Text = "Update __________ Details";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Visible = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdateProduct_Click);
+            this.buttonUpdateProduct.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateProduct.Location = new System.Drawing.Point(53, 412);
+            this.buttonUpdateProduct.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonUpdateProduct.Name = "buttonUpdateProduct";
+            this.buttonUpdateProduct.Size = new System.Drawing.Size(229, 50);
+            this.buttonUpdateProduct.TabIndex = 18;
+            this.buttonUpdateProduct.Text = "Update __________ Details";
+            this.buttonUpdateProduct.UseVisualStyleBackColor = true;
+            this.buttonUpdateProduct.Visible = false;
+            this.buttonUpdateProduct.Click += new System.EventHandler(this.buttonUpdateProduct_Click);
             // 
             // buttonModify
             // 
@@ -273,7 +273,7 @@ namespace UserInterface2._0
         protected System.Windows.Forms.Label labelEnterNumber;
         protected System.Windows.Forms.TextBox textBoxPrintProducts;
         protected System.Windows.Forms.GroupBox groupBoxProductDetails;
-        protected System.Windows.Forms.Button buttonUpdate;
+        protected System.Windows.Forms.Button buttonUpdateProduct;
         protected System.Windows.Forms.Button buttonModify;
         protected System.Windows.Forms.Button buttonDelete;
         protected System.Windows.Forms.Button buttonAdd;
