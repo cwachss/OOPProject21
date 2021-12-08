@@ -18,5 +18,6 @@ namespace UserInterface2._0
             labelProductMenu.Text = "Customer Menu";
 
         }
+
     }
 }
