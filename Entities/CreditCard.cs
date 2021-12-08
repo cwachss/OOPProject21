@@ -8,9 +8,9 @@ namespace Entities
 {
     public class CreditCard
     {
-        //properties, instance variables im not sure what
+        //properties, instance variables I'm not sure what
         public string OwnerName { get; set; }
-        public long CardNumber { get; set; }
+        protected readonly long CardNumber { get; set; }
         public DateTime ExpirationDate { get; set; }
         public decimal Charges { get; set; }
 
@@ -20,7 +20,6 @@ namespace Entities
             CardNumber = number;
             ExpirationDate = expiration;
             Charges = 0;
-            
         }
 
 

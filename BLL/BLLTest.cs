@@ -19,7 +19,7 @@ namespace BLL
 
             Console.WriteLine(mister.Read(11111));
 
-            Console.WriteLine(,ister);
+            Console.WriteLine(mister);
         }
     }
 }
