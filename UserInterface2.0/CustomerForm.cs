@@ -86,10 +86,10 @@ namespace UserInterface2._0
 
             try
             {
-                CustomerBLL bLL = new CustomerBLL();
-                bLL.Update(textBoxCustomerName.Text,int.Parse(textBoxCustomerID.Text),
-                    long.Parse(textBoxCCNumber.Text),int.Parse(textBoxCCYear.Text),
-                    int.Parse(textBoxCCMonth.Text));
+                
+                customerBLL.Update(textBoxFirstName.Text,int.Parse(textBoxCustomerID.Text),
+                    long.Parse(textBoxCreditCardNumber.Text),int.Parse(textBoxYear.Text),
+                    int.Parse(textBoxMonth.Text));
             }
             catch
             {
@@ -97,23 +97,14 @@ namespace UserInterface2._0
             }
         }
 
-
-        public void Delete()
+        public override void buttonDelete_Click(object sender, EventArgs e) 
         {
-
+            customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
         }
 
-        public void ReadOne()
-        {
 
-        }
-
-       
-        public override void buttonReadOne_Click(object sender, EventArgs e) 
-        {
-            HideMainMenu();
-
-        }
+               
+     
 
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
         {
