@@ -52,7 +52,7 @@ namespace BLL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Update(string name, int idNum, int creditCardNum, int year, int month)
+        public void Update(string name, int idNum, long creditCardNum, int year, int month)
         
         {
             misterA.Update(name, idNum, creditCardNum, year, month);

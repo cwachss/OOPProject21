@@ -47,9 +47,12 @@ namespace UserInterface2._0
 
         protected void HideMenuButtons()
         {
-            buttonCreate.Visible = false;
-            buttonReadAll.Visible = false;
+            buttonReadOne.Enabled = false;
             buttonReadOne.Visible = false;
+            buttonReadAll.Enabled = false;
+            buttonReadAll.Visible = false;
+            buttonCreate.Enabled = false;
+            buttonCreate.Visible = false;
         }
 
         protected void ResetMainMenu()
@@ -59,5 +62,10 @@ namespace UserInterface2._0
             buttonReadOne.Visible = true;
         }
 
+        //public virtual void ShowReadOne()
+        //{
+        //    buttonUpdateProduct.Visible = false;
+
+        //}
     }
 }

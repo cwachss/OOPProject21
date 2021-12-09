@@ -57,11 +57,11 @@ namespace DAL
         /// method that returns a copy of the customer list
         /// </summary>
         /// <returns></returns>
-       /* public List<Customer> ReadAll()
+        public List<Customer> ReadAll()
         {
             if (customerList.Count > 0)
             {
-                List<Customer> copyOfCustomerList = customerList.ConvertALL(user => new Customer(user.Name, user.ID, user.myCreditCard));
+                List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.Name, user.ID, user.myCreditCard));
                 return customerList;
 
             }
@@ -69,7 +69,7 @@ namespace DAL
             {
                 throw new Exception("No customers recorded.");
             }
-        }*/
+        }
 
         //read method: go through list of products to find correct id number and then return that product 
         public Customer Read(int idNum)

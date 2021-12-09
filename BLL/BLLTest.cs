@@ -18,6 +18,8 @@ namespace BLL
             mister.Create("joe", 111, 1231232312, 2021, 12);
 
             Console.WriteLine(mister.Read(11111));
+
+            Console.WriteLine(mister);
         }
     }
 }
