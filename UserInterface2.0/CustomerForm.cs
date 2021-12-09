@@ -17,8 +17,10 @@ namespace UserInterface2._0
         /*
          * some important notes:
          * the UI has sections for first and last name. right now, the DAL only receives a full name. We need to decide which option we like better
-         * the credit card section right now only allows for teh customer name to be on the credit card. this needs to be changed.
+         * the credit card section right now only allows for the customer name to be on the credit card. this needs to be changed.
          * we need to set up the code so you cannot add a customer unless the credit card is filled out. Maybe that means having the groupbox set up differently for add, right now I set it up only for the read/delete/modify. there are ways to make things move around depending on what button you press.
+         * changes to make:
+         * string credit card, 
          */
         CustomerBLL customerBLL;
         public CustomerForm()
@@ -78,5 +80,16 @@ namespace UserInterface2._0
             textBoxLastName.Clear();
 
         }
+
+        private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = true; 
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = false;
+        }
+
     }
 }

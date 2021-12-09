@@ -35,7 +35,7 @@ namespace UserInterface2._0
 
         public virtual void buttonDelete_Click(object sender, EventArgs e) { }
 
-        public virtual void buttonReturnMenu_Click(object sender, EventArgs e) 
+        public void buttonReturnMenu_Click(object sender, EventArgs e) 
         {
             ResetMainMenu();
             ResetAndHideEverything();

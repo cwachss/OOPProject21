@@ -241,12 +241,12 @@ namespace UserInterface2._0
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 500);
+            this.Controls.Add(this.buttonReturnMenu);
+            this.Controls.Add(this.textBoxPrintProducts);
             this.Controls.Add(this.groupBoxProductDetails);
             this.Controls.Add(this.textBoxProductNumber2);
             this.Controls.Add(this.buttonListDetails);
             this.Controls.Add(this.labelEnterNumber);
-            this.Controls.Add(this.textBoxPrintProducts);
-            this.Controls.Add(this.buttonReturnMenu);
             this.Controls.Add(this.buttonReadAll);
             this.Controls.Add(this.buttonReadOne);
             this.Controls.Add(this.buttonCreate);

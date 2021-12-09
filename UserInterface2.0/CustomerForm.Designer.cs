@@ -45,7 +45,6 @@ namespace UserInterface2._0
             this.textBoxMonth = new System.Windows.Forms.TextBox();
             this.labelSlash = new System.Windows.Forms.Label();
             this.buttonEnter = new System.Windows.Forms.Button();
-            this.buttonReturn = new System.Windows.Forms.Button();
             this.textBoxCharges = new System.Windows.Forms.TextBox();
             this.labelDollarSign = new System.Windows.Forms.Label();
             this.textBoxCreditCardNumber = new System.Windows.Forms.TextBox();
@@ -64,11 +63,13 @@ namespace UserInterface2._0
             // 
             // buttonReadAll
             // 
+            this.buttonReadAll.Location = new System.Drawing.Point(262, 50);
             this.buttonReadAll.Size = new System.Drawing.Size(260, 469);
             this.buttonReadAll.Text = "ALL CUSTOMERS";
             // 
             // buttonReadOne
             // 
+            this.buttonReadOne.Location = new System.Drawing.Point(522, 50);
             this.buttonReadOne.Size = new System.Drawing.Size(262, 469);
             this.buttonReadOne.Text = "FIND CUSTOMER";
             // 
@@ -207,6 +208,7 @@ namespace UserInterface2._0
             this.buttonUpdateCreditCard.TabIndex = 26;
             this.buttonUpdateCreditCard.Text = "New Credit Card";
             this.buttonUpdateCreditCard.UseVisualStyleBackColor = true;
+            this.buttonUpdateCreditCard.Click += new System.EventHandler(this.buttonUpdateCreditCard_Click);
             // 
             // labelLastName
             // 
@@ -238,7 +240,6 @@ namespace UserInterface2._0
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxMonth);
             this.groupBoxNewCreditCard.Controls.Add(this.labelSlash);
             this.groupBoxNewCreditCard.Controls.Add(this.buttonEnter);
-            this.groupBoxNewCreditCard.Controls.Add(this.buttonReturn);
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxCharges);
             this.groupBoxNewCreditCard.Controls.Add(this.labelDollarSign);
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxCreditCardNumber);
@@ -248,9 +249,9 @@ namespace UserInterface2._0
             this.groupBoxNewCreditCard.Controls.Add(this.labelCharges);
             this.groupBoxNewCreditCard.Controls.Add(this.labelCCNum);
             this.groupBoxNewCreditCard.Font = new System.Drawing.Font("Nirmala UI", 8.1F);
-            this.groupBoxNewCreditCard.Location = new System.Drawing.Point(122, 133);
+            this.groupBoxNewCreditCard.Location = new System.Drawing.Point(31, 268);
             this.groupBoxNewCreditCard.Name = "groupBoxNewCreditCard";
-            this.groupBoxNewCreditCard.Size = new System.Drawing.Size(541, 237);
+            this.groupBoxNewCreditCard.Size = new System.Drawing.Size(452, 190);
             this.groupBoxNewCreditCard.TabIndex = 29;
             this.groupBoxNewCreditCard.TabStop = false;
             this.groupBoxNewCreditCard.Text = "NEW CREDIT CARD";
@@ -258,7 +259,7 @@ namespace UserInterface2._0
             // 
             // textBoxYear
             // 
-            this.textBoxYear.Location = new System.Drawing.Point(74, 143);
+            this.textBoxYear.Location = new System.Drawing.Point(61, 105);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(54, 22);
             this.textBoxYear.TabIndex = 12;
@@ -267,7 +268,7 @@ namespace UserInterface2._0
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Nirmala UI", 8F);
-            this.labelYear.Location = new System.Drawing.Point(74, 165);
+            this.labelYear.Location = new System.Drawing.Point(61, 127);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(27, 13);
             this.labelYear.TabIndex = 15;
@@ -277,7 +278,7 @@ namespace UserInterface2._0
             // 
             this.labelMonth.AutoSize = true;
             this.labelMonth.Font = new System.Drawing.Font("Nirmala UI", 8F);
-            this.labelMonth.Location = new System.Drawing.Point(18, 165);
+            this.labelMonth.Location = new System.Drawing.Point(5, 127);
             this.labelMonth.Name = "labelMonth";
             this.labelMonth.Size = new System.Drawing.Size(42, 13);
             this.labelMonth.TabIndex = 14;
@@ -285,7 +286,7 @@ namespace UserInterface2._0
             // 
             // textBoxMonth
             // 
-            this.textBoxMonth.Location = new System.Drawing.Point(20, 143);
+            this.textBoxMonth.Location = new System.Drawing.Point(7, 105);
             this.textBoxMonth.Name = "textBoxMonth";
             this.textBoxMonth.Size = new System.Drawing.Size(36, 22);
             this.textBoxMonth.TabIndex = 11;
@@ -294,7 +295,7 @@ namespace UserInterface2._0
             // 
             this.labelSlash.AutoSize = true;
             this.labelSlash.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSlash.Location = new System.Drawing.Point(56, 137);
+            this.labelSlash.Location = new System.Drawing.Point(43, 99);
             this.labelSlash.Name = "labelSlash";
             this.labelSlash.Size = new System.Drawing.Size(21, 30);
             this.labelSlash.TabIndex = 13;
@@ -302,25 +303,17 @@ namespace UserInterface2._0
             // 
             // buttonEnter
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(398, 186);
+            this.buttonEnter.Location = new System.Drawing.Point(305, 145);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(123, 24);
             this.buttonEnter.TabIndex = 10;
             this.buttonEnter.Text = "Save Credit Card";
             this.buttonEnter.UseVisualStyleBackColor = true;
-            // 
-            // buttonReturn
-            // 
-            this.buttonReturn.Location = new System.Drawing.Point(20, 186);
-            this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(70, 24);
-            this.buttonReturn.TabIndex = 9;
-            this.buttonReturn.Text = "Back";
-            this.buttonReturn.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
             // textBoxCharges
             // 
-            this.textBoxCharges.Location = new System.Drawing.Point(310, 142);
+            this.textBoxCharges.Location = new System.Drawing.Point(217, 111);
             this.textBoxCharges.Name = "textBoxCharges";
             this.textBoxCharges.Size = new System.Drawing.Size(211, 22);
             this.textBoxCharges.TabIndex = 6;
@@ -329,7 +322,7 @@ namespace UserInterface2._0
             // 
             this.labelDollarSign.AutoSize = true;
             this.labelDollarSign.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold);
-            this.labelDollarSign.Location = new System.Drawing.Point(296, 143);
+            this.labelDollarSign.Location = new System.Drawing.Point(202, 111);
             this.labelDollarSign.Name = "labelDollarSign";
             this.labelDollarSign.Size = new System.Drawing.Size(18, 20);
             this.labelDollarSign.TabIndex = 7;
@@ -337,23 +330,23 @@ namespace UserInterface2._0
             // 
             // textBoxCreditCardNumber
             // 
-            this.textBoxCreditCardNumber.Location = new System.Drawing.Point(310, 62);
+            this.textBoxCreditCardNumber.Location = new System.Drawing.Point(221, 52);
             this.textBoxCreditCardNumber.Name = "textBoxCreditCardNumber";
             this.textBoxCreditCardNumber.Size = new System.Drawing.Size(211, 22);
             this.textBoxCreditCardNumber.TabIndex = 5;
             // 
             // textBoxNameOnCard
             // 
-            this.textBoxNameOnCard.Location = new System.Drawing.Point(20, 62);
+            this.textBoxNameOnCard.Location = new System.Drawing.Point(6, 52);
             this.textBoxNameOnCard.Name = "textBoxNameOnCard";
-            this.textBoxNameOnCard.Size = new System.Drawing.Size(211, 22);
+            this.textBoxNameOnCard.Size = new System.Drawing.Size(193, 22);
             this.textBoxNameOnCard.TabIndex = 4;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold);
-            this.labelName.Location = new System.Drawing.Point(16, 39);
+            this.labelName.Location = new System.Drawing.Point(6, 29);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(109, 20);
             this.labelName.TabIndex = 3;
@@ -363,7 +356,7 @@ namespace UserInterface2._0
             // 
             this.labelExpirationDate.AutoSize = true;
             this.labelExpirationDate.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold);
-            this.labelExpirationDate.Location = new System.Drawing.Point(16, 117);
+            this.labelExpirationDate.Location = new System.Drawing.Point(3, 79);
             this.labelExpirationDate.Name = "labelExpirationDate";
             this.labelExpirationDate.Size = new System.Drawing.Size(117, 20);
             this.labelExpirationDate.TabIndex = 2;
@@ -373,7 +366,7 @@ namespace UserInterface2._0
             // 
             this.labelCharges.AutoSize = true;
             this.labelCharges.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold);
-            this.labelCharges.Location = new System.Drawing.Point(306, 119);
+            this.labelCharges.Location = new System.Drawing.Point(217, 88);
             this.labelCharges.Name = "labelCharges";
             this.labelCharges.Size = new System.Drawing.Size(65, 20);
             this.labelCharges.TabIndex = 1;
@@ -383,7 +376,7 @@ namespace UserInterface2._0
             // 
             this.labelCCNum.AutoSize = true;
             this.labelCCNum.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold);
-            this.labelCCNum.Location = new System.Drawing.Point(306, 39);
+            this.labelCCNum.Location = new System.Drawing.Point(222, 29);
             this.labelCCNum.Name = "labelCCNum";
             this.labelCCNum.Size = new System.Drawing.Size(149, 20);
             this.labelCCNum.TabIndex = 0;
@@ -399,8 +392,8 @@ namespace UserInterface2._0
             this.Text = "CustomerForm";
             this.Controls.SetChildIndex(this.labelProductMenu, 0);
             this.Controls.SetChildIndex(this.buttonCreate, 0);
-            this.Controls.SetChildIndex(this.buttonReadOne, 0);
             this.Controls.SetChildIndex(this.buttonReadAll, 0);
+            this.Controls.SetChildIndex(this.buttonReadOne, 0);
             this.Controls.SetChildIndex(this.buttonReturnMenu, 0);
             this.Controls.SetChildIndex(this.textBoxPrintProducts, 0);
             this.Controls.SetChildIndex(this.labelEnterNumber, 0);
@@ -438,7 +431,6 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelExpirationDate;
         private System.Windows.Forms.Button buttonEnter;
-        private System.Windows.Forms.Button buttonReturn;
         private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.TextBox textBoxMonth;
         private System.Windows.Forms.Label labelSlash;
