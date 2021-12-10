@@ -31,9 +31,17 @@ namespace UserInterface2._0
 
         public virtual void buttonAdd_Click(object sender, EventArgs e) { }
 
-        public virtual void buttonModify_Click(object sender, EventArgs e) { }
+        public virtual void buttonModify_Click(object sender, EventArgs e)
+        {
+            buttonModify.Visible = false;
+            buttonDelete.Visible = false;
+            buttonUpdateProduct.Visible = true;
+        }
 
-        public virtual void buttonDelete_Click(object sender, EventArgs e) { }
+        public virtual void buttonDelete_Click(object sender, EventArgs e) 
+        { 
+            
+        }
 
         public void buttonReturnMenu_Click(object sender, EventArgs e) 
         {

@@ -39,6 +39,7 @@ namespace UserInterface2._0
             this.labelLastName = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.groupBoxNewCreditCard = new System.Windows.Forms.GroupBox();
+            this.buttonCancelNewCC = new System.Windows.Forms.Button();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelMonth = new System.Windows.Forms.Label();
@@ -204,7 +205,7 @@ namespace UserInterface2._0
             this.buttonUpdateCreditCard.Location = new System.Drawing.Point(40, 291);
             this.buttonUpdateCreditCard.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdateCreditCard.Name = "buttonUpdateCreditCard";
-            this.buttonUpdateCreditCard.Size = new System.Drawing.Size(80, 19);
+            this.buttonUpdateCreditCard.Size = new System.Drawing.Size(115, 19);
             this.buttonUpdateCreditCard.TabIndex = 26;
             this.buttonUpdateCreditCard.Text = "New Credit Card";
             this.buttonUpdateCreditCard.UseVisualStyleBackColor = true;
@@ -234,6 +235,7 @@ namespace UserInterface2._0
             // groupBoxNewCreditCard
             // 
             this.groupBoxNewCreditCard.AutoSize = true;
+            this.groupBoxNewCreditCard.Controls.Add(this.buttonCancelNewCC);
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxYear);
             this.groupBoxNewCreditCard.Controls.Add(this.labelYear);
             this.groupBoxNewCreditCard.Controls.Add(this.labelMonth);
@@ -255,6 +257,17 @@ namespace UserInterface2._0
             this.groupBoxNewCreditCard.TabStop = false;
             this.groupBoxNewCreditCard.Text = "NEW CREDIT CARD";
             this.groupBoxNewCreditCard.Visible = false;
+            // 
+            // buttonCancelNewCC
+            // 
+            this.buttonCancelNewCC.Location = new System.Drawing.Point(254, 96);
+            this.buttonCancelNewCC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelNewCC.Name = "buttonCancelNewCC";
+            this.buttonCancelNewCC.Size = new System.Drawing.Size(67, 20);
+            this.buttonCancelNewCC.TabIndex = 16;
+            this.buttonCancelNewCC.Text = "Cancel";
+            this.buttonCancelNewCC.UseVisualStyleBackColor = true;
+            this.buttonCancelNewCC.Click += new System.EventHandler(this.buttonCancelNewCC_Click);
             // 
             // textBoxYear
             // 
@@ -417,5 +430,6 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelSlash;
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label labelMonth;
+        private System.Windows.Forms.Button buttonCancelNewCC;
     }
 }

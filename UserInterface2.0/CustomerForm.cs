@@ -42,6 +42,7 @@ namespace UserInterface2._0
             buttonDelete.Visible = true;
             buttonAdd.Visible = false;
 
+
         }
 
         public override void buttonListDetails_Click(object sender, EventArgs e) 
@@ -52,9 +53,18 @@ namespace UserInterface2._0
                 textBoxFirstName.Text = aCustomer.Name;
                 textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
                 textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
+
+                //inside the hidden credit card info text boxes, for the purpose of being able to update the customer's name without updating their info
+                textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+                //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
+                textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
+                textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+
                 buttonDelete.Enabled = true;
                 buttonModify.Enabled = true;
                 buttonUpdateCreditCard.Enabled = true;
+
+
             }
             catch
             {
@@ -80,16 +90,50 @@ namespace UserInterface2._0
             textBoxLastName.Clear();
         }
 
+        //Modify opens up the groupbox for modification and hides the buttons that i don't want available
         public override void buttonModify_Click(object sender, EventArgs e)
         {
-            // base.buttonModify_Click(sender, e);
+            base.buttonModify_Click(sender, e);
+            textBoxFirstName.Enabled = true;
+            textBoxLastName.Enabled = true;
+                       
+            
+        }
 
+        //update credit card opens a groupbox to put in new credit card information
+        private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = true; 
+        }
+
+        // enter saves the credit card info and closes the groupbox
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = false;
+        }
+
+        //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
+        private void buttonCancelNewCC_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = false;
+            Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
+            textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+            //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
+            textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
+            textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+        }
+
+        //adds in the modifications and resets the readone page
+        public override void buttonUpdateProduct_Click(object sender, EventArgs e)
+        {
             try
             {
-                
-                customerBLL.Update(textBoxFirstName.Text,int.Parse(textBoxCustomerID.Text),
-                    long.Parse(textBoxCreditCardNumber.Text),int.Parse(textBoxYear.Text),
+
+                customerBLL.Update(textBoxFirstName.Text, int.Parse(textBoxCustomerID.Text),
+                    long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text),
                     int.Parse(textBoxMonth.Text));
+
+                MessageBox.Show("Customer details updated.");
             }
             catch
             {
@@ -97,23 +141,11 @@ namespace UserInterface2._0
             }
         }
 
-        public override void buttonDelete_Click(object sender, EventArgs e) 
+
+
+        public override void buttonDelete_Click(object sender, EventArgs e)
         {
             customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
-        }
-
-
-               
-     
-
-        private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
-        {
-            groupBoxNewCreditCard.Visible = true; 
-        }
-
-        private void buttonEnter_Click(object sender, EventArgs e)
-        {
-            groupBoxNewCreditCard.Visible = false;
         }
 
     }
