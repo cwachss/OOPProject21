@@ -19,6 +19,8 @@ namespace UserInterface2._0
          * the UI has sections for first and last name. right now, the DAL only receives a full name. We need to decide which option we like better
          * the credit card section right now only allows for the customer name to be on the credit card. this needs to be changed.
          * we need to set up the code so you cannot add a customer unless the credit card is filled out. Maybe that means having the groupbox set up differently for add, right now I set it up only for the read/delete/modify. there are ways to make things move around depending on what button you press.
+         * changes to make:
+         * string credit card, 
          */
         CustomerBLL customerBLL;
         public CustomerForm()
@@ -40,6 +42,7 @@ namespace UserInterface2._0
             buttonDelete.Visible = true;
             buttonAdd.Visible = false;
 
+
         }
 
         public override void buttonListDetails_Click(object sender, EventArgs e) 
@@ -50,9 +53,18 @@ namespace UserInterface2._0
                 textBoxFirstName.Text = aCustomer.Name;
                 textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
                 textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
+
+                //inside the hidden credit card info text boxes, for the purpose of being able to update the customer's name without updating their info
+                textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+                //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
+                textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
+                textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+
                 buttonDelete.Enabled = true;
                 buttonModify.Enabled = true;
                 buttonUpdateCreditCard.Enabled = true;
+
+
             }
             catch
             {
@@ -78,16 +90,50 @@ namespace UserInterface2._0
             textBoxLastName.Clear();
         }
 
+        //Modify opens up the groupbox for modification and hides the buttons that i don't want available
         public override void buttonModify_Click(object sender, EventArgs e)
         {
-            // base.buttonModify_Click(sender, e);
+            base.buttonModify_Click(sender, e);
+            textBoxFirstName.Enabled = true;
+            textBoxLastName.Enabled = true;
+                       
+            
+        }
 
+        //update credit card opens a groupbox to put in new credit card information
+        private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = true; 
+        }
+
+        // enter saves the credit card info and closes the groupbox
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = false;
+        }
+
+        //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
+        private void buttonCancelNewCC_Click(object sender, EventArgs e)
+        {
+            groupBoxNewCreditCard.Visible = false;
+            Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
+            textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+            //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
+            textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
+            textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+        }
+
+        //adds in the modifications and resets the readone page
+        public override void buttonUpdateProduct_Click(object sender, EventArgs e)
+        {
             try
             {
-                CustomerBLL bLL = new CustomerBLL();
-                bLL.Update(textBoxCustomerName.Text,int.Parse(textBoxCustomerID.Text),
-                    long.Parse(textBoxCCNumber.Text),int.Parse(textBoxCCYear.Text),
-                    int.Parse(textBoxCCMonth.Text));
+
+                customerBLL.Update(textBoxFirstName.Text, int.Parse(textBoxCustomerID.Text),
+                    long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text),
+                    int.Parse(textBoxMonth.Text));
+
+                MessageBox.Show("Customer details updated.");
             }
             catch
             {
@@ -96,21 +142,11 @@ namespace UserInterface2._0
         }
 
 
-        public void Delete()
-        {
 
+        public override void buttonDelete_Click(object sender, EventArgs e)
+        {
+            customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
         }
 
-        public void ReadOne()
-        {
-
-        }
-
-       
-        public override void buttonReadOne_Click(object sender, EventArgs e) 
-        {
-            HideMainMenu();
-
-        }
     }
 }

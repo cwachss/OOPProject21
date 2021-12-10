@@ -114,7 +114,22 @@ namespace DAL
 
         public void Delete(int idNum)
         {
-            customerList.Remove(Read(idNum));
+            //if(productNum)
+            int index = 0;
+            //while loop to find id number
+            while (customerList[index].ID != idNum)
+            {
+                if (index < customerList.Count)
+                {
+                    index++;
+                }
+                else
+                {
+                    throw new Exception("Customer not found.");
+                }
+            }
+
+            customerList.Remove(customerList[index]);
 
         }
 
