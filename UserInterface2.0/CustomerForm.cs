@@ -43,8 +43,6 @@ namespace UserInterface2._0
             buttonModify.Visible = true;
             buttonDelete.Visible = true;
             buttonAdd.Visible = false;
-
-
         }
         //lists customer's details
         public override void buttonListDetails_Click(object sender, EventArgs e) 
@@ -52,7 +50,8 @@ namespace UserInterface2._0
             try
             {
                 Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
-                textBoxFirstName.Text = aCustomer.Name;
+                textBoxFirstName.Text = aCustomer.FirstName;
+                textBoxLastName.Text = aCustomer.LastName;
                 textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
                 textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
 
@@ -98,7 +97,11 @@ namespace UserInterface2._0
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
-            customerBLL.Read(int.Parse(textBoxCustomerID.Text));
+            customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text), long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
+
+
+            buttonListDetails_Click(sender,e);
+          
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
@@ -110,6 +113,7 @@ namespace UserInterface2._0
             //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
             textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
             textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+
         }
 
         //adds in the modifications and resets the readone page
@@ -118,7 +122,7 @@ namespace UserInterface2._0
             try
             {
 
-                customerBLL.Update(textBoxFirstName.Text, int.Parse(textBoxCustomerID.Text),
+                customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text),
                     long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text),
                     int.Parse(textBoxMonth.Text));
 

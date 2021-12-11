@@ -15,7 +15,7 @@ namespace BLL
 
            
             CustomerBLL mister = new CustomerBLL();
-            mister.Create("joe", 111, 1231232312, 2021, 12);
+            //mister.Create("joe", 111, 1231232312, 2021, 12);
 
             Console.WriteLine(mister.Read(11111));
 

@@ -14,17 +14,18 @@ namespace BLL
 
 
         /// <summary>
-        /// method that adds a customer's information to the list in the BLL 
+        /// method that adds a customer's information to the list in the BLL
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="first_name"></param>
+        /// <param name="last_name"></param>
         /// <param name="idNum"></param>
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
         /// <returns></returns>
-        public CustomerDAL Create(string name, int idNum, int creditCardNum, int year, int month)
+        public CustomerDAL Create(string first_name, string last_name, int idNum, int creditCardNum, int year, int month)
         {
-            misterA.Create(name,idNum,creditCardNum,year,month);
+            misterA.Create(first_name, last_name, idNum,creditCardNum,year,month);
             return misterA;
         }
 
@@ -53,10 +54,10 @@ namespace BLL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Update(string name, int idNum, long creditCardNum, int year, int month)
+        public void Update(string first_name, string last_name, int idNum, long creditCardNum, int year, int month)
         
         {
-            misterA.Update(name, idNum, creditCardNum, year, month);
+            misterA.Update(first_name, last_name, idNum, creditCardNum, year, month);
         }
 
         public void Delete(int idNum)

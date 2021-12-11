@@ -11,17 +11,17 @@ namespace Entities
         public CreditCard myCreditCard;
         DateTime expirationDate;
 
-        public Customer(string name, int idNum, long creditCardNum, int year, int month) :base(name, idNum)
+        public Customer(string firstName, string lastName, int idNum, long creditCardNum, int year, int month) :base(firstName, lastName, idNum)
         {
             expirationDate = new DateTime(year, month, 1);
-            myCreditCard = new CreditCard(name, creditCardNum, expirationDate);
+            myCreditCard = new CreditCard(firstName,lastName, creditCardNum, expirationDate);
         }
 
-        public Customer(string name, int idNum, CreditCard aCreditCard) : base(name, idNum)
+        public Customer(string first_name,string last_name, int idNum, CreditCard aCreditCard) : base(first_name, last_name, idNum)
         {
            myCreditCard = aCreditCard;
         }
-        public Customer(Customer realCustomer) : base(realCustomer.Name, realCustomer.ID)
+        public Customer(Customer realCustomer) : base(realCustomer.FirstName, realCustomer.LastName, realCustomer.ID)
         {
             expirationDate = realCustomer.expirationDate;
             myCreditCard = realCustomer.myCreditCard;
@@ -36,8 +36,8 @@ namespace Entities
         //}
         public override string ToString()
         {
-            return $"{myCreditCard.OwnerName}\t{myCreditCard.CardNumber}\t" +
-                $"\t{expirationDate.Year}\t{expirationDate.Month}\t{expirationDate.Day}";
+            return $"{myCreditCard.OwnerFirstName}\t{myCreditCard.OwnerLastName}\t{myCreditCard.CardNumber}\t" +
+                $"\t{expirationDate.Year}\t{expirationDate.Month}";
         }
 
     }

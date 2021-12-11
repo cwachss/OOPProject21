@@ -373,9 +373,9 @@ namespace UserInterface2._0
             this.labelPrintInfo.AutoSize = true;
             this.labelPrintInfo.Location = new System.Drawing.Point(12, 58);
             this.labelPrintInfo.Name = "labelPrintInfo";
-            this.labelPrintInfo.Size = new System.Drawing.Size(390, 16);
+            this.labelPrintInfo.Size = new System.Drawing.Size(347, 16);
             this.labelPrintInfo.TabIndex = 30;
-            this.labelPrintInfo.Text = "Name:      CreditCardNumber:      Expiration- Year      Month      Day";
+            this.labelPrintInfo.Text = "Name:      CreditCardNumber:      Expiration- Year      Month";
             this.labelPrintInfo.Visible = false;
             // 
             // CustomerForm
