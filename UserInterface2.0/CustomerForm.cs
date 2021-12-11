@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 using Entities;
 
 namespace UserInterface2._0
@@ -38,9 +39,26 @@ namespace UserInterface2._0
             textBoxCustomerID.Enabled = true;
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
-            buttonUpdateCreditCard.Enabled = true;
+            buttonUpdateCreditCard.Enabled = true;//this is not working-not sure why           
         }
 
+        public override void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text,
+                                int.Parse(textBoxCustomerID.Text), int.Parse(textBoxCreditCardNumber.Text),
+                                int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
+                buttonReadAll_Click(sender, e);
+
+                MessageBox.Show("New customer details added.", "Success!");
+
+            }
+            catch
+            {
+                MessageBox.Show("One of the boxes weren't filled in correctly.", "Error");
+            }
+            }
         //Opens the readOne 'page'
         public override void buttonReadOne_Click(object sender, EventArgs e)
         {
@@ -99,8 +117,7 @@ namespace UserInterface2._0
 
         //update credit card opens a groupbox to put in new credit card information
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
-        {
-            
+        {           
             groupBoxNewCreditCard.Visible = true;
             groupBoxNewCreditCard.Enabled=true;
         }

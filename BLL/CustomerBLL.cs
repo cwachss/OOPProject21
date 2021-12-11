@@ -35,6 +35,7 @@ namespace BLL
         /// <returns></returns>
         public List<Customer> ReadAll()
         {
+            misterA.ReadAll();
             return misterA.ReadAll();
 
         }
