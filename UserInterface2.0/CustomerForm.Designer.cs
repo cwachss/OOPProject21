@@ -243,6 +243,7 @@ namespace UserInterface2._0
             this.groupBoxNewCreditCard.Controls.Add(this.labelName);
             this.groupBoxNewCreditCard.Controls.Add(this.labelExpirationDate);
             this.groupBoxNewCreditCard.Controls.Add(this.labelCCNum);
+            this.groupBoxNewCreditCard.Enabled = false;
             this.groupBoxNewCreditCard.Font = new System.Drawing.Font("Nirmala UI", 8.1F);
             this.groupBoxNewCreditCard.Location = new System.Drawing.Point(59, 326);
             this.groupBoxNewCreditCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -383,8 +384,8 @@ namespace UserInterface2._0
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 615);
-            this.Controls.Add(this.labelPrintInfo);
             this.Controls.Add(this.groupBoxNewCreditCard);
+            this.Controls.Add(this.labelPrintInfo);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
@@ -398,8 +399,8 @@ namespace UserInterface2._0
             this.Controls.SetChildIndex(this.buttonListDetails, 0);
             this.Controls.SetChildIndex(this.textBoxProductNumber2, 0);
             this.Controls.SetChildIndex(this.groupBoxProductDetails, 0);
-            this.Controls.SetChildIndex(this.groupBoxNewCreditCard, 0);
             this.Controls.SetChildIndex(this.labelPrintInfo, 0);
+            this.Controls.SetChildIndex(this.groupBoxNewCreditCard, 0);
             this.groupBoxProductDetails.ResumeLayout(false);
             this.groupBoxProductDetails.PerformLayout();
             this.groupBoxNewCreditCard.ResumeLayout(false);

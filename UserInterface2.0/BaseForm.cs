@@ -19,7 +19,15 @@ namespace UserInterface2._0
             InitializeComponent();
         }
 
-        public virtual void buttonCreate_Click(object sender, EventArgs e) { }
+        public virtual void buttonCreate_Click(object sender, EventArgs e) 
+        {
+            HideMenuButtons();
+            textBoxPrintProducts.Visible = true;
+            buttonReadAll_Click(sender,e);
+            groupBoxProductDetails.Visible = true;
+            //groupBoxProductDetails.Enabled = true;
+           
+        }
 
         public virtual void buttonReadOne_Click(object sender, EventArgs e) { }
 

@@ -23,15 +23,26 @@ namespace UserInterface2._0
          * string credit card, 
          */
         CustomerBLL customerBLL;
-       //ctor
+        //ctor
         public CustomerForm()
         {
             InitializeComponent();
             labelProductMenu.Text = "Customer Menu";
             customerBLL = new CustomerBLL();
         }
+
+        //creates new customer
+        public override void buttonCreate_Click(object sender, EventArgs e)
+        {
+            base.buttonCreate_Click(sender, e);
+            textBoxCustomerID.Enabled = true;
+            textBoxFirstName.Enabled = true;
+            textBoxLastName.Enabled = true;
+            buttonUpdateCreditCard.Enabled = true;
+        }
+
         //Opens the readOne 'page'
-        public override void buttonReadOne_Click(object sender, EventArgs e) 
+        public override void buttonReadOne_Click(object sender, EventArgs e)
         {
             ClearReadOneTextBoxes();//so it resets the textboxes as blank
             HideMenuButtons();
@@ -45,7 +56,7 @@ namespace UserInterface2._0
             buttonAdd.Visible = false;
         }
         //lists customer's details
-        public override void buttonListDetails_Click(object sender, EventArgs e) 
+        public override void buttonListDetails_Click(object sender, EventArgs e)
         {
             try
             {
@@ -73,8 +84,8 @@ namespace UserInterface2._0
             }
         }
 
-       
-        
+
+
 
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
         public override void buttonModify_Click(object sender, EventArgs e)
@@ -82,32 +93,35 @@ namespace UserInterface2._0
             base.buttonModify_Click(sender, e);
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
-                       
-            
+
+
         }
 
         //update credit card opens a groupbox to put in new credit card information
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
         {
-
-            groupBoxNewCreditCard.Visible = true; 
+            
+            groupBoxNewCreditCard.Visible = true;
+            groupBoxNewCreditCard.Enabled=true;
         }
 
         // enter saves the credit card info and closes the groupbox
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled = false;
             customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text), long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
 
 
-            buttonListDetails_Click(sender,e);
-          
+            buttonListDetails_Click(sender, e);
+
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
         private void buttonCancelNewCC_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled=false;
             Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
             textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
             //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
@@ -134,11 +148,11 @@ namespace UserInterface2._0
             }
         }
 
-        public override void buttonReadAll_Click(object sender, EventArgs e) 
+        public override void buttonReadAll_Click(object sender, EventArgs e)
         {
-            base.buttonReadAll_Click(sender,e);
+            base.buttonReadAll_Click(sender, e);
             labelPrintInfo.Visible = true;//will delete after base works
-            
+
             try
             {
 
@@ -155,7 +169,7 @@ namespace UserInterface2._0
                 MessageBox.Show("No data yet.", "Error");
 
             }
-            
+
         }
 
         public override void buttonDelete_Click(object sender, EventArgs e)
@@ -195,5 +209,7 @@ namespace UserInterface2._0
             textBoxNameOnCard.Clear();
             textBoxCreditCardNumber.Clear();
         }
+
+        
     }
 }
