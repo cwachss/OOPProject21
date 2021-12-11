@@ -99,9 +99,7 @@ namespace UserInterface2._0
             // 
             // textBoxPrintProducts
             // 
-            this.textBoxPrintProducts.Location = new System.Drawing.Point(13, 80);
             this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPrintProducts.Size = new System.Drawing.Size(580, 473);
             // 
             // groupBoxProductDetails
             // 
@@ -129,10 +127,6 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonUpdateProduct, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxLastName, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelLastName, 0);
-            // 
-            // buttonUpdateProduct
-            // 
-            this.buttonUpdateProduct.Text = "Update Customer Details";
             // 
             // buttonAdd
             // 

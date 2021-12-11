@@ -32,6 +32,7 @@ namespace UserInterface2._0
 
         public override void buttonReadOne_Click(object sender, EventArgs e) 
         {
+            ClearReadOneTextBoxes();//so it resets the textboxes as blank
             HideMenuButtons();
             groupBoxProductDetails.Visible = true;
             buttonReturnMenu.Visible = true;
@@ -72,7 +73,7 @@ namespace UserInterface2._0
             }
         }
 
-        protected override void ResetAndHideEverything()//I think this should be in the base form, since products will use it.
+        protected override void ResetAndHideEverything()//I think some of this should be in the base form, since products will use it. Since you wrote this, I'll let you decide where to put it.
         {
             textBoxPrintProducts.Visible = false;
             labelPrintInfo.Visible = false;
@@ -83,7 +84,9 @@ namespace UserInterface2._0
             textBoxProductNumber2.Visible = false;
             buttonListDetails.Visible = false;
 
-            
+            //this will remain in child class
+            groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled=false;
             
         }
 
@@ -92,6 +95,14 @@ namespace UserInterface2._0
             textBoxCustomerID.Clear();
             textBoxFirstName.Clear();
             textBoxLastName.Clear();
+            textBoxCCNum.Clear();
+            textBoxProductNumber2.Clear();
+
+            //clear the creditcard boxes as well
+            textBoxYear.Clear();
+            textBoxMonth.Clear();
+            textBoxNameOnCard.Clear();
+            textBoxCreditCardNumber.Clear();
         }
 
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
@@ -107,6 +118,7 @@ namespace UserInterface2._0
         //update credit card opens a groupbox to put in new credit card information
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
         {
+
             groupBoxNewCreditCard.Visible = true; 
         }
 
@@ -120,11 +132,14 @@ namespace UserInterface2._0
         private void buttonCancelNewCC_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
-            Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
-            textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
-            //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
-            textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
-            textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+            //Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
+            //textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+            ////textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
+            //textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
+            //textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+            //not sure you ned to re-read it in...
+
+
         }
 
         //adds in the modifications and resets the readone page
@@ -174,5 +189,6 @@ namespace UserInterface2._0
             customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
         }
 
+        
     }
 }
