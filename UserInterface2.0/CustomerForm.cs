@@ -72,14 +72,17 @@ namespace UserInterface2._0
             }
         }
 
-        protected override void ResetAndHideEverything()
+        protected override void ResetAndHideEverything()//I think this should be in the base form, since products will use it.
         {
+            labelPrintInfo.Visible = false;
             groupBoxProductDetails.Visible = false;
             buttonReturnMenu.Visible = false;
 
             labelEnterNumber.Visible = false;
             textBoxProductNumber2.Visible = false;
             buttonListDetails.Visible = false;
+
+            
             
         }
 
@@ -141,7 +144,25 @@ namespace UserInterface2._0
             }
         }
 
+        public override void buttonReadAll_Click(object sender, EventArgs e) 
+        {
+            base.buttonReadAll_Click(sender,e);
+            try
+            {
+                customerBLL.ReadAll();
 
+                foreach(Customer ploni in customerBLL.ReadAll())
+                {
+                    textBoxPrintProducts.AppendText(ploni.ToString() + "\r\n"); 
+                }
+               
+            }
+            catch
+            {
+
+            }
+            
+        }
 
         public override void buttonDelete_Click(object sender, EventArgs e)
         {

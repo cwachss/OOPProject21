@@ -32,10 +32,11 @@ namespace BLL
         /// method that returns the list of customers and their information in the BLL
         /// </summary>
         /// <returns></returns>
-        //public List<Customer> ReadAll()
-        //{
-        //    return misterA.ReadAll();
-        //}
+        public List<Customer> ReadAll()
+        {
+            return misterA.ReadAll();
+
+        }
 
 
         public Customer Read(int idNum)

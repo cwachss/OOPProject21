@@ -42,3 +42,4 @@ C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\Entities.pdb
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\Entities.exe.config
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.MainMenu.resources
+C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterface2.0\obj\Debug\UserInterface2._0.MainMenu.resources

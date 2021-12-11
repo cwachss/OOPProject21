@@ -37,7 +37,7 @@ namespace Entities
         public override string ToString()
         {
             return $"{myCreditCard.OwnerName}\t{myCreditCard.CardNumber}\t" +
-                $"{expirationDate.Year}\t{expirationDate.Month}\t{expirationDate.Day}" + base.ToString();
+                $"\t{expirationDate.Year}\t{expirationDate.Month}\t{expirationDate.Day}";
         }
 
     }
