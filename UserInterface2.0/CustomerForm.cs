@@ -23,13 +23,14 @@ namespace UserInterface2._0
          * string credit card, 
          */
         CustomerBLL customerBLL;
+       //ctor
         public CustomerForm()
         {
             InitializeComponent();
             labelProductMenu.Text = "Customer Menu";
             customerBLL = new CustomerBLL();
         }
-
+        //Opens the readOne 'page'
         public override void buttonReadOne_Click(object sender, EventArgs e) 
         {
             ClearReadOneTextBoxes();//so it resets the textboxes as blank
@@ -45,7 +46,7 @@ namespace UserInterface2._0
 
 
         }
-
+        //lists customer's details
         public override void buttonListDetails_Click(object sender, EventArgs e) 
         {
             try
@@ -73,37 +74,8 @@ namespace UserInterface2._0
             }
         }
 
-        protected override void ResetAndHideEverything()//I think some of this should be in the base form, since products will use it. Since you wrote this, I'll let you decide where to put it.
-        {
-            textBoxPrintProducts.Visible = false;
-            labelPrintInfo.Visible = false;
-            groupBoxProductDetails.Visible = false;
-            buttonReturnMenu.Visible = false;
-
-            labelEnterNumber.Visible = false;
-            textBoxProductNumber2.Visible = false;
-            buttonListDetails.Visible = false;
-
-            //this will remain in child class
-            groupBoxNewCreditCard.Visible = false;
-            groupBoxNewCreditCard.Enabled=false;
-            
-        }
-
-        private void ClearReadOneTextBoxes()
-        {
-            textBoxCustomerID.Clear();
-            textBoxFirstName.Clear();
-            textBoxLastName.Clear();
-            textBoxCCNum.Clear();
-            textBoxProductNumber2.Clear();
-
-            //clear the creditcard boxes as well
-            textBoxYear.Clear();
-            textBoxMonth.Clear();
-            textBoxNameOnCard.Clear();
-            textBoxCreditCardNumber.Clear();
-        }
+       
+        
 
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
         public override void buttonModify_Click(object sender, EventArgs e)
@@ -126,20 +98,18 @@ namespace UserInterface2._0
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
+            customerBLL.Read(int.Parse(textBoxCustomerID.Text));
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
         private void buttonCancelNewCC_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
-            //Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
-            //textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
-            ////textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
-            //textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
-            //textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
-            //not sure you ned to re-read it in...
-
-
+            Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
+            textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+            //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
+            textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
+            textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
         }
 
         //adds in the modifications and resets the readone page
@@ -189,6 +159,37 @@ namespace UserInterface2._0
             customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
         }
 
-        
+
+        protected override void ResetAndHideEverything()//I think some of this should be in the base form, since products will use it. Since you wrote this, I'll let you decide where to put it.
+        {
+            textBoxPrintProducts.Visible = false;
+            labelPrintInfo.Visible = false;
+            groupBoxProductDetails.Visible = false;
+            buttonReturnMenu.Visible = false;
+
+            labelEnterNumber.Visible = false;
+            textBoxProductNumber2.Visible = false;
+            buttonListDetails.Visible = false;
+
+            //this will remain in child class
+            groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled = false;
+
+        }
+
+        private void ClearReadOneTextBoxes()
+        {
+            textBoxCustomerID.Clear();
+            textBoxFirstName.Clear();
+            textBoxLastName.Clear();
+            textBoxCCNum.Clear();
+            textBoxProductNumber2.Clear();
+
+            //clear the creditcard boxes as well
+            textBoxYear.Clear();
+            textBoxMonth.Clear();
+            textBoxNameOnCard.Clear();
+            textBoxCreditCardNumber.Clear();
+        }
     }
 }
