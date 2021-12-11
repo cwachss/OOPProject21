@@ -158,13 +158,13 @@ namespace UserInterface2._0
             // 
             // textBoxPrintProducts
             // 
-            this.textBoxPrintProducts.Location = new System.Drawing.Point(37, 64);
+            this.textBoxPrintProducts.Location = new System.Drawing.Point(13, 80);
             this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrintProducts.Multiline = true;
             this.textBoxPrintProducts.Name = "textBoxPrintProducts";
             this.textBoxPrintProducts.ReadOnly = true;
             this.textBoxPrintProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxPrintProducts.Size = new System.Drawing.Size(580, 488);
+            this.textBoxPrintProducts.Size = new System.Drawing.Size(580, 473);
             this.textBoxPrintProducts.TabIndex = 22;
             this.textBoxPrintProducts.Visible = false;
             // 
@@ -241,7 +241,7 @@ namespace UserInterface2._0
             // 
             // labelPrintInfo
             // 
-            this.labelPrintInfo.Location = new System.Drawing.Point(34, 32);
+            this.labelPrintInfo.Location = new System.Drawing.Point(12, 62);
             this.labelPrintInfo.Name = "labelPrintInfo";
             this.labelPrintInfo.Size = new System.Drawing.Size(390, 16);
             this.labelPrintInfo.TabIndex = 31;

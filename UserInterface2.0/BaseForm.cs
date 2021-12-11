@@ -25,11 +25,13 @@ namespace UserInterface2._0
 
          public virtual void buttonReadAll_Click(object sender, EventArgs e) 
         {
+            textBoxPrintProducts.Text = null;//this way it resets the listbox as blank and then refills it.
             HideMenuButtons();  
             textBoxPrintProducts.Visible = true;
             //labelPrintInfo.Visible = true; //need to figure out how to make this button inherited...
             buttonReturnMenu.Visible = true;
             buttonReturnMenu.Enabled = true;
+
         }
 
         public virtual void buttonListDetails_Click(object sender, EventArgs e) { }

@@ -74,6 +74,7 @@ namespace UserInterface2._0
 
         protected override void ResetAndHideEverything()//I think this should be in the base form, since products will use it.
         {
+            textBoxPrintProducts.Visible = false;
             labelPrintInfo.Visible = false;
             groupBoxProductDetails.Visible = false;
             buttonReturnMenu.Visible = false;
@@ -147,18 +148,22 @@ namespace UserInterface2._0
         public override void buttonReadAll_Click(object sender, EventArgs e) 
         {
             base.buttonReadAll_Click(sender,e);
+            labelPrintInfo.Visible = true;//will delete after base works
+            
             try
             {
+
                 customerBLL.ReadAll();
 
-                foreach(Customer ploni in customerBLL.ReadAll())
+                foreach (Customer ploni in customerBLL.ReadAll())
                 {
-                    textBoxPrintProducts.AppendText(ploni.ToString() + "\r\n"); 
+                    textBoxPrintProducts.AppendText(ploni.ToString() + "\r\n");
                 }
-               
+
             }
             catch
             {
+                MessageBox.Show("No data yet.", "Error");
 
             }
             

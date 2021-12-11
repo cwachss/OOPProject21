@@ -99,9 +99,9 @@ namespace UserInterface2._0
             // 
             // textBoxPrintProducts
             // 
-            this.textBoxPrintProducts.Location = new System.Drawing.Point(36, 57);
+            this.textBoxPrintProducts.Location = new System.Drawing.Point(13, 80);
             this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPrintProducts.Size = new System.Drawing.Size(580, 600);
+            this.textBoxPrintProducts.Size = new System.Drawing.Size(580, 473);
             // 
             // groupBoxProductDetails
             // 
@@ -377,7 +377,7 @@ namespace UserInterface2._0
             // labelPrintInfo
             // 
             this.labelPrintInfo.AutoSize = true;
-            this.labelPrintInfo.Location = new System.Drawing.Point(33, 33);
+            this.labelPrintInfo.Location = new System.Drawing.Point(12, 58);
             this.labelPrintInfo.Name = "labelPrintInfo";
             this.labelPrintInfo.Size = new System.Drawing.Size(390, 16);
             this.labelPrintInfo.TabIndex = 30;
