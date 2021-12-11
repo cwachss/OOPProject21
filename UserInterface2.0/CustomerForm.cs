@@ -158,6 +158,11 @@ namespace UserInterface2._0
                     int.Parse(textBoxMonth.Text));
 
                 MessageBox.Show("Customer details updated.");
+                buttonModify.Visible = true;
+                buttonModify.Enabled=true;
+                buttonDelete.Visible=true;
+                buttonDelete.Enabled=true;
+                buttonUpdateProduct.Visible=false;
             }
             catch
             {

@@ -53,6 +53,7 @@ namespace UserInterface2._0
             buttonModify.Visible = false;
             buttonDelete.Visible = false;
             buttonUpdateProduct.Visible = true;
+            
         }
 
         public virtual void buttonDelete_Click(object sender, EventArgs e) 
