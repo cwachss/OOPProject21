@@ -1,7 +1,7 @@
 ﻿
 namespace UserInterfaceOnceMore
 {
-    partial class Form1
+    partial class BaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace UserInterfaceOnceMore
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 354);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Name = "BaseForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 

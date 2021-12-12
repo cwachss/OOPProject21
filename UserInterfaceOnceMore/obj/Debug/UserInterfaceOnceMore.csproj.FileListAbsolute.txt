@@ -1,0 +1,9 @@
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\bin\Debug\UserInterfaceOnceMore.exe.config
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\bin\Debug\UserInterfaceOnceMore.exe
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\bin\Debug\UserInterfaceOnceMore.pdb
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\obj\Debug\UserInterfaceOnceMore.BaseForm.resources
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\obj\Debug\UserInterfaceOnceMore.Properties.Resources.resources
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\obj\Debug\UserInterfaceOnceMore.csproj.GenerateResource.cache
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\obj\Debug\UserInterfaceOnceMore.csproj.CoreCompileInputs.cache
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\obj\Debug\UserInterfaceOnceMore.exe
+C:\Users\chani\source\repos\OOPProject\UserInterfaceOnceMore\obj\Debug\UserInterfaceOnceMore.pdb

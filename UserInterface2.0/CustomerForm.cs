@@ -50,7 +50,8 @@ namespace UserInterface2._0
             try
             {
                 Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
-                textBoxFirstName.Text = aCustomer.Name;
+                textBoxFirstName.Text = aCustomer.FirstName;
+                textBoxLastName.Text = aCustomer.LastName;
                 textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
                 textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
 
@@ -89,6 +90,7 @@ namespace UserInterface2._0
             textBoxFirstName.Clear();
             textBoxLastName.Clear();
             textBoxProductNumber2.Clear();
+            textBoxCCNum.Clear();
         }
 
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
@@ -97,6 +99,7 @@ namespace UserInterface2._0
             base.buttonModify_Click(sender, e);
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
+            buttonUpdateCreditCard.Visible = true;
                        
             
         }
@@ -104,7 +107,10 @@ namespace UserInterface2._0
         //update credit card opens a groupbox to put in new credit card information
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
         {
-            groupBoxNewCreditCard.Visible = true; 
+            groupBoxNewCreditCard.Visible = true;
+            textBoxCreditCardNumber.Clear();
+            textBoxMonth.Clear();
+            textBoxYear.Clear();
         }
 
         // enter saves the credit card info and closes the groupbox
@@ -130,11 +136,19 @@ namespace UserInterface2._0
             try
             {
 
-                customerBLL.Update(textBoxFirstName.Text, int.Parse(textBoxCustomerID.Text),
+                customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text),
                     long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text),
                     int.Parse(textBoxMonth.Text));
 
                 MessageBox.Show("Customer details updated.");
+                buttonUpdateCreditCard.Visible = false;
+                buttonUpdateProduct.Visible = false;
+                textBoxFirstName.Enabled = false;
+                textBoxLastName.Enabled = false;
+                buttonUpdateCreditCard.Visible = false;
+                buttonModify.Visible = true;
+                buttonDelete.Visible = true;
+                buttonListDetails_Click(sender, e);
             }
             catch
             {
@@ -146,8 +160,12 @@ namespace UserInterface2._0
 
         public override void buttonDelete_Click(object sender, EventArgs e)
         {
+
             customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
             ClearReadOneTextBoxes();
+            buttonDelete.Enabled = false;
+            buttonModify.Enabled = false;
+
         }
 
     }
