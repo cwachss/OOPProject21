@@ -63,29 +63,29 @@ namespace UserInterface2._0
             // 
             // buttonReadAll
             // 
-            this.buttonReadAll.Location = new System.Drawing.Point(262, 33);
+            this.buttonReadAll.Location = new System.Drawing.Point(262, 52);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonReadAll.Size = new System.Drawing.Size(262, 523);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 504);
             this.buttonReadAll.Text = "ALL CUSTOMERS";
             // 
             // buttonReadOne
             // 
-            this.buttonReadOne.Location = new System.Drawing.Point(524, 33);
+            this.buttonReadOne.Location = new System.Drawing.Point(524, 52);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonReadOne.Size = new System.Drawing.Size(262, 523);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 504);
             this.buttonReadOne.Text = "FIND CUSTOMER";
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(0, 33);
+            this.buttonCreate.Location = new System.Drawing.Point(0, 52);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCreate.Size = new System.Drawing.Size(262, 523);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 504);
             this.buttonCreate.Text = "NEW CUSTOMER";
             // 
             // labelProductMenu
             // 
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelProductMenu.Size = new System.Drawing.Size(786, 33);
+            this.labelProductMenu.Size = new System.Drawing.Size(786, 52);
             this.labelProductMenu.Text = "Customer Menu";
             // 
             // textBoxProductNumber2
