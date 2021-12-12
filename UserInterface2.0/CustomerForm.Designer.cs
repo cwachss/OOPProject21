@@ -405,7 +405,7 @@ namespace UserInterface2._0
             // labelPrintInfo2
             // 
             this.labelPrintInfo2.AutoSize = true;
-            this.labelPrintInfo2.Location = new System.Drawing.Point(37, 93);
+            this.labelPrintInfo2.Location = new System.Drawing.Point(25, 57);
             this.labelPrintInfo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrintInfo2.Name = "labelPrintInfo2";
             this.labelPrintInfo2.Size = new System.Drawing.Size(285, 13);
