@@ -18,15 +18,16 @@ C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\Us
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.CopyComplete
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.exe
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.exe.config
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.exe
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.pdb
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\BLL.exe
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\DAL.exe
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\Entities.exe
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\BLL.pdb
-C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\DAL.pdb
-C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\UserInterfaceLayer.exe.config
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\BLL.exe.config
+C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\DAL.pdb
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\DAL.exe.config
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\Entities.pdb
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\bin\Debug\Entities.exe.config
@@ -38,4 +39,3 @@ C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfac
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.exe
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.pdb
-C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.SuggestedBindingRedirects.cache

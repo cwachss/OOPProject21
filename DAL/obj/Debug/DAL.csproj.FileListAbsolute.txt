@@ -9,6 +9,7 @@ C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.csproj.CoreCo
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.pdb
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.csproj.SuggestedBindingRedirects.cache
 C:\Users\chani\source\repos\OOPProject\DAL\bin\Debug\DAL.exe.config
 C:\Users\chani\source\repos\OOPProject\DAL\bin\Debug\DAL.exe
 C:\Users\chani\source\repos\OOPProject\DAL\bin\Debug\DAL.pdb
@@ -20,4 +21,3 @@ C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.csproj.CoreCompileInput
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.exe
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.pdb
-C:\Users\shira\Source\Repos\cwachss\OOPProject21\DAL\obj\Debug\DAL.csproj.SuggestedBindingRedirects.cache
