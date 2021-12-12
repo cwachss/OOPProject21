@@ -25,8 +25,8 @@ PRODUCT some ideas for product GUI section:
 	view product: enter product number and then pull up info with options to delete or modify
 	modify allows you to enter a product number and then modify everything else, but initial text is what it is, and then they can change it
 CUSTOMER idea board:
-	fairly similar to the product one, but needs more complex details groupbox to allow for credit card info. but find dhould just show last four digits of creidt card
-	modify should have add.modify/delete credit card option as a sub option, and should be password protected or somethimg
+	fairly similar to the product one, but needs more complex details groupbox to allow for credit card info. but find should just show last four digits of credit card
+	modify should have add.modify/delete credit card option as a sub option, and should be password protected or something
 
 
 
@@ -34,5 +34,31 @@ CUSTOMER idea board:
 Shira 
 	credit card: have a text box dash text box dash ect. append the input together to make string of number together to check credit card number
 	only show last 4 digit to user unless input password
+	eee
+	make the enter the list buttons and add product ect...
 
-	
+	Order:
+		Customer id	product	quantity	cost
+		make sure both product and customer exist- and  there's enough in stock
+		after ordered	subtract from product's stock
+		Store the order's details-create a unique id number. Do this with static num of all products. or with dateTIme
+		
+			this way the customer can delete or modify an order
+		Let customer change their order.
+		perhaps on customer and/or products you can click order
+
+
+		E.C. charges in credit card
+
+
+
+		ReadAll orders	?let them modify there?
+		In BLL you do logic, not the DAL
+		so deduct from stock in BLL
+
+
+		Show product list on side? With pictures! in a scroll list!
+		
+		?Message box that says You sure you want to place order? with buttons "edit order" and "Buy".?
+		Write all orders and customers and product last details into a file-so it always saves.
+
