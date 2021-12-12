@@ -58,28 +58,28 @@ namespace UserInterface2._0
             // 
             // buttonReturnMenu
             // 
-            this.buttonReturnMenu.Location = new System.Drawing.Point(1, 366);
+            this.buttonReturnMenu.Location = new System.Drawing.Point(0, 457);
             this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(2);
             // 
             // buttonReadAll
             // 
-            this.buttonReadAll.Location = new System.Drawing.Point(196, 33);
+            this.buttonReadAll.Location = new System.Drawing.Point(262, 33);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonReadAll.Size = new System.Drawing.Size(196, 438);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 473);
             this.buttonReadAll.Text = "ALL CUSTOMERS";
             // 
             // buttonReadOne
             // 
-            this.buttonReadOne.Location = new System.Drawing.Point(392, 33);
+            this.buttonReadOne.Location = new System.Drawing.Point(524, 33);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonReadOne.Size = new System.Drawing.Size(196, 438);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 473);
             this.buttonReadOne.Text = "FIND CUSTOMER";
             // 
             // buttonCreate
             // 
             this.buttonCreate.Location = new System.Drawing.Point(0, 33);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCreate.Size = new System.Drawing.Size(196, 438);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 473);
             this.buttonCreate.Text = "NEW CUSTOMER";
             // 
             // labelProductMenu
@@ -90,17 +90,17 @@ namespace UserInterface2._0
             // 
             // textBoxProductNumber2
             // 
-            this.textBoxProductNumber2.Location = new System.Drawing.Point(33, 87);
+            this.textBoxProductNumber2.Location = new System.Drawing.Point(41, 124);
             this.textBoxProductNumber2.Margin = new System.Windows.Forms.Padding(2);
             // 
             // buttonListDetails
             // 
-            this.buttonListDetails.Location = new System.Drawing.Point(33, 118);
+            this.buttonListDetails.Location = new System.Drawing.Point(41, 171);
             this.buttonListDetails.Margin = new System.Windows.Forms.Padding(2);
             // 
             // labelEnterNumber
             // 
-            this.labelEnterNumber.Location = new System.Drawing.Point(30, 68);
+            this.labelEnterNumber.Location = new System.Drawing.Point(36, 87);
             this.labelEnterNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEnterNumber.Size = new System.Drawing.Size(205, 20);
             this.labelEnterNumber.Text = "Enter Customer ID Number:";
@@ -121,10 +121,10 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.Add(this.labelFirstName);
             this.groupBoxProductDetails.Controls.Add(this.textBoxFirstName);
             this.groupBoxProductDetails.Controls.Add(this.labelCustomerID);
-            this.groupBoxProductDetails.Location = new System.Drawing.Point(380, 37);
+            this.groupBoxProductDetails.Location = new System.Drawing.Point(483, 49);
             this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxProductDetails.Size = new System.Drawing.Size(256, 396);
+            this.groupBoxProductDetails.Size = new System.Drawing.Size(245, 399);
             this.groupBoxProductDetails.Text = "CUSTOMER DETAILS";
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelCustomerID, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxFirstName, 0);
@@ -140,15 +140,28 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxLastName, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelLastName, 0);
             // 
+            // buttonUpdateProduct
+            // 
+            this.buttonUpdateProduct.Location = new System.Drawing.Point(38, 338);
+            // 
+            // buttonModify
+            // 
+            this.buttonModify.Location = new System.Drawing.Point(37, 338);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(135, 338);
+            // 
             // buttonAdd
             // 
+            this.buttonAdd.Location = new System.Drawing.Point(37, 338);
             this.buttonAdd.Text = "ADD CUSTOMER";
             // 
             // textBoxCustomerID
             // 
             this.textBoxCustomerID.Enabled = false;
             this.textBoxCustomerID.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.textBoxCustomerID.Location = new System.Drawing.Point(30, 48);
+            this.textBoxCustomerID.Location = new System.Drawing.Point(30, 59);
             this.textBoxCustomerID.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxCustomerID.Name = "textBoxCustomerID";
             this.textBoxCustomerID.Size = new System.Drawing.Size(175, 31);
@@ -169,7 +182,7 @@ namespace UserInterface2._0
             // 
             this.textBoxCCNum.Enabled = false;
             this.textBoxCCNum.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.textBoxCCNum.Location = new System.Drawing.Point(30, 209);
+            this.textBoxCCNum.Location = new System.Drawing.Point(33, 257);
             this.textBoxCCNum.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxCCNum.Name = "textBoxCCNum";
             this.textBoxCCNum.Size = new System.Drawing.Size(172, 31);
@@ -190,7 +203,7 @@ namespace UserInterface2._0
             // 
             this.textBoxFirstName.Enabled = false;
             this.textBoxFirstName.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.textBoxFirstName.Location = new System.Drawing.Point(30, 102);
+            this.textBoxFirstName.Location = new System.Drawing.Point(30, 126);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(175, 31);
@@ -210,7 +223,7 @@ namespace UserInterface2._0
             // buttonUpdateCreditCard
             // 
             this.buttonUpdateCreditCard.Enabled = false;
-            this.buttonUpdateCreditCard.Location = new System.Drawing.Point(30, 236);
+            this.buttonUpdateCreditCard.Location = new System.Drawing.Point(38, 308);
             this.buttonUpdateCreditCard.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdateCreditCard.Name = "buttonUpdateCreditCard";
             this.buttonUpdateCreditCard.Size = new System.Drawing.Size(115, 19);
@@ -235,7 +248,7 @@ namespace UserInterface2._0
             // 
             this.textBoxLastName.Enabled = false;
             this.textBoxLastName.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.textBoxLastName.Location = new System.Drawing.Point(30, 154);
+            this.textBoxLastName.Location = new System.Drawing.Point(30, 190);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(175, 31);
@@ -244,6 +257,7 @@ namespace UserInterface2._0
             // groupBoxNewCreditCard
             // 
             this.groupBoxNewCreditCard.AutoSize = true;
+            this.groupBoxNewCreditCard.Controls.Add(this.labelExpirationDate);
             this.groupBoxNewCreditCard.Controls.Add(this.buttonCancelNewCC);
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxYear);
             this.groupBoxNewCreditCard.Controls.Add(this.labelYear);
@@ -254,15 +268,14 @@ namespace UserInterface2._0
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxCreditCardNumber);
             this.groupBoxNewCreditCard.Controls.Add(this.textBoxNameOnCard);
             this.groupBoxNewCreditCard.Controls.Add(this.labelName);
-            this.groupBoxNewCreditCard.Controls.Add(this.labelExpirationDate);
             this.groupBoxNewCreditCard.Controls.Add(this.labelCCNum);
             this.groupBoxNewCreditCard.Enabled = false;
             this.groupBoxNewCreditCard.Font = new System.Drawing.Font("Nirmala UI", 8.1F);
-            this.groupBoxNewCreditCard.Location = new System.Drawing.Point(33, 215);
+            this.groupBoxNewCreditCard.Location = new System.Drawing.Point(33, 275);
             this.groupBoxNewCreditCard.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxNewCreditCard.Name = "groupBoxNewCreditCard";
             this.groupBoxNewCreditCard.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxNewCreditCard.Size = new System.Drawing.Size(319, 144);
+            this.groupBoxNewCreditCard.Size = new System.Drawing.Size(340, 152);
             this.groupBoxNewCreditCard.TabIndex = 29;
             this.groupBoxNewCreditCard.TabStop = false;
             this.groupBoxNewCreditCard.Text = "NEW CREDIT CARD";
@@ -270,7 +283,7 @@ namespace UserInterface2._0
             // 
             // buttonCancelNewCC
             // 
-            this.buttonCancelNewCC.Location = new System.Drawing.Point(190, 78);
+            this.buttonCancelNewCC.Location = new System.Drawing.Point(262, 89);
             this.buttonCancelNewCC.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelNewCC.Name = "buttonCancelNewCC";
             this.buttonCancelNewCC.Size = new System.Drawing.Size(67, 20);
@@ -281,7 +294,7 @@ namespace UserInterface2._0
             // 
             // textBoxYear
             // 
-            this.textBoxYear.Location = new System.Drawing.Point(35, 75);
+            this.textBoxYear.Location = new System.Drawing.Point(50, 96);
             this.textBoxYear.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(42, 22);
@@ -291,7 +304,7 @@ namespace UserInterface2._0
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Nirmala UI", 8F);
-            this.labelYear.Location = new System.Drawing.Point(47, 113);
+            this.labelYear.Location = new System.Drawing.Point(47, 119);
             this.labelYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(27, 13);
@@ -302,7 +315,7 @@ namespace UserInterface2._0
             // 
             this.labelMonth.AutoSize = true;
             this.labelMonth.Font = new System.Drawing.Font("Nirmala UI", 8F);
-            this.labelMonth.Location = new System.Drawing.Point(5, 114);
+            this.labelMonth.Location = new System.Drawing.Point(5, 120);
             this.labelMonth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMonth.Name = "labelMonth";
             this.labelMonth.Size = new System.Drawing.Size(42, 13);
@@ -311,7 +324,7 @@ namespace UserInterface2._0
             // 
             // textBoxMonth
             // 
-            this.textBoxMonth.Location = new System.Drawing.Point(4, 75);
+            this.textBoxMonth.Location = new System.Drawing.Point(8, 96);
             this.textBoxMonth.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMonth.Name = "textBoxMonth";
             this.textBoxMonth.Size = new System.Drawing.Size(28, 22);
@@ -330,7 +343,7 @@ namespace UserInterface2._0
             // 
             // buttonEnter
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(164, 102);
+            this.buttonEnter.Location = new System.Drawing.Point(226, 113);
             this.buttonEnter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(103, 20);
@@ -341,7 +354,7 @@ namespace UserInterface2._0
             // 
             // textBoxCreditCardNumber
             // 
-            this.textBoxCreditCardNumber.Location = new System.Drawing.Point(124, 34);
+            this.textBoxCreditCardNumber.Location = new System.Drawing.Point(170, 46);
             this.textBoxCreditCardNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCreditCardNumber.Name = "textBoxCreditCardNumber";
             this.textBoxCreditCardNumber.Size = new System.Drawing.Size(159, 22);
@@ -349,7 +362,7 @@ namespace UserInterface2._0
             // 
             // textBoxNameOnCard
             // 
-            this.textBoxNameOnCard.Location = new System.Drawing.Point(3, 34);
+            this.textBoxNameOnCard.Location = new System.Drawing.Point(7, 46);
             this.textBoxNameOnCard.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNameOnCard.Name = "textBoxNameOnCard";
             this.textBoxNameOnCard.Size = new System.Drawing.Size(146, 22);
@@ -370,7 +383,7 @@ namespace UserInterface2._0
             // 
             this.labelExpirationDate.AutoSize = true;
             this.labelExpirationDate.Font = new System.Drawing.Font("Nirmala UI", 11.1F, System.Drawing.FontStyle.Bold);
-            this.labelExpirationDate.Location = new System.Drawing.Point(3, 71);
+            this.labelExpirationDate.Location = new System.Drawing.Point(3, 74);
             this.labelExpirationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelExpirationDate.Name = "labelExpirationDate";
             this.labelExpirationDate.Size = new System.Drawing.Size(117, 20);
@@ -403,7 +416,7 @@ namespace UserInterface2._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 471);
+            this.ClientSize = new System.Drawing.Size(786, 506);
             this.Controls.Add(this.groupBoxNewCreditCard);
             this.Controls.Add(this.labelPrintInfo);
             this.Margin = new System.Windows.Forms.Padding(2);

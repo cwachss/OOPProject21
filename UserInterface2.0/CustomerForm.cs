@@ -94,6 +94,8 @@ namespace UserInterface2._0
                 buttonModify.Enabled = true;
                 buttonUpdateCreditCard.Enabled = true;
 
+                textBoxFirstName.Enabled = false;
+                textBoxLastName.Enabled = false;
 
             }
             catch
@@ -169,6 +171,7 @@ namespace UserInterface2._0
                 buttonDelete.Visible=true;
                 buttonDelete.Enabled=true;
                 buttonUpdateProduct.Visible=false;
+                
             }
             catch
             {
