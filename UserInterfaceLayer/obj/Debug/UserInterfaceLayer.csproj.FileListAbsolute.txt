@@ -39,3 +39,4 @@ C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfac
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.exe
 C:\Users\chani\source\repos\OOPProject\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterfaceLayer\obj\Debug\UserInterfaceLayer.csproj.SuggestedBindingRedirects.cache

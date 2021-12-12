@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 using Entities;
 
 namespace UserInterface2._0
@@ -23,6 +24,7 @@ namespace UserInterface2._0
          * string credit card, 
          */
         CustomerBLL customerBLL;
+        //ctor
         public CustomerForm()
         {
             InitializeComponent();
@@ -30,8 +32,37 @@ namespace UserInterface2._0
             customerBLL = new CustomerBLL();
         }
 
-        public override void buttonReadOne_Click(object sender, EventArgs e) 
+        //creates new customer
+        public override void buttonCreate_Click(object sender, EventArgs e)
         {
+            base.buttonCreate_Click(sender, e);
+            textBoxCustomerID.Enabled = true;
+            textBoxFirstName.Enabled = true;
+            textBoxLastName.Enabled = true;
+            buttonUpdateCreditCard.Enabled = true;//this is not working-not sure why           
+        }
+
+        public override void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text,
+                                int.Parse(textBoxCustomerID.Text), int.Parse(textBoxCreditCardNumber.Text),
+                                int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
+                buttonReadAll_Click(sender, e);
+
+                MessageBox.Show("New customer details added.", "Success!");
+
+            }
+            catch
+            {
+                MessageBox.Show("One of the boxes weren't filled in correctly.", "Error");
+            }
+            }
+        //Opens the readOne 'page'
+        public override void buttonReadOne_Click(object sender, EventArgs e)
+        {
+            ClearReadOneTextBoxes();//so it resets the textboxes as blank
             HideMenuButtons();
             groupBoxProductDetails.Visible = true;
             buttonReturnMenu.Visible = true;
@@ -41,11 +72,9 @@ namespace UserInterface2._0
             buttonModify.Visible = true;
             buttonDelete.Visible = true;
             buttonAdd.Visible = false;
-
-
         }
-
-        public override void buttonListDetails_Click(object sender, EventArgs e) 
+        //lists customer's details
+        public override void buttonListDetails_Click(object sender, EventArgs e)
         {
             try
             {
@@ -73,16 +102,8 @@ namespace UserInterface2._0
             }
         }
 
-        protected override void ResetAndHideEverything()
-        {
-            groupBoxProductDetails.Visible = false;
-            buttonReturnMenu.Visible = false;
 
-            labelEnterNumber.Visible = false;
-            textBoxProductNumber2.Visible = false;
-            buttonListDetails.Visible = false;
-            
-        }
+
 
         private void ClearReadOneTextBoxes()
         {
@@ -117,17 +138,25 @@ namespace UserInterface2._0
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled = false;
+            customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text), long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
+
+
+            buttonListDetails_Click(sender, e);
+
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
         private void buttonCancelNewCC_Click(object sender, EventArgs e)
         {
             groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled=false;
             Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
             textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
             //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
             textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
             textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+
         }
 
         //adds in the modifications and resets the readone page
@@ -156,7 +185,29 @@ namespace UserInterface2._0
             }
         }
 
+        public override void buttonReadAll_Click(object sender, EventArgs e)
+        {
+            base.buttonReadAll_Click(sender, e);
+            labelPrintInfo.Visible = true;//will delete after base works
 
+            try
+            {
+
+                customerBLL.ReadAll();
+
+                foreach (Customer ploni in customerBLL.ReadAll())
+                {
+                    textBoxPrintProducts.AppendText(ploni.ToString() + "\r\n");
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("No data yet.", "Error");
+
+            }
+
+        }
 
         public override void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -168,5 +219,39 @@ namespace UserInterface2._0
 
         }
 
+
+        protected override void ResetAndHideEverything()//I think some of this should be in the base form, since products will use it. Since you wrote this, I'll let you decide where to put it.
+        {
+            textBoxPrintProducts.Visible = false;
+            labelPrintInfo.Visible = false;
+            groupBoxProductDetails.Visible = false;
+            buttonReturnMenu.Visible = false;
+
+            labelEnterNumber.Visible = false;
+            textBoxProductNumber2.Visible = false;
+            buttonListDetails.Visible = false;
+
+            //this will remain in child class
+            groupBoxNewCreditCard.Visible = false;
+            groupBoxNewCreditCard.Enabled = false;
+
+        }
+
+        private void ClearReadOneTextBoxes()
+        {
+            textBoxCustomerID.Clear();
+            textBoxFirstName.Clear();
+            textBoxLastName.Clear();
+            textBoxCCNum.Clear();
+            textBoxProductNumber2.Clear();
+
+            //clear the creditcard boxes as well
+            textBoxYear.Clear();
+            textBoxMonth.Clear();
+            textBoxNameOnCard.Clear();
+            textBoxCreditCardNumber.Clear();
+        }
+
+        
     }
 }
