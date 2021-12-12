@@ -1,3 +1,5 @@
 .vs
 .pdb
 .exe
+UserInterfaceLayer/bin/
+DAL/bin/
