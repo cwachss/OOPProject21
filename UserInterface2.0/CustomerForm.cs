@@ -63,16 +63,11 @@ namespace UserInterface2._0
         //Opens the readOne 'page'
         public override void buttonReadOne_Click(object sender, EventArgs e)
         {
+            base.buttonReadOne_Click(sender, e);
             ClearReadOneTextBoxes();//so it resets the textboxes as blank
-            HideMenuButtons();
-            groupBoxProductDetails.Visible = true;
-            buttonReturnMenu.Visible = true;
-            labelEnterNumber.Visible = true;
-            textBoxProductNumber2.Visible = true;
-            buttonListDetails.Visible = true;
-            buttonModify.Visible = true;
-            buttonDelete.Visible = true;
-            buttonAdd.Visible = false;
+
+            labelProductMenu.Text = "Find Customer";
+            //set them all to unenabled or something
         }
         //lists customer's details
         public override void buttonListDetails_Click(object sender, EventArgs e)
@@ -167,12 +162,10 @@ namespace UserInterface2._0
                     int.Parse(textBoxMonth.Text));
 
                 MessageBox.Show("Customer details updated.");
-                buttonModify.Visible = true;
-                buttonModify.Enabled=true;
-                buttonDelete.Visible=true;
-                buttonDelete.Enabled=true;
-                buttonUpdateProduct.Visible=false;
-                
+                base.buttonUpdateProduct_Click(sender, e);
+
+                textBoxFirstName.Enabled = false;
+                textBoxLastName.Enabled = false;
             }
             catch
             {
@@ -215,18 +208,10 @@ namespace UserInterface2._0
         }
 
 
-        protected override void ResetAndHideEverything()//I think some of this should be in the base form, since products will use it. Since you wrote this, I'll let you decide where to put it.
+        protected override void ResetAndHideEverything()
         {
-            textBoxPrintProducts.Visible = false;
-            labelPrintInfo.Visible = false;
-            groupBoxProductDetails.Visible = false;
-            buttonReturnMenu.Visible = false;
+            base.ResetAndHideEverything();
 
-            labelEnterNumber.Visible = false;
-            textBoxProductNumber2.Visible = false;
-            buttonListDetails.Visible = false;
-
-            //this will remain in child class
             groupBoxNewCreditCard.Visible = false;
             groupBoxNewCreditCard.Enabled = false;
 

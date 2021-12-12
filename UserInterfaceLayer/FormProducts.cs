@@ -64,33 +64,13 @@ namespace UserInterfaceLayer
 
         private void buttonReadOne_Click(object sender, EventArgs e)
         {
-            HideMenuButtons();
-
-            buttonReturnMenu.Visible = true; //allows you to return to main menu
-
-            labelProductMenu.Text = "Find Product"; //changes title
-            labelEnterNumber.Visible = true; //instructions
-            textBoxProductNumber2.Visible = true; //textbox to enter product number you want to find
-
-            buttonListDetails.Visible = true; //button prints product details into the textboxes
-
-
-            groupBoxProductDetails.Visible = true; //groupbox where details are printed
-            buttonAdd.Visible = false; //this button is for the create method
-            /*labelEnterNumber.Visible = false;
-            textBoxProductNumber2.Visible = false;
-            buttonListDetails.Visible = false;*/
+            labelProductMenu.Text = "Find Product";
 
             //you cannot edit product information in the find product mode
             textBoxProductNumber.Enabled = false;
             textBoxName.Enabled = false;
             textBoxPrice.Enabled = false;
             textBoxStock.Enabled = false;
-
-            //your two options for modify a product is to update the information or to delete it completely:
-            buttonDelete2.Visible = true;
-            buttonModify.Visible = true;
-
 
         }
 

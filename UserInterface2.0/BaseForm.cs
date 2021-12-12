@@ -30,7 +30,18 @@ namespace UserInterface2._0
            
         }
 
-        public virtual void buttonReadOne_Click(object sender, EventArgs e) { }
+        public virtual void buttonReadOne_Click(object sender, EventArgs e) 
+        {
+            HideMenuButtons();
+            groupBoxProductDetails.Visible = true;
+            buttonReturnMenu.Visible = true;
+            labelEnterNumber.Visible = true;
+            textBoxProductNumber2.Visible = true;
+            buttonListDetails.Visible = true;
+            buttonModify.Visible = true;
+            buttonDelete.Visible = true;
+            buttonAdd.Visible = false;
+        }
 
          public virtual void buttonReadAll_Click(object sender, EventArgs e) 
         {
@@ -45,7 +56,14 @@ namespace UserInterface2._0
 
         public virtual void buttonListDetails_Click(object sender, EventArgs e) { }
 
-        public virtual void buttonUpdateProduct_Click(object sender, EventArgs e) { }
+        public virtual void buttonUpdateProduct_Click(object sender, EventArgs e) 
+        {
+            buttonModify.Visible = true;
+            buttonModify.Enabled = true;
+            buttonDelete.Visible = true;
+            buttonDelete.Enabled = true;
+            buttonUpdateProduct.Visible = false;
+        }
 
         public virtual void buttonAdd_Click(object sender, EventArgs e) { }
 
@@ -71,7 +89,16 @@ namespace UserInterface2._0
 
         protected virtual void ResetAndHideEverything() 
         {
-           
+            textBoxPrintProducts.Visible = false;
+            labelPrintInfo.Visible = false;
+            groupBoxProductDetails.Visible = false;
+            buttonReturnMenu.Visible = false;
+
+            labelEnterNumber.Visible = false;
+            textBoxProductNumber2.Visible = false;
+            buttonListDetails.Visible = false;
+            
+
         }
        
 
