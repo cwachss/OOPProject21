@@ -53,7 +53,7 @@ namespace UserInterface2._0
             this.buttonReturnMenu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonReturnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturnMenu.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReturnMenu.Location = new System.Drawing.Point(0, 450);
+            this.buttonReturnMenu.Location = new System.Drawing.Point(-1, 507);
             this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReturnMenu.Name = "buttonReturnMenu";
             this.buttonReturnMenu.Size = new System.Drawing.Size(786, 49);
@@ -72,7 +72,7 @@ namespace UserInterface2._0
             this.buttonReadAll.Location = new System.Drawing.Point(524, 50);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadAll.Name = "buttonReadAll";
-            this.buttonReadAll.Size = new System.Drawing.Size(262, 450);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 506);
             this.buttonReadAll.TabIndex = 17;
             this.buttonReadAll.Text = "ALL ____________";
             this.buttonReadAll.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@ namespace UserInterface2._0
             this.buttonReadOne.Location = new System.Drawing.Point(262, 50);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadOne.Name = "buttonReadOne";
-            this.buttonReadOne.Size = new System.Drawing.Size(262, 450);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 506);
             this.buttonReadOne.TabIndex = 16;
             this.buttonReadOne.Text = "FIND ___________";
             this.buttonReadOne.UseVisualStyleBackColor = false;
@@ -102,7 +102,7 @@ namespace UserInterface2._0
             this.buttonCreate.Location = new System.Drawing.Point(0, 50);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(262, 450);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 506);
             this.buttonCreate.TabIndex = 15;
             this.buttonCreate.Text = "NEW ___________";
             this.buttonCreate.UseVisualStyleBackColor = false;
@@ -116,7 +116,7 @@ namespace UserInterface2._0
             this.labelProductMenu.Location = new System.Drawing.Point(0, 0);
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelProductMenu.Name = "labelProductMenu";
-            this.labelProductMenu.Size = new System.Drawing.Size(785, 50);
+            this.labelProductMenu.Size = new System.Drawing.Size(786, 50);
             this.labelProductMenu.TabIndex = 14;
             this.labelProductMenu.Text = "________ Menu";
             this.labelProductMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,12 +159,13 @@ namespace UserInterface2._0
             // 
             // textBoxPrintProducts
             // 
-            this.textBoxPrintProducts.Location = new System.Drawing.Point(10, 65);
+            this.textBoxPrintProducts.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBoxPrintProducts.Location = new System.Drawing.Point(28, 78);
             this.textBoxPrintProducts.Multiline = true;
             this.textBoxPrintProducts.Name = "textBoxPrintProducts";
             this.textBoxPrintProducts.ReadOnly = true;
             this.textBoxPrintProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxPrintProducts.Size = new System.Drawing.Size(328, 314);
+            this.textBoxPrintProducts.Size = new System.Drawing.Size(436, 397);
             this.textBoxPrintProducts.TabIndex = 22;
             this.textBoxPrintProducts.Visible = false;
             // 
@@ -176,11 +177,11 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.Add(this.buttonDelete);
             this.groupBoxProductDetails.Controls.Add(this.buttonAdd);
             this.groupBoxProductDetails.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxProductDetails.Location = new System.Drawing.Point(498, 58);
+            this.groupBoxProductDetails.Location = new System.Drawing.Point(503, 78);
             this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(1);
             this.groupBoxProductDetails.Name = "groupBoxProductDetails";
             this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBoxProductDetails.Size = new System.Drawing.Size(249, 383);
+            this.groupBoxProductDetails.Size = new System.Drawing.Size(249, 397);
             this.groupBoxProductDetails.TabIndex = 23;
             this.groupBoxProductDetails.TabStop = false;
             this.groupBoxProductDetails.Text = "________ DETAILS";
@@ -259,7 +260,7 @@ namespace UserInterface2._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 500);
+            this.ClientSize = new System.Drawing.Size(786, 556);
             this.Controls.Add(this.textBoxProductNumber2);
             this.Controls.Add(this.buttonListDetails);
             this.Controls.Add(this.labelEnterNumber);
