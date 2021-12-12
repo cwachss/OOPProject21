@@ -90,7 +90,7 @@ namespace UserInterface2._0
         protected virtual void ResetAndHideEverything() 
         {
             textBoxPrintProducts.Visible = false;
-            labelPrintInfo.Visible = false;
+            //labelPrintInfo.Visible = false;
             groupBoxProductDetails.Visible = false;
             buttonReturnMenu.Visible = false;
 
