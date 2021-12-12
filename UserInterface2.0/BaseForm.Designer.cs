@@ -44,7 +44,6 @@ namespace UserInterface2._0
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.labelPrintInfo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBoxProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -242,19 +241,11 @@ namespace UserInterface2._0
             // 
             // labelPrintInfo
             // 
-            this.labelPrintInfo.Location = new System.Drawing.Point(7, 41);
+            this.labelPrintInfo.Location = new System.Drawing.Point(39, 64);
             this.labelPrintInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrintInfo.Name = "labelPrintInfo";
             this.labelPrintInfo.Size = new System.Drawing.Size(219, 11);
             this.labelPrintInfo.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(7, 41);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 11);
-            this.label3.TabIndex = 42;
             // 
             // BaseForm
             // 
@@ -264,7 +255,6 @@ namespace UserInterface2._0
             this.Controls.Add(this.textBoxProductNumber2);
             this.Controls.Add(this.buttonListDetails);
             this.Controls.Add(this.labelEnterNumber);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonReturnMenu);
             this.Controls.Add(this.labelPrintInfo);
             this.Controls.Add(this.textBoxPrintProducts);
@@ -298,8 +288,7 @@ namespace UserInterface2._0
         protected System.Windows.Forms.Button buttonModify;
         protected System.Windows.Forms.Button buttonDelete;
         protected System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Label labelPrintInfo;
-        private System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label labelPrintInfo;
     }
 }
 

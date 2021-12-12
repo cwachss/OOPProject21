@@ -176,7 +176,7 @@ namespace UserInterface2._0
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
             base.buttonReadAll_Click(sender, e);
-            labelPrintInfo.Visible = true;//will delete after base works
+            labelPrintInfo2.Visible = true;//will delete after base works
 
             try
             {
