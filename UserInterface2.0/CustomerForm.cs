@@ -88,6 +88,7 @@ namespace UserInterface2._0
             textBoxCustomerID.Clear();
             textBoxFirstName.Clear();
             textBoxLastName.Clear();
+            textBoxProductNumber2.Clear();
         }
 
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
@@ -146,6 +147,7 @@ namespace UserInterface2._0
         public override void buttonDelete_Click(object sender, EventArgs e)
         {
             customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
+            ClearReadOneTextBoxes();
         }
 
     }
