@@ -15,7 +15,7 @@ namespace DAL
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
-            Customer aCustomerForTestingPurposes = new Customer("chani", 222, 12323213, 2021, 12);
+            Customer aCustomerForTestingPurposes = new Customer("chani", "wachsstock", 222, 12323213, 2021, 12);
             customerList.Add(aCustomerForTestingPurposes);
         }
 
@@ -27,7 +27,7 @@ namespace DAL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Create(string name, int idNum, long creditCardNum, int year, int month)
+        public void Create(string first_name, string last_name, int idNum, long creditCardNum, int year, int month)
         {
             if (month <= 12 && year < DateTime.Now.Year + 20)
             {
@@ -39,7 +39,7 @@ namespace DAL
                     }
                 }
 
-                Customer PloniAlmoni = new Customer(name, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
+                Customer PloniAlmoni = new Customer(first_name, last_name, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
                 customerList.Add(PloniAlmoni);
             }
             else if (month>12)
@@ -61,7 +61,7 @@ namespace DAL
         {
             if (customerList.Count > 0)
             {
-                List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.Name, user.ID, user.myCreditCard));
+                List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.FirstName, user.LastName, user.ID, user.myCreditCard));
                 return customerList;
 
             }
@@ -104,11 +104,11 @@ namespace DAL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Update(string name, int idNum, long creditCardNum, int year, int month)
+        public void Update(string first_name, string last_name, int idNum, long creditCardNum, int year, int month)
         {
 
             Delete(idNum);
-            Create(name, idNum, creditCardNum, year, month);
+            Create(first_name, last_name, idNum, creditCardNum, year, month);
            
         }
 

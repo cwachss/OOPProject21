@@ -24,8 +24,8 @@ namespace DAL
 
             //Console.WriteLine(try1.Read(1)); 
 
-            CustomerDAL asdf = new CustomerDAL();
-            asdf.Create("asdf", 2141, 41324, 1992, 30);
+            //CustomerDAL asdf = new CustomerDAL();
+            //asdf.Create("asdf", 2141, 41324, 1992, 30);
 
 
 

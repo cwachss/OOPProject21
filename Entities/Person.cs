@@ -8,18 +8,20 @@ namespace Entities
 {
     public class Person
     {
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public int ID { get; set; }
 
-        public Person(string name, int id)
+        public Person(string first_name, string last_name, int id)
         {
-            Name = name;
+            FirstName = first_name;
+            LastName=last_name;
             ID = id;
         }
 
         public override string ToString()
         {
-            return $"{Name} {ID}";
+            return $"{FirstName} {LastName} {ID}";
 
         }
     }

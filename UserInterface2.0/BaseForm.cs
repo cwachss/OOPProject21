@@ -19,11 +19,28 @@ namespace UserInterface2._0
             InitializeComponent();
         }
 
-        public virtual void buttonCreate_Click(object sender, EventArgs e) { }
+        public virtual void buttonCreate_Click(object sender, EventArgs e) 
+        {
+            HideMenuButtons();
+            textBoxPrintProducts.Visible = true;
+            buttonReadAll_Click(sender,e);
+            groupBoxProductDetails.Visible = true;
+            //groupBoxProductDetails.Enabled = true;//not working, so I had to set each textbox to be enabled by the child class
+           
+        }
 
         public virtual void buttonReadOne_Click(object sender, EventArgs e) { }
 
-         public virtual void buttonReadAll_Click(object sender, EventArgs e) { }
+         public virtual void buttonReadAll_Click(object sender, EventArgs e) 
+        {
+            textBoxPrintProducts.Clear();//this way it resets the listbox as blank and then refills it.
+            HideMenuButtons();  
+            textBoxPrintProducts.Visible = true;
+            //labelPrintInfo.Visible = true; //need to figure out how to make this button inherited...
+            buttonReturnMenu.Visible = true;
+            buttonReturnMenu.Enabled = true;
+
+        }
 
         public virtual void buttonListDetails_Click(object sender, EventArgs e) { }
 
@@ -36,6 +53,7 @@ namespace UserInterface2._0
             buttonModify.Visible = false;
             buttonDelete.Visible = false;
             buttonUpdateProduct.Visible = true;
+            
         }
 
         public virtual void buttonDelete_Click(object sender, EventArgs e) 
@@ -50,7 +68,10 @@ namespace UserInterface2._0
         }
         
 
-        protected virtual void ResetAndHideEverything() { }
+        protected virtual void ResetAndHideEverything() 
+        {
+           
+        }
        
 
         protected void HideMenuButtons()
@@ -68,6 +89,9 @@ namespace UserInterface2._0
             buttonCreate.Visible = true;
             buttonReadAll.Visible = true;
             buttonReadOne.Visible = true;
+            buttonCreate.Enabled=true;//added this since it wasm't worin without re-enabaling
+            buttonReadAll.Enabled=true;
+            buttonReadOne.Enabled=true;
         }
 
         //public virtual void ShowReadOne()

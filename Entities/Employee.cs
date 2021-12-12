@@ -10,7 +10,7 @@ namespace Entities
     {
         public decimal Salary { get; set; }
 
-        public Employee(decimal salary, string name, int id) :base(name, id)
+        public Employee(decimal salary, string first_name, string last_name, int id) :base(first_name, last_name, id)
         {
             Salary = salary;
         }

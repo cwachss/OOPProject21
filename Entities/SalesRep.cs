@@ -10,7 +10,7 @@ namespace Entities
     {
         public double CommissionRate { get; set; }
 
-        public SalesRep(double commission, decimal salary, string name, int id) : base(salary, name, id)
+        public SalesRep(double commission, decimal salary, string first_name, string last_name, int id) : base(salary, first_name,last_name, id)
         {
             CommissionRate = commission;
         }
