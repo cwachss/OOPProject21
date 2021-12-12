@@ -1,5 +1,6 @@
 .vs
-.pdb
-.exe
 UserInterfaceLayer/bin/
 DAL/bin/
+BLL/bin/
+Entities/bin/
+UserInterface2.0/bin/
