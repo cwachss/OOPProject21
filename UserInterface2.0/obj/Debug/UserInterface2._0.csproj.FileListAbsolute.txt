@@ -20,3 +20,4 @@ C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\Entities.exe.c
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.exe
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.pdb
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.ProductForm.resources

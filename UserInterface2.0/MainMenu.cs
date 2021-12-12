@@ -17,9 +17,21 @@ namespace UserInterface2._0
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void buttonCustomers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CustomerForm cF = new CustomerForm();
+            cF.ShowDialog();
+           
+        }
+
+        private void buttonProducts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProductForm pF = new ProductForm();
+            pF.ShowDialog();
+            
         }
     }
 }

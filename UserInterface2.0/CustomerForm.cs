@@ -105,15 +105,6 @@ namespace UserInterface2._0
 
 
 
-        private void ClearReadOneTextBoxes()
-        {
-            textBoxCustomerID.Clear();
-            textBoxFirstName.Clear();
-            textBoxLastName.Clear();
-            textBoxProductNumber2.Clear();
-            textBoxCCNum.Clear();
-        }
-
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
         public override void buttonModify_Click(object sender, EventArgs e)
         {
@@ -128,10 +119,13 @@ namespace UserInterface2._0
         //update credit card opens a groupbox to put in new credit card information
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
         {
-            groupBoxNewCreditCard.Visible = true;
+            
             textBoxCreditCardNumber.Clear();
             textBoxMonth.Clear();
             textBoxYear.Clear();
+                
+            groupBoxNewCreditCard.Visible = true;
+            groupBoxNewCreditCard.Enabled=true;
         }
 
         // enter saves the credit card info and closes the groupbox
@@ -170,14 +164,11 @@ namespace UserInterface2._0
                     int.Parse(textBoxMonth.Text));
 
                 MessageBox.Show("Customer details updated.");
-                buttonUpdateCreditCard.Visible = false;
-                buttonUpdateProduct.Visible = false;
-                textBoxFirstName.Enabled = false;
-                textBoxLastName.Enabled = false;
-                buttonUpdateCreditCard.Visible = false;
                 buttonModify.Visible = true;
-                buttonDelete.Visible = true;
-                buttonListDetails_Click(sender, e);
+                buttonModify.Enabled=true;
+                buttonDelete.Visible=true;
+                buttonDelete.Enabled=true;
+                buttonUpdateProduct.Visible=false;
             }
             catch
             {
@@ -252,6 +243,9 @@ namespace UserInterface2._0
             textBoxCreditCardNumber.Clear();
         }
 
-        
+        private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
