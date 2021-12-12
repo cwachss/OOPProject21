@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Chani Wachsstock and Shira Laury
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace DAL
         List<Product> productList = new List<Product>(); //question from chani: why is this static?
 
         //create StreamReader object to read the list
-        StreamReader reader = new StreamReader("ListOfProducts.txt");
+        StreamReader reader = new StreamReader(@"../../../DAL/bin/debug/ListOfProducts.txt");
 
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product

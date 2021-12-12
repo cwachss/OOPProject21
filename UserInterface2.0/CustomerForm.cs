@@ -112,13 +112,19 @@ namespace UserInterface2._0
             base.buttonModify_Click(sender, e);
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
-
-
+            buttonUpdateCreditCard.Visible = true;
+                       
+            
         }
 
         //update credit card opens a groupbox to put in new credit card information
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
-        {           
+        {
+            
+            textBoxCreditCardNumber.Clear();
+            textBoxMonth.Clear();
+            textBoxYear.Clear();
+                
             groupBoxNewCreditCard.Visible = true;
             groupBoxNewCreditCard.Enabled=true;
         }
@@ -197,7 +203,12 @@ namespace UserInterface2._0
 
         public override void buttonDelete_Click(object sender, EventArgs e)
         {
+
             customerBLL.Delete(int.Parse(textBoxCustomerID.Text));
+            ClearReadOneTextBoxes();
+            buttonDelete.Enabled = false;
+            buttonModify.Enabled = false;
+
         }
 
 
@@ -233,6 +244,9 @@ namespace UserInterface2._0
             textBoxCreditCardNumber.Clear();
         }
 
-        
+        private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

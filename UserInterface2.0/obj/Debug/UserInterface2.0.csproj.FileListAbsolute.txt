@@ -1,11 +1,12 @@
-C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\UserInterface2.0.exe.config
-C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\UserInterface2.0.exe
-C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\UserInterface2.0.pdb
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.csproj.AssemblyReference.cache
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.BaseForm.resources
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.CustomerForm.resources
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.MainMenu.resources
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.Properties.Resources.resources
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.csproj.GenerateResource.cache
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
+=======
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.exe
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.pdb
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.CustomerForm.resources
@@ -43,3 +44,4 @@ C:\Users\chani\source\repos\OOPProject\UserInterface2.0\bin\Debug\Entities.exe.c
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2.0.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.MainMenu.resources
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterface2.0\obj\Debug\UserInterface2._0.MainMenu.resources
+>>>>>>> c8409eea1ceca4e2e6c16a709a9ba3ec96ab0b68

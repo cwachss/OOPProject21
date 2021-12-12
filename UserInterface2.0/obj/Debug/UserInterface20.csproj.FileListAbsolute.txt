@@ -1,0 +1,7 @@
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface20.csproj.AssemblyReference.cache
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.BaseForm.resources
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.CustomerForm.resources
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.MainMenu.resources
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.Properties.Resources.resources
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface20.csproj.GenerateResource.cache
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface20.csproj.CoreCompileInputs.cache

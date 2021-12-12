@@ -44,6 +44,7 @@ namespace UserInterface2._0
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.labelPrintInfo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBoxProductDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@ namespace UserInterface2._0
             this.buttonReadAll.Location = new System.Drawing.Point(698, 62);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadAll.Name = "buttonReadAll";
-            this.buttonReadAll.Size = new System.Drawing.Size(349, 553);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 449);
             this.buttonReadAll.TabIndex = 17;
             this.buttonReadAll.Text = "ALL ____________";
             this.buttonReadAll.UseVisualStyleBackColor = false;
@@ -86,7 +87,7 @@ namespace UserInterface2._0
             this.buttonReadOne.Location = new System.Drawing.Point(349, 62);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1);
             this.buttonReadOne.Name = "buttonReadOne";
-            this.buttonReadOne.Size = new System.Drawing.Size(349, 553);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 449);
             this.buttonReadOne.TabIndex = 16;
             this.buttonReadOne.Text = "FIND ___________";
             this.buttonReadOne.UseVisualStyleBackColor = false;
@@ -101,7 +102,7 @@ namespace UserInterface2._0
             this.buttonCreate.Location = new System.Drawing.Point(0, 62);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(1);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(349, 553);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 449);
             this.buttonCreate.TabIndex = 15;
             this.buttonCreate.Text = "NEW ___________";
             this.buttonCreate.UseVisualStyleBackColor = false;
@@ -123,7 +124,7 @@ namespace UserInterface2._0
             // textBoxProductNumber2
             // 
             this.textBoxProductNumber2.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductNumber2.Location = new System.Drawing.Point(67, 198);
+            this.textBoxProductNumber2.Location = new System.Drawing.Point(49, 173);
             this.textBoxProductNumber2.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxProductNumber2.Name = "textBoxProductNumber2";
             this.textBoxProductNumber2.Size = new System.Drawing.Size(308, 39);
@@ -133,7 +134,7 @@ namespace UserInterface2._0
             // buttonListDetails
             // 
             this.buttonListDetails.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListDetails.Location = new System.Drawing.Point(67, 256);
+            this.buttonListDetails.Location = new System.Drawing.Point(49, 224);
             this.buttonListDetails.Margin = new System.Windows.Forms.Padding(1);
             this.buttonListDetails.Name = "buttonListDetails";
             this.buttonListDetails.Size = new System.Drawing.Size(212, 50);
@@ -164,7 +165,7 @@ namespace UserInterface2._0
             this.textBoxPrintProducts.Name = "textBoxPrintProducts";
             this.textBoxPrintProducts.ReadOnly = true;
             this.textBoxPrintProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxPrintProducts.Size = new System.Drawing.Size(580, 473);
+            this.textBoxPrintProducts.Size = new System.Drawing.Size(436, 385);
             this.textBoxPrintProducts.TabIndex = 22;
             this.textBoxPrintProducts.Visible = false;
             // 
@@ -241,23 +242,33 @@ namespace UserInterface2._0
             // 
             // labelPrintInfo
             // 
-            this.labelPrintInfo.Location = new System.Drawing.Point(12, 62);
+            this.labelPrintInfo.Location = new System.Drawing.Point(9, 50);
+            this.labelPrintInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrintInfo.Name = "labelPrintInfo";
-            this.labelPrintInfo.Size = new System.Drawing.Size(390, 16);
+            this.labelPrintInfo.Size = new System.Drawing.Size(292, 13);
             this.labelPrintInfo.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(9, 50);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(292, 13);
+            this.label3.TabIndex = 42;
             // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 615);
+            this.ClientSize = new System.Drawing.Size(787, 499);
+            this.Controls.Add(this.buttonListDetails);
+            this.Controls.Add(this.labelEnterNumber);
+            this.Controls.Add(this.textBoxProductNumber2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonReturnMenu);
             this.Controls.Add(this.labelPrintInfo);
             this.Controls.Add(this.textBoxPrintProducts);
             this.Controls.Add(this.groupBoxProductDetails);
-            this.Controls.Add(this.textBoxProductNumber2);
-            this.Controls.Add(this.buttonListDetails);
-            this.Controls.Add(this.labelEnterNumber);
             this.Controls.Add(this.buttonReadAll);
             this.Controls.Add(this.buttonReadOne);
             this.Controls.Add(this.buttonCreate);
@@ -288,6 +299,7 @@ namespace UserInterface2._0
         protected System.Windows.Forms.Button buttonDelete;
         protected System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label labelPrintInfo;
+        private System.Windows.Forms.Label label3;
     }
 }
 
