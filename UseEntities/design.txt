@@ -62,3 +62,10 @@ Shira
 		?Message box that says You sure you want to place order? with buttons "edit order" and "Buy".?
 		Write all orders and customers and product last details into a file-so it always saves.
 
+		create
+		read one order-get order number-shira
+		readall
+		all order history
+		read all customer history-basically the same as 
+		read all product order history-shira
+
