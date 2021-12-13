@@ -7,7 +7,7 @@ using Entities;
 
 namespace DAL
 {
-    class OrderDAL
+    public class OrderDAL
     {
         List<Order> orderList = new List<Order> ();
         int orderNumber = 100;
