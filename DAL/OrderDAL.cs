@@ -9,7 +9,7 @@ namespace DAL
 {
     public class OrderDAL
     {
-        List<Order> orderList = new List<Order> ();
+        internal List<Order> orderList = new List<Order> ();
         int orderNumber = 100;
 
 

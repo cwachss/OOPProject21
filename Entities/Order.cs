@@ -19,5 +19,8 @@ namespace Entities
             productID = pID;
         }
 
+        public override string ToString() => $"Order Number: {OrderNumber}\tCustomerID: {customerID}\tProductID: {productID}";
+        
+
     }
 }
