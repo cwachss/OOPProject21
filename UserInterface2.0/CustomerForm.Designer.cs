@@ -51,7 +51,6 @@ namespace UserInterface2._0
             this.textBoxNameOnCard = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelCCNum = new System.Windows.Forms.Label();
-            this.labelPrintInfo2 = new System.Windows.Forms.Label();
             this.groupBoxProductDetails.SuspendLayout();
             this.groupBoxNewCreditCard.SuspendLayout();
             this.SuspendLayout();
@@ -407,24 +406,12 @@ namespace UserInterface2._0
             this.labelCCNum.TabIndex = 0;
             this.labelCCNum.Text = "Credit Card Number";
             // 
-            // labelPrintInfo2
-            // 
-            this.labelPrintInfo2.AutoSize = true;
-            this.labelPrintInfo2.Location = new System.Drawing.Point(25, 57);
-            this.labelPrintInfo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPrintInfo2.Name = "labelPrintInfo2";
-            this.labelPrintInfo2.Size = new System.Drawing.Size(285, 13);
-            this.labelPrintInfo2.TabIndex = 30;
-            this.labelPrintInfo2.Text = "Name:      CreditCardNumber:      Expiration- Year      Month";
-            this.labelPrintInfo2.Visible = false;
-            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 555);
             this.Controls.Add(this.groupBoxNewCreditCard);
-            this.Controls.Add(this.labelPrintInfo2);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
@@ -439,7 +426,6 @@ namespace UserInterface2._0
             this.Controls.SetChildIndex(this.buttonListDetails, 0);
             this.Controls.SetChildIndex(this.textBoxProductNumber2, 0);
             this.Controls.SetChildIndex(this.groupBoxProductDetails, 0);
-            this.Controls.SetChildIndex(this.labelPrintInfo2, 0);
             this.Controls.SetChildIndex(this.groupBoxNewCreditCard, 0);
             this.groupBoxProductDetails.ResumeLayout(false);
             this.groupBoxProductDetails.PerformLayout();
@@ -474,6 +460,5 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label labelMonth;
         private System.Windows.Forms.Button buttonCancelNewCC;
-        private System.Windows.Forms.Label labelPrintInfo2;
     }
 }
