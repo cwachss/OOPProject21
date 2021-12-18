@@ -12,7 +12,7 @@ namespace DAL
         internal List<Order> orderList = new List<Order> ();
         int orderNumber = 100;
 
-
+        Order transaction;
         public void Create(int customerID, int productID)
         {
             Order order = new Order(orderNumber, customerID, productID);
@@ -42,6 +42,26 @@ namespace DAL
             Delete(anOrderNumber);
             Order order = new Order(anOrderNumber, customerID, productID);
             orderList.Add(order);
+        }
+
+        public Order ReadOne(int customerID, int productID)
+        {
+            Order sale = new Order(transaction.OrderNumber, customerID, productID);
+            return sale;
+        }
+        
+        public List<Order> ReadALl()
+        {
+            if(orderList.Count > 0)
+            {
+                List<Order> copy_list = orderList.ConvertAll(user => new Order(transaction.OrderNumber, ));
+                return copy_list;
+            }
+            else
+            {
+                throw new Exception("No order yet!");
+            }
+            
         }
 
     }
