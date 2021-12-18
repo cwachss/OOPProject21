@@ -22,7 +22,7 @@ namespace DAL
 
         public void Delete(int anOrderNumber)
         {
-            for (int i = 0; i < orderList.Count; i++) //I feel like I made this method too unwieldy
+            for (int i = 0; i < orderList.Count; i++) 
             {
                 if (anOrderNumber == orderList[i].OrderNumber)//checks if we've found the sought-for product number
                 {
