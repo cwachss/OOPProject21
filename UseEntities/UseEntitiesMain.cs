@@ -17,7 +17,7 @@ namespace UseEntities
     {
         static void Main(string[] args)
         {
-            Person person1 = new Person("George", 23423423); //assignment 3 
+            /*Person person1 = new Person("George", 23423423); //assignment 3 
             Product product1 = new Product(234234, "Banana", 23, 45); //assignment 3 
             Customer customer1 = new Customer("Joe", 23322, 4756, 2025, 4);
             Customer customer2 = new Customer("me", 77777, 3333, 2022, 11);
@@ -29,10 +29,10 @@ namespace UseEntities
 
             for (int i = 0; i < personArray.Length; i++)
             {
-                /*Console.WriteLine("Enter name");
+                *//*Console.WriteLine("Enter name");
                 string name = Console.ReadLine();
                 Console.WriteLine("Enter ID number:");
-                int id = int.Parse(Console.ReadLine());*/
+                int id = int.Parse(Console.ReadLine());*//*
                 
             
             string name = reader.ReadLine(); //store name in a string (these two lines only work if the file is stored name on one line and ID on the other)
@@ -51,14 +51,14 @@ namespace UseEntities
 
             }
 
-            /* StreamReader reader = new StreamReader
+            *//* StreamReader reader = new StreamReader
                  (Contents.txt);
 
              string fileContents = reader.ReadToEnd();
 
              Console.WriteLine(fileContents);
-             reader.Close();*/
-            Console.ReadLine();
+             reader.Close();*//*
+            Console.ReadLine();*/
         }
     }
     

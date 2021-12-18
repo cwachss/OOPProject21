@@ -8,13 +8,13 @@ namespace BLL
 {
     public class ProductBLL
     {
-        ProductDAL product = new ProductDAL();
+        internal ProductDAL productDAL = new ProductDAL();
 
         public ProductDAL Create(int prodNum, string prodName, decimal cost, int stock)
         {
             
-           product.Create(prodNum, prodName, cost, stock);
-            return product;
+           productDAL.Create(prodNum, prodName, cost, stock);
+            return productDAL;
 
         }
 
@@ -25,7 +25,7 @@ namespace BLL
         public Product Read(int productNum)
         {
             
-                return product.Read(productNum);
+                return productDAL.Read(productNum);
             
          
                
@@ -36,7 +36,7 @@ namespace BLL
         public List<Product> ReadAll()
         {
             
-            return product.ReadAll();
+            return productDAL.ReadAll();
         }
 
             /// <summary>
@@ -45,7 +45,7 @@ namespace BLL
             /// <param name="productNum"></param>
         public void Update(int prodNum, string prodName, decimal cost, int stock)
         {
-                product.Update(prodNum, prodName, cost, stock);
+                productDAL.Update(prodNum, prodName, cost, stock);
            
         }
 
@@ -55,7 +55,7 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Delete(int productNum)
         {
-              product.Delete(productNum);
+              productDAL.Delete(productNum);
            
             
         }
