@@ -95,12 +95,12 @@ namespace UserInterface2._0
             // 
             // pictureBoxCustomer
             // 
-            this.pictureBoxCustomer.Image = global::UserInterface2._0.Properties.Resources.customers;
-            this.pictureBoxCustomer.Location = new System.Drawing.Point(866, 325);
+            this.pictureBoxCustomer.Image = global::UserInterface2._0.Properties.Resources.toystorepeoples;
+            this.pictureBoxCustomer.Location = new System.Drawing.Point(869, 325);
             this.pictureBoxCustomer.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBoxCustomer.Name = "pictureBoxCustomer";
-            this.pictureBoxCustomer.Size = new System.Drawing.Size(887, 624);
-            this.pictureBoxCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCustomer.Size = new System.Drawing.Size(891, 657);
+            this.pictureBoxCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxCustomer.TabIndex = 2;
             this.pictureBoxCustomer.TabStop = false;
             this.pictureBoxCustomer.Click += new System.EventHandler(this.buttonCustomers_Click);
