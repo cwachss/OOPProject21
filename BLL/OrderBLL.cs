@@ -11,7 +11,6 @@ namespace BLL
     public class OrderBLL
     {
         OrderDAL orderDAL = new OrderDAL();
-
         public void Create(int customerID, int productID)
         {
             orderDAL.Create(customerID, productID);
@@ -32,6 +31,11 @@ namespace BLL
             orderDAL.Update(orderNum, customerID, productID);
 
             //see delete comment
+        }
+
+        public Order ReadOne(int customerID, int productID)
+        {
+            return orderDAL.ReadOne(customerID,productID);
         }
     }
 }
