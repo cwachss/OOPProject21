@@ -17,26 +17,34 @@ namespace DAL
         public void InitilizeList()
         {
             StreamReader reader = new StreamReader(@"../../bin/debug/ListOfOrders.txt");
-
+            string line;
             using(reader)
             {
-                while(orderNumber!=0)
+                for (int i = 0; (line = reader.ReadLine()) != null; i++)
                 {
-
-                    Order sale1 = new Order(orderNumber, transaction.customerID, transaction.productID);
+                    string [] array =line.Split(' ');
+                    Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
                     orderList.Add(sale1);
-
-                   // string checkForNull=reader.ReadLine();
-                    //if (checkForNull != null)
-                    //    break;
-                    orderNumber=int.Parse(reader.ReadLine());
-                    transaction.customerID=int.Parse(reader.ReadLine());
-                    transaction.productID=int.Parse(reader.ReadLine());
-
                     Console.WriteLine(orderNumber);
                     Console.WriteLine(transaction.customerID);
                     Console.WriteLine(transaction.productID);
                 }
+
+                //while(orderNumber!=0)
+                //{
+
+                //    Order sale1 = new Order(orderNumber, transaction.customerID, transaction.productID);
+                //    orderList.Add(sale1);
+
+                //   // string checkForNull=reader.ReadLine();
+                //    //if (checkForNull != null)
+                //    //    break;
+                //    orderNumber=int.Parse(reader.ReadLine());
+                //    transaction.customerID=int.Parse(reader.ReadLine());
+                //    transaction.productID=int.Parse(reader.ReadLine());
+
+                    
+                //}
             }
         }
 
@@ -108,6 +116,7 @@ namespace DAL
         //this is an idea that I have: to make the customerId and productId be anything that the user wants to enter -and then we check it for validity 
         private bool CheckForCustomer(int customerID)
         {
+            //Customer misterA = new Customer();
             return false;//just filler stuff, not the actual method
         }
 
