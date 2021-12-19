@@ -12,3 +12,9 @@ C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\obj\Debug\UseEntiti
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.csproj.AssemblyReference.cache
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.csproj.CoreCompileInputs.cache
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\obj\Debug\UseEntities.csproj.SuggestedBindingRedirects.cache
+C:\Users\shira\source\repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.exe
+C:\Users\shira\source\repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.exe
+C:\Users\shira\source\repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.exe.config
+C:\Users\shira\source\repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.pdb
+C:\Users\shira\source\repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.exe.config

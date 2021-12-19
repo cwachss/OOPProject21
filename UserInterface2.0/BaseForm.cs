@@ -34,6 +34,7 @@ namespace UserInterface2._0
         {
             HideMenuButtons();
             groupBoxProductDetails.Visible = true;
+            groupBoxProductDetails.Enabled = false;
             buttonReturnMenu.Visible = true;
             labelEnterNumber.Visible = true;
             textBoxProductNumber2.Visible = true;
@@ -54,7 +55,14 @@ namespace UserInterface2._0
 
         }
 
-        public virtual void buttonListDetails_Click(object sender, EventArgs e) { }
+        public virtual void buttonListDetails_Click(object sender, EventArgs e) 
+        {
+            groupBoxProductDetails.Enabled = true;
+            buttonDelete.Enabled = true;
+            buttonModify.Enabled = true;
+          
+           
+        }
 
         public virtual void buttonUpdateProduct_Click(object sender, EventArgs e) 
         {

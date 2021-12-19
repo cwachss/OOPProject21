@@ -16,7 +16,7 @@ namespace DAL
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
-            Customer aCustomerForTestingPurposes = new Customer("chani", "wachsstock", "Chani N. Wachsstock", 222, 12323213, 2021, 12);
+            Customer aCustomerForTestingPurposes = new Customer("chani", "wachsstock", "Chani N. Wachsstock", 222, "1232321309240918", 2021, 12);
             customerList.Add(aCustomerForTestingPurposes);
         }
 
@@ -28,9 +28,9 @@ namespace DAL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Create(string first_name, string last_name, string ccName, int idNum, long creditCardNum, int year, int month)
+        public void Create(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
         {
-            if (month <= 12 && year < DateTime.Now.Year + 20)
+            if (month <= 12 && year < DateTime.Now.Year + 20 && creditCardNum.Length!=16)
             {
                 for (int i = 0; i < customerList.Count; i++)
                 {
@@ -45,11 +45,15 @@ namespace DAL
             }
             else if (month>12)
             {
-                throw new MonthOutOfRange(); //there are more exceptions needed:)
+                throw new MonthOutOfRange();
             }
             else if(year<= DateTime.Now.Year | year> DateTime.Now.Year+20)
             {
                 throw new Exception("Year out of range.");
+            }
+            else if(creditCardNum.Length!=16)
+            {
+                throw new CreditCardNumOutOfRange();
             }
            
 
@@ -62,7 +66,7 @@ namespace DAL
         {
             if (customerList.Count > 0)
             {
-                List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.FirstName, user.LastName, user.ID, user.myCreditCard));
+                List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.FirstName, user.LastName, user.ID));
                 return customerList;
 
             }
@@ -105,7 +109,7 @@ namespace DAL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Update(string first_name, string last_name, string ccName, int idNum, long creditCardNum, int year, int month)
+        public void Update(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
         {
 
             Delete(idNum);

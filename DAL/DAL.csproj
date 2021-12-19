@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreditCardNumOutOfRange.cs" />
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="MonthOutOfRange.cs" />
     <Compile Include="OrderDAL.cs" />

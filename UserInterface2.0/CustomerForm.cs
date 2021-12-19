@@ -40,7 +40,9 @@ namespace UserInterface2._0
             textBoxCustomerID.Enabled = true;
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
-            buttonUpdateCreditCard.Enabled = true;//this is not working-not sure why           
+            
+            buttonUpdateCreditCard.Visible = true;
+            buttonUpdateCreditCard.Enabled=true;
         }
 
         public override void buttonAdd_Click(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace UserInterface2._0
             try
             {
                 customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text,
-                                int.Parse(textBoxCustomerID.Text), int.Parse(textBoxCreditCardNumber.Text),
+                                int.Parse(textBoxCustomerID.Text), textBoxCreditCardNumber.Text,
                                 int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
                 buttonReadAll_Click(sender, e);
 
@@ -57,9 +59,9 @@ namespace UserInterface2._0
             }
             catch
             {
-                MessageBox.Show("One of the boxes weren't filled in correctly.", "Error");
+                MessageBox.Show("One or more boxes weren't filled in correctly.", "Error");
             }
-            }
+        }
         //Opens the readOne 'page'
         public override void buttonReadOne_Click(object sender, EventArgs e)
         {
@@ -67,31 +69,36 @@ namespace UserInterface2._0
             ClearReadOneTextBoxes();//so it resets the textboxes as blank
 
             labelProductMenu.Text = "Find Customer";
-            //set them all to unenabled or something
+            
         }
         //lists customer's details
         public override void buttonListDetails_Click(object sender, EventArgs e)
         {
+            base.buttonListDetails_Click(sender, e);
+
             try
             {
                 Customer aCustomer = customerBLL.Read(int.Parse(textBoxProductNumber2.Text));
                 textBoxFirstName.Text = aCustomer.FirstName;
                 textBoxLastName.Text = aCustomer.LastName;
                 textBoxCustomerID.Text = Convert.ToString(aCustomer.ID);
-                textBoxCCNum.Text = "****-****-****-" + Convert.ToString(aCustomer.myCreditCard.CardNumber % 10000);
+                textBoxCCNum.Text = "****-****-****-" + aCustomer.myCreditCard.CardNumber.Substring(11);
 
                 //inside the hidden credit card info text boxes, for the purpose of being able to update the customer's name without updating their info
+               
                 textBoxCreditCardNumber.Text = Convert.ToString(aCustomer.myCreditCard.CardNumber);
+                
                 //textBoxNameOnCard.Text = right now there is no option for a dif name on credit card. i will wait... dun dun dun
                 textBoxMonth.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Month);
                 textBoxYear.Text = Convert.ToString(aCustomer.myCreditCard.ExpirationDate.Year);
+                groupBoxProductDetails.Enabled = true;
 
-                buttonDelete.Enabled = true;
-                buttonModify.Enabled = true;
-                buttonUpdateCreditCard.Enabled = true;
-
+                //buttonDelete.Enabled = true;
+                //buttonModify.Enabled = true;
+                
                 textBoxFirstName.Enabled = false;
                 textBoxLastName.Enabled = false;
+               
 
             }
             catch
@@ -99,8 +106,9 @@ namespace UserInterface2._0
                 MessageBox.Show("Customer not found.");
             }
         }
-
-
+        // if (aCustomer.myCreditCard.CardNumber > 10000000000000000)
+        //else
+        //MessageBox.Show("Incorrect format entered for the credit card number.");
 
 
         //Modify opens up the groupbox for modification and hides the buttons that i don't want available
@@ -110,7 +118,7 @@ namespace UserInterface2._0
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
             buttonUpdateCreditCard.Visible = true;
-                       
+            buttonUpdateCreditCard.Enabled = true;           
             
         }
 
@@ -118,9 +126,9 @@ namespace UserInterface2._0
         private void buttonUpdateCreditCard_Click(object sender, EventArgs e)
         {
             
-            textBoxCreditCardNumber.Clear();
-            textBoxMonth.Clear();
-            textBoxYear.Clear();
+            //textBoxCreditCardNumber.Clear();
+            //textBoxMonth.Clear();
+            //textBoxYear.Clear();
                 
             groupBoxNewCreditCard.Visible = true;
             groupBoxNewCreditCard.Enabled=true;
@@ -129,13 +137,20 @@ namespace UserInterface2._0
         // enter saves the credit card info and closes the groupbox
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            groupBoxNewCreditCard.Visible = false;
-            groupBoxNewCreditCard.Enabled = false;
-            customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, textBoxPrintProducts.Text, int.Parse(textBoxCustomerID.Text), long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
-
-
-            buttonListDetails_Click(sender, e);
-
+            try
+            {
+                groupBoxNewCreditCard.Visible = false;
+                groupBoxNewCreditCard.Enabled = false;
+                customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, 
+                    textBoxPrintProducts.Text, int.Parse(textBoxCustomerID.Text), 
+                    textBoxCreditCardNumber.Text, int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
+                
+            }
+           catch
+            {
+                MessageBox.Show("Improper input.\nPlease try again.","Error:");
+            }
+           // buttonListDetails_Click(sender, e);
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
@@ -158,7 +173,7 @@ namespace UserInterface2._0
             {
 
                 customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text, int.Parse(textBoxCustomerID.Text),
-                    long.Parse(textBoxCreditCardNumber.Text), int.Parse(textBoxYear.Text),
+                textBoxCreditCardNumber.Text, int.Parse(textBoxYear.Text),
                     int.Parse(textBoxMonth.Text));
 
                 MessageBox.Show("Customer details updated.");
@@ -176,7 +191,7 @@ namespace UserInterface2._0
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
             base.buttonReadAll_Click(sender, e);
-            labelPrintInfo2.Visible = true;//will delete after base works
+            
 
             try
             {
