@@ -44,25 +44,27 @@ namespace DAL
             orderList.Add(order);
         }
 
+        //Can't do more than one type of ReadOne or REadALl because the way the properties are set up
         public Order ReadOne(int customerID, int productID)
         {
             Order sale = new Order(transaction.OrderNumber, customerID, productID);
             return sale;
         }
+
         
-        public List<Order> ReadALl()
-        {
-            if(orderList.Count > 0)
-            {
-                List<Order> copy_list = orderList.ConvertAll(user => new Order(transaction.OrderNumber, ));
-                return copy_list;
-            }
-            else
-            {
-                throw new Exception("No order yet!");
-            }
+        //public List<Order> ReadALl()
+        //{
+        //    if(orderList.Count > 0)
+        //    {
+        //        List<Order> copy_list = orderList.ConvertAll(user => new Order(transaction.OrderNumber,  ));
+        //        return copy_list;
+        //    }
+        //    else
+        //    {
+        //        throw new Exception("No order yet!");
+        //    }
             
-        }
+        //}
 
     }
 }

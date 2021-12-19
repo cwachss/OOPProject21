@@ -35,7 +35,13 @@ namespace BLL
 
         public Order ReadOne(int customerID, int productID)
         {
-            return orderDAL.ReadOne(customerID,productID);
+            return orderDAL.ReadOne(customerID,productID);//returns a list of one order
         }
+
+        //it's commented b/c DAL method doesn't work
+        //public List<Order> ReadAll()
+        //{
+        //    return orderDAL.ReadALl();//returns list of all order with all their order details
+        //}
     }
 }
