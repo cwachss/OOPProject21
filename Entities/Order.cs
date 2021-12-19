@@ -8,8 +8,11 @@ namespace Entities
 {
     public class Order
     {
-        int customerID;
-        int productID;
+        //int customerID;
+        //int productID;
+
+        public int customerID { get; set; }
+        public int productID { get; set; }
         public int OrderNumber { get; set; }
 
         public Order(int orderNumber, int cID, int pID)

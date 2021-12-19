@@ -29,20 +29,22 @@ namespace DAL
 
             OrderDAL tester = new OrderDAL();
 
-            tester.Create(1234, 1234);
-            Console.WriteLine(tester.orderList[0]);
-            Console.WriteLine();
+            //tester.Create(1234, 1234);
+            //Console.WriteLine(tester.orderList[0]);
+            //Console.WriteLine();
 
-            tester.Create(1234, 1234);
-            Console.WriteLine(tester.orderList[1]);
-            Console.WriteLine();
+            //tester.Create(1234, 1234);
+            //Console.WriteLine(tester.orderList[1]);
+            //Console.WriteLine();
 
-            tester.Update(100, 1223, 1112);
-            Console.WriteLine(tester.orderList[1]);
-            Console.WriteLine();
+            //tester.Update(100, 1223, 1112);
+            //Console.WriteLine(tester.orderList[1]);
+            //Console.WriteLine();
 
-            tester.Delete(100);
-            Console.WriteLine(tester.orderList[1]);
+            //tester.Delete(100);
+            //Console.WriteLine(tester.orderList[1]);
+
+            tester.InitilizeList();
 
         }
     }
