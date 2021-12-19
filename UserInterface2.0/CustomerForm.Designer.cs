@@ -231,9 +231,9 @@ namespace UserInterface2._0
             this.buttonUpdateCreditCard.Location = new System.Drawing.Point(51, 379);
             this.buttonUpdateCreditCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdateCreditCard.Name = "buttonUpdateCreditCard";
-            this.buttonUpdateCreditCard.Size = new System.Drawing.Size(153, 23);
+            this.buttonUpdateCreditCard.Size = new System.Drawing.Size(153, 25);
             this.buttonUpdateCreditCard.TabIndex = 26;
-            this.buttonUpdateCreditCard.Text = "New Credit Card";
+            this.buttonUpdateCreditCard.Text = "Update Credit Card";
             this.buttonUpdateCreditCard.UseVisualStyleBackColor = true;
             this.buttonUpdateCreditCard.Visible = false;
             this.buttonUpdateCreditCard.Click += new System.EventHandler(this.buttonUpdateCreditCard_Click);

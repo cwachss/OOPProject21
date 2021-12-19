@@ -26,6 +26,7 @@ namespace UserInterface2._0
             textBoxPrintProducts.Visible = true;
             buttonReadAll_Click(sender,e);
             groupBoxProductDetails.Visible = true;
+            groupBoxProductDetails.Enabled = true;
             //groupBoxProductDetails.Enabled = true;//not working, so I had to set each textbox to be enabled by the child class
            
         }
@@ -105,6 +106,8 @@ namespace UserInterface2._0
             labelEnterNumber.Visible = false;
             textBoxProductNumber2.Visible = false;
             buttonListDetails.Visible = false;
+            buttonUpdateProduct.Visible=false;
+            
             
 
         }
