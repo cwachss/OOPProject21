@@ -108,7 +108,7 @@ namespace UserInterface2._0
             buttonListDetails.Visible = false;
             buttonUpdateProduct.Visible=false;
             
-            
+            buttonAdd.Enabled = false;
 
         }
        

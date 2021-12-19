@@ -40,6 +40,8 @@ namespace UserInterface2._0
             textBoxCustomerID.Enabled = true;
             textBoxFirstName.Enabled = true;
             textBoxLastName.Enabled = true;
+            buttonAdd.Enabled = true;
+            buttonAdd.Visible = true;
             
             buttonUpdateCreditCard.Visible = true;
             buttonUpdateCreditCard.Enabled=true;
@@ -50,6 +52,7 @@ namespace UserInterface2._0
 
         public override void buttonAdd_Click(object sender, EventArgs e)
         {
+
             try
             {
                 customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text,
