@@ -12,7 +12,7 @@ namespace DAL
     public class CustomerDAL
     {
        
-        public List<Customer> customerList;
+        public static List<Customer> customerList;
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
@@ -28,9 +28,9 @@ namespace DAL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Create(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
+        public void Create(string first_name, string last_name, int idNum, string ccName, string creditCardNum, int year, int month)
         {
-            if (month <= 12 && year < DateTime.Now.Year + 20 && creditCardNum.Length!=16)
+            if (month <= 12 && creditCardNum.Length!=16 && (year <= DateTime.Now.Year + 20 | year >= DateTime.Now.Year))
             {
                 for (int i = 0; i < customerList.Count; i++)
                 {
@@ -47,7 +47,7 @@ namespace DAL
             {
                 throw new MonthOutOfRange();
             }
-            else if(year<= DateTime.Now.Year | year> DateTime.Now.Year+20)
+            else if(year < DateTime.Now.Year | year > DateTime.Now.Year+20)
             {
                 throw new Exception("Year out of range.");
             }
@@ -109,11 +109,11 @@ namespace DAL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Update(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
+        public void Update(string first_name, string last_name,  int idNum, string ccName, string creditCardNum, int year, int month)
         {
 
             Delete(idNum);
-            Create(first_name, last_name, ccName, idNum, creditCardNum, year, month);
+            Create(first_name, last_name, idNum, ccName, creditCardNum, year, month);
            
         }
 

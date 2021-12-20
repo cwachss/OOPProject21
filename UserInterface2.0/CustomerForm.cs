@@ -147,9 +147,11 @@ namespace UserInterface2._0
                 groupBoxNewCreditCard.Visible = false;
                 groupBoxNewCreditCard.Enabled = false;
                 customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, 
-                    textBoxPrintProducts.Text, int.Parse(textBoxCustomerID.Text), 
+                     int.Parse(textBoxCustomerID.Text), textBoxNameOnCard.Text,
                     textBoxCreditCardNumber.Text, int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
-               // buttonListDetails_Click(sender, e);
+                buttonListDetails_Click(sender, e);
+                buttonUpdateCreditCard.Enabled = true;
+                buttonUpdateProduct.Enabled=true;
 
             }
            catch
@@ -179,7 +181,7 @@ namespace UserInterface2._0
             try
             {
 
-                customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text, int.Parse(textBoxCustomerID.Text),
+                customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text), textBoxNameOnCard.Text, 
                 textBoxCreditCardNumber.Text, int.Parse(textBoxYear.Text),
                     int.Parse(textBoxMonth.Text));
 

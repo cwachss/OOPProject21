@@ -26,7 +26,7 @@ namespace BLL
         /// <returns></returns>
         public CustomerDAL Create(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
         {
-            misterA.Create(first_name, last_name, ccName, idNum, creditCardNum, year, month);
+            misterA.Create(first_name, last_name, idNum, ccName, creditCardNum, year, month);
             return misterA;
         }
 
@@ -56,10 +56,10 @@ namespace BLL
         /// <param name="creditCardNum"></param>
         /// <param name="year"></param>
         /// <param name="month"></param>
-        public void Update(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
+        public void Update(string first_name, string last_name, int idNum,  string ccName, string creditCardNum, int year, int month)
         
         {
-            misterA.Update(first_name, last_name, ccName, idNum, creditCardNum, year, month);
+            misterA.Update(first_name, last_name, idNum, ccName, creditCardNum, year, month);
         }
 
         public void Delete(int idNum)

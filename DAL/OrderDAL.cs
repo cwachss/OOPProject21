@@ -116,7 +116,8 @@ namespace DAL
         //this is an idea that I have: to make the customerId and productId be anything that the user wants to enter -and then we check it for validity 
         private bool CheckForCustomer(int customerID)
         {
-            //Customer misterA = new Customer();
+            //CustomerDAL customer;
+            //customer.customerList
             return false;//just filler stuff, not the actual method
         }
 
