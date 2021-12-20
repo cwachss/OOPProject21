@@ -36,7 +36,7 @@ namespace UserInterface2._0
 
         }
 
-        public override void buttonListDetails_Click(object sender, EventArgs e) 
+        public override void buttonListDetails_Click(object sender, EventArgs e)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace UserInterface2._0
             {
                 productBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
 
-                
+
                 textBoxName.Enabled = false;
                 textBoxPrice.Enabled = false;
                 textBoxStock.Enabled = false;
@@ -103,5 +103,27 @@ namespace UserInterface2._0
         {
             Application.Exit();
         }
+
+
+
+        public override void buttonCreate_Click(object sender, EventArgs e)
+        {
+            base.buttonCreate_Click(sender, e);
+            buttonAdd.Visible = true;
+            buttonReturnMenu.Visible = true; //open up button that returns you to main menu
+            labelProductMenu.Text = "Add Product"; //change title of page
+            //allows you to type in the new product info:
+            textBoxProductNumber.Enabled = true;
+            textBoxName.Enabled = true;
+            textBoxPrice.Enabled = true;
+            textBoxStock.Enabled = true;
+
+
+            textBoxPrintProducts.Size = new System.Drawing.Size(436, 397); //resize text box to make room for add panel
+
+        }
+
+
+
     }
-} 
+}
