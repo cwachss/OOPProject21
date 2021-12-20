@@ -152,7 +152,7 @@ namespace UserInterface2._0
                 buttonListDetails_Click(sender, e);
                 buttonUpdateCreditCard.Enabled = true;
                 buttonUpdateProduct.Enabled=true;
-
+                MessageBox.Show("Credit Card updated successfully!");
             }
            catch
             {

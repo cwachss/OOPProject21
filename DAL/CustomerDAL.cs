@@ -12,7 +12,8 @@ namespace DAL
     public class CustomerDAL
     {
        
-        public static List<Customer> customerList;
+         //public static List<Customer> customerList;
+        public static List<Customer> customerList { get; set; }
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
@@ -30,7 +31,7 @@ namespace DAL
         /// <param name="month"></param>
         public void Create(string first_name, string last_name, int idNum, string ccName, string creditCardNum, int year, int month)
         {
-            if (month <= 12 && creditCardNum.Length!=16 && (year <= DateTime.Now.Year + 20 | year >= DateTime.Now.Year))
+            if (month <= 12 && creditCardNum.Length==16 && (year <= DateTime.Now.Year + 20 || year >= DateTime.Now.Year))
             {
                 for (int i = 0; i < customerList.Count; i++)
                 {
