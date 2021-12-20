@@ -37,35 +37,41 @@ namespace UserInterface2._0
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelProductNumber = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.groupBoxProductDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonReadAll
             // 
-            this.buttonReadAll.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.buttonReadAll.Size = new System.Drawing.Size(262, 507);
+            this.buttonReadAll.Location = new System.Drawing.Point(524, 59);
+            this.buttonReadAll.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 497);
             this.buttonReadAll.Text = "ALL PRODUCTS";
             // 
             // buttonReadOne
             // 
-            this.buttonReadOne.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.buttonReadOne.Size = new System.Drawing.Size(262, 507);
+            this.buttonReadOne.Location = new System.Drawing.Point(262, 59);
+            this.buttonReadOne.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 497);
             this.buttonReadOne.Text = "FIND PRODUCT";
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.buttonCreate.Size = new System.Drawing.Size(262, 507);
+            this.buttonCreate.Location = new System.Drawing.Point(0, 59);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 497);
             this.buttonCreate.Text = "NEW PRODUCT";
             // 
             // labelProductMenu
             // 
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelProductMenu.Size = new System.Drawing.Size(787, 59);
             this.labelProductMenu.Text = "Product Menu";
             // 
             // textBoxProductNumber2
             // 
-            this.textBoxProductNumber2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxProductNumber2.Margin = new System.Windows.Forms.Padding(2);
             // 
             // labelEnterNumber
             // 
@@ -76,7 +82,7 @@ namespace UserInterface2._0
             // textBoxPrintProducts
             // 
             this.textBoxPrintProducts.Location = new System.Drawing.Point(31, 78);
-            this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(8);
             this.textBoxPrintProducts.Size = new System.Drawing.Size(436, 399);
             // 
             // groupBoxProductDetails
@@ -90,27 +96,27 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.Add(this.labelName);
             this.groupBoxProductDetails.Controls.Add(this.textBoxName);
             this.groupBoxProductDetails.Location = new System.Drawing.Point(509, 78);
-            this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxProductDetails.Size = new System.Drawing.Size(235, 398);
+            this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxProductDetails.Size = new System.Drawing.Size(254, 398);
             this.groupBoxProductDetails.Text = "PRODUCT DETAILS";
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxName, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelName, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelProductNumber, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxPrice, 0);
-            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonAdd, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelPrice, 0);
-            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonDelete, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxStock, 0);
-            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonModify, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelStock, 0);
-            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonUpdateProduct, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxProductNumber, 0);
+            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonAdd, 0);
+            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonDelete, 0);
+            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonModify, 0);
+            this.groupBoxProductDetails.Controls.SetChildIndex(this.buttonUpdateProduct, 0);
             // 
             // buttonUpdateProduct
             // 
             this.buttonUpdateProduct.Location = new System.Drawing.Point(40, 332);
-            this.buttonUpdateProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUpdateProduct.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdateProduct.Text = "Update Product Details";
             // 
             // buttonModify
@@ -126,14 +132,14 @@ namespace UserInterface2._0
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(40, 332);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Text = "ADD PRODUCT";
             // 
             // textBoxProductNumber
             // 
             this.textBoxProductNumber.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductNumber.Location = new System.Drawing.Point(36, 45);
-            this.textBoxProductNumber.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxProductNumber.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxProductNumber.Name = "textBoxProductNumber";
             this.textBoxProductNumber.Size = new System.Drawing.Size(175, 33);
             this.textBoxProductNumber.TabIndex = 43;
@@ -153,7 +159,7 @@ namespace UserInterface2._0
             // 
             this.textBoxStock.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStock.Location = new System.Drawing.Point(36, 276);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxStock.Name = "textBoxStock";
             this.textBoxStock.Size = new System.Drawing.Size(175, 33);
             this.textBoxStock.TabIndex = 46;
@@ -173,7 +179,7 @@ namespace UserInterface2._0
             // 
             this.textBoxPrice.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrice.Location = new System.Drawing.Point(37, 200);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(175, 33);
             this.textBoxPrice.TabIndex = 45;
@@ -193,7 +199,7 @@ namespace UserInterface2._0
             // 
             this.textBoxName.Font = new System.Drawing.Font("Nirmala UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(37, 121);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(175, 33);
             this.textBoxName.TabIndex = 44;
@@ -209,17 +215,42 @@ namespace UserInterface2._0
             this.labelProductNumber.TabIndex = 47;
             this.labelProductNumber.Text = "Product Number";
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::UserInterface2._0.Properties.Resources.toysLogo3;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(6, 3);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(43, 56);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 24;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 557);
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ClientSize = new System.Drawing.Size(787, 556);
+            this.Controls.Add(this.pictureBoxLogo);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductForm_FormClosing);
+            this.Controls.SetChildIndex(this.labelProductMenu, 0);
+            this.Controls.SetChildIndex(this.buttonCreate, 0);
+            this.Controls.SetChildIndex(this.buttonReadOne, 0);
+            this.Controls.SetChildIndex(this.buttonReadAll, 0);
+            this.Controls.SetChildIndex(this.groupBoxProductDetails, 0);
+            this.Controls.SetChildIndex(this.textBoxPrintProducts, 0);
+            this.Controls.SetChildIndex(this.buttonReturnMenu, 0);
+            this.Controls.SetChildIndex(this.labelEnterNumber, 0);
+            this.Controls.SetChildIndex(this.buttonListDetails, 0);
+            this.Controls.SetChildIndex(this.textBoxProductNumber2, 0);
+            this.Controls.SetChildIndex(this.pictureBoxLogo, 0);
             this.groupBoxProductDetails.ResumeLayout(false);
             this.groupBoxProductDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +266,6 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelProductNumber;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

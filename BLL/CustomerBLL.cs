@@ -24,10 +24,10 @@ namespace BLL
         /// <param name="year"></param>
         /// <param name="month"></param>
         /// <returns></returns>
-        public CustomerDAL Create(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
+        public void Create(string first_name, string last_name, string ccName, int idNum, string creditCardNum, int year, int month)
         {
             misterA.Create(first_name, last_name, idNum, ccName, creditCardNum, year, month);
-            return misterA;
+            
         }
 
         /// <summary> 

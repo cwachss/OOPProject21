@@ -121,21 +121,11 @@
   <data name="toystorepeoples" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toystorepeoples.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shoppingcart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shoppingcart.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="toyslogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\toyslogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="toysLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toysLogo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="toyslogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\toyslogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="shoppingcart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shoppingcart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

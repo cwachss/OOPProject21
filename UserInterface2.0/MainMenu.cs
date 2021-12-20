@@ -34,5 +34,9 @@ namespace UserInterface2._0
             
         }
 
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

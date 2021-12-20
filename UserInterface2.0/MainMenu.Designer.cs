@@ -44,7 +44,7 @@ namespace UserInterface2._0
             // 
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(99, 70);
+            this.labelWelcome.Location = new System.Drawing.Point(108, 70);
             this.labelWelcome.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(379, 45);
@@ -113,7 +113,7 @@ namespace UserInterface2._0
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(661, 445);
+            this.ClientSize = new System.Drawing.Size(669, 458);
             this.Controls.Add(this.labelCustomers);
             this.Controls.Add(this.labelProducts);
             this.Controls.Add(this.labelWelcome);
@@ -121,7 +121,9 @@ namespace UserInterface2._0
             this.Controls.Add(this.pictureBoxProducts);
             this.Controls.Add(this.pictureBoxCustomer);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer)).EndInit();

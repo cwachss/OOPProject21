@@ -12,7 +12,7 @@ namespace DAL
     public class CustomerDAL
     {
        
-        protected static List<Customer> customerList;
+        protected static List<Customer> customerList { get; set; }
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information

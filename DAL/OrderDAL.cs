@@ -89,7 +89,8 @@ namespace DAL
         }
 
         //Can't do more than one type of ReadOne or REadALl because the way the properties are set up
-        public Order ReadOne(int customerID, int productID)
+        //no, you can read in a customer id OR productiD and then all you do is check if the order exists based on the ORDER PROPERTIES of customer id and product id- you aren't supposed to be referencing the customer list or product list at all. 
+       /* public Order ReadOne(int customerID, int productID)
         {
             if(CheckForCustomer(customerID) && CheckForProduct(productID))
             {
@@ -97,7 +98,7 @@ namespace DAL
             }
             Order sale = new Order(transaction.OrderNumber, customerID, productID);
             return sale;
-        }
+        }*/
 
         
         //public List<Order> ReadALl()
@@ -115,7 +116,10 @@ namespace DAL
         //}
 
         //this is an idea that I have: to make the customerId and productId be anything that the user wants to enter -and then we check it for validity 
-        private bool CheckForCustomer(int customerID)
+        
+        //good point i think this should be in the BLL
+
+        /*private bool CheckForCustomer(int customerID)
         {
             int i;
             for( i=0; i<=CustomerDAL.customerList.Count; i++)
@@ -134,6 +138,6 @@ namespace DAL
         private bool CheckForProduct(int productID)
         {
             return false;//same as above
-        }
+        }*/
     }
 }

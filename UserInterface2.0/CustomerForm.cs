@@ -265,5 +265,12 @@ namespace UserInterface2._0
             
           
         }
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.ShowDialog();
+        }
     }
 }

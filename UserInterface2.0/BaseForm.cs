@@ -26,7 +26,7 @@ namespace UserInterface2._0
             textBoxPrintProducts.Visible = true;
             buttonReadAll_Click(sender,e);
             groupBoxProductDetails.Visible = true;
-            groupBoxProductDetails.Enabled = true;
+           
             //groupBoxProductDetails.Enabled = true;//not working, so I had to set each textbox to be enabled by the child class
            
         }
@@ -35,7 +35,7 @@ namespace UserInterface2._0
         {
             HideMenuButtons();
             groupBoxProductDetails.Visible = true;
-            groupBoxProductDetails.Enabled = false;
+            
             buttonReturnMenu.Visible = true;
             labelEnterNumber.Visible = true;
             textBoxProductNumber2.Visible = true;
@@ -58,7 +58,7 @@ namespace UserInterface2._0
 
         public virtual void buttonListDetails_Click(object sender, EventArgs e) 
         {
-            groupBoxProductDetails.Enabled = true;
+           
             buttonDelete.Enabled = true;
             buttonModify.Enabled = true;
           
