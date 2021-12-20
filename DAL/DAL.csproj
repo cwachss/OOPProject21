@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreditCardNumOutOfRange.cs" />
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="MonthOutOfRange.cs" />
     <Compile Include="OrderDAL.cs" />
@@ -60,6 +61,9 @@
       <Project>{22eaa7f0-877f-4da9-96c2-d04dbb28ebd8}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ListOfOrders.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

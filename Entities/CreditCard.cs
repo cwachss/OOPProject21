@@ -12,11 +12,11 @@ namespace Entities
         //properties, instance variables I'm not sure what
         public string Name { get; set; }
        
-        public long CardNumber { get; set; }
+        public string CardNumber { get; set; }
         public DateTime ExpirationDate { get; set; }
         public decimal Charges { get; set; }
 
-        public CreditCard(string name, long number, DateTime expiration)
+        public CreditCard(string name, string number, DateTime expiration)
         {
             Name = name;
             CardNumber = number;
