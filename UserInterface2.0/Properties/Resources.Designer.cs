@@ -83,6 +83,16 @@ namespace UserInterface2._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shoppingcart1 {
+            get {
+                object obj = ResourceManager.GetObject("shoppingcart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap toyslogo {
             get {
                 object obj = ResourceManager.GetObject("toyslogo", resourceCulture);

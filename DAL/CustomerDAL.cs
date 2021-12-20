@@ -12,7 +12,7 @@ namespace DAL
     public class CustomerDAL
     {
        
-        public List<Customer> customerList;
+        protected static List<Customer> customerList;
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
@@ -112,6 +112,8 @@ namespace DAL
             Create(first_name, last_name, ccName, idNum, creditCardNum, year, month);
            
         }
+
+        
 
         public void Delete(int idNum)
         {

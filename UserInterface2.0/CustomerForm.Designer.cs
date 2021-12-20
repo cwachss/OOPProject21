@@ -64,27 +64,27 @@ namespace UserInterface2._0
             // 
             this.buttonReadAll.Location = new System.Drawing.Point(262, 52);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonReadAll.Size = new System.Drawing.Size(262, 503);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 504);
             this.buttonReadAll.Text = "ALL CUSTOMERS";
             // 
             // buttonReadOne
             // 
             this.buttonReadOne.Location = new System.Drawing.Point(524, 52);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonReadOne.Size = new System.Drawing.Size(262, 503);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 504);
             this.buttonReadOne.Text = "FIND CUSTOMER";
             // 
             // buttonCreate
             // 
             this.buttonCreate.Location = new System.Drawing.Point(0, 52);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonCreate.Size = new System.Drawing.Size(262, 503);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 504);
             this.buttonCreate.Text = "NEW CUSTOMER";
             // 
             // labelProductMenu
             // 
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelProductMenu.Size = new System.Drawing.Size(786, 52);
+            this.labelProductMenu.Size = new System.Drawing.Size(787, 52);
             this.labelProductMenu.Text = "Customer Menu";
             // 
             // textBoxProductNumber2
@@ -124,7 +124,7 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Location = new System.Drawing.Point(499, 70);
             this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxProductDetails.Size = new System.Drawing.Size(248, 413);
+            this.groupBoxProductDetails.Size = new System.Drawing.Size(240, 413);
             this.groupBoxProductDetails.Text = "CUSTOMER DETAILS";
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelCustomerID, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxFirstName, 0);
@@ -410,7 +410,7 @@ namespace UserInterface2._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 555);
+            this.ClientSize = new System.Drawing.Size(787, 556);
             this.Controls.Add(this.groupBoxNewCreditCard);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CustomerForm";

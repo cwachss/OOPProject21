@@ -10,32 +10,60 @@ namespace BLL
 {
     public class OrderBLL
     {
+        
+        ProductBLL productBLL = new ProductBLL();
         OrderDAL orderDAL = new OrderDAL();
-        public void Create(int customerID, int productID)
+
+
+        public void Create(int customerID, int productID, int amountOrdered)
         {
+
             orderDAL.Create(customerID, productID);
+            Product product = productBLL.Read(productID);
+
+            if(product.AmountInStock >= amountOrdered)
+            {
+                productBLL.Update(productID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
+            }
+            else
+            {
+                throw new Exception("Not enough in stock");
+            }
             
-            
-            //I don't know how to change the stock or to add charges to a customer's credit card
         }
 
         public void Delete(int orderNum)
         {
+           /* Waiting for critical updates in the order class
+            * Order order = orderDAL.ReadOne(orderNum);
+            Product product = productBLL.Read(order.productID);
+            productBLL.Update(order.productID, product.ProductName, product.CostPerUnit, (product.AmountInStock + amountOrdered));*/
             orderDAL.Delete(orderNum);
             
             //again, same problem
         }
 
-        public void Update(int orderNum, int customerID, int productID)
+        public void Update(int orderNum, int customerID, int productID, int amountOrdered)
         {
             orderDAL.Update(orderNum, customerID, productID);
 
-            //see delete comment
+            Product product = productBLL.Read(productID);
+
+            if (product.AmountInStock >= amountOrdered)
+            {
+                productBLL.Update(productID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
+            }
+            else
+            {
+                throw new Exception("Not enough in stock");
+            }
+
+            
         }
 
-        public Order ReadOne(int customerID, int productID)
+       /* public Order ReadOne(int customerID, int productID)
         {
             return orderDAL.ReadOne(customerID,productID);
-        }
+        }*/
     }
 }

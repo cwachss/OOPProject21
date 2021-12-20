@@ -148,5 +148,23 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppingcart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toyslogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toyslogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toysLogo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toystorepeoples.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppingcart.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

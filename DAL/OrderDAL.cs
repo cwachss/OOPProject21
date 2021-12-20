@@ -15,6 +15,7 @@ namespace DAL
         Order transaction;
         public void Create(int customerID, int productID)
         {
+
             Order order = new Order(orderNumber, customerID, productID);
             orderList.Add(order);
             orderNumber += 100;
@@ -44,13 +45,14 @@ namespace DAL
             orderList.Add(order);
         }
 
+        //this does not work... the point is readOne should read in an order number and be able to find the customer and product ids also this just reads in a single predefined order, it doesn't find a specific one...
         public Order ReadOne(int customerID, int productID)
         {
             Order sale = new Order(transaction.OrderNumber, customerID, productID);
             return sale;
         }
         
-        public List<Order> ReadALl()
+       /* public List<Order> ReadALl()
         {
             if(orderList.Count > 0)
             {
@@ -62,7 +64,7 @@ namespace DAL
                 throw new Exception("No order yet!");
             }
             
-        }
+        }*/
 
     }
 }

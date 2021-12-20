@@ -10,7 +10,7 @@ namespace Entities
 {
     public class Customer : Person
     {
-        public CreditCard myCreditCard;
+        public CreditCard myCreditCard; //need to set this to private and then create get methods for all its details
         DateTime expirationDate;
 
         public Customer(string firstName, string lastName, string ccName, int idNum, long creditCardNum, int year, int month) :base(firstName, lastName, idNum)

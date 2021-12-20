@@ -14,8 +14,10 @@ namespace UserInterface2._0
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+           
             Application.Run(new MainMenu());
            
         }

@@ -166,6 +166,7 @@ namespace UserInterface2._0
 
                 textBoxFirstName.Enabled = false;
                 textBoxLastName.Enabled = false;
+                buttonUpdateCreditCard.Visible = false;
             }
             catch
             {
@@ -176,7 +177,7 @@ namespace UserInterface2._0
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
             base.buttonReadAll_Click(sender, e);
-            labelPrintInfo2.Visible = true;//will delete after base works
+            //labelPrintInfo2.Visible = true;//will delete after base works
 
             try
             {
@@ -235,6 +236,8 @@ namespace UserInterface2._0
         private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+            
+          
         }
     }
 }
