@@ -12,15 +12,23 @@ namespace DAL
     public class CustomerDAL
     {
        
-         //public static List<Customer> customerList;
-        public static List<Customer> customerList { get; set; }
-        public CustomerDAL()
+        public static List<Customer> customerList;
+       // public static List<Customer> customerList { get; set; }
+      
+        public CustomerDAL()//make the customer list get info from text doc so it reinitializes by each start up 
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
-            Customer aCustomerForTestingPurposes = new Customer("chani", "wachsstock", "Chani N. Wachsstock", 222, "1232321309240918", 2021, 12);
+            Customer aCustomerForTestingPurposes = new Customer("chani", "wachsstock",  222, "Chani N. Wachsstock", "1232321309240918", 2021, 12);
             customerList.Add(aCustomerForTestingPurposes);
+
+            InitializeList();
         }
 
+        
+
+
+           
+        
         /// <summary>
         /// method that adds a customer's information to a list
         /// </summary>
@@ -41,8 +49,16 @@ namespace DAL
                     }
                 }
 
-                Customer PloniAlmoni = new Customer(first_name, last_name, ccName, idNum, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
+                Customer PloniAlmoni = new Customer(first_name, last_name,  idNum, ccName, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
                 customerList.Add(PloniAlmoni);
+                StreamWriter writer = new StreamWriter(@"..\..\CustomerList.txt");
+                using(writer)
+                {
+                    writer.WriteLine($"{PloniAlmoni.FirstName} {PloniAlmoni.LastName} " +
+                        $"{PloniAlmoni.ID} {PloniAlmoni.myCreditCard.Name} {PloniAlmoni.myCreditCard.CardNumber} " +
+                        $"{PloniAlmoni.myCreditCard.ExpirationDate.Year} {PloniAlmoni.myCreditCard.ExpirationDate.Month}");
+                }
+
             }
             else if (month>12)
             {
@@ -55,9 +71,7 @@ namespace DAL
             else if(creditCardNum.Length!=16)
             {
                 throw new CreditCardNumOutOfRange();
-            }
-           
-
+            }         
         }
         /// <summary>
         /// method that returns a copy of the customer list
@@ -139,12 +153,28 @@ namespace DAL
 
         }
 
-        //public int? Find()
+        //public override string ToString()
         //{
-        //    for (int i=0;)
+
+        //    return $"{FirstName}{LastName}{ID}{CreditCardNum}";
         //}
           
+        public void InitializeList()
+        {
+            StreamReader reader = new StreamReader(@"..\..\customerList.txt");
+            string line;
+            using (reader)
+            {
+                for (int i = 0; (line = reader.ReadLine()) != null; i++)
+                {
+                    string[] array = line.Split(' ');
 
+                    Customer soAndSo = new Customer(array[0], array[1], int.Parse(array[2]), array[3], array[4], int.Parse(array[5]), int.Parse(array[6]));
+                    customerList.Add(soAndSo);
+                    //input all info into list, then whenever you add use StreamWriter
+                }
+            }
+        }
 
 
 

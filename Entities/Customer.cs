@@ -13,7 +13,7 @@ namespace Entities
         public CreditCard myCreditCard;
         DateTime expirationDate;
 
-        public Customer(string firstName, string lastName, string ccName, int idNum, string creditCardNum, int year, int month) :base(firstName, lastName, idNum)
+        public Customer(string firstName, string lastName,  int idNum, string ccName, string creditCardNum, int year, int month) :base(firstName, lastName, idNum)
         {
             expirationDate = new DateTime(year, month, 1);
             myCreditCard = new CreditCard(ccName, creditCardNum, expirationDate);

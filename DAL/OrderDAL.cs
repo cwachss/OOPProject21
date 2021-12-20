@@ -114,10 +114,10 @@ namespace DAL
         //}
 
         //this is an idea that I have: to make the customerId and productId be anything that the user wants to enter -and then we check it for validity 
-        private bool CheckForCustomer(int customerID)
+        public bool CheckForCustomer(int customerID)
         {
             int i;
-            for( i=0; i<=CustomerDAL.customerList.Count; i++)
+            for( i=0; i <= (CustomerDAL.customerList).Count; i++)
             {
                 if ((CustomerDAL.customerList[i]).ID==customerID)
                 {

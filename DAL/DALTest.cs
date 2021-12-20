@@ -27,24 +27,15 @@ namespace DAL
             //CustomerDAL asdf = new CustomerDAL();
             //asdf.Create("asdf", 2141, 41324, 1992, 30);
 
-            OrderDAL tester = new OrderDAL();
+            //OrderDAL tester = new OrderDAL();
 
-            //tester.Create(1234, 1234);
-            //Console.WriteLine(tester.orderList[0]);
-            //Console.WriteLine();
-
-            //tester.Create(1234, 1234);
-            //Console.WriteLine(tester.orderList[1]);
-            //Console.WriteLine();
-
-            //tester.Update(100, 1223, 1112);
-            //Console.WriteLine(tester.orderList[1]);
-            //Console.WriteLine();
-
-            //tester.Delete(100);
-            //Console.WriteLine(tester.orderList[1]);
-
-            tester.InitilizeList();
+          // Console.WriteLine(tester.CheckForCustomer(222));
+            CustomerDAL name = new CustomerDAL();
+            Console.WriteLine(CustomerDAL.customerList[0]);
+            Console.WriteLine("###############");
+            name.Create("asdf", "asdf", 134, "asdfa alskd", "0909090909090909", 2021, 10);
+            Console.WriteLine(CustomerDAL.customerList[1]);
+            //tester.InitilizeList();
 
         }
     }
