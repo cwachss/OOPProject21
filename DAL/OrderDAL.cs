@@ -12,50 +12,29 @@ namespace DAL
     {
         internal List<Order> orderList = new List<Order>();
         int orderNumber = 100;
-        private Order transaction;
 
+        public OrderDAL()
+        {
+            InitilizeList();
+        }
         public void InitilizeList()
         {
-            StreamReader reader = new StreamReader(@"../../bin/debug/ListOfOrders.txt");
-            string line;
-            using(reader)
-            {
-                for (int i = 0; (line = reader.ReadLine()) != null; i++)
-                {
-                    string [] array =line.Split(' ');
-                    Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
-                    orderList.Add(sale1);
-                    Console.WriteLine(orderNumber);
-                    Console.WriteLine(transaction.customerID);
-                    Console.WriteLine(transaction.productID);
-                }
-
-                //while(orderNumber!=0)
-                //{
-
-                //    Order sale1 = new Order(orderNumber, transaction.customerID, transaction.productID);
-                //    orderList.Add(sale1);
-
-                //   // string checkForNull=reader.ReadLine();
-                //    //if (checkForNull != null)
-                //    //    break;
-                //    orderNumber=int.Parse(reader.ReadLine());
-                //    transaction.customerID=int.Parse(reader.ReadLine());
-                //    transaction.productID=int.Parse(reader.ReadLine());
-
-                    
-                //}
-            }
+            //StreamReader reader = new StreamReader(@"../../bin/debug/ListOfOrders.txt");
+            //string line;
+            //using(reader)
+            //{
+            //    for (int i = 0; (line = reader.ReadLine()) != null; i++)
+            //    {
+            //        string [] array =line.Split(' ');
+            //        Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
+            //        orderList.Add(sale1);
+            //        Console.WriteLine(orderNumber);
+            //        Console.WriteLine(transaction.customerID);
+            //        Console.WriteLine(transaction.productID);
+            //    }
+            //}
         }
 
-
-
-
-
-
-
-
-       
         public void Create(int customerID, int productID)
         {
 
@@ -88,19 +67,43 @@ namespace DAL
             orderList.Add(order);
         }
 
-        //Can't do more than one type of ReadOne or REadALl because the way the properties are set up
-        //no, you can read in a customer id OR productiD and then all you do is check if the order exists based on the ORDER PROPERTIES of customer id and product id- you aren't supposed to be referencing the customer list or product list at all. 
-       /* public Order ReadOne(int customerID, int productID)
-        {
-            if(CheckForCustomer(customerID) && CheckForProduct(productID))
-            {
-
-            }
-            Order sale = new Order(transaction.OrderNumber, customerID, productID);
-            return sale;
-        }*/
-
         
+        //no, you can read in a customer id OR productiD and then all you do is check if the order exists based on the ORDER PROPERTIES of customer id and product id- you aren't supposed to be referencing the customer list or product list at all. 
+         public Order ReadOne(int customerID)
+         {
+            try
+            {
+                int i;
+                for (i = 0; i <orderList.Count; i++)
+                {
+                    if (orderList[i].customerID == customerID)
+                        break;
+                }
+                   
+
+                Order sale = orderList[i];
+                return sale;
+            }
+             catch
+            {
+                throw new Exception("No orders for this customer");
+            }
+         }
+
+        //public Order ReadOne(int productID)
+        //{
+        //    try
+        //    {
+        //        Order sale = new Order(transaction.OrderNumber, transaction.customerID, productID);
+        //    }
+        //    catch
+        //    {
+        //        throw new Exception("No orders found for this product");
+        //    }
+        //}
+
+
+
         //public List<Order> ReadALl()
         //{
         //    if(orderList.Count > 0)
@@ -112,29 +115,9 @@ namespace DAL
         //    {
         //        throw new Exception("No order yet!");
         //    }
-            
+
         //}
 
-        //this is an idea that I have: to make the customerId and productId be anything that the user wants to enter -and then we check it for validity 
-        public bool CheckForCustomer(int customerID)
-        {
-            int i;
-            for( i=0; i <= (CustomerDAL.customerList).Count; i++)
-            {
-                if ((CustomerDAL.customerList[i]).ID==customerID)
-                {
-                    return true;
-                }
-            }
-            if (i > CustomerDAL.customerList.Count)
-                return false;
-            else
-                return false;
-        }
-
-        private bool CheckForProduct(int productID)
-        {
-            return false;//same as above
-        }*/
+        
     }
 }

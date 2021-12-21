@@ -27,3 +27,9 @@ C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.csproj.
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.exe
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.pdb
 C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\BLL.exe
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.exe
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.exe
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.pdb
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.exe.config
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.pdb
+C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.exe.config
