@@ -11,18 +11,20 @@ namespace Entities
         //int customerID;
         //int productID;
 
-        public int customerID { get; set; }
-        public int productID { get; set; }
+        public int CustomerID { get; set; }
+        public int ProductID { get; set; }
         public int OrderNumber { get; set; }
+        public int AmountOrdered { get; set; }
 
-        public Order(int orderNumber, int cID, int pID)
+        public Order(int orderNumber, int cID, int pID, int amount)
         {
             OrderNumber = orderNumber;
-            customerID = cID;
-            productID = pID;
+            CustomerID = cID;
+            ProductID = pID;
+            AmountOrdered = amount;
         }
 
-        public override string ToString() => $"Order Number: {OrderNumber}\tCustomerID: {customerID}\tProductID: {productID}";
+        public override string ToString() => $"Order Number: {OrderNumber}\tCustomerID: {CustomerID}\tProductID: {ProductID}";
         
 
     }

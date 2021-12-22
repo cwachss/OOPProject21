@@ -25,11 +25,17 @@ namespace BLL
             Console.WriteLine(productBLL.Read(78889));
             
             orderBLL.Create(222, 78889, 10); //correct format
+            orderBLL.Create(222, 78889, 2); //correct format
             Console.WriteLine(productBLL.Read(78889));
+            orderBLL.Delete(200);
 
-            orderBLL.Create(123, 78889, 10); //wrong customer id
+            orderBLL.Update(100, 5);
+            Console.WriteLine(productBLL.Read(78889));
+            Console.WriteLine();
+
+            /*orderBLL.Create(123, 78889, 10); //wrong customer id
             orderBLL.Create(222, 78889, 10); //wrong product id
-            orderBLL.Create(222, 78889, 101); //ordered too many
+            orderBLL.Create(222, 78889, 101); //ordered too many*/
             Console.WriteLine(productBLL.Read(78889));
 
         }

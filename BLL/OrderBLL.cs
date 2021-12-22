@@ -25,7 +25,7 @@ namespace BLL
                 customerBLL.Read(customerID);
 
 
-                orderDAL.Create(customerID, productID);
+                orderDAL.Create(customerID, productID, amountOrdered);
             }
             catch
             {
@@ -47,24 +47,25 @@ namespace BLL
 
         public void Delete(int orderNum)
         {
-           /* Waiting for critical updates in the order class
-            * Order order = orderDAL.ReadOne(orderNum);
-            Product product = productBLL.Read(order.productID);
-            productBLL.Update(order.productID, product.ProductName, product.CostPerUnit, (product.AmountInStock + amountOrdered));*/
+            //Waiting for critical updates in the order class
+             Order order = orderDAL.FakeReadByOrderForTestingPurposes(orderNum);
+        Product product = productBLL.Read(order.ProductID);
+        productBLL.Update(product.ProductNumber, product.ProductName, product.CostPerUnit, (product.AmountInStock + order.AmountOrdered));
             orderDAL.Delete(orderNum);
             
             //again, same problem
         }
 
-        public void Update(int orderNum, int customerID, int productID, int amountOrdered)
+        public void Update(int orderNum, int amountOrdered)
         {
-            orderDAL.Update(orderNum, customerID, productID);
+            Order order = orderDAL.FakeReadByOrderForTestingPurposes(orderNum);
 
-            Product product = productBLL.Read(productID);
+            Product product = productBLL.Read(order.ProductID);
 
             if (product.AmountInStock >= amountOrdered)
             {
-                productBLL.Update(productID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
+                orderDAL.Update(orderNum, amountOrdered);
+                productBLL.Update(order.ProductID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
             }
             else
             {

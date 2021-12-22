@@ -10,7 +10,7 @@ namespace DAL
 {
     public class OrderDAL
     {
-        internal List<Order> orderList = new List<Order>();
+        internal static List<Order> orderList = new List<Order>();
         int orderNumber = 100;
         private Order transaction;
 
@@ -23,11 +23,14 @@ namespace DAL
                 for (int i = 0; (line = reader.ReadLine()) != null; i++)
                 {
                     string [] array =line.Split(' ');
-                    Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
+                    Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]), int.Parse(array[3]));
                     orderList.Add(sale1);
+                    orderNumber++;
+
+                    //What is this? 
                     Console.WriteLine(orderNumber);
-                    Console.WriteLine(transaction.customerID);
-                    Console.WriteLine(transaction.productID);
+                    Console.WriteLine(transaction.CustomerID);
+                    Console.WriteLine(transaction.ProductID);
                 }
 
                 //while(orderNumber!=0)
@@ -50,16 +53,10 @@ namespace DAL
 
 
 
-
-
-
-
-
-       
-        public void Create(int customerID, int productID)
+        public void Create(int customerID, int productID, int amountOrdered)
         {
 
-            Order order = new Order(orderNumber, customerID, productID);
+            Order order = new Order(orderNumber, customerID, productID, amountOrdered);
             orderList.Add(order);
             orderNumber += 100;
         }
@@ -81,11 +78,41 @@ namespace DAL
             }
         }
 
-        public void Update(int anOrderNumber, int customerID, int productID)
+        public void Update(int anOrderNumber, int amountOrdered)
         {
+            int index = 0;
+            //this will be replaced by the read method but not yet
+            while (index < orderList.Count)
+            {
+                if (anOrderNumber == orderList[index].OrderNumber)
+                {
+                    break;
+                }
+                index++;
+            }
+            //end test method
+ 
+            Order order = new Order(anOrderNumber, orderList[index].CustomerID, orderList[index].ProductID, amountOrdered);
             Delete(anOrderNumber);
-            Order order = new Order(anOrderNumber, customerID, productID);
             orderList.Add(order);
+        }
+
+        public Order FakeReadByOrderForTestingPurposes(int orderNumber)
+        {
+            int index = 0;
+            //this will be replaced by the read method but not yet
+            while (index < orderList.Count)
+            {
+                if (orderNumber == orderList[index].OrderNumber)
+                {
+                    break;
+                }
+                index++;
+            }
+            //end test method
+
+            Order order = new Order(orderNumber, orderList[index].CustomerID, orderList[index].ProductID, orderList[index].AmountOrdered);
+            return order;
         }
 
         //Can't do more than one type of ReadOne or REadALl because the way the properties are set up
