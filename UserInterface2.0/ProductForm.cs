@@ -70,9 +70,10 @@ namespace UserInterface2._0
         {
             try
             {
-                productBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
+                productBLL.Update((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, 
+                    decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //update product with new details
 
-
+                
                 textBoxName.Enabled = false;
                 textBoxPrice.Enabled = false;
                 textBoxStock.Enabled = false;
@@ -132,9 +133,50 @@ namespace UserInterface2._0
 
         }
 
-        private void buttonReadOne_Click_1(object sender, EventArgs e)
+        public override void buttonAdd_Click(object sender, EventArgs e)
+        {
+            base.buttonAdd_Click(sender, e);
+            try
+            {
+                productBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //adds a product to the list
+                textBoxPrintProducts.Clear(); //empty list box to reprint with new product added
+                PrintAll(); //reprint list with new product added
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Product information is invalid.", "Error"); //maybe we should have different error messages depending on what is invalid (product number in use, price is not valid, etc)
+            }
+        }
+
+        public override void buttonReadAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                base.buttonReadAll_Click(sender, e);
+            }
+           catch
+            {
+                MessageBox.Show("No products found. Please add to inventory.", "Error");
+            }
+
+        }
+        public void PrintAll()
         {
 
+            foreach (Product product in productBLL.ReadAll()) //appends each product in the text box
+            {
+                textBoxPrintProducts.AppendText(product.ToString() + "\r\n");
+            }
+        }
+
+        public override void ResetAndHideEverything()
+        {
+            buttonDelete.Visible=false;
+            buttonModify.Visible=false;
+            textBoxProductNumber.Clear();
+            textBoxName.Clear();
+            textBoxStock.Clear();
+            textBoxPrice.Clear();
         }
     }
 }

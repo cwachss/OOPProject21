@@ -21,3 +21,15 @@ C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.csproj.CoreCompileInput
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.exe
 C:\Users\chani\source\repos\OOPProject\DAL\obj\Debug\DAL.pdb
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\bin\Debug\DAL.exe.config
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\bin\Debug\DAL.exe
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\bin\Debug\DAL.pdb
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\bin\Debug\Entities.exe
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\bin\Debug\Entities.pdb
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\bin\Debug\Entities.exe.config
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\obj\Debug\DAL.csproj.SuggestedBindingRedirects.cache
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\obj\Debug\DAL.exe
+C:\Users\shira\source\repos\OOP\OOPProject21\DAL\obj\Debug\DAL.pdb

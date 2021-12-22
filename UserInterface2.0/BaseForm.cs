@@ -96,19 +96,20 @@ namespace UserInterface2._0
         }
         
 
-        protected virtual void ResetAndHideEverything() 
+        public virtual void ResetAndHideEverything() 
         {
             textBoxPrintProducts.Visible = false;
             //labelPrintInfo.Visible = false;
             groupBoxProductDetails.Visible = false;
             buttonReturnMenu.Visible = false;
-
+            textBoxPrintProducts.Clear();
             labelEnterNumber.Visible = false;
             textBoxProductNumber2.Visible = false;
             buttonListDetails.Visible = false;
             buttonUpdateProduct.Visible=false;
             
             buttonAdd.Enabled = false;
+            buttonAdd.Visible = false;
 
         }
        
