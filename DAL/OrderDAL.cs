@@ -68,7 +68,7 @@ namespace DAL
         }
 
         
-        //no, you can read in a customer id OR productiD and then all you do is check if the order exists based on the ORDER PROPERTIES of customer id and product id- you aren't supposed to be referencing the customer list or product list at all. 
+        //method that reads out a specific customer's orders
          public Order ReadOrderViaCustomer(int customerID)
          {
             try
@@ -86,10 +86,11 @@ namespace DAL
             }
              catch
             {
-                throw new Exception("No orders for this customer");
+                throw new Exception("No orders for this customer yet");
             }
          }
 
+        //reads out orders of a specific product
         public Order ReadOrderViaProduct(int productID)
         {
            
@@ -108,32 +109,32 @@ namespace DAL
             }
             catch
             {
-                throw new Exception("No orders for this customer");
+                throw new Exception("No orders for this Product yet");
             }
         }
 
 
+        //Checks for order by input of the order's Id number
+        public Order ReadOrderViaOrder(int orderNum)
+        {
+            try
+            {
+                int i;
+                for (i = 0; i < orderList.Count; i++)
+                {
+                    if (orderList[i].OrderNumber == orderNum)
+                        break;
+                }
 
-        //public Order ReadOrderViaOrder(int orderNum)
-        //{
-        //    try
-        //    {
-        //        int i;
-        //        for (i = 0; i < orderList.Count; i++)
-        //        {
-        //            if (orderList[i].OrderNumber == orderNumber)
-        //                break;
-        //        }
 
-
-        //        Order sale = orderList[i];
-        //        return sale;
-        //    }
-        //    catch
-        //    {
-        //        throw new Exception("No orders for this customer");
-        //    }
-        //}
+                Order sale = orderList[i];
+                return sale;
+            }
+            catch
+            {
+                throw new Exception("No such order in our system");
+            }
+        }
         //public Order ReadOne(int productID)
         //{
         //    try

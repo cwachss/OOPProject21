@@ -38,7 +38,7 @@ namespace DAL
             orderDAL.Create(342116, 90876);
             Console.WriteLine(orderDAL.ReadOrderViaCustomer(342116));
             Console.WriteLine(orderDAL.ReadOrderViaProduct(90876));
-           // Console.WriteLine(orderDAL.ReadOrderViaOrder(100));
+            Console.WriteLine(orderDAL.ReadOrderViaOrder(100));
         }
     }
 }
