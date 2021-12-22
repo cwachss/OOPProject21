@@ -43,7 +43,10 @@ namespace UserInterface2._0
             this.labelCustomerID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelOrderNumber = new System.Windows.Forms.Label();
+            this.numericUpDownAmount = new System.Windows.Forms.NumericUpDown();
+            this.labelAmount = new System.Windows.Forms.Label();
             this.groupBoxPlaceOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonReturnMenu
@@ -146,6 +149,8 @@ namespace UserInterface2._0
             // 
             // groupBoxPlaceOrder
             // 
+            this.groupBoxPlaceOrder.Controls.Add(this.labelAmount);
+            this.groupBoxPlaceOrder.Controls.Add(this.numericUpDownAmount);
             this.groupBoxPlaceOrder.Controls.Add(this.buttonPlaceOrder);
             this.groupBoxPlaceOrder.Controls.Add(this.textBoxProductNumber);
             this.groupBoxPlaceOrder.Controls.Add(this.textBoxCustomerID);
@@ -226,6 +231,34 @@ namespace UserInterface2._0
             this.labelOrderNumber.Text = "Order Number:";
             this.labelOrderNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // numericUpDownAmount
+            // 
+            this.numericUpDownAmount.Location = new System.Drawing.Point(32, 288);
+            this.numericUpDownAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownAmount.Name = "numericUpDownAmount";
+            this.numericUpDownAmount.Size = new System.Drawing.Size(46, 20);
+            this.numericUpDownAmount.TabIndex = 6;
+            this.numericUpDownAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // labelAmount
+            // 
+            this.labelAmount.AutoSize = true;
+            this.labelAmount.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAmount.Location = new System.Drawing.Point(29, 270);
+            this.labelAmount.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelAmount.Name = "labelAmount";
+            this.labelAmount.Size = new System.Drawing.Size(53, 15);
+            this.labelAmount.TabIndex = 7;
+            this.labelAmount.Text = "Quantity";
+            // 
             // orderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +277,7 @@ namespace UserInterface2._0
             this.Text = "Orders";
             this.groupBoxPlaceOrder.ResumeLayout(false);
             this.groupBoxPlaceOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +299,7 @@ namespace UserInterface2._0
         private System.Windows.Forms.TextBox textBoxProductNumber;
         private System.Windows.Forms.TextBox textBoxCustomerID;
         private System.Windows.Forms.Button buttonPlaceOrder;
+        private System.Windows.Forms.Label labelAmount;
+        private System.Windows.Forms.NumericUpDown numericUpDownAmount;
     }
 }

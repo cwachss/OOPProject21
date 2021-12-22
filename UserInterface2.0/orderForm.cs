@@ -57,10 +57,28 @@ namespace UserInterface2._0
             HideMainMenu();
             labelOrderTitle.Text = "Place Order";
             listBoxProducts.Visible = true;
+            listBoxProducts.Size = new System.Drawing.Size(386, 382); //resize text box to make room for place order groupbox
+            listBoxProducts.Text = ""; //need readall function to work first
             labelAllProducts.Visible = true;
             groupBoxPlaceOrder.Visible = true;
             buttonReturnMenu.Visible = true;
             labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
+        }
+
+        private void buttonPlaceOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                orderBLL.Create(int.Parse(textBoxCustomerID.Text), int.Parse(textBoxProductNumber.Text), Convert.ToInt32(numericUpDownAmount.Value));
+                MessageBox.Show("Thank you for shopping at Toys of All Sorts!");
+                labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
+                //update listbox to show new stock numbers (waiting on ReadAll)
+            }
+            catch
+            {
+                MessageBox.Show("Incorrect input");
+            }
+
         }
 
         private void buttonReadOne_Click(object sender, EventArgs e)
@@ -74,12 +92,11 @@ namespace UserInterface2._0
             labelOrderTitle.Text = "All Orders";
             buttonReturnMenu.Visible = true;
             listBoxProducts.Visible = true;
+            listBoxProducts.Size = new System.Drawing.Size(688, 382); //resize text box to take up all the space
             listBoxProducts.Text = ""; //need readall function to work first
+
+            
         }
 
-        private void buttonPlaceOrder_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
