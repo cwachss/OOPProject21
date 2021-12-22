@@ -32,10 +32,13 @@ namespace DAL
             //name.Create("asdf", "asdf", 134, "asdfa alskd", "0909090909090909", 2021, 10);
             //Console.WriteLine(CustomerDAL.customerList[1]);
             ////tester.InitilizeList();
-            Order newSale = new Order(1233, 342116, 120394);
+            //Order newSale = new Order(1233, 000, 120394);
+            //Customer vew = new Customer("me", "last", 342116);
             OrderDAL orderDAL = new OrderDAL();
-
-            Console.WriteLine(orderDAL.ReadOne(342116));
+            orderDAL.Create(342116, 90876);
+            Console.WriteLine(orderDAL.ReadOrderViaCustomer(342116));
+            Console.WriteLine(orderDAL.ReadOrderViaProduct(90876));
+           // Console.WriteLine(orderDAL.ReadOrderViaOrder(100));
         }
     }
 }

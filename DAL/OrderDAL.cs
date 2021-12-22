@@ -69,7 +69,7 @@ namespace DAL
 
         
         //no, you can read in a customer id OR productiD and then all you do is check if the order exists based on the ORDER PROPERTIES of customer id and product id- you aren't supposed to be referencing the customer list or product list at all. 
-         public Order ReadOne(int customerID)
+         public Order ReadOrderViaCustomer(int customerID)
          {
             try
             {
@@ -90,6 +90,50 @@ namespace DAL
             }
          }
 
+        public Order ReadOrderViaProduct(int productID)
+        {
+           
+            try
+            {
+                int i;
+                for (i = 0; i < orderList.Count; i++)
+                {
+                    if (orderList[i].productID == productID)
+                        break;
+                }
+
+
+                Order sale = orderList[i];
+                return sale;
+            }
+            catch
+            {
+                throw new Exception("No orders for this customer");
+            }
+        }
+
+
+
+        //public Order ReadOrderViaOrder(int orderNum)
+        //{
+        //    try
+        //    {
+        //        int i;
+        //        for (i = 0; i < orderList.Count; i++)
+        //        {
+        //            if (orderList[i].OrderNumber == orderNumber)
+        //                break;
+        //        }
+
+
+        //        Order sale = orderList[i];
+        //        return sale;
+        //    }
+        //    catch
+        //    {
+        //        throw new Exception("No orders for this customer");
+        //    }
+        //}
         //public Order ReadOne(int productID)
         //{
         //    try
@@ -118,6 +162,6 @@ namespace DAL
 
         //}
 
-        
+
     }
 }
