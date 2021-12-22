@@ -11,17 +11,21 @@ namespace DAL
 {
     public class CustomerDAL
     {
-       
-        protected static List<Customer> customerList { get; set; }
+
+        protected static List<Customer> customerList;
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
             Customer aCustomerForTestingPurposes = new Customer("chani", "wachsstock",  222, "Chani N. Wachsstock", "1232321309240918", 2021, 12);
             customerList.Add(aCustomerForTestingPurposes);
 
-            InitializeList();
+            //InitializeList();
         }
 
+        public CustomerDAL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        {
+
+        }
         
 
 
@@ -159,9 +163,9 @@ namespace DAL
         //    return $"{FirstName}{LastName}{ID}{CreditCardNum}";
         //}
           
-        public void InitializeList()
+      /*  public void InitializeList()
         {
-            StreamReader reader = new StreamReader(@"..\..\customerList.txt");
+            StreamReader reader = new StreamReader(@"..\..\..\DAL\customerList.txt");
             string line;
             using (reader)
             {
@@ -174,7 +178,7 @@ namespace DAL
                     //input all info into list, then whenever you add use StreamWriter
                 }
             }
-        }
+        }*/
 
 
 

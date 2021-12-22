@@ -30,11 +30,11 @@ namespace DAL
             //OrderDAL tester = new OrderDAL();
 
           // Console.WriteLine(tester.CheckForCustomer(222));
-            CustomerDAL name = new CustomerDAL();
+           /* CustomerDAL name = new CustomerDAL();
             Console.WriteLine(CustomerDAL.customerList[0]);
             Console.WriteLine("###############");
             name.Create("asdf", "asdf", 134, "asdfa alskd", "0909090909090909", 2021, 10);
-            Console.WriteLine(CustomerDAL.customerList[1]);
+            Console.WriteLine(CustomerDAL.customerList[1]);*/
             //tester.InitilizeList();
 
         }

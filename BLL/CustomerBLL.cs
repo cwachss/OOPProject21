@@ -11,9 +11,16 @@ namespace BLL
 {
     public class CustomerBLL
     {
-        CustomerDAL misterA = new CustomerDAL();//creates generic customer to use
+        CustomerDAL misterA;
 
-
+        public CustomerBLL()
+        {
+            misterA = new CustomerDAL();
+        }
+        public CustomerBLL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        {
+            misterA = new CustomerDAL(1);
+        }
         /// <summary>
         /// method that adds a customer's information to the list in the BLL
         /// </summary>

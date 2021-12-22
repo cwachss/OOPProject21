@@ -10,18 +10,31 @@ namespace BLL
 {
     public class OrderBLL
     {
-        
-        ProductBLL productBLL = new ProductBLL();
+
+        ProductBLL productBLL = new ProductBLL(1);
+        CustomerBLL customerBLL = new CustomerBLL();
         OrderDAL orderDAL = new OrderDAL();
 
 
         public void Create(int customerID, int productID, int amountOrdered)
         {
 
-            orderDAL.Create(customerID, productID);
+            try
+            {
+                productBLL.Read(productID);
+                customerBLL.Read(customerID);
+
+
+                orderDAL.Create(customerID, productID);
+            }
+            catch
+            {
+                throw new Exception("Incorrect input");
+            }
+
             Product product = productBLL.Read(productID);
 
-            if(product.AmountInStock >= amountOrdered)
+            if (product.AmountInStock >= amountOrdered)
             {
                 productBLL.Update(productID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
             }
@@ -29,7 +42,7 @@ namespace BLL
             {
                 throw new Exception("Not enough in stock");
             }
-            
+
         }
 
         public void Delete(int orderNum)

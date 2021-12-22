@@ -8,7 +8,16 @@ namespace BLL
 {
     public class ProductBLL
     {
-        internal ProductDAL productDAL = new ProductDAL();
+        internal ProductDAL productDAL;
+
+        public ProductBLL() 
+        {
+            productDAL = new ProductDAL();
+        }
+        public ProductBLL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the lists or else I will have double of every product
+        {
+            productDAL = new ProductDAL(1);
+        }
 
         public ProductDAL Create(int prodNum, string prodName, decimal cost, int stock)
         {
