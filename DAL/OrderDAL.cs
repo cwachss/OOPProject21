@@ -51,7 +51,10 @@ namespace DAL
             }
         }
 
-
+        public int GetOrderNumber()
+        {
+            return orderNumber;
+        }
 
         public void Create(int customerID, int productID, int amountOrdered)
         {

@@ -132,9 +132,5 @@ namespace UserInterface2._0
 
         }
 
-        private void buttonReadOne_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

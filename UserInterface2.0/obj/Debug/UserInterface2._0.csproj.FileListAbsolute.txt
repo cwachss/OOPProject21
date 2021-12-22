@@ -45,3 +45,4 @@ C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterface2.0\bin\Debug\Enti
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterface2.0\obj\Debug\UserInterface2._0.csproj.CopyComplete
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterface2.0\obj\Debug\UserInterface2.0.exe
 C:\Users\shira\source\repos\cwachss\OOPProject21\UserInterface2.0\obj\Debug\UserInterface2.0.pdb
+C:\Users\chani\source\repos\OOPProject\UserInterface2.0\obj\Debug\UserInterface2._0.orderForm.resources

@@ -75,6 +75,11 @@ namespace BLL
             
         }
 
+        public int GetOrderNumber()
+        {
+            return orderDAL.GetOrderNumber();
+        }
+
        /* public Order ReadOne(int customerID, int productID)
         {
             return orderDAL.ReadOne(customerID,productID);//returns a list of one order
