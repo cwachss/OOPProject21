@@ -36,9 +36,15 @@ namespace DAL
             //Customer vew = new Customer("me", "last", 342116);
             OrderDAL orderDAL = new OrderDAL();
             orderDAL.Create(342116, 90876);
-            Console.WriteLine(orderDAL.ReadOrderViaCustomer(342116));
+            orderDAL.Create(1241235, 2735);
+            orderDAL.Create(246311, 4564);
+            Console.WriteLine(orderDAL.ReadOrderViaCustomer(1241235));
             Console.WriteLine(orderDAL.ReadOrderViaProduct(90876));
-            Console.WriteLine(orderDAL.ReadOrderViaOrder(100));
+            Console.WriteLine(orderDAL.ReadOrderViaOrder(300));
+            for (int i=0; i< orderDAL.ReadAll().Count;i++)
+            {
+                Console.WriteLine(orderDAL.ReadAll()[i]);
+            }
         }
     }
 }

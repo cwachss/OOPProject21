@@ -135,33 +135,24 @@ namespace DAL
                 throw new Exception("No such order in our system");
             }
         }
-        //public Order ReadOne(int productID)
-        //{
-        //    try
-        //    {
-        //        Order sale = new Order(transaction.OrderNumber, transaction.customerID, productID);
-        //    }
-        //    catch
-        //    {
-        //        throw new Exception("No orders found for this product");
-        //    }
-        //}
 
 
 
-        //public List<Order> ReadALl()
-        //{
-        //    if(orderList.Count > 0)
-        //    {
-        //        List<Order> copy_list = orderList.ConvertAll(user => new Order(transaction.OrderNumber,  ));
-        //        return copy_list;
-        //    }
-        //    else
-        //    {
-        //        throw new Exception("No order yet!");
-        //    }
+        //returns a copy of the list of all orders
+        public List<Order> ReadAll()
+        {
+            
+            if (orderList.Count > 0)
+            {
+                List<Order> copy_list = orderList.ConvertAll(pro => new Order(pro.OrderNumber, pro.customerID, pro.productID));
+                return copy_list;
+            }
+            else
+            {
+                throw new Exception("No order yet!");
+            }
 
-        //}
+        }
 
 
     }
