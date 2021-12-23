@@ -11,8 +11,8 @@ namespace DAL
 {
     public class CustomerDAL
     {
-       
-        protected static List<Customer> customerList { get; set; }
+
+        protected static List<Customer> customerList;
         public CustomerDAL()
         {
             customerList = new List<Customer>();//creates list to hold all the customer's information
@@ -20,6 +20,10 @@ namespace DAL
             customerList.Add(aCustomerForTestingPurposes);
         }
 
+        public CustomerDAL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        {
+
+        }
         
 
 

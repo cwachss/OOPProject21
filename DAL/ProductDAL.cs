@@ -22,11 +22,16 @@ namespace DAL
             InitializeList();
         }
 
+        public ProductDAL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        {
+
+        }
+
         //create list to hold the product information 
         static List<Product> productList = new List<Product>(); 
 
         //create StreamReader object to read the list
-        StreamReader reader = new StreamReader(@"../../../DAL/bin/debug/ListOfProducts.txt");
+        StreamReader reader = new StreamReader(@"../../../../OOPProject21/DAL/ListOfProducts.txt");
 
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product

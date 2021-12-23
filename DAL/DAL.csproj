@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ListOfOrders.txt" />
+    <Content Include="ListOfProducts.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

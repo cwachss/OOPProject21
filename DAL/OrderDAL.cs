@@ -10,7 +10,7 @@ namespace DAL
 {
     public class OrderDAL
     {
-        internal List<Order> orderList = new List<Order>();
+        internal static List<Order> orderList = new List<Order>();
         int orderNumber = 100;
 
         public OrderDAL()
@@ -35,10 +35,12 @@ namespace DAL
             //}
         }
 
-        public void Create(int customerID, int productID)
+
+
+        public void Create(int customerID, int productID, int amountOrdered)
         {
 
-            Order order = new Order(orderNumber, customerID, productID);
+            Order order = new Order(orderNumber, customerID, productID, amountOrdered);
             orderList.Add(order);
             orderNumber += 100;
         }
@@ -60,66 +62,79 @@ namespace DAL
             }
         }
 
-        public void Update(int anOrderNumber, int customerID, int productID)
+        public void Update(int anOrderNumber, int amountOrdered)
         {
+            int index = 0;
+            //this will be replaced by the read method but not yet
+            while (index < orderList.Count)
+            {
+                if (anOrderNumber == orderList[index].OrderNumber)
+                {
+                    break;
+                }
+                index++;
+            }
+            //end test method
+ 
+            Order order = new Order(anOrderNumber, orderList[index].CustomerID, orderList[index].ProductID, amountOrdered);
             Delete(anOrderNumber);
-            Order order = new Order(anOrderNumber, customerID, productID);
             orderList.Add(order);
         }
 
+        //public Order FakeReadByOrderForTestingPurposes(int orderNumber)
+        //{
+        //    int index = 0;
+        //    //this will be replaced by the read method but not yet
+        //    while (index < orderList.Count)
+        //    {
+        //        if (orderNumber == orderList[index].OrderNumber)
+        //        {
+        //            break;
+        //        }
+        //        index++;
+        //    }
+        //    //end test method
+        //}
         
         //method that reads out a specific customer's orders
          public Order ReadOrderViaCustomer(int customerID)
          {
-            try
-            {
                 int i;
                 for (i = 0; i <orderList.Count; i++)
                 {
-                    if (orderList[i].customerID == customerID)
+                    if (orderList[i].CustomerID == customerID)
                         break;
                 }
                    
-
                 Order sale = orderList[i];
                 return sale;
-            }
-             catch
-            {
-                throw new Exception("No orders for this customer yet");
-            }
+            
+            
          }
 
         //reads out orders of a specific product
         public Order ReadOrderViaProduct(int productID)
         {
            
-            try
-            {
-                int i;
+            int i;
                 for (i = 0; i < orderList.Count; i++)
                 {
-                    if (orderList[i].productID == productID)
+                    if (orderList[i].ProductID == productID)
                         break;
                 }
 
 
                 Order sale = orderList[i];
                 return sale;
-            }
-            catch
-            {
-                throw new Exception("No orders for this Product yet");
-            }
+            
+            
         }
 
 
         //Checks for order by input of the order's Id number
         public Order ReadOrderViaOrder(int orderNum)
         {
-            try
-            {
-                int i;
+              int i;
                 for (i = 0; i < orderList.Count; i++)
                 {
                     if (orderList[i].OrderNumber == orderNum)
@@ -129,11 +144,7 @@ namespace DAL
 
                 Order sale = orderList[i];
                 return sale;
-            }
-            catch
-            {
-                throw new Exception("No such order in our system");
-            }
+           
         }
 
 
@@ -142,15 +153,10 @@ namespace DAL
         public List<Order> ReadAll()
         {
             
-            if (orderList.Count > 0)
-            {
-                List<Order> copy_list = orderList.ConvertAll(pro => new Order(pro.OrderNumber, pro.customerID, pro.productID));
+           
+                List<Order> copy_list = orderList.ConvertAll(pro => new Order(pro.OrderNumber, pro.CustomerID, pro.ProductID, pro.AmountOrdered));
                 return copy_list;
-            }
-            else
-            {
-                throw new Exception("No order yet!");
-            }
+           
 
         }
 
