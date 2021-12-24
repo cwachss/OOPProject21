@@ -119,6 +119,7 @@ namespace UserInterfaceLayer
                 //return to find object page:
                 buttonUpdateProduct.Visible = false;               
                 buttonModify.Visible = true;
+
                 buttonDelete2.Visible = true;
                 textBoxName.Enabled = false;
                 textBoxPrice.Enabled = false;

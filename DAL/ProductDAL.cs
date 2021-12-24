@@ -31,7 +31,7 @@ namespace DAL
         static List<Product> productList = new List<Product>(); 
 
         //create StreamReader object to read the list
-        StreamReader reader = new StreamReader(@"../../../DAL/bin/debug/ListOfProducts.txt");
+        StreamReader reader = new StreamReader(@"../../../../OOPProject21/DAL/ListOfProducts.txt");
 
         private int number;//variable to hold the number of the product
         private string name;//variable to hold the name of the product

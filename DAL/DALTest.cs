@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entities;
+﻿using Entities;
+using System;
 
 
 namespace DAL
@@ -37,6 +33,26 @@ namespace DAL
             Console.WriteLine(CustomerDAL.customerList[1]);*/
             //tester.InitilizeList();
 
+            // Console.WriteLine(tester.CheckForCustomer(222));
+            //CustomerDAL name = new CustomerDAL();
+            //Console.WriteLine(CustomerDAL.customerList[0]);
+            //Console.WriteLine("###############");
+            //name.Create("asdf", "asdf", 134, "asdfa alskd", "0909090909090909", 2021, 10);
+            //Console.WriteLine(CustomerDAL.customerList[1]);
+            ////tester.InitilizeList();
+            //Order newSale = new Order(1233, 000, 120394);
+            //Customer vew = new Customer("me", "last", 342116);
+            OrderDAL orderDAL = new OrderDAL();
+            //orderDAL.Create(342116, 90876,8);
+            //orderDAL.Create(1241235, 2735,0);
+            //orderDAL.Create(246311, 4564,7);
+            //Console.WriteLine(orderDAL.ReadOrderViaCustomer(1241235));
+            //Console.WriteLine(orderDAL.ReadOrderViaProduct(90876));
+            //Console.WriteLine(orderDAL.ReadOrderViaOrder(300));
+            for (int i=0; i< orderDAL.ReadAll().Count;i++)
+            {
+                Console.WriteLine(orderDAL.ReadAll()[i]);
+            }
         }
     }
 }

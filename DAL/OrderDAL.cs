@@ -12,43 +12,27 @@ namespace DAL
     {
         internal static List<Order> orderList = new List<Order>();
         int orderNumber = 100;
-        private Order transaction;
 
+        public OrderDAL()
+        {
+            InitilizeList();
+        }
         public void InitilizeList()
         {
-            StreamReader reader = new StreamReader(@"../../bin/debug/ListOfOrders.txt");
-            string line;
-            using(reader)
-            {
-                for (int i = 0; (line = reader.ReadLine()) != null; i++)
-                {
-                    string [] array =line.Split(' ');
-                    Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]), int.Parse(array[3]));
-                    orderList.Add(sale1);
-                    orderNumber++;
-
-                    //What is this? 
-                    Console.WriteLine(orderNumber);
-                    Console.WriteLine(transaction.CustomerID);
-                    Console.WriteLine(transaction.ProductID);
-                }
-
-                //while(orderNumber!=0)
-                //{
-
-                //    Order sale1 = new Order(orderNumber, transaction.customerID, transaction.productID);
-                //    orderList.Add(sale1);
-
-                //   // string checkForNull=reader.ReadLine();
-                //    //if (checkForNull != null)
-                //    //    break;
-                //    orderNumber=int.Parse(reader.ReadLine());
-                //    transaction.customerID=int.Parse(reader.ReadLine());
-                //    transaction.productID=int.Parse(reader.ReadLine());
-
-                    
-                //}
-            }
+            //StreamReader reader = new StreamReader(@"../../bin/debug/ListOfOrders.txt");
+            //string line;
+            //using(reader)
+            //{
+            //    for (int i = 0; (line = reader.ReadLine()) != null; i++)
+            //    {
+            //        string [] array =line.Split(' ');
+            //        Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
+            //        orderList.Add(sale1);
+            //        Console.WriteLine(orderNumber);
+            //        Console.WriteLine(transaction.customerID);
+            //        Console.WriteLine(transaction.productID);
+            //    }
+            //}
         }
 
 
@@ -97,71 +81,85 @@ namespace DAL
             orderList.Add(order);
         }
 
-        public Order FakeReadByOrderForTestingPurposes(int orderNumber)
-        {
-            int index = 0;
-            //this will be replaced by the read method but not yet
-            while (index < orderList.Count)
-            {
-                if (orderNumber == orderList[index].OrderNumber)
-                {
-                    break;
-                }
-                index++;
-            }
-            //end test method
-
-            Order order = new Order(orderNumber, orderList[index].CustomerID, orderList[index].ProductID, orderList[index].AmountOrdered);
-            return order;
-        }
-
-        //Can't do more than one type of ReadOne or REadALl because the way the properties are set up
-        //no, you can read in a customer id OR productiD and then all you do is check if the order exists based on the ORDER PROPERTIES of customer id and product id- you aren't supposed to be referencing the customer list or product list at all. 
-       /* public Order ReadOne(int customerID, int productID)
-        {
-            if(CheckForCustomer(customerID) && CheckForProduct(productID))
-            {
-
-            }
-            Order sale = new Order(transaction.OrderNumber, customerID, productID);
-            return sale;
-        }*/
-
-        
-        //public List<Order> ReadALl()
+        //public Order FakeReadByOrderForTestingPurposes(int orderNumber)
         //{
-        //    if(orderList.Count > 0)
+        //    int index = 0;
+        //    //this will be replaced by the read method but not yet
+        //    while (index < orderList.Count)
         //    {
-        //        List<Order> copy_list = orderList.ConvertAll(user => new Order(transaction.OrderNumber,  ));
-        //        return copy_list;
+        //        if (orderNumber == orderList[index].OrderNumber)
+        //        {
+        //            break;
+        //        }
+        //        index++;
         //    }
-        //    else
-        //    {
-        //        throw new Exception("No order yet!");
-        //    }
-            
+        //    //end test method
         //}
-
-        //this is an idea that I have: to make the customerId and productId be anything that the user wants to enter -and then we check it for validity 
-       /* public bool CheckForCustomer(int customerID)
-        {
-            int i;
-            for( i=0; i <= (CustomerDAL.customerList).Count; i++)
-            {
-                if ((CustomerDAL.customerList[i]).ID==customerID)
+        
+        //method that reads out a specific customer's orders
+         public Order ReadOrderViaCustomer(int customerID)
+         {
+                int i;
+                for (i = 0; i <orderList.Count; i++)
                 {
-                    return true;
+                    if (orderList[i].CustomerID == customerID)
+                        break;
                 }
-            }
-            if (i > CustomerDAL.customerList.Count)
-                return false;
-            else
-                return false;
+                   
+                Order sale = orderList[i];
+                return sale;
+            
+            
+         }
+
+        //reads out orders of a specific product
+        public Order ReadOrderViaProduct(int productID)
+        {
+           
+            int i;
+                for (i = 0; i < orderList.Count; i++)
+                {
+                    if (orderList[i].ProductID == productID)
+                        break;
+                }
+
+
+                Order sale = orderList[i];
+                return sale;
+            
+            
         }
 
-        private bool CheckForProduct(int productID)
+
+        //Checks for order by input of the order's Id number
+        public Order ReadOrderViaOrder(int orderNum)
         {
-            return false;//same as above
-        }*/
+              int i;
+                for (i = 0; i < orderList.Count; i++)
+                {
+                    if (orderList[i].OrderNumber == orderNum)
+                        break;
+                }
+
+
+                Order sale = orderList[i];
+                return sale;
+           
+        }
+
+
+
+        //returns a copy of the list of all orders
+        public List<Order> ReadAll()
+        {
+            
+           
+                List<Order> copy_list = orderList.ConvertAll(pro => new Order(pro.OrderNumber, pro.CustomerID, pro.ProductID, pro.AmountOrdered));
+                return copy_list;
+           
+
+        }
+
+
     }
 }

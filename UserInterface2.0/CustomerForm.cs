@@ -234,7 +234,7 @@ namespace UserInterface2._0
         }
 
        
-        protected override void ResetAndHideEverything()
+        public override void ResetAndHideEverything()
         {
             base.ResetAndHideEverything();
 

@@ -63,8 +63,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CustomerList.txt" />
     <Content Include="ListOfOrders.txt" />
+    <Content Include="ListOfProducts.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

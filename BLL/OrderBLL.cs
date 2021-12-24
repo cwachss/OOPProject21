@@ -48,7 +48,7 @@ namespace BLL
         public void Delete(int orderNum)
         {
             //Waiting for critical updates in the order class
-             Order order = orderDAL.FakeReadByOrderForTestingPurposes(orderNum);
+            Order order = orderDAL.ReadOrderViaOrder(orderNum);
         Product product = productBLL.Read(order.ProductID);
         productBLL.Update(product.ProductNumber, product.ProductName, product.CostPerUnit, (product.AmountInStock + order.AmountOrdered));
             orderDAL.Delete(orderNum);
@@ -58,7 +58,7 @@ namespace BLL
 
         public void Update(int orderNum, int amountOrdered)
         {
-            Order order = orderDAL.FakeReadByOrderForTestingPurposes(orderNum);
+            Order order = orderDAL.ReadOrderViaOrder(orderNum);
 
             Product product = productBLL.Read(order.ProductID);
 
@@ -75,15 +75,58 @@ namespace BLL
             
         }
 
-       /* public Order ReadOne(int customerID, int productID)
+      
+
+        //returns orders of a scpecific customer
+       public Order ReadOrderViaCustomer(int customerID)
         {
-            return orderDAL.ReadOne(customerID,productID);//returns a list of one order
+                int i;
+                for (i = 0; i < orderDAL.ReadAll().Count; i++)
+                {
+                    if (orderDAL.ReadAll()[i].CustomerID == customerID)
+                        return orderDAL.ReadOrderViaCustomer(customerID);
+                }
+                if (i == orderDAL.ReadAll().Count)
+                    throw new Exception("This customers has no orders yet");
+            return null;
         }
 
-        //it's commented b/c DAL method doesn't work
-        //public List<Order> ReadAll()
-        //{
-        //    return orderDAL.ReadALl();//returns list of all order with all their order details
-        //}*/
+        //returns orders of a specif product
+        public Order ReadOrderViaProduct(int productID)
+        {
+            int i;
+            for (i = 0; i < orderDAL.ReadAll().Count; i++)
+            {
+                if (orderDAL.ReadAll()[i].ProductID == productID)
+                    return orderDAL.ReadOrderViaProduct(productID);
+            }
+            if (i == orderDAL.ReadAll().Count)
+                throw new Exception("This products has no orders yet");
+            return null;
+           
+        }
+
+        //returns a specific order when given its order number
+        public Order ReadOrderViaOrderNum(int orderNum)
+        {
+            int i;
+            for (i = 0; i < orderDAL.ReadAll().Count; i++)
+            {
+                if (orderDAL.ReadAll()[i].OrderNumber == orderNum)
+                    return orderDAL.ReadOrderViaOrder(orderNum);
+            }
+            if (i == orderDAL.ReadAll().Count)
+                throw new Exception("This customers has no orders yet");
+            return null;
+           
+        }
+
+        public List<Order> ReadAll()
+        {
+            if (orderDAL.ReadAll().Count != 0)
+                return orderDAL.ReadAll();
+            else
+                throw new Exception("No orders yet.");
+        }
     }
 }
