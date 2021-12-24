@@ -116,7 +116,7 @@ namespace BLL
                     return orderDAL.ReadOrderViaOrder(orderNum);
             }
             if (i == orderDAL.ReadAll().Count)
-                throw new Exception("This customers has no orders yet");
+                throw new Exception("Invalid order number");
             return null;
            
         }
