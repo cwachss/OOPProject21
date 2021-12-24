@@ -11,7 +11,7 @@ namespace BLL
     public class OrderBLL
     {
 
-        ProductBLL productBLL = new ProductBLL(1);
+        ProductBLL productBLL = new ProductBLL();
         CustomerBLL customerBLL = new CustomerBLL();
         OrderDAL orderDAL = new OrderDAL();
 
@@ -73,6 +73,11 @@ namespace BLL
             }
 
             
+        }
+
+        public int GetOrderNumber()
+        {
+            return orderDAL.GetOrderNumber();
         }
 
       

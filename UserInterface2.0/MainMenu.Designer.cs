@@ -32,9 +32,12 @@ namespace UserInterface2._0
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelProducts = new System.Windows.Forms.Label();
             this.labelCustomers = new System.Windows.Forms.Label();
+            this.labelOrders = new System.Windows.Forms.Label();
+            this.pictureBoxOrders = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBoxProducts = new System.Windows.Forms.PictureBox();
             this.pictureBoxCustomer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer)).BeginInit();
@@ -56,7 +59,7 @@ namespace UserInterface2._0
             this.labelProducts.AutoSize = true;
             this.labelProducts.BackColor = System.Drawing.Color.Transparent;
             this.labelProducts.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProducts.Location = new System.Drawing.Point(106, 394);
+            this.labelProducts.Location = new System.Drawing.Point(76, 394);
             this.labelProducts.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelProducts.Name = "labelProducts";
             this.labelProducts.Size = new System.Drawing.Size(120, 46);
@@ -68,12 +71,35 @@ namespace UserInterface2._0
             this.labelCustomers.AutoSize = true;
             this.labelCustomers.BackColor = System.Drawing.Color.White;
             this.labelCustomers.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomers.Location = new System.Drawing.Point(417, 394);
+            this.labelCustomers.Location = new System.Drawing.Point(347, 394);
             this.labelCustomers.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelCustomers.Name = "labelCustomers";
             this.labelCustomers.Size = new System.Drawing.Size(140, 46);
             this.labelCustomers.TabIndex = 9;
             this.labelCustomers.Text = "Customers";
+            // 
+            // labelOrders
+            // 
+            this.labelOrders.AutoSize = true;
+            this.labelOrders.BackColor = System.Drawing.Color.White;
+            this.labelOrders.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrders.Location = new System.Drawing.Point(658, 394);
+            this.labelOrders.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelOrders.Name = "labelOrders";
+            this.labelOrders.Size = new System.Drawing.Size(98, 46);
+            this.labelOrders.TabIndex = 11;
+            this.labelOrders.Text = "Orders";
+            // 
+            // pictureBoxOrders
+            // 
+            this.pictureBoxOrders.Image = global::UserInterface2._0.Properties.Resources.shoppingcart1;
+            this.pictureBoxOrders.Location = new System.Drawing.Point(563, 136);
+            this.pictureBoxOrders.Name = "pictureBoxOrders";
+            this.pictureBoxOrders.Size = new System.Drawing.Size(283, 276);
+            this.pictureBoxOrders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxOrders.TabIndex = 10;
+            this.pictureBoxOrders.TabStop = false;
+            this.pictureBoxOrders.Click += new System.EventHandler(this.pictureBoxOrders_Click);
             // 
             // pictureBoxLogo
             // 
@@ -88,11 +114,11 @@ namespace UserInterface2._0
             // 
             // pictureBoxProducts
             // 
-            this.pictureBoxProducts.Image = global::UserInterface2._0.Properties.Resources.shoppingcart1;
+            this.pictureBoxProducts.Image = global::UserInterface2._0.Properties.Resources.teddy3_02;
             this.pictureBoxProducts.Location = new System.Drawing.Point(-2, 136);
             this.pictureBoxProducts.Name = "pictureBoxProducts";
-            this.pictureBoxProducts.Size = new System.Drawing.Size(328, 276);
-            this.pictureBoxProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxProducts.Size = new System.Drawing.Size(270, 276);
+            this.pictureBoxProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxProducts.TabIndex = 3;
             this.pictureBoxProducts.TabStop = false;
             this.pictureBoxProducts.Click += new System.EventHandler(this.buttonProducts_Click);
@@ -100,9 +126,9 @@ namespace UserInterface2._0
             // pictureBoxCustomer
             // 
             this.pictureBoxCustomer.Image = global::UserInterface2._0.Properties.Resources.toystorepeoples;
-            this.pictureBoxCustomer.Location = new System.Drawing.Point(332, 136);
+            this.pictureBoxCustomer.Location = new System.Drawing.Point(274, 136);
             this.pictureBoxCustomer.Name = "pictureBoxCustomer";
-            this.pictureBoxCustomer.Size = new System.Drawing.Size(328, 276);
+            this.pictureBoxCustomer.Size = new System.Drawing.Size(283, 276);
             this.pictureBoxCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCustomer.TabIndex = 2;
             this.pictureBoxCustomer.TabStop = false;
@@ -113,7 +139,9 @@ namespace UserInterface2._0
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(669, 458);
+            this.ClientSize = new System.Drawing.Size(847, 458);
+            this.Controls.Add(this.labelOrders);
+            this.Controls.Add(this.pictureBoxOrders);
             this.Controls.Add(this.labelCustomers);
             this.Controls.Add(this.labelProducts);
             this.Controls.Add(this.labelWelcome);
@@ -124,6 +152,7 @@ namespace UserInterface2._0
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer)).EndInit();
@@ -139,5 +168,7 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Label labelProducts;
         private System.Windows.Forms.Label labelCustomers;
+        private System.Windows.Forms.PictureBox pictureBoxOrders;
+        private System.Windows.Forms.Label labelOrders;
     }
 }
