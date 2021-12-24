@@ -98,5 +98,9 @@ namespace UserInterface2._0
             
         }
 
+        private void orderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

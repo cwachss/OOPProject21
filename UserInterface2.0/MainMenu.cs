@@ -38,5 +38,12 @@ namespace UserInterface2._0
         {
             Application.Exit();
         }
+
+        private void pictureBoxOrders_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            orderForm oF = new orderForm();
+            oF.ShowDialog();
+        }
     }
 }
