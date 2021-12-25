@@ -16,17 +16,11 @@ C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\UseEntities.exe.con
 C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\UseEntities.exe
 C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\UseEntities.pdb
 C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\Entities.exe
-C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\DAL.exe
 C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\Entities.pdb
 C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\Entities.exe.config
-C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\BLL.pdb
-C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\BLL.exe.config
-C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\DAL.pdb
-C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\DAL.exe.config
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.csproj.CopyComplete
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.exe
 C:\Users\chani\source\repos\OOPProject\UseEntities\obj\Debug\UseEntities.pdb
-C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\BLL.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\DAL.exe
 C:\Users\shira\Source\Repos\cwachss\OOPProject21\UseEntities\bin\Debug\BLL.pdb

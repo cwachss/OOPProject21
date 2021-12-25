@@ -12,6 +12,10 @@ namespace UserInterface2._0
 {
     public partial class MainMenu : Form
     {
+        CustomerForm cF = new CustomerForm();
+        ProductForm pF = new ProductForm();
+        orderForm oF = new orderForm();
+
         public MainMenu()
         {
             InitializeComponent();
@@ -21,7 +25,7 @@ namespace UserInterface2._0
         private void buttonCustomers_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerForm cF = new CustomerForm();
+           
             cF.ShowDialog();
            
         }
@@ -29,9 +33,16 @@ namespace UserInterface2._0
         private void buttonProducts_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ProductForm pF = new ProductForm();
+           
             pF.ShowDialog();
             
+        }
+
+        private void pictureBoxOrders_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            oF.ShowDialog();
         }
 
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,11 +50,6 @@ namespace UserInterface2._0
             Application.Exit();
         }
 
-        private void pictureBoxOrders_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            orderForm oF = new orderForm();
-            oF.ShowDialog();
-        }
+       
     }
 }
