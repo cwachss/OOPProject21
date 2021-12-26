@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using Entities;
 
 namespace UserInterface2._0
 {
     public partial class orderForm : Form
     {
         OrderBLL orderBLL = new OrderBLL();
+        ProductBLL productBLL = new ProductBLL(0);
         public orderForm()
         {
             InitializeComponent();
@@ -63,6 +65,7 @@ namespace UserInterface2._0
             groupBoxPlaceOrder.Visible = true;
             buttonReturnMenu.Visible = true;
             labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
+            PrintAllProducts();
         }
 
         private void buttonPlaceOrder_Click(object sender, EventArgs e)
@@ -73,6 +76,7 @@ namespace UserInterface2._0
                 MessageBox.Show("Thank you for shopping at Toys of All Sorts!");
                 labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
                 //update listbox to show new stock numbers (waiting on ReadAll)
+                PrintAllProducts();
             }
             catch
             {
@@ -93,14 +97,37 @@ namespace UserInterface2._0
             buttonReturnMenu.Visible = true;
             listBoxProducts.Visible = true;
             listBoxProducts.Size = new System.Drawing.Size(688, 382); //resize text box to take up all the space
-            listBoxProducts.Text = ""; //need readall function to work first
+           
 
             
         }
 
         private void orderForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+
+            FormProvider.MainMenu.Show();
+        }
+
+        private void PrintAllProducts()
+        {
+            List<Product> products = productBLL.ReadAll();
+            for (int i = 0; i < products.Count; i++)
+            {
+                listBoxProducts.Items.Add(products[i]);
+            }
+            
+        }
+        private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int listBoxIndex = listBoxProducts.SelectedIndex;
+            List<Product> products = productBLL.ReadAll();
+            textBoxProductNumber.Text = Convert.ToString(products[listBoxIndex].ProductNumber);
+        }
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+           
+            MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
         }
     }
 }

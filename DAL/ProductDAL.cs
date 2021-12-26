@@ -31,12 +31,9 @@ namespace DAL
         static List<Product> productList = new List<Product>(); 
 
         //create StreamReader object to read the list
-        StreamReader reader = new StreamReader(@"../../../../OOPProject21/DAL/ListOfProducts.txt");
+        StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
 
-        private int number;//variable to hold the number of the product
-        private string name;//variable to hold the name of the product
-        private decimal price;//variable to hold the price of the product
-        private int stock;
+        string product;
 
         //question: why do we need an index?
         //protected int index = 0;//variable to hold the index of the list *see comment on index below*
@@ -44,11 +41,21 @@ namespace DAL
         //method to initialize the list with products' information
         public void InitializeList()
         {
-
             using (reader)
             {
+                for (int i = 0; (product = reader.ReadLine()) != null; i++)
+                {
+                    string[] orderArray = product.Split(' ');
+                    Product aProduct = new Product(int.Parse(orderArray[0]), orderArray[1], decimal.Parse(orderArray[2]), int.Parse(orderArray[3]));
+                    productList.Add(aProduct);
 
-                number = int.Parse(reader.ReadLine());//reads the ID number into the variable number
+                }
+            }
+
+            /*using (reader)
+            {
+
+               *//* number = int.Parse(reader.ReadLine());//reads the ID number into the variable number
                 name = reader.ReadLine();//reads the name into the variable name
                 price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
                 stock = int.Parse(reader.ReadLine());//reads the amount in stock
@@ -73,9 +80,10 @@ namespace DAL
                     name = reader.ReadLine();//reads the name into the variable name
                     price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
                     stock = int.Parse(reader.ReadLine());//reads the amount in stock
-                } //end while
+                } //end while*/
 
-            }//close reader
+         
+            //}//close reader
 
         }//end initialize list
 

@@ -19,20 +19,18 @@ namespace DAL
         }
         public void InitilizeList()
         {
-            //StreamReader reader = new StreamReader(@"../../bin/debug/ListOfOrders.txt");
-            //string line;
-            //using(reader)
-            //{
-            //    for (int i = 0; (line = reader.ReadLine()) != null; i++)
-            //    {
-            //        string [] array =line.Split(' ');
-            //        Order sale1 = new Order(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
-            //        orderList.Add(sale1);
-            //        Console.WriteLine(orderNumber);
-            //        Console.WriteLine(transaction.customerID);
-            //        Console.WriteLine(transaction.productID);
-            //    }
-            //}
+            StreamReader reader = new StreamReader(@"../../../DAL/ListOfOrders.txt");
+            string line;
+            using (reader)
+            {
+                for (int i = 0; (line = reader.ReadLine()) != null; i++)
+                {
+                    string[] orderArray = line.Split(' ');
+                    Order sale1 = new Order(int.Parse(orderArray[0]), int.Parse(orderArray[1]), int.Parse(orderArray[2]), int.Parse(orderArray[3]));
+                    orderList.Add(sale1);
+                    
+                }
+            }
         }
 
         public int GetOrderNumber()

@@ -12,9 +12,9 @@ namespace UserInterface2._0
 {
     public partial class MainMenu : Form
     {
-        CustomerForm cF = new CustomerForm();
-        ProductForm pF = new ProductForm();
-        orderForm oF = new orderForm();
+        ProductForm pF = FormProvider.ProductForm;
+        CustomerForm cF = FormProvider.CustomerForm;
+        orderForm oF = FormProvider.OrderForm;
 
         public MainMenu()
         {
@@ -26,7 +26,7 @@ namespace UserInterface2._0
         {
             this.Hide();
            
-            cF.ShowDialog();
+            FormProvider.CustomerForm.ShowDialog();
            
         }
 
@@ -34,7 +34,7 @@ namespace UserInterface2._0
         {
             this.Hide();
            
-            pF.ShowDialog();
+            FormProvider.ProductForm.ShowDialog();
             
         }
 
@@ -42,7 +42,7 @@ namespace UserInterface2._0
         {
             this.Hide();
 
-            oF.ShowDialog();
+            FormProvider.OrderForm.ShowDialog();
         }
 
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -50,6 +50,10 @@ namespace UserInterface2._0
             Application.Exit();
         }
 
-       
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
+
+        }
     }
 }

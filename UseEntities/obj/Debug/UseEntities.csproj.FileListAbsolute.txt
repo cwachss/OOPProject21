@@ -45,3 +45,4 @@ C:\Users\shira\source\repos\OOP\OOPProject21\UseEntities\obj\Debug\UseEntities.c
 C:\Users\shira\source\repos\OOP\OOPProject21\UseEntities\obj\Debug\UseEntities.csproj.CopyComplete
 C:\Users\shira\source\repos\OOP\OOPProject21\UseEntities\obj\Debug\UseEntities.exe
 C:\Users\shira\source\repos\OOP\OOPProject21\UseEntities\obj\Debug\UseEntities.pdb
+C:\Users\chani\source\repos\OOPProject\UseEntities\bin\Debug\BLL.exe
