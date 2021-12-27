@@ -49,10 +49,12 @@ namespace DAL
             //Console.WriteLine(orderDAL.ReadOrderViaCustomer(1241235));
             //Console.WriteLine(orderDAL.ReadOrderViaProduct(90876));
             //Console.WriteLine(orderDAL.ReadOrderViaOrder(300));
-            for (int i=0; i< orderDAL.ReadAll().Count;i++)
-            {
-                Console.WriteLine(orderDAL.ReadAll()[i]);
-            }
+            //for (int i=0; i< orderDAL.ReadAll().Count;i++)
+            //{
+            //    Console.WriteLine(orderDAL.ReadAll()[i]);
+            //}
+            orderDAL.InitilizeList();
+
         }
     }
 }
