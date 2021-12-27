@@ -132,7 +132,7 @@ namespace UserInterface2._0
 
         public override void buttonAdd_Click(object sender, EventArgs e)
         {
-            base.buttonAdd_Click(sender, e);
+            //base.buttonAdd_Click(sender, e);
             try
             {
                 productBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //adds a product to the list
@@ -179,16 +179,17 @@ namespace UserInterface2._0
             textBoxName.Clear();
             textBoxStock.Clear();
             textBoxPrice.Clear();
-            groupBoxProductDetails.Visible = false;
-            labelEnterNumber.Visible = false;
-            buttonListDetails.Visible = false;
-            textBoxPrintProducts.Visible = false;
+           
         }
 
         public override void buttonReturnMenu_Click(object sender, EventArgs e)
         {
             base.buttonReturnMenu_Click(sender,e);
             labelProductMenu.Text = "Product Menu";
+            groupBoxProductDetails.Visible = false;
+            labelEnterNumber.Visible = false;
+            buttonListDetails.Visible = false;
+            textBoxPrintProducts.Visible = false;
         }
 
         public override void ResetAndHideEverything()

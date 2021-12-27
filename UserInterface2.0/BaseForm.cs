@@ -77,7 +77,10 @@ namespace UserInterface2._0
             buttonUpdateProduct.Visible = false;
         }
 
-        public virtual void buttonAdd_Click(object sender, EventArgs e) { }
+        public virtual void buttonAdd_Click(object sender, EventArgs e) 
+        {
+            textBoxPrintProducts.Size = new System.Drawing.Size(436, 397);
+        }
 
         public virtual void buttonModify_Click(object sender, EventArgs e)
         {
@@ -114,7 +117,7 @@ namespace UserInterface2._0
             buttonListDetails.Visible = false;
             buttonUpdateProduct.Visible=false;
             
-            buttonAdd.Enabled = false;
+          
             buttonAdd.Visible = false;
             buttonModify.Visible = false;
             buttonDelete.Visible = false;

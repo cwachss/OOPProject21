@@ -162,6 +162,8 @@ namespace UserInterface2._0
                     listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
                 else if (IDChooser.SelectedIndex == -1)
                     MessageBox.Show("Please select a ID holder.");
+
+              
             }
             catch (ExceptionCustomerHasNoOrders ex)
             {
@@ -175,6 +177,13 @@ namespace UserInterface2._0
             {
                 MessageBox.Show("Please enter an ID");
             }
+
+
+        }
+
+        private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
         }
     }
 }
