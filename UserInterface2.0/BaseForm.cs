@@ -53,6 +53,7 @@ namespace UserInterface2._0
             //labelPrintInfo.Visible = true; //need to figure out how to make this button inherited...
             buttonReturnMenu.Visible = true;
             buttonReturnMenu.Enabled = true;
+            textBoxPrintProducts.Size = new System.Drawing.Size(732, 397);
 
         }
 
@@ -89,10 +90,12 @@ namespace UserInterface2._0
             
         }
 
-        public void buttonReturnMenu_Click(object sender, EventArgs e) 
+        public virtual void buttonReturnMenu_Click(object sender, EventArgs e) 
         {
             ResetMainMenu();
             ResetAndHideEverything();
+            buttonReturnMenu.Visible=false;
+         
         }
         
 
@@ -134,10 +137,6 @@ namespace UserInterface2._0
             buttonReadOne.Enabled=true;
         }
 
-        //public virtual void ShowReadOne()
-        //{
-        //    buttonUpdateProduct.Visible = false;
-
-        //}
+      
     }
 }

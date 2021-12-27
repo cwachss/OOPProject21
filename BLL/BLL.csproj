@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerBLL.cs" />
+    <Compile Include="ExceptionCustomerHasNoOrders.cs" />
+    <Compile Include="ExceptionProductHasNoOrders.cs" />
     <Compile Include="OrderBLL.cs" />
     <Compile Include="ProductBLL.cs" />
     <Compile Include="BLLTest.cs" />

@@ -19,3 +19,10 @@ C:\Users\shira\source\repos\OOP\OOPProject21\Entities\obj\Debug\Entities.csproj.
 C:\Users\shira\source\repos\OOP\OOPProject21\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 C:\Users\shira\source\repos\OOP\OOPProject21\Entities\obj\Debug\Entities.exe
 C:\Users\shira\source\repos\OOP\OOPProject21\Entities\obj\Debug\Entities.pdb
+C:\Users\shira\source\repos\OOPProject21\Entities\bin\Debug\Entities.exe.config
+C:\Users\shira\source\repos\OOPProject21\Entities\bin\Debug\Entities.exe
+C:\Users\shira\source\repos\OOPProject21\Entities\bin\Debug\Entities.pdb
+C:\Users\shira\source\repos\OOPProject21\Entities\obj\Debug\Entities.csproj.SuggestedBindingRedirects.cache
+C:\Users\shira\source\repos\OOPProject21\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\shira\source\repos\OOPProject21\Entities\obj\Debug\Entities.exe
+C:\Users\shira\source\repos\OOPProject21\Entities\obj\Debug\Entities.pdb
