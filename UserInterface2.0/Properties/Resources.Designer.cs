@@ -73,6 +73,26 @@ namespace UserInterface2._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap teddy_02 {
+            get {
+                object obj = ResourceManager.GetObject("teddy-02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap teddy3_02 {
+            get {
+                object obj = ResourceManager.GetObject("teddy3-02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap toysLogo3 {
             get {
                 object obj = ResourceManager.GetObject("toysLogo3", resourceCulture);

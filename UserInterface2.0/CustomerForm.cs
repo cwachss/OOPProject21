@@ -261,16 +261,15 @@ namespace UserInterface2._0
 
         private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
-            
-          
+            FormProvider.MainMenu.Show();
+
+
         }
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.ShowDialog();
+            MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
+
         }
     }
 }

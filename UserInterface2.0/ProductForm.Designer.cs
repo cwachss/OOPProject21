@@ -46,27 +46,27 @@ namespace UserInterface2._0
             // 
             this.buttonReadAll.Location = new System.Drawing.Point(524, 48);
             this.buttonReadAll.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonReadAll.Size = new System.Drawing.Size(262, 510);
+            this.buttonReadAll.Size = new System.Drawing.Size(262, 507);
             this.buttonReadAll.Text = "ALL PRODUCTS";
             // 
             // buttonReadOne
             // 
             this.buttonReadOne.Location = new System.Drawing.Point(262, 48);
             this.buttonReadOne.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonReadOne.Size = new System.Drawing.Size(262, 510);
+            this.buttonReadOne.Size = new System.Drawing.Size(262, 507);
             this.buttonReadOne.Text = "FIND PRODUCT";
             // 
             // buttonCreate
             // 
             this.buttonCreate.Location = new System.Drawing.Point(0, 48);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonCreate.Size = new System.Drawing.Size(262, 510);
+            this.buttonCreate.Size = new System.Drawing.Size(262, 507);
             this.buttonCreate.Text = "NEW PRODUCT";
             // 
             // labelProductMenu
             // 
             this.labelProductMenu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelProductMenu.Size = new System.Drawing.Size(789, 48);
+            this.labelProductMenu.Size = new System.Drawing.Size(785, 48);
             this.labelProductMenu.Text = "Product Menu";
             // 
             // textBoxProductNumber2
@@ -95,10 +95,10 @@ namespace UserInterface2._0
             this.groupBoxProductDetails.Controls.Add(this.labelProductNumber);
             this.groupBoxProductDetails.Controls.Add(this.labelName);
             this.groupBoxProductDetails.Controls.Add(this.textBoxName);
-            this.groupBoxProductDetails.Location = new System.Drawing.Point(490, 74);
+            this.groupBoxProductDetails.Location = new System.Drawing.Point(504, 74);
             this.groupBoxProductDetails.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxProductDetails.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxProductDetails.Size = new System.Drawing.Size(244, 408);
+            this.groupBoxProductDetails.Size = new System.Drawing.Size(245, 406);
             this.groupBoxProductDetails.Text = "PRODUCT DETAILS";
             this.groupBoxProductDetails.Controls.SetChildIndex(this.textBoxName, 0);
             this.groupBoxProductDetails.Controls.SetChildIndex(this.labelName, 0);
@@ -231,7 +231,7 @@ namespace UserInterface2._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 558);
+            this.ClientSize = new System.Drawing.Size(785, 555);
             this.Controls.Add(this.pictureBoxLogo);
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "ProductForm";

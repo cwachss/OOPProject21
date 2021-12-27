@@ -103,15 +103,13 @@ namespace UserInterface2._0
 
         private void ProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
-            
+            FormProvider.MainMenu.Show();
+
         }
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.ShowDialog();
+            MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
         }
 
 
@@ -150,14 +148,6 @@ namespace UserInterface2._0
 
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
-            try
-            {
-                base.buttonReadAll_Click(sender, e);
-            }
-           catch
-            {
-                MessageBox.Show("No products found. Please add to inventory.", "Error");
-            }
 
         }
         public void PrintAll()

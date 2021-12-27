@@ -11,7 +11,7 @@ namespace BLL
     public class OrderBLL
     {
 
-        ProductBLL productBLL = new ProductBLL(1);
+        ProductBLL productBLL = new ProductBLL();
         CustomerBLL customerBLL = new CustomerBLL();
         OrderDAL orderDAL = new OrderDAL();
 
@@ -75,6 +75,11 @@ namespace BLL
             
         }
 
+        public int GetOrderNumber()
+        {
+            return orderDAL.GetOrderNumber();
+        }
+
       
 
         //returns orders of a scpecific customer
@@ -116,7 +121,7 @@ namespace BLL
                     return orderDAL.ReadOrderViaOrder(orderNum);
             }
             if (i == orderDAL.ReadAll().Count)
-                throw new Exception("This customers has no orders yet");
+                throw new Exception("Invalid order number");
             return null;
            
         }
