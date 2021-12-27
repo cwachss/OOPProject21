@@ -60,12 +60,19 @@ namespace UserInterface2._0
 
             try
             {
-                customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text,
-                                int.Parse(textBoxCustomerID.Text), textBoxCreditCardNumber.Text,
-                                int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
-                buttonReadAll_Click(sender, e);
+                if (textBoxCustomerID.Text != "" && textBoxFirstName.Text != "" && textBoxLastName.Text != "" && textBoxCreditCardNumber.Text.Length == 16 && int.Parse(textBoxMonth.Text) > 0 && int.Parse(textBoxMonth.Text) <= 12 && int.Parse(textBoxYear.Text) > 2021)
+                {
+                    customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text,
+                               int.Parse(textBoxCustomerID.Text), textBoxCreditCardNumber.Text,
+                               int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
+                    buttonReadAll_Click(sender, e);
 
-                MessageBox.Show("New customer details added.", "Success!");
+                    MessageBox.Show("New customer details added.", "Success!");
+                }
+                else
+                {
+                    throw new Exception();
+                }
 
             }
             catch
