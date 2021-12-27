@@ -11,7 +11,7 @@ namespace BLL
     public class OrderBLL
     {
 
-        ProductBLL productBLL = new ProductBLL();
+        ProductBLL productBLL = new ProductBLL(0); //calls constructor that does not reinitialize list
         CustomerBLL customerBLL = new CustomerBLL();
         OrderDAL orderDAL = new OrderDAL();
 

@@ -20,7 +20,7 @@ namespace UserInterface2._0
             Application.SetCompatibleTextRenderingDefault(false);
            
             Application.Run(FormProvider.MainMenu);
-           
+            //pplication.Run(new CustomerForm());
         }
     }
 }
