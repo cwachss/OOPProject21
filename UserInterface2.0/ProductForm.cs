@@ -125,8 +125,7 @@ namespace UserInterface2._0
             textBoxName.Enabled = true;
             textBoxPrice.Enabled = true;
             textBoxStock.Enabled = true;
-
-
+            
             textBoxPrintProducts.Size = new System.Drawing.Size(436, 397); //resize text box to make room for add panel
 
         }
@@ -139,6 +138,7 @@ namespace UserInterface2._0
                 productBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //adds a product to the list
                 textBoxPrintProducts.Clear(); //empty list box to reprint with new product added
                 PrintAll(); //reprint list with new product added
+                ClearGroupBoxTexboxes();
             }
             catch (Exception)
             {
@@ -148,7 +148,8 @@ namespace UserInterface2._0
 
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
-
+            base.buttonReadAll_Click(sender, e);
+            PrintAll();
         }
         public void PrintAll()
         {
@@ -159,14 +160,20 @@ namespace UserInterface2._0
             }
         }
 
-        public override void ResetAndHideEverything()
+        private void ClearGroupBoxTexboxes()
         {
-            buttonDelete.Visible=false;
-            buttonModify.Visible=false;
             textBoxProductNumber.Clear();
             textBoxName.Clear();
             textBoxStock.Clear();
             textBoxPrice.Clear();
+        }
+
+        public override void ResetAndHideEverything()
+        {
+            buttonDelete.Visible=false;
+            buttonModify.Visible=false;
+            ClearGroupBoxTexboxes();
+            base.ResetAndHideEverything();
         }
     }
 }

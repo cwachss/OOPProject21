@@ -22,8 +22,7 @@ namespace UserInterface2._0
 
         public virtual void buttonCreate_Click(object sender, EventArgs e) 
         {
-            HideMenuButtons();
-            textBoxPrintProducts.Visible = true;
+           
             buttonReadAll_Click(sender,e);
             groupBoxProductDetails.Visible = true;
            
@@ -43,6 +42,9 @@ namespace UserInterface2._0
             buttonModify.Visible = true;
             buttonDelete.Visible = true;
             buttonAdd.Visible = false;
+            buttonModify.Enabled = false;
+            buttonDelete.Enabled = false;
+            
         }
 
          public virtual void buttonReadAll_Click(object sender, EventArgs e) 
@@ -82,6 +84,7 @@ namespace UserInterface2._0
             buttonDelete.Visible = false;
             buttonUpdateProduct.Visible = true;
             
+            
         }
 
         public virtual void buttonDelete_Click(object sender, EventArgs e) 
@@ -110,7 +113,8 @@ namespace UserInterface2._0
             
             buttonAdd.Enabled = false;
             buttonAdd.Visible = false;
-
+            buttonModify.Visible = false;
+            buttonDelete.Visible = false;
         }
        
 

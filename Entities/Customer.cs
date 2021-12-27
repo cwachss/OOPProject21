@@ -40,8 +40,7 @@ namespace Entities
         //}
         public override string ToString()
         {
-            return $"{FirstName}\t{LastName}\t" +
-                $"{ID}";
+            return $"{ID}\t{FirstName}\t{LastName}\t";
         }
 
     }

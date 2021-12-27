@@ -19,8 +19,8 @@ namespace UserInterface2._0
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
-            Application.Run(FormProvider.MainMenu);
-           
+            //Application.Run(FormProvider.MainMenu);
+            Application.Run(new CustomerForm());
         }
     }
 }
