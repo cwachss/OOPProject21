@@ -51,7 +51,9 @@ namespace UserInterface2._0
             labelCreditCardNumber.Visible = false;
             labelProductMenu.Text = "Create new Customer";
             buttonUpdateCreditCard.Text = "New Credit Card";
+           
             ClearReadOneTextBoxes();
+            PrintAll();
 
         }
 
@@ -68,10 +70,7 @@ namespace UserInterface2._0
                     
                         customerBLL.ReadAll();
 
-                        foreach (Customer ploni in customerBLL.ReadAll())
-                        {
-                            textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
-                        }
+                    PrintAll();
 
                     
 
@@ -255,10 +254,7 @@ namespace UserInterface2._0
 
                 customerBLL.ReadAll();
 
-                foreach (Customer ploni in customerBLL.ReadAll())
-                {
-                    textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
-                }
+                PrintAll();
 
             }
             catch
@@ -321,9 +317,13 @@ namespace UserInterface2._0
 
         }
 
-        private void textBoxPrintProducts_TextChanged(object sender, EventArgs e)
+        private void PrintAll()
         {
-
+            textBoxPrintProducts.Clear();
+            foreach (Customer ploni in customerBLL.ReadAll())
+            {
+                textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
+            }
         }
     }
 }

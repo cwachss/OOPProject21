@@ -31,6 +31,7 @@ namespace UserInterface2._0
             //labelPrintInfo.Visible = true; //need to figure out how to make this button inherited...
             buttonReturnMenu.Visible = true;
             buttonReturnMenu.Enabled = true;
+            textBoxPrintProducts.Size = new System.Drawing.Size(436, 415);
             //groupBoxProductDetails.Enabled = true;//not working, so I had to set each textbox to be enabled by the child class
 
         }

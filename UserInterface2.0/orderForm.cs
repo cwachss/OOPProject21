@@ -82,6 +82,7 @@ namespace UserInterface2._0
                 MessageBox.Show("Thank you for shopping at Toys of All Sorts!");
                 labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
                 //update listbox to show new stock numbers (waiting on ReadAll)
+                listBoxProducts.Items.Clear();
                 PrintAllProducts();
             }
             catch
