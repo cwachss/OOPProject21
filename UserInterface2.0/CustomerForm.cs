@@ -52,7 +52,7 @@ namespace UserInterface2._0
             labelProductMenu.Text = "Create new Customer";
             buttonUpdateCreditCard.Text = "New Credit Card";
             ClearReadOneTextBoxes();
-           
+
         }
 
         public override void buttonAdd_Click(object sender, EventArgs e)
@@ -65,7 +65,15 @@ namespace UserInterface2._0
                     customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text,
                                int.Parse(textBoxCustomerID.Text), textBoxCreditCardNumber.Text,
                                int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
-                    buttonReadAll_Click(sender, e);
+                    
+                        customerBLL.ReadAll();
+
+                        foreach (Customer ploni in customerBLL.ReadAll())
+                        {
+                            textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
+                        }
+
+                    
 
                     MessageBox.Show("New customer details added.", "Success!");
                 }
@@ -90,7 +98,7 @@ namespace UserInterface2._0
             textBoxLastName.Enabled = false;
             textBoxCCNum.Enabled = false;
             labelProductMenu.Text = "Find Customer";
-            
+
         }
         //lists customer's details
         public override void buttonListDetails_Click(object sender, EventArgs e)
@@ -147,14 +155,14 @@ namespace UserInterface2._0
             //textBoxYear.Clear();
 
             groupBoxNewCreditCard.Visible = true;
-          
+
             buttonUpdateCreditCard.Enabled = false;
             buttonUpdateProduct.Enabled = false;
             groupBoxNewCreditCard.BringToFront();
             textBoxNameOnCard.Clear();
             textBoxCreditCardNumber.Clear();
             textBoxMonth.Clear();
-            textBoxYear.Clear(); 
+            textBoxYear.Clear();
         }
 
         // enter saves the credit card info and closes the groupbox
@@ -165,7 +173,7 @@ namespace UserInterface2._0
             {
                 if (int.Parse(textBoxMonth.Text) <= 12 && int.Parse(textBoxMonth.Text) > 0 && int.Parse(textBoxYear.Text) > 2021)
                 {
-                    if(textBoxNameOnCard.Text != "")
+                    if (textBoxNameOnCard.Text != "")
                     {
                         customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text), textBoxNameOnCard.Text, textBoxCreditCardNumber.Text, int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
                         buttonListDetails_Click(sender, e);
@@ -173,13 +181,13 @@ namespace UserInterface2._0
                         buttonUpdateProduct.Enabled = true;
                         MessageBox.Show("Credit Card updated successfully!");
                         groupBoxNewCreditCard.Visible = false;
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Please input the name on credit card.");
                     }
-                    
+
                 }
                 else
                 {
@@ -194,7 +202,7 @@ namespace UserInterface2._0
 
 
 
-            
+
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
@@ -210,8 +218,8 @@ namespace UserInterface2._0
             buttonUpdateCreditCard.Enabled = true;
             buttonUpdateProduct.Enabled = true;
         }
-        
-        
+
+
 
         //adds in the modifications and resets the readone page
         public override void buttonUpdateProduct_Click(object sender, EventArgs e)
@@ -277,7 +285,7 @@ namespace UserInterface2._0
             base.ResetAndHideEverything();
 
             groupBoxNewCreditCard.Visible = false;
-           
+
             buttonUpdateCreditCard.Visible = false;
             labelProductMenu.Text = "Customer Menu";
 
@@ -300,6 +308,8 @@ namespace UserInterface2._0
 
         private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            ResetAndHideEverything();
+            ResetMainMenu();
             FormProvider.MainMenu.Show();
 
 
@@ -311,6 +321,9 @@ namespace UserInterface2._0
 
         }
 
-      
+        private void textBoxPrintProducts_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
