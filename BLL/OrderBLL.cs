@@ -92,7 +92,7 @@ namespace BLL
                         return orderDAL.ReadOrderViaCustomer(customerID);
                 }
                 if (i == orderDAL.ReadAll().Count)
-                    throw new Exception("This customers has no orders yet");
+                    throw new ExceptionCustomerHasNoOrders("This customers has no orders yet");
             return null;
         }
 
@@ -106,7 +106,7 @@ namespace BLL
                     return orderDAL.ReadOrderViaProduct(productID);
             }
             if (i == orderDAL.ReadAll().Count)
-                throw new Exception("This products has no orders yet");
+                throw new ExceptionProductHasNoOrders("This products has no orders yet");
             return null;
            
         }

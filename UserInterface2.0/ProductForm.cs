@@ -47,7 +47,7 @@ namespace UserInterface2._0
                 textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
                 textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
                 textBoxName.Text = Convert.ToString(newProduct.ProductName);
-                
+
             }
             catch
             {
@@ -132,7 +132,7 @@ namespace UserInterface2._0
 
         public override void buttonAdd_Click(object sender, EventArgs e)
         {
-            base.buttonAdd_Click(sender, e);
+            //base.buttonAdd_Click(sender, e);
             try
             {
                 productBLL.Create((int.Parse(textBoxProductNumber.Text)), textBoxName.Text, decimal.Parse(textBoxPrice.Text), int.Parse(textBoxStock.Text)); //adds a product to the list
@@ -149,7 +149,16 @@ namespace UserInterface2._0
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
             base.buttonReadAll_Click(sender, e);
-            PrintAll();
+            labelProductMenu.Text = "All Products";
+           
+            try
+            {
+                PrintAll();
+            }
+            catch
+            {
+                MessageBox.Show("No products found. Please add to inventory.", "Error");
+            }
         }
         public void PrintAll()
         {
@@ -162,10 +171,25 @@ namespace UserInterface2._0
 
         private void ClearGroupBoxTexboxes()
         {
+            buttonDelete.Visible=false;
+            buttonModify.Visible=false;
             textBoxProductNumber.Clear();
+            textBoxProductNumber2.Clear();
+            textBoxProductNumber2.Visible = false;
             textBoxName.Clear();
             textBoxStock.Clear();
             textBoxPrice.Clear();
+           
+        }
+
+        public override void buttonReturnMenu_Click(object sender, EventArgs e)
+        {
+            base.buttonReturnMenu_Click(sender,e);
+            labelProductMenu.Text = "Product Menu";
+            groupBoxProductDetails.Visible = false;
+            labelEnterNumber.Visible = false;
+            buttonListDetails.Visible = false;
+            textBoxPrintProducts.Visible = false;
         }
 
         public override void ResetAndHideEverything()

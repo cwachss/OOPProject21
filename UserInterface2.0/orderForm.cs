@@ -16,6 +16,7 @@ namespace UserInterface2._0
     {
         OrderBLL orderBLL = new OrderBLL();
         ProductBLL productBLL = new ProductBLL(0);
+      
         public orderForm()
         {
             InitializeComponent();
@@ -44,7 +45,12 @@ namespace UserInterface2._0
             buttonReturnMenu.Visible = false;
             labelAllProducts.Visible = false;
 
+
             //things to disappear for readone
+            listBoxOrdersFound.Visible = false;
+            labelOrderDetails.Visible = false;
+            panelIDInput.Visible = false;
+            buttonFindOrders.Enabled = false;
 
         }
 
@@ -87,6 +93,19 @@ namespace UserInterface2._0
 
         private void buttonReadOne_Click(object sender, EventArgs e)
         {
+            HideMainMenu();
+            labelOrderTitle.Text = "Find Orders";
+            buttonReturnMenu.Enabled = true;
+            buttonReturnMenu.Visible=true;
+            panelIDInput.Visible = true;
+            buttonFindOrders.Enabled = true;
+            IDChooser.Enabled = true;
+            textBoxIDInput.Enabled = true;
+            labelOrderDetails.Visible=true;
+            listBoxOrdersFound.Visible=true;
+            listBoxOrdersFound.Text = null;
+            textBoxIDInput.Text = null;
+            IDChooser.SelectedIndex = -1;
 
         }
 
@@ -128,6 +147,43 @@ namespace UserInterface2._0
         {
            
             MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
+        }
+
+        private void buttonFindOrders_Click(object sender, EventArgs e)
+        {
+            listBoxOrdersFound.Items.Clear();
+            try
+            {
+                if (IDChooser.SelectedIndex == 0)
+                    listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaCustomer(int.Parse(textBoxIDInput.Text)).ToString());
+                else if (IDChooser.SelectedIndex == 1)
+                    listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaProduct(int.Parse(textBoxIDInput.Text)).ToString());
+                else if (IDChooser.SelectedIndex == 2)
+                    listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
+                else if (IDChooser.SelectedIndex == -1)
+                    MessageBox.Show("Please select a ID holder.");
+
+              
+            }
+            catch (ExceptionCustomerHasNoOrders ex)
+            {
+                MessageBox.Show("No orders for this customer yet", "Error");
+            }
+            catch (ExceptionProductHasNoOrders ex)
+            {
+                MessageBox.Show("No orders for this product yet.", "Error");
+            }
+            catch
+            {
+                MessageBox.Show("Please enter an ID");
+            }
+
+
+        }
+
+        private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
         }
     }
 }
