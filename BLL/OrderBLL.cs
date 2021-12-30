@@ -24,6 +24,16 @@ namespace BLL
                 productBLL.Read(productID);
                 customerBLL.Read(customerID);
 
+                Product product = productBLL.Read(productID);
+
+                if (product.AmountInStock >= amountOrdered)
+                {
+                    productBLL.Update(productID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
+                }
+                else
+                {
+                    throw new Exception("Not enough in stock");
+                }
 
                 orderDAL.Create(customerID, productID, amountOrdered);
             }
@@ -32,16 +42,7 @@ namespace BLL
                 throw new Exception("Incorrect input");
             }
 
-            Product product = productBLL.Read(productID);
-
-            if (product.AmountInStock >= amountOrdered)
-            {
-                productBLL.Update(productID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
-            }
-            else
-            {
-                throw new Exception("Not enough in stock");
-            }
+            
 
         }
 
@@ -56,16 +57,19 @@ namespace BLL
             //again, same problem
         }
 
-        public void Update(int orderNum, int amountOrdered)
+        public void Update(int orderNum, int amountToOrder)
         {
             Order order = orderDAL.ReadOrderViaOrder(orderNum);
 
             Product product = productBLL.Read(order.ProductID);
+            int amountDifference = order.AmountOrdered - amountToOrder;
 
-            if (product.AmountInStock >= amountOrdered)
+            if (product.AmountInStock >= amountDifference)
             {
-                orderDAL.Update(orderNum, amountOrdered);
-                productBLL.Update(order.ProductID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountOrdered));
+            
+                productBLL.Update(order.ProductID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountDifference));
+                orderDAL.Update(orderNum, amountDifference);
+                
             }
             else
             {

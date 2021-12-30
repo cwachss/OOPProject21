@@ -11,7 +11,7 @@ namespace DAL
     public class OrderDAL
     {
         internal static List<Order> orderList = new List<Order>();
-        int orderNumber = 100;
+        protected int orderNumber = 100;
 
         public OrderDAL()
         {
@@ -43,7 +43,7 @@ namespace DAL
 
             Order order = new Order(orderNumber, customerID, productID, amountOrdered);
             orderList.Add(order);
-            orderNumber += 100;
+            orderNumber += 1;
         }
 
         public void Delete(int anOrderNumber)
