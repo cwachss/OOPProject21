@@ -11,7 +11,7 @@ namespace DAL
     public class OrderDAL
     {
         internal static List<Order> orderList = new List<Order>();
-        protected int orderNumber = 100;
+        protected int orderNumber = 103;
 
         public OrderDAL()
         {

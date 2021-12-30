@@ -51,7 +51,7 @@ namespace UserInterface2._0
             labelOrderDetails.Visible = false;
             panelIDInput.Visible = false;
             buttonFindOrders.Enabled = false;
-
+            listBoxProducts.Items.Clear();
         }
 
         public void HideMainMenu()
@@ -117,8 +117,8 @@ namespace UserInterface2._0
             buttonReturnMenu.Visible = true;
             listBoxProducts.Visible = true;
             listBoxProducts.Size = new System.Drawing.Size(688, 382); //resize text box to take up all the space
-           
 
+            PrintAllOrders();
             
         }
 
@@ -136,6 +136,16 @@ namespace UserInterface2._0
                 listBoxProducts.Items.Add(products[i]);
             }
             
+        }
+
+        private void PrintAllOrders()
+        {
+            List<Order> orders = orderBLL.ReadAll();
+            for (int i = 0; i < orders.Count; i++)
+            {
+                listBoxProducts.Items.Add(orders[i]);
+            }
+
         }
         private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {

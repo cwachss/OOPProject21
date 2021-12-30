@@ -96,6 +96,7 @@ namespace UserInterface2._0
             textBoxFirstName.Enabled = false;
             textBoxLastName.Enabled = false;
             textBoxCCNum.Enabled = false;
+            textBoxCCNum.Visible = true;
             labelProductMenu.Text = "Find Customer";
 
         }
@@ -157,6 +158,8 @@ namespace UserInterface2._0
 
             buttonUpdateCreditCard.Enabled = false;
             buttonUpdateProduct.Enabled = false;
+            buttonEnter.Visible = true;
+            buttonCancelNewCC.Visible = true;
             groupBoxNewCreditCard.BringToFront();
             textBoxNameOnCard.Clear();
             textBoxCreditCardNumber.Clear();
