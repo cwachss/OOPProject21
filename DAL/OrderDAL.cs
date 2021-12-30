@@ -17,7 +17,9 @@ namespace DAL
         {
             InitilizeList();
         }
-        public void InitilizeList()
+
+        //method to initialize a list of orders
+        public void InitilizeList() 
         {
             StreamReader reader = new StreamReader(@"../../../DAL/ListOfOrders.txt");
             string line;
@@ -33,20 +35,23 @@ namespace DAL
             }
         }
 
+        //this is just so the visuals can access this relatively unimportant and arbitrary order number. it doesn't really matter, it just makes our visual neater with this lovely generated order number..
         public int GetOrderNumber()
         {
             return orderNumber;
         }
 
+        //method to place an order
         public void Create(int customerID, int productID, int amountOrdered)
         {
-
+            //no need to exception handle- order number is predefined and all other exceptions are dealt with in the BLL
             Order order = new Order(orderNumber, customerID, productID, amountOrdered);
             orderList.Add(order);
             orderNumber += 1;
         }
 
-        public void Delete(int anOrderNumber)
+        //deletes an order from the system 
+        public void Delete(int anOrderNumber) 
         {
             for (int i = 0; i < orderList.Count; i++) 
             {
@@ -58,7 +63,7 @@ namespace DAL
                 }
                 if (i == orderList.Count)//if never found product number, it throws an exception.
                 {
-                    throw new ProductNumberNotFound();
+                    throw new ProductNumberNotFound(); 
                 }
             }
         }

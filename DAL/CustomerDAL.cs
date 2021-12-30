@@ -11,7 +11,7 @@ namespace DAL
 {
     public class CustomerDAL
     {
-
+        const int CREDITCARDNUMBERLENGTH = 16;
         protected static List<Customer> customerList;
         public CustomerDAL()
         {
@@ -39,9 +39,9 @@ namespace DAL
         /// <param name="month"></param>
         public void Create(string first_name, string last_name, int idNum, string ccName, string creditCardNum, int year, int month)
         {
-            if (month <= 12 && creditCardNum.Length==16 && (year <= DateTime.Now.Year + 20 || year >= DateTime.Now.Year))
+            if (month <= 12 && creditCardNum.Length==16 && (year <= DateTime.Now.Year + 20 || year >= DateTime.Now.Year)) //check if credit card number is a valid number (16 digits) and if expiration date is valid    
             {
-                for (int i = 0; i < customerList.Count; i++)
+                for (int i = 0; i < customerList.Count; i++) //check if the customer id is already in use
                 {
                     if (idNum == customerList[i].ID)
                     {
@@ -49,8 +49,8 @@ namespace DAL
                     }
                 }
 
-                Customer PloniAlmoni = new Customer(first_name, last_name,  idNum, ccName, creditCardNum, year, month);//I think is terrible programming since we're storing sensitive information is a unsecured list, but I think this is what we're meant to do... 
-                customerList.Add(PloniAlmoni);
+                Customer PloniAlmoni = new Customer(first_name, last_name,  idNum, ccName, creditCardNum, year, month);  //create the customer
+                customerList.Add(PloniAlmoni); //add him to the list
                 
             }
             else if (month>12)
@@ -126,7 +126,7 @@ namespace DAL
         }
 
         
-
+        //method deletes a customer entirely from the list
         public void Delete(int idNum)
         {
             //if(productNum)
@@ -134,7 +134,7 @@ namespace DAL
             //while loop to find id number
             while (customerList[index].ID != idNum)
             {
-                if (index < customerList.Count)
+                if (index < customerList.Count) //checks if the customer is actually in the list
                 {
                     index++;
                 }
@@ -148,28 +148,7 @@ namespace DAL
 
         }
 
-        //public override string ToString()
-        //{
-
-        //    return $"{FirstName}{LastName}{ID}{CreditCardNum}";
-        //}
-          
-        //public void InitializeList()
-        //{
-        //    StreamReader reader = new StreamReader(@"..\..\customerList.txt");
-        //    string line;
-        //    using (reader)
-        //    {
-        //        for (int i = 0; (line = reader.ReadLine()) != null; i++)
-        //        {
-        //            string[] array = line.Split(' ');
-
-        //            Customer soAndSo = new Customer(array[0], array[1], int.Parse(array[2]), array[3], array[4], int.Parse(array[5]), int.Parse(array[6]));
-        //            customerList.Add(soAndSo);
-        //            //input all info into list, then whenever you add use StreamWriter
-        //        }
-        //    }
-        //}
+        
 
 
 

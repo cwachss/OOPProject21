@@ -17,12 +17,12 @@ namespace BLL
         {
             misterA = new CustomerDAL();
         }
-        public CustomerBLL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        public CustomerBLL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every customer (in the end, we didn't initialize a list of customers so it doesn't matter. But if we did, this would be a problem).
         {
             misterA = new CustomerDAL(1);
         }
         /// <summary>
-        /// method that adds a customer's information to the list in the BLL
+        /// method that adds a customer's information to the list in the DAL
         /// </summary>
         /// <param name="first_name"></param>
         /// <param name="last_name"></param>
@@ -38,7 +38,7 @@ namespace BLL
         }
 
         /// <summary> 
-        /// method that returns the list of customers and their information in the BLL
+        /// method that returns ac copy of a list of customers and their information from the DAL
         /// </summary>
         /// <returns></returns>
         public List<Customer> ReadAll()
@@ -48,7 +48,7 @@ namespace BLL
 
         }
 
-
+        //returns a copy of the customer
         public Customer Read(int idNum)
         {
            return misterA.Read(idNum);
@@ -69,6 +69,7 @@ namespace BLL
             misterA.Update(first_name, last_name, idNum, ccName, creditCardNum, year, month);
         }
 
+        //deletes a customer from the list
         public void Delete(int idNum)
         {
             misterA.Delete(idNum);
