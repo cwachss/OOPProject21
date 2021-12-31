@@ -35,8 +35,7 @@ namespace DAL
 
         string product;
 
-        //question: why do we need an index?
-        //protected int index = 0;//variable to hold the index of the list *see comment on index below*
+       
 
         //method to initialize the list with products' information
         public void InitializeList()
@@ -52,38 +51,7 @@ namespace DAL
                 }
             }
 
-            /*using (reader)
-            {
-
-               *//* number = int.Parse(reader.ReadLine());//reads the ID number into the variable number
-                name = reader.ReadLine();//reads the name into the variable name
-                price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
-                stock = int.Parse(reader.ReadLine());//reads the amount in stock
-
-                while (name != null) //read until there are no more entries
-                {
-
-                    Product Item = new Product(number, name, price, stock);//creates new Product object 
-                    productList.Add(Item);//puts the new object into the List
-                                          //NumberOfProducts++;
-
-                    //index++; I like number of products better because index is not really what we care about
-
-
-                    string checkForNull = reader.ReadLine();
-                    if (checkForNull == null)
-                    {
-                        break;
-                    }
-
-                    number = int.Parse(checkForNull);//reads the ID number into the variable number
-                    name = reader.ReadLine();//reads the name into the variable name
-                    price = decimal.Parse(reader.ReadLine());//reads the price into the variable price
-                    stock = int.Parse(reader.ReadLine());//reads the amount in stock
-                } //end while*/
-
-         
-            //}//close reader
+          
 
         }//end initialize list
 
@@ -91,13 +59,13 @@ namespace DAL
         //Create method: create a product and add to product list
         public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
-            Product product = new Product(prodNum, prodName, cost, stock);
-            for (int i = 0; i < productList.Count; i++)
+            Product product = new Product(prodNum, prodName, cost, stock); //create a product with the info
+            for (int i = 0; i < productList.Count; i++) //go through all the products
             {
-                if (prodNum == productList[i].ProductNumber)
+                if (prodNum == productList[i].ProductNumber) //checks the product id we're trying to add against all the pre-existing ones
                 {
-                    throw new Exception("Product already exists");
-                     //throw new NumberAlreadyExists();
+                    throw new Exception("Product already exists"); //if it exists, throw an exception
+                     
                 }
             }
 
@@ -120,7 +88,7 @@ namespace DAL
                 }
                 else
                 {
-                   throw new ProductNumberNotFound();
+                   throw new ProductNumberNotFound(); //if it's not there, throw an exception
                 }
             }
 
@@ -128,24 +96,15 @@ namespace DAL
             return product;
         }
 
-        //readall method: prints out the whole list
-        /* public void PrintAll()
-        {
-            
-            for (int i = 0; i < productList.Count; i++)
-            {
-                Console.WriteLine(productList[i]);
-            }
-            
-        }*/
+       
 
-        //possibly what readall is supposed to:  return a copy of the product list.
+        //returns a copy of the product list.
         public List<Product> ReadAll()
         {
             if (productList.Count > 0)
             {
                 List<Product> copyOfList = productList.ConvertAll(pro => new Product(pro.ProductNumber, pro.ProductName,
-                    pro.CostPerUnit, pro.AmountInStock));
+                    pro.CostPerUnit, pro.AmountInStock)); //send a copy of the list, rather than the actual list
 
                 return copyOfList;
             }
@@ -153,11 +112,7 @@ namespace DAL
             {
                 throw new Exception("No products found");
             }
-            /* for (int i = 0; i < productList.Count; i++)
-             {
-             copyOfList.Add(productList[i]);
-             }*/
-            //test exception
+            
         }
 
 

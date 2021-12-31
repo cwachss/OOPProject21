@@ -103,6 +103,8 @@ namespace UserInterface2._0
 
         private void ProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            ResetMainMenu();
+            ResetAndHideEverything();
             FormProvider.MainMenu.Show();
 
         }
@@ -125,7 +127,7 @@ namespace UserInterface2._0
             textBoxName.Enabled = true;
             textBoxPrice.Enabled = true;
             textBoxStock.Enabled = true;
-            
+            PrintAll();
             textBoxPrintProducts.Size = new System.Drawing.Size(436, 397); //resize text box to make room for add panel
 
         }

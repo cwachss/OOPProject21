@@ -23,11 +23,17 @@ namespace UserInterface2._0
         public virtual void buttonCreate_Click(object sender, EventArgs e) 
         {
            
-            buttonReadAll_Click(sender,e);
+            //buttonReadAll_Click(sender,e);
             groupBoxProductDetails.Visible = true;
-           
+            textBoxPrintProducts.Clear();//this way it resets the listbox as blank and then refills it.
+            HideMenuButtons();
+            textBoxPrintProducts.Visible = true;
+            //labelPrintInfo.Visible = true; //need to figure out how to make this button inherited...
+            buttonReturnMenu.Visible = true;
+            buttonReturnMenu.Enabled = true;
+            textBoxPrintProducts.Size = new System.Drawing.Size(436, 415);
             //groupBoxProductDetails.Enabled = true;//not working, so I had to set each textbox to be enabled by the child class
-           
+
         }
 
         public virtual void buttonReadOne_Click(object sender, EventArgs e) 
@@ -79,7 +85,7 @@ namespace UserInterface2._0
 
         public virtual void buttonAdd_Click(object sender, EventArgs e) 
         {
-            textBoxPrintProducts.Size = new System.Drawing.Size(436, 397);
+            textBoxPrintProducts.Size = new System.Drawing.Size(436, 415);
         }
 
         public virtual void buttonModify_Click(object sender, EventArgs e)

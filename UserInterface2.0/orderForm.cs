@@ -51,7 +51,7 @@ namespace UserInterface2._0
             labelOrderDetails.Visible = false;
             panelIDInput.Visible = false;
             buttonFindOrders.Enabled = false;
-
+            listBoxProducts.Items.Clear();
         }
 
         public void HideMainMenu()
@@ -82,6 +82,7 @@ namespace UserInterface2._0
                 MessageBox.Show("Thank you for shopping at Toys of All Sorts!");
                 labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
                 //update listbox to show new stock numbers (waiting on ReadAll)
+                listBoxProducts.Items.Clear();
                 PrintAllProducts();
             }
             catch
@@ -105,6 +106,7 @@ namespace UserInterface2._0
             listBoxOrdersFound.Visible=true;
             listBoxOrdersFound.Text = null;
             textBoxIDInput.Text = null;
+            textBoxIDInput.Enabled = false;
             IDChooser.SelectedIndex = -1;
 
         }
@@ -116,8 +118,8 @@ namespace UserInterface2._0
             buttonReturnMenu.Visible = true;
             listBoxProducts.Visible = true;
             listBoxProducts.Size = new System.Drawing.Size(688, 382); //resize text box to take up all the space
-           
 
+            PrintAllOrders();
             
         }
 
@@ -135,6 +137,16 @@ namespace UserInterface2._0
                 listBoxProducts.Items.Add(products[i]);
             }
             
+        }
+
+        private void PrintAllOrders()
+        {
+            List<Order> orders = orderBLL.ReadAll();
+            for (int i = 0; i < orders.Count; i++)
+            {
+                listBoxProducts.Items.Add(orders[i]);
+            }
+
         }
         private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -154,14 +166,19 @@ namespace UserInterface2._0
             listBoxOrdersFound.Items.Clear();
             try
             {
-                if (IDChooser.SelectedIndex == 0)
-                    listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaCustomer(int.Parse(textBoxIDInput.Text)).ToString());
-                else if (IDChooser.SelectedIndex == 1)
-                    listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaProduct(int.Parse(textBoxIDInput.Text)).ToString());
-                else if (IDChooser.SelectedIndex == 2)
-                    listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
-                else if (IDChooser.SelectedIndex == -1)
-                    MessageBox.Show("Please select a ID holder.");
+               
+                if (IDChooser.SelectedIndex >= 0)
+                {
+                    if (IDChooser.SelectedIndex == 0)
+                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaCustomer(int.Parse(textBoxIDInput.Text)).ToString());
+                    else if (IDChooser.SelectedIndex == 1)
+                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaProduct(int.Parse(textBoxIDInput.Text)).ToString());
+                    else if (IDChooser.SelectedIndex == 2)
+                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
+                    textBoxIDInput.Enabled=true;
+                }
+                
+               
 
               
             }
@@ -184,6 +201,12 @@ namespace UserInterface2._0
         private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
+        }
+
+        //makes sure a selectionis made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
+        private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
+        {
+            textBoxIDInput.Enabled = true;
         }
     }
 }

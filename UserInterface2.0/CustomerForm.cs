@@ -18,11 +18,7 @@ namespace UserInterface2._0
     {
         /*
          * some important notes:
-         * the UI has sections for first and last name. right now, the DAL only receives a full name. We need to decide which option we like better
-         * the credit card section right now only allows for the customer name to be on the credit card. this needs to be changed.
-         * we need to set up the code so you cannot add a customer unless the credit card is filled out. Maybe that means having the groupbox set up differently for add, right now I set it up only for the read/delete/modify. there are ways to make things move around depending on what button you press.
-         * changes to make:
-         * string credit card, 
+         * we need to set up the code so you cannot add a customer unless the credit card is filled out. Maybe that means having the groupbox set up differently for add, right now I set it up only for the read/delete/modify. there are ways to make things move around depending on what button you press. 
          */
         CustomerBLL customerBLL;
         //ctor
@@ -51,8 +47,10 @@ namespace UserInterface2._0
             labelCreditCardNumber.Visible = false;
             labelProductMenu.Text = "Create new Customer";
             buttonUpdateCreditCard.Text = "New Credit Card";
-            ClearReadOneTextBoxes();
            
+            ClearReadOneTextBoxes();
+            PrintAll();
+
         }
 
         public override void buttonAdd_Click(object sender, EventArgs e)
@@ -65,7 +63,12 @@ namespace UserInterface2._0
                     customerBLL.Create(textBoxFirstName.Text, textBoxLastName.Text, textBoxNameOnCard.Text,
                                int.Parse(textBoxCustomerID.Text), textBoxCreditCardNumber.Text,
                                int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));//computer gave me a hard time until I added a DAL refence here. No idea why.
-                    buttonReadAll_Click(sender, e);
+                    
+                        customerBLL.ReadAll();
+
+                    PrintAll();
+
+                    
 
                     MessageBox.Show("New customer details added.", "Success!");
                 }
@@ -89,8 +92,9 @@ namespace UserInterface2._0
             textBoxFirstName.Enabled = false;
             textBoxLastName.Enabled = false;
             textBoxCCNum.Enabled = false;
+            textBoxCCNum.Visible = true;
             labelProductMenu.Text = "Find Customer";
-            
+
         }
         //lists customer's details
         public override void buttonListDetails_Click(object sender, EventArgs e)
@@ -147,14 +151,16 @@ namespace UserInterface2._0
             //textBoxYear.Clear();
 
             groupBoxNewCreditCard.Visible = true;
-          
+
             buttonUpdateCreditCard.Enabled = false;
             buttonUpdateProduct.Enabled = false;
+            buttonEnter.Visible = true;
+            buttonCancelNewCC.Visible = true;
             groupBoxNewCreditCard.BringToFront();
             textBoxNameOnCard.Clear();
             textBoxCreditCardNumber.Clear();
             textBoxMonth.Clear();
-            textBoxYear.Clear(); 
+            textBoxYear.Clear();
         }
 
         // enter saves the credit card info and closes the groupbox
@@ -165,7 +171,7 @@ namespace UserInterface2._0
             {
                 if (int.Parse(textBoxMonth.Text) <= 12 && int.Parse(textBoxMonth.Text) > 0 && int.Parse(textBoxYear.Text) > 2021)
                 {
-                    if(textBoxNameOnCard.Text != "")
+                    if (textBoxNameOnCard.Text != "")
                     {
                         customerBLL.Update(textBoxFirstName.Text, textBoxLastName.Text, int.Parse(textBoxCustomerID.Text), textBoxNameOnCard.Text, textBoxCreditCardNumber.Text, int.Parse(textBoxYear.Text), int.Parse(textBoxMonth.Text));
                         buttonListDetails_Click(sender, e);
@@ -173,13 +179,13 @@ namespace UserInterface2._0
                         buttonUpdateProduct.Enabled = true;
                         MessageBox.Show("Credit Card updated successfully!");
                         groupBoxNewCreditCard.Visible = false;
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Please input the name on credit card.");
                     }
-                    
+
                 }
                 else
                 {
@@ -194,7 +200,7 @@ namespace UserInterface2._0
 
 
 
-            
+
         }
 
         //Cancels the new credit card by hiding the groupbox and resetting the credit card details to the original credit card. this prevents you from partially modifying a credit card.
@@ -210,8 +216,8 @@ namespace UserInterface2._0
             buttonUpdateCreditCard.Enabled = true;
             buttonUpdateProduct.Enabled = true;
         }
-        
-        
+
+
 
         //adds in the modifications and resets the readone page
         public override void buttonUpdateProduct_Click(object sender, EventArgs e)
@@ -247,10 +253,7 @@ namespace UserInterface2._0
 
                 customerBLL.ReadAll();
 
-                foreach (Customer ploni in customerBLL.ReadAll())
-                {
-                    textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
-                }
+                PrintAll();
 
             }
             catch
@@ -277,7 +280,7 @@ namespace UserInterface2._0
             base.ResetAndHideEverything();
 
             groupBoxNewCreditCard.Visible = false;
-           
+
             buttonUpdateCreditCard.Visible = false;
             labelProductMenu.Text = "Customer Menu";
 
@@ -300,6 +303,8 @@ namespace UserInterface2._0
 
         private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            ResetAndHideEverything();
+            ResetMainMenu();
             FormProvider.MainMenu.Show();
 
 
@@ -311,6 +316,13 @@ namespace UserInterface2._0
 
         }
 
-      
+        private void PrintAll()
+        {
+            textBoxPrintProducts.Clear();
+            foreach (Customer ploni in customerBLL.ReadAll())
+            {
+                textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace BLL
             productDAL = new ProductDAL(1);
         }
 
+        //method to add a product to the product list
         public ProductDAL Create(int prodNum, string prodName, decimal cost, int stock)
         {
             
