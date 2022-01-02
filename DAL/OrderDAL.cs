@@ -89,7 +89,7 @@ namespace DAL
 
             for (int i = 0; i < orderList.Count; i++)
             {
-                if (customerOrders[i].CustomerID == customerID)
+                if (orderList[i].CustomerID == customerID)
                 {
                     Order customerOrder = new Order(orderList[i].OrderNumber, orderList[i].CustomerID, orderList[i].ProductID, orderList[i].AmountOrdered);
                     customerOrders.Add(customerOrder);

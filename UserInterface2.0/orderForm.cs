@@ -52,6 +52,8 @@ namespace UserInterface2._0
             panelIDInput.Visible = false;
             buttonFindOrders.Enabled = false;
             listBoxProducts.Items.Clear();
+            listBoxPrintOrders.Items.Clear();
+            listBoxPrintOrders.Visible = false;
         }
 
         public void HideMainMenu()
@@ -116,8 +118,7 @@ namespace UserInterface2._0
             HideMainMenu();
             labelOrderTitle.Text = "All Orders";
             buttonReturnMenu.Visible = true;
-            listBoxProducts.Visible = true;
-            listBoxProducts.Size = new System.Drawing.Size(688, 382); //resize text box to take up all the space
+            listBoxPrintOrders.Visible = true;
 
             PrintAllOrders();
             
@@ -144,7 +145,7 @@ namespace UserInterface2._0
             List<Order> orders = orderBLL.ReadAll();
             for (int i = 0; i < orders.Count; i++)
             {
-                listBoxProducts.Items.Add(orders[i]);
+                listBoxPrintOrders.Items.Add(orders[i]);
             }
 
         }
@@ -170,11 +171,18 @@ namespace UserInterface2._0
                 if (IDChooser.SelectedIndex >= 0)
                 {
                     if (IDChooser.SelectedIndex == 0)
-                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaCustomer(int.Parse(textBoxIDInput.Text)).ToString());
+                    {
+                        CustomerOrdersFoundPrint(int.Parse(textBoxIDInput.Text));
+                    }
                     else if (IDChooser.SelectedIndex == 1)
-                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaProduct(int.Parse(textBoxIDInput.Text)).ToString());
+                    {
+                        ProductOrdersFoundPrint(int.Parse(textBoxIDInput.Text));
+                    }
                     else if (IDChooser.SelectedIndex == 2)
+                    {
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
+
+                    }
                     textBoxIDInput.Enabled=true;
                 }
                 
@@ -198,6 +206,28 @@ namespace UserInterface2._0
 
         }
 
+        private void CustomerOrdersFoundPrint(int customerID)
+        {
+            
+            List<Order> orders = orderBLL.ReadOrderViaCustomer(customerID);
+            for (int i = 0; i < orders.Count; i++)
+            {
+                listBoxPrintOrders.Items.Add(orders[i]);
+            }
+            
+        }
+        private void ProductOrdersFoundPrint(int productID)
+        {
+           
+            List<Order> orders = orderBLL.ReadOrderViaProduct(productID);
+            for (int i = 0; i < orders.Count; i++)
+            {
+                listBoxPrintOrders.Items.Add(orders[i]);
+            }
+            
+        }
+
+       
         private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());

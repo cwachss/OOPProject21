@@ -53,6 +53,7 @@ namespace UserInterface2._0
             this.buttonFindOrders = new System.Windows.Forms.Button();
             this.listBoxOrdersFound = new System.Windows.Forms.ListBox();
             this.labelOrderDetails = new System.Windows.Forms.Label();
+            this.listBoxPrintOrders = new System.Windows.Forms.ListBox();
             this.groupBoxPlaceOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -64,10 +65,10 @@ namespace UserInterface2._0
             this.buttonReturnMenu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonReturnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturnMenu.Font = new System.Drawing.Font("Nirmala UI", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReturnMenu.Location = new System.Drawing.Point(-4, 638);
-            this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonReturnMenu.Location = new System.Drawing.Point(-8, 1236);
+            this.buttonReturnMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonReturnMenu.Name = "buttonReturnMenu";
-            this.buttonReturnMenu.Size = new System.Drawing.Size(1048, 60);
+            this.buttonReturnMenu.Size = new System.Drawing.Size(2096, 116);
             this.buttonReturnMenu.TabIndex = 23;
             this.buttonReturnMenu.Text = "Main Menu";
             this.buttonReturnMenu.UseVisualStyleBackColor = false;
@@ -80,10 +81,10 @@ namespace UserInterface2._0
             this.buttonReadAll.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonReadAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReadAll.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonReadAll.Location = new System.Drawing.Point(698, 62);
-            this.buttonReadAll.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonReadAll.Location = new System.Drawing.Point(1396, 120);
+            this.buttonReadAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonReadAll.Name = "buttonReadAll";
-            this.buttonReadAll.Size = new System.Drawing.Size(349, 638);
+            this.buttonReadAll.Size = new System.Drawing.Size(698, 1231);
             this.buttonReadAll.TabIndex = 22;
             this.buttonReadAll.Text = "ALL ORDERS";
             this.buttonReadAll.UseVisualStyleBackColor = false;
@@ -95,10 +96,10 @@ namespace UserInterface2._0
             this.buttonReadOne.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonReadOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReadOne.Font = new System.Drawing.Font("Palatino Linotype", 16F);
-            this.buttonReadOne.Location = new System.Drawing.Point(349, 62);
-            this.buttonReadOne.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonReadOne.Location = new System.Drawing.Point(698, 120);
+            this.buttonReadOne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonReadOne.Name = "buttonReadOne";
-            this.buttonReadOne.Size = new System.Drawing.Size(349, 638);
+            this.buttonReadOne.Size = new System.Drawing.Size(698, 1231);
             this.buttonReadOne.TabIndex = 21;
             this.buttonReadOne.Text = "FIND ORDER";
             this.buttonReadOne.UseVisualStyleBackColor = false;
@@ -110,10 +111,10 @@ namespace UserInterface2._0
             this.buttonCreate.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Palatino Linotype", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreate.Location = new System.Drawing.Point(0, 62);
-            this.buttonCreate.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonCreate.Location = new System.Drawing.Point(0, 120);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(349, 638);
+            this.buttonCreate.Size = new System.Drawing.Size(698, 1231);
             this.buttonCreate.TabIndex = 20;
             this.buttonCreate.Text = "PLACE ORDER";
             this.buttonCreate.UseVisualStyleBackColor = false;
@@ -125,9 +126,9 @@ namespace UserInterface2._0
             this.labelOrderTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelOrderTitle.Font = new System.Drawing.Font("Agency FB", 21.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrderTitle.Location = new System.Drawing.Point(0, 0);
-            this.labelOrderTitle.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelOrderTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOrderTitle.Name = "labelOrderTitle";
-            this.labelOrderTitle.Size = new System.Drawing.Size(1041, 62);
+            this.labelOrderTitle.Size = new System.Drawing.Size(2089, 120);
             this.labelOrderTitle.TabIndex = 19;
             this.labelOrderTitle.Text = "Order Menu";
             this.labelOrderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,11 +137,11 @@ namespace UserInterface2._0
             // 
             this.listBoxProducts.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxProducts.FormattingEnabled = true;
-            this.listBoxProducts.ItemHeight = 28;
-            this.listBoxProducts.Location = new System.Drawing.Point(64, 118);
-            this.listBoxProducts.Margin = new System.Windows.Forms.Padding(1);
+            this.listBoxProducts.ItemHeight = 54;
+            this.listBoxProducts.Location = new System.Drawing.Point(128, 229);
+            this.listBoxProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxProducts.Name = "listBoxProducts";
-            this.listBoxProducts.Size = new System.Drawing.Size(513, 424);
+            this.listBoxProducts.Size = new System.Drawing.Size(1022, 814);
             this.listBoxProducts.TabIndex = 24;
             this.listBoxProducts.Visible = false;
             this.listBoxProducts.SelectedIndexChanged += new System.EventHandler(this.listBoxProducts_SelectedIndexChanged);
@@ -150,10 +151,10 @@ namespace UserInterface2._0
             this.labelAllProducts.AutoSize = true;
             this.labelAllProducts.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelAllProducts.Font = new System.Drawing.Font("Agency FB", 20.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAllProducts.Location = new System.Drawing.Point(227, 73);
-            this.labelAllProducts.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelAllProducts.Location = new System.Drawing.Point(454, 141);
+            this.labelAllProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAllProducts.Name = "labelAllProducts";
-            this.labelAllProducts.Size = new System.Drawing.Size(165, 42);
+            this.labelAllProducts.Size = new System.Drawing.Size(354, 81);
             this.labelAllProducts.TabIndex = 25;
             this.labelAllProducts.Text = "ALL PRODUCTS";
             this.labelAllProducts.Visible = false;
@@ -168,11 +169,11 @@ namespace UserInterface2._0
             this.groupBoxPlaceOrder.Controls.Add(this.labelCustomerID);
             this.groupBoxPlaceOrder.Controls.Add(this.label1);
             this.groupBoxPlaceOrder.Controls.Add(this.labelOrderNumber);
-            this.groupBoxPlaceOrder.Location = new System.Drawing.Point(648, 116);
-            this.groupBoxPlaceOrder.Margin = new System.Windows.Forms.Padding(1);
+            this.groupBoxPlaceOrder.Location = new System.Drawing.Point(1296, 225);
+            this.groupBoxPlaceOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxPlaceOrder.Name = "groupBoxPlaceOrder";
-            this.groupBoxPlaceOrder.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBoxPlaceOrder.Size = new System.Drawing.Size(333, 476);
+            this.groupBoxPlaceOrder.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxPlaceOrder.Size = new System.Drawing.Size(666, 922);
             this.groupBoxPlaceOrder.TabIndex = 26;
             this.groupBoxPlaceOrder.TabStop = false;
             this.groupBoxPlaceOrder.Text = "PLACE ORDER";
@@ -182,24 +183,24 @@ namespace UserInterface2._0
             // 
             this.labelAmount.AutoSize = true;
             this.labelAmount.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAmount.Location = new System.Drawing.Point(39, 332);
-            this.labelAmount.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelAmount.Location = new System.Drawing.Point(78, 643);
+            this.labelAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAmount.Name = "labelAmount";
-            this.labelAmount.Size = new System.Drawing.Size(65, 20);
+            this.labelAmount.Size = new System.Drawing.Size(132, 41);
             this.labelAmount.TabIndex = 7;
             this.labelAmount.Text = "Quantity";
             // 
             // numericUpDownAmount
             // 
-            this.numericUpDownAmount.Location = new System.Drawing.Point(43, 354);
-            this.numericUpDownAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownAmount.Location = new System.Drawing.Point(86, 686);
+            this.numericUpDownAmount.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.numericUpDownAmount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numericUpDownAmount.Name = "numericUpDownAmount";
-            this.numericUpDownAmount.Size = new System.Drawing.Size(61, 22);
+            this.numericUpDownAmount.Size = new System.Drawing.Size(122, 38);
             this.numericUpDownAmount.TabIndex = 6;
             this.numericUpDownAmount.Value = new decimal(new int[] {
             1,
@@ -210,10 +211,10 @@ namespace UserInterface2._0
             // buttonPlaceOrder
             // 
             this.buttonPlaceOrder.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPlaceOrder.Location = new System.Drawing.Point(37, 401);
-            this.buttonPlaceOrder.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonPlaceOrder.Location = new System.Drawing.Point(74, 777);
+            this.buttonPlaceOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPlaceOrder.Name = "buttonPlaceOrder";
-            this.buttonPlaceOrder.Size = new System.Drawing.Size(265, 44);
+            this.buttonPlaceOrder.Size = new System.Drawing.Size(530, 85);
             this.buttonPlaceOrder.TabIndex = 5;
             this.buttonPlaceOrder.Text = "PLACE ORDER";
             this.buttonPlaceOrder.UseVisualStyleBackColor = true;
@@ -222,29 +223,29 @@ namespace UserInterface2._0
             // textBoxProductNumber
             // 
             this.textBoxProductNumber.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductNumber.Location = new System.Drawing.Point(37, 260);
-            this.textBoxProductNumber.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxProductNumber.Location = new System.Drawing.Point(74, 504);
+            this.textBoxProductNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxProductNumber.Name = "textBoxProductNumber";
-            this.textBoxProductNumber.Size = new System.Drawing.Size(268, 47);
+            this.textBoxProductNumber.Size = new System.Drawing.Size(532, 87);
             this.textBoxProductNumber.TabIndex = 4;
             // 
             // textBoxCustomerID
             // 
             this.textBoxCustomerID.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustomerID.Location = new System.Drawing.Point(36, 154);
-            this.textBoxCustomerID.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxCustomerID.Location = new System.Drawing.Point(72, 298);
+            this.textBoxCustomerID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxCustomerID.Name = "textBoxCustomerID";
-            this.textBoxCustomerID.Size = new System.Drawing.Size(271, 47);
+            this.textBoxCustomerID.Size = new System.Drawing.Size(538, 87);
             this.textBoxCustomerID.TabIndex = 3;
             // 
             // labelCustomerID
             // 
             this.labelCustomerID.AutoSize = true;
             this.labelCustomerID.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomerID.Location = new System.Drawing.Point(37, 124);
-            this.labelCustomerID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelCustomerID.Location = new System.Drawing.Point(74, 240);
+            this.labelCustomerID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCustomerID.Name = "labelCustomerID";
-            this.labelCustomerID.Size = new System.Drawing.Size(124, 28);
+            this.labelCustomerID.Size = new System.Drawing.Size(253, 54);
             this.labelCustomerID.TabIndex = 2;
             this.labelCustomerID.Text = "Customer ID:";
             // 
@@ -252,10 +253,10 @@ namespace UserInterface2._0
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 230);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Location = new System.Drawing.Point(74, 446);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 28);
+            this.label1.Size = new System.Drawing.Size(328, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "Product Number:";
             // 
@@ -263,10 +264,10 @@ namespace UserInterface2._0
             // 
             this.labelOrderNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelOrderNumber.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrderNumber.Location = new System.Drawing.Point(33, 43);
-            this.labelOrderNumber.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelOrderNumber.Location = new System.Drawing.Point(66, 83);
+            this.labelOrderNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOrderNumber.Name = "labelOrderNumber";
-            this.labelOrderNumber.Size = new System.Drawing.Size(269, 47);
+            this.labelOrderNumber.Size = new System.Drawing.Size(538, 91);
             this.labelOrderNumber.TabIndex = 0;
             this.labelOrderNumber.Text = "Order Number:";
             this.labelOrderNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,10 +275,10 @@ namespace UserInterface2._0
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::UserInterface2._0.Properties.Resources.toysLogo3;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(8, 6);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(16, 12);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(43, 55);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(86, 107);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 27;
             this.pictureBoxLogo.TabStop = false;
@@ -287,18 +288,19 @@ namespace UserInterface2._0
             // 
             this.labelEnterID.AutoSize = true;
             this.labelEnterID.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.labelEnterID.Location = new System.Drawing.Point(16, 14);
+            this.labelEnterID.Location = new System.Drawing.Point(32, 27);
+            this.labelEnterID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelEnterID.Name = "labelEnterID";
-            this.labelEnterID.Size = new System.Drawing.Size(85, 28);
+            this.labelEnterID.Size = new System.Drawing.Size(174, 54);
             this.labelEnterID.TabIndex = 28;
             this.labelEnterID.Text = "Enter ID:";
             // 
             // textBoxIDInput
             // 
-            this.textBoxIDInput.Location = new System.Drawing.Point(169, 49);
-            this.textBoxIDInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxIDInput.Location = new System.Drawing.Point(338, 95);
+            this.textBoxIDInput.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.textBoxIDInput.Name = "textBoxIDInput";
-            this.textBoxIDInput.Size = new System.Drawing.Size(220, 22);
+            this.textBoxIDInput.Size = new System.Drawing.Size(436, 38);
             this.textBoxIDInput.TabIndex = 29;
             // 
             // IDChooser
@@ -307,13 +309,12 @@ namespace UserInterface2._0
             this.IDChooser.Items.Add("Customer");
             this.IDChooser.Items.Add("Product");
             this.IDChooser.Items.Add("Order");
-            this.IDChooser.Location = new System.Drawing.Point(20, 46);
-            this.IDChooser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IDChooser.Location = new System.Drawing.Point(40, 89);
+            this.IDChooser.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.IDChooser.Name = "IDChooser";
             this.IDChooser.ReadOnly = true;
-            this.IDChooser.Size = new System.Drawing.Size(107, 30);
+            this.IDChooser.Size = new System.Drawing.Size(214, 52);
             this.IDChooser.TabIndex = 30;
-            this.IDChooser.Text = "By";
             this.IDChooser.SelectedItemChanged += new System.EventHandler(this.IDChooser_SelectedItemChanged);
             // 
             // panelIDInput
@@ -322,20 +323,20 @@ namespace UserInterface2._0
             this.panelIDInput.Controls.Add(this.labelEnterID);
             this.panelIDInput.Controls.Add(this.IDChooser);
             this.panelIDInput.Controls.Add(this.textBoxIDInput);
-            this.panelIDInput.Location = new System.Drawing.Point(320, 96);
-            this.panelIDInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelIDInput.Location = new System.Drawing.Point(640, 186);
+            this.panelIDInput.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.panelIDInput.Name = "panelIDInput";
-            this.panelIDInput.Size = new System.Drawing.Size(417, 161);
+            this.panelIDInput.Size = new System.Drawing.Size(834, 312);
             this.panelIDInput.TabIndex = 31;
             this.panelIDInput.Visible = false;
             // 
             // buttonFindOrders
             // 
             this.buttonFindOrders.Font = new System.Drawing.Font("Agency FB", 12F);
-            this.buttonFindOrders.Location = new System.Drawing.Point(139, 96);
-            this.buttonFindOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFindOrders.Location = new System.Drawing.Point(278, 186);
+            this.buttonFindOrders.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.buttonFindOrders.Name = "buttonFindOrders";
-            this.buttonFindOrders.Size = new System.Drawing.Size(157, 46);
+            this.buttonFindOrders.Size = new System.Drawing.Size(314, 89);
             this.buttonFindOrders.TabIndex = 31;
             this.buttonFindOrders.Text = "Find Order(s)";
             this.buttonFindOrders.UseVisualStyleBackColor = true;
@@ -345,11 +346,11 @@ namespace UserInterface2._0
             // 
             this.listBoxOrdersFound.Font = new System.Drawing.Font("Nirmala UI", 12F);
             this.listBoxOrdersFound.FormattingEnabled = true;
-            this.listBoxOrdersFound.ItemHeight = 28;
-            this.listBoxOrdersFound.Location = new System.Drawing.Point(124, 377);
-            this.listBoxOrdersFound.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxOrdersFound.ItemHeight = 54;
+            this.listBoxOrdersFound.Location = new System.Drawing.Point(248, 730);
+            this.listBoxOrdersFound.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.listBoxOrdersFound.Name = "listBoxOrdersFound";
-            this.listBoxOrdersFound.Size = new System.Drawing.Size(805, 144);
+            this.listBoxOrdersFound.Size = new System.Drawing.Size(1606, 274);
             this.listBoxOrdersFound.TabIndex = 8;
             this.listBoxOrdersFound.Visible = false;
             // 
@@ -357,18 +358,33 @@ namespace UserInterface2._0
             // 
             this.labelOrderDetails.AutoSize = true;
             this.labelOrderDetails.Font = new System.Drawing.Font("Agency FB", 20.1F);
-            this.labelOrderDetails.Location = new System.Drawing.Point(483, 322);
+            this.labelOrderDetails.Location = new System.Drawing.Point(966, 624);
+            this.labelOrderDetails.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelOrderDetails.Name = "labelOrderDetails";
-            this.labelOrderDetails.Size = new System.Drawing.Size(152, 42);
+            this.labelOrderDetails.Size = new System.Drawing.Size(323, 81);
             this.labelOrderDetails.TabIndex = 32;
             this.labelOrderDetails.Text = "Order Details";
             this.labelOrderDetails.Visible = false;
             // 
+            // listBoxPrintOrders
+            // 
+            this.listBoxPrintOrders.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxPrintOrders.FormattingEnabled = true;
+            this.listBoxPrintOrders.ItemHeight = 54;
+            this.listBoxPrintOrders.Location = new System.Drawing.Point(117, 225);
+            this.listBoxPrintOrders.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxPrintOrders.Name = "listBoxPrintOrders";
+            this.listBoxPrintOrders.Size = new System.Drawing.Size(1865, 922);
+            this.listBoxPrintOrders.TabIndex = 33;
+            this.listBoxPrintOrders.Visible = false;
+            // 
             // orderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 700);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(2089, 1351);
+            this.Controls.Add(this.listBoxPrintOrders);
             this.Controls.Add(this.listBoxOrdersFound);
             this.Controls.Add(this.labelOrderDetails);
             this.Controls.Add(this.panelIDInput);
@@ -381,7 +397,7 @@ namespace UserInterface2._0
             this.Controls.Add(this.buttonReadOne);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.labelOrderTitle);
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "orderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders";
@@ -423,5 +439,6 @@ namespace UserInterface2._0
         private System.Windows.Forms.Button buttonFindOrders;
         private System.Windows.Forms.ListBox listBoxOrdersFound;
         private System.Windows.Forms.Label labelOrderDetails;
+        private System.Windows.Forms.ListBox listBoxPrintOrders;
     }
 }
