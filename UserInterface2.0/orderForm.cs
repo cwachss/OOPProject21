@@ -106,6 +106,8 @@ namespace UserInterface2._0
             listBoxOrdersFound.Visible=true;
             listBoxOrdersFound.Text = null;
             textBoxIDInput.Text = null;
+            listBoxOrdersFound.Items.Clear();
+            IDChooser.Text = "By:";
             textBoxIDInput.Enabled = false;
             IDChooser.SelectedIndex = -1;
 
