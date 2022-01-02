@@ -90,46 +90,39 @@ namespace BLL
       
 
         //returns orders of a scpecific customer
-       public Order ReadOrderViaCustomer(int customerID)
+       public List<Order> ReadOrderViaCustomer(int customerID)
         {
-                int i;
-                for (i = 0; i < orderDAL.ReadAll().Count; i++)
-                {
-                    if (orderDAL.ReadAll()[i].CustomerID == customerID)
-                        return orderDAL.ReadOrderViaCustomer(customerID);
-                }
-                if (i == orderDAL.ReadAll().Count)
-                    throw new ExceptionCustomerHasNoOrders("This customers has no orders yet");
-            return null;
+            List<Order> customerOrders = orderDAL.ReadOrderViaCustomer(customerID);
+
+            if (customerOrders.Count == 0)
+            {
+                throw new ExceptionCustomerHasNoOrders("This customers has no orders yet");
+            }
+                
+            return customerOrders;
+
+          
         }
 
-        //returns orders of a specif product
-        public Order ReadOrderViaProduct(int productID)
+        //returns orders of a specific product
+        public List<Order> ReadOrderViaProduct(int productID)
         {
-            int i;
-            for (i = 0; i < orderDAL.ReadAll().Count; i++)
+            List<Order> productOrders = orderDAL.ReadOrderViaProduct(productID);
+            if (productOrders.Count == 0)
             {
-                if (orderDAL.ReadAll()[i].ProductID == productID)
-                    return orderDAL.ReadOrderViaProduct(productID);
-            }
-            if (i == orderDAL.ReadAll().Count)
                 throw new ExceptionProductHasNoOrders("This products has no orders yet");
-            return null;
+            }
+               
+            return productOrders;
            
         }
 
         //returns a specific order when given its order number
         public Order ReadOrderViaOrderNum(int orderNum)
         {
-            int i;
-            for (i = 0; i < orderDAL.ReadAll().Count; i++)
-            {
-                if (orderDAL.ReadAll()[i].OrderNumber == orderNum)
-                    return orderDAL.ReadOrderViaOrder(orderNum);
-            }
-            if (i == orderDAL.ReadAll().Count)
-                throw new Exception("Invalid order number");
-            return null;
+            Order orderRequested = orderDAL.ReadOrderViaOrder(orderNum);
+            
+            return orderRequested;
            
         }
 

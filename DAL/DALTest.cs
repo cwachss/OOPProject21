@@ -1,6 +1,11 @@
 ﻿using Entities;
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entities;
+using System.IO;
 
 namespace DAL
 {
@@ -53,8 +58,18 @@ namespace DAL
             //{
             //    Console.WriteLine(orderDAL.ReadAll()[i]);
             //}
-            orderDAL.InitilizeList();
+            
+                List<Order> orders = orderDAL.ReadOrderViaProduct(1234);
+            for (int i = 0; i < orders.Count; i++)
+            {
+                Console.WriteLine(orders[i]);
+            }
 
+            Console.WriteLine(orderDAL.ReadOrderViaOrder(102));
+            orderDAL.Update(102, 10);
+            Console.WriteLine(orderDAL.ReadOrderViaOrder(102));
+            orderDAL.Update(10, 2);
+            Console.WriteLine(orderDAL.ReadOrderViaOrder(10));
         }
     }
 }
