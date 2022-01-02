@@ -230,20 +230,26 @@ namespace UserInterface2._0
         }
 
        
-        private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
-        }
-
-        //makes sure a selectionis made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
-        //private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
+        //private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
         //{
-        //    textBoxIDInput.Enabled = true;
+        //    MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
         //}
+
+        //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
+        private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
+        {
+            textBoxIDInput.Enabled = true;
+        }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("asdfas");
+            string[] listOfOrderNums= listBoxOrdersFound.SelectedItem.ToString().Split(' ');
+            int selectedOrderNum=int.Parse(listOfOrderNums[2]);
+
+
+            //MessageBox.Show(Convert.ToString(listBoxOrdersFound.SelectedItem.GetProperty(ProductName)));
         }
+
+        
     }
 }
