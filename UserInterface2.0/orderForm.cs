@@ -55,6 +55,7 @@ namespace UserInterface2._0
             listBoxPrintOrders.Items.Clear();
             listBoxPrintOrders.Visible = false;
             textBoxIDInput.Enabled = false;
+            buttonEditOrder.Visible = false;
         }
 
         public void HideMainMenu()
@@ -113,6 +114,8 @@ namespace UserInterface2._0
             IDChooser.Text = "By:";
             textBoxIDInput.Enabled = false;
             IDChooser.SelectedIndex = -1;
+            buttonEditOrder.Visible = true;
+            buttonEditOrder.Enabled = false;
 
         }
 
@@ -240,17 +243,27 @@ namespace UserInterface2._0
         private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
         {
             textBoxIDInput.Enabled = true;
+            listBoxOrdersFound.Items.Clear();
+            textBoxIDInput.Clear();
         }
 
+        //when you select an item, you can now edit it
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            string[] listOfOrderNums= listBoxOrdersFound.SelectedItem.ToString().Split(' ');
-            int selectedOrderNum=int.Parse(listOfOrderNums[2]);
-
-
-            //MessageBox.Show(Convert.ToString(listBoxOrdersFound.SelectedItem.GetProperty(ProductName)));
+            buttonEditOrder.Enabled = true;
         }
 
-        
+        //when you click edit-it brings you to the edit area.
+        private void buttonEditOrder_Click(object sender, EventArgs e)
+        {
+            string[] listOfOrderNums = listBoxOrdersFound.SelectedItem.ToString().Split(' ');
+            int selectedOrderNum = int.Parse(listOfOrderNums[2]);
+            HideEverything();
+            groupBoxPlaceOrder.Visible = true;
+            groupBoxPlaceOrder.Enabled=true;
+            OrderBLL thisOrder = new OrderBLL();
+            thisOrder.ReadOrderViaOrderNum(selectedOrderNum);
+
+        }
     }
 }
