@@ -54,6 +54,7 @@ namespace UserInterface2._0
             listBoxProducts.Items.Clear();
             listBoxPrintOrders.Items.Clear();
             listBoxPrintOrders.Visible = false;
+            textBoxIDInput.Enabled = false;
         }
 
         public void HideMainMenu()
@@ -185,7 +186,7 @@ namespace UserInterface2._0
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
 
                     }
-                    textBoxIDInput.Enabled=true;
+                    
                 }
                 
                
@@ -236,10 +237,10 @@ namespace UserInterface2._0
         }
 
         //makes sure a selectionis made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
-        //private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
-        //{
-        //    textBoxIDInput.Enabled = true;
-        //}
+        private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
+        {
+            textBoxIDInput.Enabled = true;
+        }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
