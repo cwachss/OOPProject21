@@ -316,7 +316,7 @@ namespace UserInterface2._0
             this.IDChooser.Size = new System.Drawing.Size(214, 52);
             this.IDChooser.TabIndex = 30;
             this.IDChooser.Text = "By";
-            this.IDChooser.SelectedItemChanged += new System.EventHandler(this.IDChooser_SelectedItemChanged);
+          //  this.IDChooser.SelectedItemChanged += new System.EventHandler(this.IDChooser_SelectedItemChanged);
             // 
             // panelIDInput
             // 
