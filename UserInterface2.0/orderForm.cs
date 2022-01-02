@@ -241,12 +241,12 @@ namespace UserInterface2._0
         }
 
        
-        private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
-        }
+        //private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
+        //}
 
-        //makes sure a selectionis made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
+        //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
         private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
         {
             textBoxIDInput.Enabled = true;
@@ -276,5 +276,7 @@ namespace UserInterface2._0
             }
            
         }
+
+        
     }
 }

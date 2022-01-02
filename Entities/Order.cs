@@ -24,7 +24,7 @@ namespace Entities
             AmountOrdered = amount;
         }
 
-        public override string ToString() => $"Order Number: {OrderNumber}\t  CustomerID: {CustomerID}\tProductID: {ProductID}\tAmount Ordered: {AmountOrdered}";
+        public override string ToString() => $"Order Number: {OrderNumber}    CustomerID: {CustomerID}      ProductID: {ProductID}      Amount Ordered: {AmountOrdered}";
         
 
     }
