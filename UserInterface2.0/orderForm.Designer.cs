@@ -54,10 +54,15 @@ namespace UserInterface2._0
             this.listBoxOrdersFound = new System.Windows.Forms.ListBox();
             this.labelOrderDetails = new System.Windows.Forms.Label();
             this.listBoxPrintOrders = new System.Windows.Forms.ListBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
+            this.labelAmountModify = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBoxPlaceOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelIDInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonReturnMenu
@@ -348,7 +353,7 @@ namespace UserInterface2._0
             this.listBoxOrdersFound.Font = new System.Drawing.Font("Nirmala UI", 12F);
             this.listBoxOrdersFound.FormattingEnabled = true;
             this.listBoxOrdersFound.ItemHeight = 54;
-            this.listBoxOrdersFound.Location = new System.Drawing.Point(248, 730);
+            this.listBoxOrdersFound.Location = new System.Drawing.Point(248, 668);
             this.listBoxOrdersFound.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.listBoxOrdersFound.Name = "listBoxOrdersFound";
             this.listBoxOrdersFound.Size = new System.Drawing.Size(1606, 274);
@@ -360,7 +365,7 @@ namespace UserInterface2._0
             // 
             this.labelOrderDetails.AutoSize = true;
             this.labelOrderDetails.Font = new System.Drawing.Font("Agency FB", 20.1F);
-            this.labelOrderDetails.Location = new System.Drawing.Point(966, 624);
+            this.labelOrderDetails.Location = new System.Drawing.Point(857, 583);
             this.labelOrderDetails.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelOrderDetails.Name = "labelOrderDetails";
             this.labelOrderDetails.Size = new System.Drawing.Size(323, 81);
@@ -373,12 +378,54 @@ namespace UserInterface2._0
             this.listBoxPrintOrders.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPrintOrders.FormattingEnabled = true;
             this.listBoxPrintOrders.ItemHeight = 54;
-            this.listBoxPrintOrders.Location = new System.Drawing.Point(117, 441);
+            this.listBoxPrintOrders.Location = new System.Drawing.Point(128, 214);
             this.listBoxPrintOrders.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxPrintOrders.Name = "listBoxPrintOrders";
-            this.listBoxPrintOrders.Size = new System.Drawing.Size(1865, 706);
+            this.listBoxPrintOrders.Size = new System.Drawing.Size(53, 922);
             this.listBoxPrintOrders.TabIndex = 33;
             this.listBoxPrintOrders.Visible = false;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Enabled = false;
+            this.buttonDelete.Location = new System.Drawing.Point(248, 1077);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(682, 111);
+            this.buttonDelete.TabIndex = 34;
+            this.buttonDelete.Text = "Delete Order";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
+            // 
+            // buttonModify
+            // 
+            this.buttonModify.Enabled = false;
+            this.buttonModify.Location = new System.Drawing.Point(1449, 1077);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(405, 111);
+            this.buttonModify.TabIndex = 35;
+            this.buttonModify.Text = "Modify Order";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Visible = false;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            // 
+            // labelAmountModify
+            // 
+            this.labelAmountModify.AutoSize = true;
+            this.labelAmountModify.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAmountModify.Location = new System.Drawing.Point(1202, 1089);
+            this.labelAmountModify.Name = "labelAmountModify";
+            this.labelAmountModify.Size = new System.Drawing.Size(220, 32);
+            this.labelAmountModify.TabIndex = 8;
+            this.labelAmountModify.Text = "Update Amount:";
+            this.labelAmountModify.Visible = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(1208, 1136);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(218, 38);
+            this.numericUpDown1.TabIndex = 36;
+            this.numericUpDown1.Visible = false;
             // 
             // orderForm
             // 
@@ -386,6 +433,10 @@ namespace UserInterface2._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2089, 1351);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.labelAmountModify);
+            this.Controls.Add(this.buttonModify);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.listBoxPrintOrders);
             this.Controls.Add(this.listBoxOrdersFound);
             this.Controls.Add(this.labelOrderDetails);
@@ -410,6 +461,7 @@ namespace UserInterface2._0
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelIDInput.ResumeLayout(false);
             this.panelIDInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +494,9 @@ namespace UserInterface2._0
         private System.Windows.Forms.ListBox listBoxOrdersFound;
         private System.Windows.Forms.Label labelOrderDetails;
         private System.Windows.Forms.ListBox listBoxPrintOrders;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Label labelAmountModify;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
