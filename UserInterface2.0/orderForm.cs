@@ -212,7 +212,7 @@ namespace UserInterface2._0
             List<Order> orders = orderBLL.ReadOrderViaCustomer(customerID);
             for (int i = 0; i < orders.Count; i++)
             {
-                listBoxPrintOrders.Items.Add(orders[i]);
+                listBoxOrdersFound.Items.Add(orders[i]);
             }
             
         }
@@ -222,7 +222,7 @@ namespace UserInterface2._0
             List<Order> orders = orderBLL.ReadOrderViaProduct(productID);
             for (int i = 0; i < orders.Count; i++)
             {
-                listBoxPrintOrders.Items.Add(orders[i]);
+                listBoxOrdersFound.Items.Add(orders[i]);
             }
             
         }
