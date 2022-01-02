@@ -55,6 +55,8 @@ namespace UserInterface2._0
             this.labelOrderDetails = new System.Windows.Forms.Label();
             this.listBoxPrintOrders = new System.Windows.Forms.ListBox();
             this.buttonEditOrder = new System.Windows.Forms.Button();
+            this.buttonUpdateOrder = new System.Windows.Forms.Button();
+            this.buttonDeleteOrder = new System.Windows.Forms.Button();
             this.groupBoxPlaceOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -163,6 +165,8 @@ namespace UserInterface2._0
             // 
             // groupBoxPlaceOrder
             // 
+            this.groupBoxPlaceOrder.Controls.Add(this.buttonDeleteOrder);
+            this.groupBoxPlaceOrder.Controls.Add(this.buttonUpdateOrder);
             this.groupBoxPlaceOrder.Controls.Add(this.labelAmount);
             this.groupBoxPlaceOrder.Controls.Add(this.numericUpDownAmount);
             this.groupBoxPlaceOrder.Controls.Add(this.buttonPlaceOrder);
@@ -395,6 +399,32 @@ namespace UserInterface2._0
             this.buttonEditOrder.Visible = false;
             this.buttonEditOrder.Click += new System.EventHandler(this.buttonEditOrder_Click);
             // 
+            // buttonUpdateOrder
+            // 
+            this.buttonUpdateOrder.Enabled = false;
+            this.buttonUpdateOrder.Font = new System.Drawing.Font("Agency FB", 12F);
+            this.buttonUpdateOrder.Location = new System.Drawing.Point(43, 401);
+            this.buttonUpdateOrder.Name = "buttonUpdateOrder";
+            this.buttonUpdateOrder.Size = new System.Drawing.Size(85, 36);
+            this.buttonUpdateOrder.TabIndex = 35;
+            this.buttonUpdateOrder.Text = "Update";
+            this.buttonUpdateOrder.UseVisualStyleBackColor = true;
+            this.buttonUpdateOrder.Visible = false;
+            this.buttonUpdateOrder.Click += new System.EventHandler(this.buttonUpdateOrder_Click);
+            // 
+            // buttonDeleteOrder
+            // 
+            this.buttonDeleteOrder.Enabled = false;
+            this.buttonDeleteOrder.Font = new System.Drawing.Font("Agency FB", 12F);
+            this.buttonDeleteOrder.Location = new System.Drawing.Point(191, 401);
+            this.buttonDeleteOrder.Name = "buttonDeleteOrder";
+            this.buttonDeleteOrder.Size = new System.Drawing.Size(85, 36);
+            this.buttonDeleteOrder.TabIndex = 36;
+            this.buttonDeleteOrder.Text = "Delete";
+            this.buttonDeleteOrder.UseVisualStyleBackColor = true;
+            this.buttonDeleteOrder.Visible = false;
+            this.buttonDeleteOrder.Click += new System.EventHandler(this.buttonDeleteOrder_Click);
+            // 
             // orderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,5 +488,7 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelOrderDetails;
         private System.Windows.Forms.ListBox listBoxPrintOrders;
         private System.Windows.Forms.Button buttonEditOrder;
+        private System.Windows.Forms.Button buttonDeleteOrder;
+        private System.Windows.Forms.Button buttonUpdateOrder;
     }
 }

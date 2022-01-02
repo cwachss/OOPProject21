@@ -16,6 +16,7 @@ namespace UserInterface2._0
     {
         OrderBLL orderBLL = new OrderBLL();
         ProductBLL productBLL = new ProductBLL(0);
+        static int selectedOrderNum;
       
         public orderForm()
         {
@@ -73,6 +74,7 @@ namespace UserInterface2._0
             listBoxProducts.Text = ""; //need readall function to work first
             labelAllProducts.Visible = true;
             groupBoxPlaceOrder.Visible = true;
+            groupBoxPlaceOrder.Location = new Point(443, 52);
             buttonReturnMenu.Visible = true;
             labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
             PrintAllProducts();
@@ -256,14 +258,40 @@ namespace UserInterface2._0
         //when you click edit-it brings you to the edit area.
         private void buttonEditOrder_Click(object sender, EventArgs e)
         {
+            buttonUpdateOrder.Visible = true;
+            buttonDeleteOrder.Visible = true;
+
+            groupBoxPlaceOrder.Location = new Point(224, 50);
+            
+
             string[] listOfOrderNums = listBoxOrdersFound.SelectedItem.ToString().Split(' ');
-            int selectedOrderNum = int.Parse(listOfOrderNums[2]);
+            selectedOrderNum = int.Parse(listOfOrderNums[2]);
             HideEverything();
             groupBoxPlaceOrder.Visible = true;
             groupBoxPlaceOrder.Enabled=true;
             OrderBLL thisOrder = new OrderBLL();
             thisOrder.ReadOrderViaOrderNum(selectedOrderNum);
+            //fill textboxes with info from above
 
+        }
+
+        private void buttonUpdateOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // orderBLL.Update(selectedOrderNum, textBoxAmountToorder)
+            }
+            catch
+            {
+                MessageBox.Show("Incorrect Input", "Error");
+            }
+
+        }
+
+        private void buttonDeleteOrder_Click(object sender, EventArgs e)
+        {        
+                orderBLL.Delete(selectedOrderNum);
+      //no need for throwing error, b/c the order num cannot be changed
         }
     }
 }
