@@ -192,7 +192,7 @@ namespace UserInterface2._0
             // numericUpDownAmount
             // 
             this.numericUpDownAmount.Location = new System.Drawing.Point(43, 354);
-            this.numericUpDownAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownAmount.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownAmount.Minimum = new decimal(new int[] {
             1,
             0,
@@ -314,7 +314,7 @@ namespace UserInterface2._0
             this.IDChooser.Size = new System.Drawing.Size(107, 30);
             this.IDChooser.TabIndex = 30;
             this.IDChooser.Text = "By";
-            this.IDChooser.SelectedItemChanged += new System.EventHandler(this.IDChooser_SelectedItemChanged);
+           // this.IDChooser.SelectedItemChanged += new System.EventHandler(this.IDChooser_SelectedItemChanged);
             // 
             // panelIDInput
             // 
@@ -352,6 +352,7 @@ namespace UserInterface2._0
             this.listBoxOrdersFound.Size = new System.Drawing.Size(805, 144);
             this.listBoxOrdersFound.TabIndex = 8;
             this.listBoxOrdersFound.Visible = false;
+            this.listBoxOrdersFound.SelectedValueChanged += new System.EventHandler(this.listBoxOrdersFound_SelectedValueChanged);
             // 
             // labelOrderDetails
             // 

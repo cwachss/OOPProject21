@@ -206,9 +206,14 @@ namespace UserInterface2._0
         }
 
         //makes sure a selectionis made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
-        private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
+        //private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
+        //{
+        //    textBoxIDInput.Enabled = true;
+        //}
+
+        private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            textBoxIDInput.Enabled = true;
+            MessageBox.Show("asdfas");
         }
     }
 }
