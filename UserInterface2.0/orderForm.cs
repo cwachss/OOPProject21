@@ -54,6 +54,7 @@ namespace UserInterface2._0
             listBoxProducts.Items.Clear();
             listBoxPrintOrders.Items.Clear();
             listBoxPrintOrders.Visible = false;
+            textBoxIDInput.Enabled = false;
         }
 
         public void HideMainMenu()
@@ -185,7 +186,7 @@ namespace UserInterface2._0
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
 
                     }
-                    textBoxIDInput.Enabled=true;
+                    
                 }
                 
                
