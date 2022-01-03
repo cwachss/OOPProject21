@@ -139,7 +139,7 @@ namespace UserInterface2._0
 
         private void orderForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            buttonReturnMenu_Click(sender, e);
             FormProvider.MainMenu.Show();
         }
 
