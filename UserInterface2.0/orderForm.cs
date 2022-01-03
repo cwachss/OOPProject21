@@ -250,6 +250,8 @@ namespace UserInterface2._0
         private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
         {
             textBoxIDInput.Enabled = true;
+            buttonModify.Enabled = false;
+            buttonDelete.Enabled = false;
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
@@ -277,6 +279,9 @@ namespace UserInterface2._0
            
         }
 
-        
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

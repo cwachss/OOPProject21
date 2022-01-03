@@ -145,6 +145,7 @@ namespace UserInterface2._0
             this.buttonDelete.Text = "Delete Order";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Visible = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // listBoxPrintOrders
             // 
@@ -232,9 +233,19 @@ namespace UserInterface2._0
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(1212, 1136);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(218, 38);
             this.numericUpDown1.TabIndex = 53;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Visible = false;
             // 
             // buttonModify
