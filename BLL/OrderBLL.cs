@@ -64,13 +64,13 @@ namespace BLL
             Order order = orderDAL.ReadOrderViaOrder(orderNum);
 
             Product product = productBLL.Read(order.ProductID);
-            int amountDifference = order.AmountOrdered - amountToOrder;
+            int amountDifference = amountToOrder - order.AmountOrdered;
 
             if (product.AmountInStock >= amountDifference)
             {
             
                 productBLL.Update(order.ProductID, product.ProductName, product.CostPerUnit, (product.AmountInStock - amountDifference));
-                orderDAL.Update(orderNum, amountDifference);
+                orderDAL.Update(orderNum, amountToOrder);
                 
             }
             else

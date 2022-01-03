@@ -18,6 +18,9 @@ namespace UserInterface2._0
         ProductBLL productBLL = new ProductBLL(0);
         static int selectedOrderNum;
       
+        
+        //for use in modify etc- allows computer to temporarily define a list containing either customer orders or product orders so that we can use it in a few different methods ie modify delete and print
+        List<Order> temporaryStorage = new List<Order>();
         public orderForm()
         {
             InitializeComponent();
@@ -56,7 +59,10 @@ namespace UserInterface2._0
             listBoxPrintOrders.Items.Clear();
             listBoxPrintOrders.Visible = false;
             textBoxIDInput.Enabled = false;
-            buttonEditOrder.Visible = false;
+            buttonDelete.Visible = false;
+            buttonModify.Visible = false;
+            numericUpDown1.Visible = false;
+            labelAmountModify.Visible = false;
         }
 
         public void HideMainMenu()
@@ -70,7 +76,7 @@ namespace UserInterface2._0
             HideMainMenu();
             labelOrderTitle.Text = "Place Order";
             listBoxProducts.Visible = true;
-            listBoxProducts.Size = new System.Drawing.Size(386, 382); //resize text box to make room for place order groupbox
+            
             listBoxProducts.Text = ""; //need readall function to work first
             labelAllProducts.Visible = true;
             groupBoxPlaceOrder.Visible = true;
@@ -116,8 +122,10 @@ namespace UserInterface2._0
             IDChooser.Text = "By:";
             textBoxIDInput.Enabled = false;
             IDChooser.SelectedIndex = -1;
-            buttonEditOrder.Visible = true;
-            buttonEditOrder.Enabled = false;
+            buttonDelete.Visible = true;
+            buttonModify.Visible = true;
+            numericUpDown1.Visible = true;
+            labelAmountModify.Visible = true;
 
         }
 
@@ -127,7 +135,7 @@ namespace UserInterface2._0
             labelOrderTitle.Text = "All Orders";
             buttonReturnMenu.Visible = true;
             listBoxPrintOrders.Visible = true;
-
+            listBoxPrintOrders.Size = new System.Drawing.Size(1865, 922); //resize text box to make room for place order groupbox
             PrintAllOrders();
             
         }
@@ -217,20 +225,20 @@ namespace UserInterface2._0
         private void CustomerOrdersFoundPrint(int customerID)
         {
             
-            List<Order> orders = orderBLL.ReadOrderViaCustomer(customerID);
-            for (int i = 0; i < orders.Count; i++)
+            temporaryStorage = orderBLL.ReadOrderViaCustomer(customerID);
+            for (int i = 0; i < temporaryStorage.Count; i++)
             {
-                listBoxOrdersFound.Items.Add(orders[i]);
+                listBoxOrdersFound.Items.Add(temporaryStorage[i]);
             }
             
         }
         private void ProductOrdersFoundPrint(int productID)
         {
-           
-            List<Order> orders = orderBLL.ReadOrderViaProduct(productID);
-            for (int i = 0; i < orders.Count; i++)
+
+            temporaryStorage = orderBLL.ReadOrderViaProduct(productID);
+            for (int i = 0; i < temporaryStorage.Count; i++)
             {
-                listBoxOrdersFound.Items.Add(orders[i]);
+                listBoxOrdersFound.Items.Add(temporaryStorage[i]);
             }
             
         }
@@ -285,6 +293,28 @@ namespace UserInterface2._0
             {
                 MessageBox.Show("Incorrect Input", "Error");
             }
+            MessageBox.Show("asdfas");
+            buttonModify.Enabled = true;
+            buttonDelete.Enabled = true;
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+               int orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+                
+                int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
+                orderBLL.Update(orderNum, amountToOrder);
+               buttonFindOrders_Click(sender, e);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid input.");
+            }
+           
+        }
 
         }
 
