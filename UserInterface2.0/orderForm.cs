@@ -316,7 +316,7 @@ namespace UserInterface2._0
            
         }
 
-        }
+        
 
         private void buttonDeleteOrder_Click(object sender, EventArgs e)
         {        
@@ -325,3 +325,4 @@ namespace UserInterface2._0
         }
     }
 }
+
