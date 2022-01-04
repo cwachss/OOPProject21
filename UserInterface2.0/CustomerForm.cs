@@ -321,7 +321,7 @@ namespace UserInterface2._0
             textBoxPrintProducts.Clear();
             foreach (Customer ploni in customerBLL.ReadAll())
             {
-                textBoxPrintProducts.AppendText(ploni + "CC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
+                textBoxPrintProducts.AppendText(ploni + "\tCC Number: ****-****-****-" + ploni.myCreditCard.CardNumber.Substring(12) + "\r\n");
             }
         }
     }

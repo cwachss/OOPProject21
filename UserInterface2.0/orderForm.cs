@@ -132,7 +132,7 @@ namespace UserInterface2._0
             labelOrderTitle.Text = "All Orders";
             buttonReturnMenu.Visible = true;
             listBoxPrintOrders.Visible = true;
-            listBoxPrintOrders.Size = new System.Drawing.Size(1865, 922); //resize text box to make room for place order groupbox
+            listBoxPrintOrders.Size = new System.Drawing.Size(694, 429); //resize text box to make room for place order groupbox
             PrintAllOrders();
             
         }

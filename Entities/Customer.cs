@@ -38,10 +38,6 @@ namespace Entities
         //    myCreditCard = user.myCreditCard;
 
         //}
-        public override string ToString()
-        {
-            return $"{ID}\t{FirstName}\t{LastName}\t";
-        }
-
+       
     }
 }
