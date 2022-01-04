@@ -256,7 +256,7 @@ namespace UserInterface2._0
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("asdfas");
+            
             buttonModify.Enabled = true;
             buttonDelete.Enabled = true;
         }
@@ -271,6 +271,7 @@ namespace UserInterface2._0
                 int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
                 orderBLL.Update(orderNum, amountToOrder);
                buttonFindOrders_Click(sender, e);
+
             }
             catch
             {
