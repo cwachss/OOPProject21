@@ -46,7 +46,7 @@ namespace UserInterface2._0
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.buttonModify = new System.Windows.Forms.Button();
             this.listBoxOrdersFound = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelProductNum = new System.Windows.Forms.Label();
             this.labelOrderNumber = new System.Windows.Forms.Label();
             this.labelAmountModify = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -275,7 +275,7 @@ namespace UserInterface2._0
             this.listBoxOrdersFound.Visible = false;
             this.listBoxOrdersFound.SelectedValueChanged += new System.EventHandler(this.listBoxOrdersFound_SelectedValueChanged);
             // 
-            // label1
+            // labelProductNum
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,7 +330,7 @@ namespace UserInterface2._0
             this.groupBoxPlaceOrder.Controls.Add(this.textBoxProductNumber);
             this.groupBoxPlaceOrder.Controls.Add(this.textBoxCustomerID);
             this.groupBoxPlaceOrder.Controls.Add(this.labelCustomerID);
-            this.groupBoxPlaceOrder.Controls.Add(this.label1);
+            this.groupBoxPlaceOrder.Controls.Add(this.labelProductNum);
             this.groupBoxPlaceOrder.Controls.Add(this.labelOrderNumber);
             this.groupBoxPlaceOrder.Location = new System.Drawing.Point(488, 94);
             this.groupBoxPlaceOrder.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
@@ -500,7 +500,7 @@ namespace UserInterface2._0
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.ListBox listBoxOrdersFound;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelProductNum;
         private System.Windows.Forms.Label labelOrderNumber;
         private System.Windows.Forms.Label labelAmountModify;
         private System.Windows.Forms.PictureBox pictureBoxLogo;

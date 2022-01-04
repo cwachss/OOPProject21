@@ -23,7 +23,7 @@ namespace Entities
 
         public override string ToString()
         {
-            return $"{FirstName} {LastName} {ID}";
+            return $"Name: {FirstName} {LastName} \tID: {ID}";
 
         }
     }

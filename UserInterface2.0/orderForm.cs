@@ -132,7 +132,7 @@ namespace UserInterface2._0
             labelOrderTitle.Text = "All Orders";
             buttonReturnMenu.Visible = true;
             listBoxPrintOrders.Visible = true;
-            listBoxPrintOrders.Size = new System.Drawing.Size(1865, 922); //resize text box to make room for place order groupbox
+            listBoxPrintOrders.Size = new System.Drawing.Size(694, 429); //resize text box to make room for place order groupbox
             PrintAllOrders();
             
         }
@@ -223,6 +223,7 @@ namespace UserInterface2._0
         {
             
             temporaryStorage = orderBLL.ReadOrderViaCustomer(customerID);
+
             for (int i = 0; i < temporaryStorage.Count; i++)
             {
                 listBoxOrdersFound.Items.Add(temporaryStorage[i]);
@@ -240,16 +241,14 @@ namespace UserInterface2._0
             
         }
 
-       
-        //private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
-        //}
 
-        //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
+        //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position  
+
         private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
         {
             textBoxIDInput.Enabled = true;
+            listBoxOrdersFound.Items.Clear();
+            textBoxIDInput.Clear();
             buttonModify.Enabled = false;
             buttonDelete.Enabled = false;
         }
@@ -281,7 +280,11 @@ namespace UserInterface2._0
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
-        {
+        { 
+            //MessageBox.Show(Convert.ToString( temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber));
+            orderBLL.Delete(temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber);
+
+            buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
 
         }
     }
