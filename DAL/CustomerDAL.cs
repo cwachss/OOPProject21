@@ -23,11 +23,7 @@ namespace DAL
         public CustomerDAL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
         {
 
-        }
-        
-
-
-           
+        }     
         
         /// <summary>
         /// method that adds a customer's information to a list
@@ -76,7 +72,6 @@ namespace DAL
             {
                 List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.FirstName, user.LastName, user.ID));
                 return customerList;
-
             }
             else
             {

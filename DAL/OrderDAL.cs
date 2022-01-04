@@ -63,10 +63,10 @@ namespace DAL
                     orderList.Remove(orderList[i]);
                     break;
                 }
-                if (i == orderList.Count)//if never found product number, it throws an exception.
-                {
-                    throw new ProductNumberNotFound();
-                }
+                //if (i == orderList.Count)//if never found product number, it throws an exception.
+                //{
+                //    throw new ProductNumberNotFound();
+                //}//This is unnecassy for our current UI setup. We're keeping this to be used if needed another time.
             }
         }
 
@@ -77,8 +77,6 @@ namespace DAL
                 Order order = new Order(anOrderNumber, pastOrder.CustomerID, pastOrder.ProductID, amountOrdered);
                 Delete(anOrderNumber);
                 orderList.Add(order);
-            
-           
         }
 
         
@@ -86,7 +84,6 @@ namespace DAL
         //method that reads out a specific customer's orders
         public List<Order> ReadOrderViaCustomer(int customerID)
         {
-
             List<Order> customerOrders = new List<Order>();
 
             for (int i = 0; i < orderList.Count; i++)
@@ -97,12 +94,7 @@ namespace DAL
                     customerOrders.Add(customerOrder);
                 }
             }
-
-           
-
             return customerOrders;
-           
-
         }
 
         //reads out orders of a specific product
@@ -140,9 +132,6 @@ namespace DAL
                 
             }
             throw new Exception("Order not found.");
-
-            
-
         }
 
 
