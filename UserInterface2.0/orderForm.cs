@@ -61,6 +61,7 @@ namespace UserInterface2._0
             buttonModify.Visible = false;
             numericUpDown1.Visible = false;
             labelAmountModify.Visible = false;
+            groupBoxModifyOrder.Visible = false;
         }
 
         public void HideMainMenu()
@@ -256,12 +257,14 @@ namespace UserInterface2._0
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
             groupBoxModifyOrder.Visible = true;
-            if(numericUpDown1.Value != temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered)
-            {
-                buttonModify.Enabled = true;
-            }
             
-            
+            numericUpDown1.Value = temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered;
+            buttonModify.Enabled = false;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            buttonModify.Enabled = true;
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -306,7 +309,7 @@ namespace UserInterface2._0
             
             orderBLL.Delete(orderNum);
 
-            buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
+            listBoxOrdersFound.Items.Clear();
 
         }
 
@@ -315,9 +318,6 @@ namespace UserInterface2._0
 
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
