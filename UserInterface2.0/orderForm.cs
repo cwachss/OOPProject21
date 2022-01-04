@@ -277,7 +277,9 @@ namespace UserInterface2._0
 
         private void buttonDelete_Click(object sender, EventArgs e)
         { 
-            orderBLL.Delete(int. Parse(textBoxIDInput.Text));
+            //MessageBox.Show(Convert.ToString( temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber));
+            orderBLL.Delete(temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber);
+
             buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
 
         }
