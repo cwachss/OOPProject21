@@ -269,6 +269,7 @@ namespace UserInterface2._0
                 
                 int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
                 orderBLL.Update(orderNum, amountToOrder);
+                MessageBox.Show("Order Modified");
                buttonFindOrders_Click(sender, e);
 
             }
@@ -285,6 +286,16 @@ namespace UserInterface2._0
             orderBLL.Delete(temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber);
 
             buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
+
+        }
+
+        private void labelAmountModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
