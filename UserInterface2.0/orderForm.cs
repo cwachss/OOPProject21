@@ -195,7 +195,7 @@ namespace UserInterface2._0
                     {
 
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)));
-
+                        groupBoxModifyOrder.Visible = true;
                     }
                     
                 }
@@ -250,15 +250,12 @@ namespace UserInterface2._0
             textBoxIDInput.Enabled = true;
             listBoxOrdersFound.Items.Clear();
             textBoxIDInput.Clear();
-            buttonModify.Enabled = false;
-            buttonDelete.Enabled = false;
+            
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
             
-            buttonModify.Enabled = true;
-            buttonDelete.Enabled = true;
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
