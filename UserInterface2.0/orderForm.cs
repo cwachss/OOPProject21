@@ -250,11 +250,17 @@ namespace UserInterface2._0
             textBoxIDInput.Enabled = true;
             listBoxOrdersFound.Items.Clear();
             textBoxIDInput.Clear();
-            
+            groupBoxModifyOrder.Visible = false;
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
+            groupBoxModifyOrder.Visible = true;
+            if(numericUpDown1.Value != temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered)
+            {
+                buttonModify.Enabled = true;
+            }
+            
             
         }
 

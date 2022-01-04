@@ -17,10 +17,7 @@ namespace BLL
         {
             misterA = new CustomerDAL();
         }
-        public CustomerBLL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every customer (in the end, we didn't initialize a list of customers so it doesn't matter. But if we did, this would be a problem).
-        {
-            misterA = new CustomerDAL(1);
-        }
+       
         /// <summary>
         /// method that adds a customer's information to the list in the DAL
         /// </summary>

@@ -20,14 +20,8 @@ namespace DAL
             customerList.Add(aCustomerForTestingPurposes);
         }
 
-        public CustomerDAL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
-        {
-
-        }
         
-
-
-           
+       
         
         /// <summary>
         /// method that adds a customer's information to a list
@@ -70,6 +64,7 @@ namespace DAL
         /// method that returns a copy of the customer list
         /// </summary>
         /// <returns></returns>
+        
         public List<Customer> ReadAll()
         {
             if (customerList.Count > 0)

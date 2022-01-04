@@ -22,7 +22,7 @@ namespace DAL
             InitializeList();
         }
 
-        public ProductDAL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        public ProductDAL(int orderConstructorIndicator) //when I call the productDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
         {
 
         }
