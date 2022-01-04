@@ -10,8 +10,10 @@ namespace DAL
 {
     public class OrderDAL
     {
-        internal static List<Order> orderList = new List<Order>();
+       
         protected int orderNumber = 103;
+        internal static List<Order> orderList = new List<Order>();
+
 
         public OrderDAL()
         {
@@ -118,10 +120,7 @@ namespace DAL
                 }
                 
             }
-
-            
             return productOrders;
-
 
         }
 

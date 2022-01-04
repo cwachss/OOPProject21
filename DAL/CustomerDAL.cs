@@ -102,7 +102,7 @@ namespace DAL
                 }
             }
 
-            Customer customer = new Customer(customerList[index]);//did you not want to find the index this way? How else should I find it?
+            Customer customer = new Customer(customerList[index]);
             return customer;
         }
 

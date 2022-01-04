@@ -28,7 +28,7 @@ namespace DAL
         }
 
         //create list to hold the product information 
-        static List<Product> productList = new List<Product>(); 
+        internal static List<Product> productList = new List<Product>(); 
 
         //create StreamReader object to read the list
         StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
@@ -92,7 +92,7 @@ namespace DAL
                 }
             }
 
-            Product product = new Product(productList[index]);//did you not want to find the index this way? How else should I find it?
+            Product product = new Product(productList[index]);
             return product;
         }
 
@@ -155,32 +155,8 @@ namespace DAL
                 {
                     throw new ProductNumberNotFound();
                 }
-            }
-           
-           
+            }  
         }
-
-            //Thought to make check product number easier by making it a method. But, this may not the way to do it...
-            //public int CheckNum(int prodNum)
-            //{
-            //    int i;
-            //    for (i = 0; i < productList.Count; i++) //I feel like I made this method too unwieldy
-            //    {
-            //        if (prodNum == productList[i].ProductNumber)//checks if we've found the sought-for product number
-            //        {
-            //            return prodNum;
-
-            //        }
-            //    }
-            //    if (i == productList.Count)//if never found product number, it throws an exception.
-            //    {
-            //        throw new ProductNumberNotFound();  
-            //    }
-            //    return 0;
-            //}
-
-
-        }
-
     }
+}
 
