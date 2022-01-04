@@ -242,15 +242,17 @@ namespace UserInterface2._0
         }
 
 
-        //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
+        //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position  
+
         private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
         {
             textBoxIDInput.Enabled = true;
+            listBoxOrdersFound.Items.Clear();
+            textBoxIDInput.Clear();
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("asdfas");
             buttonModify.Enabled = true;
             buttonDelete.Enabled = true;
         }
@@ -273,6 +275,11 @@ namespace UserInterface2._0
            
         }
 
-        
+        private void buttonDelete_Click(object sender, EventArgs e)
+        { 
+            orderBLL.Delete(int. Parse(textBoxIDInput.Text));
+            buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
+
+        }
     }
 }
