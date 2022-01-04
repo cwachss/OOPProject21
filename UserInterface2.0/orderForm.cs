@@ -193,7 +193,8 @@ namespace UserInterface2._0
                     }
                     else if (IDChooser.SelectedIndex == 2)
                     {
-                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)).ToString());
+
+                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)));
 
                     }
                     
@@ -264,8 +265,16 @@ namespace UserInterface2._0
         {
             try
             {
-
-               int orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+                int orderNum;
+                if(IDChooser.SelectedIndex == 2)
+                {
+                    orderNum = int.Parse(textBoxIDInput.Text);
+                }
+                else
+                {
+                    orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+                }
+               
                 
                 int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
                 orderBLL.Update(orderNum, amountToOrder);
@@ -281,9 +290,18 @@ namespace UserInterface2._0
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
-        { 
-            //MessageBox.Show(Convert.ToString( temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber));
-            orderBLL.Delete(temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber);
+        {
+            int orderNum;
+            if (IDChooser.SelectedIndex == 2)
+            {
+                orderNum = int.Parse(textBoxIDInput.Text);
+            }
+            else
+            {
+                orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+            }
+            
+            orderBLL.Delete(orderNum);
 
             buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
 

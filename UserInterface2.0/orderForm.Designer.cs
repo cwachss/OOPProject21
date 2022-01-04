@@ -139,7 +139,6 @@ namespace UserInterface2._0
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Enabled = false;
             this.buttonDelete.Location = new System.Drawing.Point(15, 30);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(1);
             this.buttonDelete.Name = "buttonDelete";
@@ -453,6 +452,7 @@ namespace UserInterface2._0
             this.groupBoxModifyOrder.TabIndex = 54;
             this.groupBoxModifyOrder.TabStop = false;
             this.groupBoxModifyOrder.Text = "Order Number ________";
+            this.groupBoxModifyOrder.Visible = false;
             // 
             // orderForm
             // 
