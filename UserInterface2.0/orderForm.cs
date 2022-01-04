@@ -223,6 +223,7 @@ namespace UserInterface2._0
         {
             
             temporaryStorage = orderBLL.ReadOrderViaCustomer(customerID);
+
             for (int i = 0; i < temporaryStorage.Count; i++)
             {
                 listBoxOrdersFound.Items.Add(temporaryStorage[i]);
@@ -240,11 +241,6 @@ namespace UserInterface2._0
             
         }
 
-       
-        //private void listBoxOrdersFound_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show(listBoxOrdersFound.SelectedItem.ToString());
-        //}
 
         //makes sure a selection is made by user. Baruch Hashem, the DomainUpDown doesn't let you go back to default position
         private void IDChooser_SelectedItemChanged(object sender, EventArgs e)
