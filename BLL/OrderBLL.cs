@@ -117,10 +117,10 @@ namespace BLL
 
         //returns a specific order when given its order number
         public Order ReadOrderViaOrderNum(int orderNum)
-        {
-            Order orderRequested = orderDAL.ReadOrderViaOrder(orderNum);
-            
-            return orderRequested;
+        { 
+                Order orderRequested = orderDAL.ReadOrderViaOrder(orderNum);
+
+                return orderRequested;
            
         }
 

@@ -131,7 +131,7 @@ namespace DAL
                 
                 
             }
-            throw new Exception("Order not found.");
+            throw new ExceptionOrderNumInvalid ();
         }
 
 

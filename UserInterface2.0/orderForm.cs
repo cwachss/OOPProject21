@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 using Entities;
 
 namespace UserInterface2._0
@@ -16,7 +17,7 @@ namespace UserInterface2._0
     {
         OrderBLL orderBLL = new OrderBLL();
         ProductBLL productBLL = new ProductBLL(0);
-        
+
         //for use in modify etc- allows computer to temporarily define a list containing either customer orders or product orders so that we can use it in a few different methods ie modify delete and print
         List<Order> temporaryStorage = new List<Order>();
         public orderForm()
@@ -39,7 +40,7 @@ namespace UserInterface2._0
             buttonReturnMenu.Visible = false;
         }
 
-        public void HideEverything() 
+        public void HideEverything()
         {
             //things to disappear for add
             groupBoxPlaceOrder.Visible = false;
@@ -74,7 +75,7 @@ namespace UserInterface2._0
             HideMainMenu();
             labelOrderTitle.Text = "Place Order";
             listBoxProducts.Visible = true;
-            
+
             listBoxProducts.Text = ""; //need readall function to work first
             labelAllProducts.Visible = true;
             groupBoxPlaceOrder.Visible = true;
@@ -106,13 +107,13 @@ namespace UserInterface2._0
             HideMainMenu();
             labelOrderTitle.Text = "Find Orders";
             buttonReturnMenu.Enabled = true;
-            buttonReturnMenu.Visible=true;
+            buttonReturnMenu.Visible = true;
             panelIDInput.Visible = true;
             buttonFindOrders.Enabled = true;
             IDChooser.Enabled = true;
             textBoxIDInput.Enabled = true;
-            labelOrderDetails.Visible=true;
-            listBoxOrdersFound.Visible=true;
+            labelOrderDetails.Visible = true;
+            listBoxOrdersFound.Visible = true;
             listBoxOrdersFound.Text = null;
             textBoxIDInput.Text = null;
             listBoxOrdersFound.Items.Clear();
@@ -134,7 +135,7 @@ namespace UserInterface2._0
             listBoxPrintOrders.Visible = true;
             listBoxPrintOrders.Size = new System.Drawing.Size(694, 429); //resize text box to make room for place order groupbox
             PrintAllOrders();
-            
+
         }
 
         private void orderForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -150,7 +151,7 @@ namespace UserInterface2._0
             {
                 listBoxProducts.Items.Add(products[i]);
             }
-            
+
         }
 
         private void PrintAllOrders()
@@ -171,7 +172,7 @@ namespace UserInterface2._0
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
-           
+
             MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
         }
 
@@ -180,7 +181,7 @@ namespace UserInterface2._0
             listBoxOrdersFound.Items.Clear();
             try
             {
-               
+
                 if (IDChooser.SelectedIndex >= 0)
                 {
                     if (IDChooser.SelectedIndex == 0)
@@ -197,12 +198,12 @@ namespace UserInterface2._0
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)));
                         groupBoxModifyOrder.Visible = true;
                     }
-                    
-                }
-                
-               
 
-              
+                }
+
+
+
+
             }
             catch (ExceptionCustomerHasNoOrders ex)
             {
@@ -212,24 +213,27 @@ namespace UserInterface2._0
             {
                 MessageBox.Show("No orders for this product yet.", "Error");
             }
+            catch (ExceptionOrderNumInvalid)
+            {
+                MessageBox.Show("Invalid ID number", "Error");
+            }
             catch
             {
                 MessageBox.Show("Please enter an ID");
             }
 
-
         }
 
         private void CustomerOrdersFoundPrint(int customerID)
         {
-            
+
             temporaryStorage = orderBLL.ReadOrderViaCustomer(customerID);
 
             for (int i = 0; i < temporaryStorage.Count; i++)
             {
                 listBoxOrdersFound.Items.Add(temporaryStorage[i]);
             }
-            
+
         }
         private void ProductOrdersFoundPrint(int productID)
         {
@@ -239,7 +243,7 @@ namespace UserInterface2._0
             {
                 listBoxOrdersFound.Items.Add(temporaryStorage[i]);
             }
-            
+
         }
 
 
@@ -250,12 +254,12 @@ namespace UserInterface2._0
             textBoxIDInput.Enabled = true;
             listBoxOrdersFound.Items.Clear();
             textBoxIDInput.Clear();
-            
+
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -263,7 +267,7 @@ namespace UserInterface2._0
             try
             {
                 int orderNum;
-                if(IDChooser.SelectedIndex == 2)
+                if (IDChooser.SelectedIndex == 2)
                 {
                     orderNum = int.Parse(textBoxIDInput.Text);
                 }
@@ -271,19 +275,20 @@ namespace UserInterface2._0
                 {
                     orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
                 }
-               
-                
+
+
                 int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
                 orderBLL.Update(orderNum, amountToOrder);
                 MessageBox.Show("Order Modified");
-               buttonFindOrders_Click(sender, e);
+                buttonFindOrders_Click(sender, e);
 
             }
             catch
             {
-                MessageBox.Show("Invalid input.");
+                MessageBox.Show("Invalid input.");//why is this an exception? How  would a user give in vlaid info?
+                                                  //They need to click the item for it to even show modify!
             }
-           
+
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -297,7 +302,7 @@ namespace UserInterface2._0
             {
                 orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
             }
-            
+
             orderBLL.Delete(orderNum);
 
             buttonFindOrders_Click(sender, e);//resets what's in the the listbox.

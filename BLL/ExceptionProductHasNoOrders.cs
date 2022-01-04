@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public  class ExceptionProductHasNoOrders:Exception
+    public class ExceptionProductHasNoOrders :Exception
     {
         public ExceptionProductHasNoOrders()
         {
 
         }
-        public ExceptionProductHasNoOrders(string message):base(message)
+        public ExceptionProductHasNoOrders(string message) : base(message)
         {
 
         }
-        public ExceptionProductHasNoOrders(string message, Exception e):base(message, e)
+        public ExceptionProductHasNoOrders(string message, Exception e) : base(message, e)
         {
 
         }
     }
+
 }
