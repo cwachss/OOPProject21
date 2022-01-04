@@ -197,6 +197,7 @@ namespace UserInterface2._0
 
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)));
                         groupBoxModifyOrder.Visible = true;
+                        groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
                     }
                     
                 }
@@ -257,7 +258,7 @@ namespace UserInterface2._0
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
             groupBoxModifyOrder.Visible = true;
-            
+            groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
             numericUpDown1.Value = temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered;
             buttonModify.Enabled = false;
         }
@@ -308,15 +309,11 @@ namespace UserInterface2._0
             }
             
             orderBLL.Delete(orderNum);
-
+            
             listBoxOrdersFound.Items.Clear();
-
+            groupBoxModifyOrder.Visible = false;
         }
 
-        private void labelAmountModify_Click(object sender, EventArgs e)
-        {
-
-        }
 
        
     }
