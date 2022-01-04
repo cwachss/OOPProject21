@@ -13,7 +13,14 @@ namespace DAL
 {
     public class ProductDAL
     {
-        //public int NumberOfProducts { get; set; }
+        //create list to hold the product information 
+        internal static List<Product> productList = new List<Product>();
+
+        //create StreamReader object to read the list
+        StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
+
+        string product;
+
 
         //Shira Laury
         public ProductDAL()
@@ -26,16 +33,6 @@ namespace DAL
         {
 
         }
-
-        //create list to hold the product information 
-        internal static List<Product> productList = new List<Product>(); 
-
-        //create StreamReader object to read the list
-        StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
-
-        string product;
-
-       
 
         //method to initialize the list with products' information
         public void InitializeList()

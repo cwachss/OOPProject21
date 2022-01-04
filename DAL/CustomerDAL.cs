@@ -71,7 +71,6 @@ namespace DAL
             {
                 List<Customer> copyOfCustomerList = customerList.ConvertAll(user => new Customer(user.FirstName, user.LastName, user.ID));
                 return customerList;
-
             }
             else
             {

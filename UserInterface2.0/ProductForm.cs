@@ -194,7 +194,7 @@ namespace UserInterface2._0
             textBoxPrintProducts.Visible = false;
         }
 
-        public override void ResetAndHideEverything()
+        protected override void ResetAndHideEverything()
         {
             buttonDelete.Visible=false;
             buttonModify.Visible=false;

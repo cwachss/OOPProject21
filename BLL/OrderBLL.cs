@@ -100,8 +100,6 @@ namespace BLL
             }
                 
             return customerOrders;
-
-          
         }
 
         //returns orders of a specific product

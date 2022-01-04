@@ -30,7 +30,7 @@ namespace UserInterface2._0
             HideEverything();
         }
 
-        public void ResetMainMenu()
+        private void ResetMainMenu()
         {
             labelOrderTitle.Text = "Order Menu";
             buttonCreate.Visible = true;

@@ -275,7 +275,7 @@ namespace UserInterface2._0
         }
 
 
-        public override void ResetAndHideEverything()
+        protected override void ResetAndHideEverything()
         {
             base.ResetAndHideEverything();
 
@@ -286,7 +286,7 @@ namespace UserInterface2._0
 
         }
 
-        private void ClearReadOneTextBoxes()
+        protected void ClearReadOneTextBoxes()
         {
             textBoxCustomerID.Clear();
             textBoxFirstName.Clear();
