@@ -111,7 +111,7 @@ namespace UserInterface2._0
         }
         
 
-        public virtual void ResetAndHideEverything() 
+        protected virtual void ResetAndHideEverything() 
         {
             textBoxPrintProducts.Visible = false;
             //labelPrintInfo.Visible = false;
