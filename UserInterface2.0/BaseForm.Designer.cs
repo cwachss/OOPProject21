@@ -29,6 +29,7 @@ namespace UserInterface2._0
         /// </summary>
         protected void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.buttonReturnMenu = new System.Windows.Forms.Button();
             this.buttonReadAll = new System.Windows.Forms.Button();
             this.buttonReadOne = new System.Windows.Forms.Button();
@@ -159,7 +160,7 @@ namespace UserInterface2._0
             // 
             this.textBoxPrintProducts.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBoxPrintProducts.Location = new System.Drawing.Point(37, 96);
-            this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrintProducts.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrintProducts.Multiline = true;
             this.textBoxPrintProducts.Name = "textBoxPrintProducts";
             this.textBoxPrintProducts.ReadOnly = true;
@@ -255,7 +256,8 @@ namespace UserInterface2._0
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.labelProductMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BaseForm";
             this.Text = "Form1";
             this.groupBoxProductDetails.ResumeLayout(false);

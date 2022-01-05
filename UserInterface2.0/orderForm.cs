@@ -95,11 +95,19 @@ namespace UserInterface2._0
                 listBoxProducts.Items.Clear();
                 PrintAllProducts();
             }
+            //catch (ProductNumberNotFound)
+            //{
+            //    MessageBox.Show("Product Not Found");
+            //}
+            //catch (CustomerNotFound)
+            //{
+            //    MessageBox.Show("Customer not found");
+            //}
             catch
             {
-                MessageBox.Show("Incorrect input");
+                MessageBox.Show("Please fill in all textboxes");
             }
-
+          
         }
 
         private void buttonReadOne_Click(object sender, EventArgs e)

@@ -32,17 +32,20 @@ namespace BLL
                 }
                 else
                 {
-                    throw new Exception("Not enough in stock");
+                    throw new ExceptionNotEnoughInStock("Not enough in stock");
                 }
 
                 orderDAL.Create(customerID, productID, amountOrdered); //if all checkboxes are checked, place order
             }
-            catch
+            catch (ProductNumberNotFound)
             {
-                throw new Exception("Incorrect input");
+                throw new ProductNumberNotFound();
+            }
+            catch (CustomerNotFound)
+            {
+                throw new CustomerNotFound();
             }
 
-            
 
         }
 

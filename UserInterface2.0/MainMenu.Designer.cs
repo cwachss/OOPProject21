@@ -29,6 +29,7 @@ namespace UserInterface2._0
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelProducts = new System.Windows.Forms.Label();
             this.labelCustomers = new System.Windows.Forms.Label();
@@ -47,10 +48,10 @@ namespace UserInterface2._0
             // 
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(108, 70);
+            this.labelWelcome.Location = new System.Drawing.Point(144, 86);
             this.labelWelcome.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(379, 45);
+            this.labelWelcome.Size = new System.Drawing.Size(473, 57);
             this.labelWelcome.TabIndex = 7;
             this.labelWelcome.Text = "Welcome to Toys of All Sorts";
             // 
@@ -59,10 +60,10 @@ namespace UserInterface2._0
             this.labelProducts.AutoSize = true;
             this.labelProducts.BackColor = System.Drawing.Color.Transparent;
             this.labelProducts.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProducts.Location = new System.Drawing.Point(76, 394);
+            this.labelProducts.Location = new System.Drawing.Point(101, 485);
             this.labelProducts.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelProducts.Name = "labelProducts";
-            this.labelProducts.Size = new System.Drawing.Size(120, 46);
+            this.labelProducts.Size = new System.Drawing.Size(153, 55);
             this.labelProducts.TabIndex = 8;
             this.labelProducts.Text = "Products";
             // 
@@ -71,10 +72,10 @@ namespace UserInterface2._0
             this.labelCustomers.AutoSize = true;
             this.labelCustomers.BackColor = System.Drawing.Color.White;
             this.labelCustomers.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomers.Location = new System.Drawing.Point(347, 394);
+            this.labelCustomers.Location = new System.Drawing.Point(463, 485);
             this.labelCustomers.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelCustomers.Name = "labelCustomers";
-            this.labelCustomers.Size = new System.Drawing.Size(140, 46);
+            this.labelCustomers.Size = new System.Drawing.Size(180, 55);
             this.labelCustomers.TabIndex = 9;
             this.labelCustomers.Text = "Customers";
             // 
@@ -83,19 +84,20 @@ namespace UserInterface2._0
             this.labelOrders.AutoSize = true;
             this.labelOrders.BackColor = System.Drawing.Color.White;
             this.labelOrders.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrders.Location = new System.Drawing.Point(658, 394);
+            this.labelOrders.Location = new System.Drawing.Point(877, 485);
             this.labelOrders.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelOrders.Name = "labelOrders";
-            this.labelOrders.Size = new System.Drawing.Size(98, 46);
+            this.labelOrders.Size = new System.Drawing.Size(125, 55);
             this.labelOrders.TabIndex = 11;
             this.labelOrders.Text = "Orders";
             // 
             // pictureBoxOrders
             // 
             this.pictureBoxOrders.Image = global::UserInterface2._0.Properties.Resources.shoppingcart1;
-            this.pictureBoxOrders.Location = new System.Drawing.Point(563, 136);
+            this.pictureBoxOrders.Location = new System.Drawing.Point(751, 167);
+            this.pictureBoxOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxOrders.Name = "pictureBoxOrders";
-            this.pictureBoxOrders.Size = new System.Drawing.Size(283, 276);
+            this.pictureBoxOrders.Size = new System.Drawing.Size(377, 340);
             this.pictureBoxOrders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxOrders.TabIndex = 10;
             this.pictureBoxOrders.TabStop = false;
@@ -104,10 +106,10 @@ namespace UserInterface2._0
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::UserInterface2._0.Properties.Resources.toysLogo3;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(7, 7);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(9, 9);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(90, 113);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(120, 139);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 6;
             this.pictureBoxLogo.TabStop = false;
@@ -116,9 +118,10 @@ namespace UserInterface2._0
             // pictureBoxProducts
             // 
             this.pictureBoxProducts.Image = global::UserInterface2._0.Properties.Resources.teddy3_02;
-            this.pictureBoxProducts.Location = new System.Drawing.Point(-2, 136);
+            this.pictureBoxProducts.Location = new System.Drawing.Point(-3, 167);
+            this.pictureBoxProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxProducts.Name = "pictureBoxProducts";
-            this.pictureBoxProducts.Size = new System.Drawing.Size(270, 276);
+            this.pictureBoxProducts.Size = new System.Drawing.Size(360, 340);
             this.pictureBoxProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxProducts.TabIndex = 3;
             this.pictureBoxProducts.TabStop = false;
@@ -127,9 +130,10 @@ namespace UserInterface2._0
             // pictureBoxCustomer
             // 
             this.pictureBoxCustomer.Image = global::UserInterface2._0.Properties.Resources.toystorepeoples;
-            this.pictureBoxCustomer.Location = new System.Drawing.Point(274, 136);
+            this.pictureBoxCustomer.Location = new System.Drawing.Point(365, 167);
+            this.pictureBoxCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxCustomer.Name = "pictureBoxCustomer";
-            this.pictureBoxCustomer.Size = new System.Drawing.Size(283, 276);
+            this.pictureBoxCustomer.Size = new System.Drawing.Size(377, 340);
             this.pictureBoxCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCustomer.TabIndex = 2;
             this.pictureBoxCustomer.TabStop = false;
@@ -137,10 +141,10 @@ namespace UserInterface2._0
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(847, 458);
+            this.ClientSize = new System.Drawing.Size(1129, 564);
             this.Controls.Add(this.labelOrders);
             this.Controls.Add(this.pictureBoxOrders);
             this.Controls.Add(this.labelCustomers);
@@ -149,6 +153,8 @@ namespace UserInterface2._0
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.pictureBoxProducts);
             this.Controls.Add(this.pictureBoxCustomer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
