@@ -308,7 +308,7 @@ namespace UserInterface2._0
             this.labelAmountModify.TabIndex = 38;
             this.labelAmountModify.Text = "Update Amount:";
             this.labelAmountModify.Visible = false;
-            this.labelAmountModify.Click += new System.EventHandler(this.labelAmountModify_Click);
+            //this.labelAmountModify.Click += new System.EventHandler(this.labelAmountModify_Click);
             // 
             // pictureBoxLogo
             // 

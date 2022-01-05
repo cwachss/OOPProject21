@@ -62,6 +62,7 @@ namespace UserInterface2._0
             buttonModify.Visible = false;
             numericUpDown1.Visible = false;
             labelAmountModify.Visible = false;
+            groupBoxModifyOrder.Visible = false;
         }
 
         public void HideMainMenu()
@@ -205,6 +206,7 @@ namespace UserInterface2._0
 
                         listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)));
                         groupBoxModifyOrder.Visible = true;
+                        groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
                     }
 
                 }
@@ -262,12 +264,20 @@ namespace UserInterface2._0
             textBoxIDInput.Enabled = true;
             listBoxOrdersFound.Items.Clear();
             textBoxIDInput.Clear();
-
+            groupBoxModifyOrder.Visible = false;
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
+            groupBoxModifyOrder.Visible = true;
+            groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+            numericUpDown1.Value = temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered;
+            buttonModify.Enabled = false;
+        }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            buttonModify.Enabled = true;
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -312,19 +322,12 @@ namespace UserInterface2._0
             }
 
             orderBLL.Delete(orderNum);
-
-            buttonFindOrders_Click(sender, e);//resets what's in the the listbox.
-
+            
+            listBoxOrdersFound.Items.Clear();
+            groupBoxModifyOrder.Visible = false;
         }
 
-        private void labelAmountModify_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

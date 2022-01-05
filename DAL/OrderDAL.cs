@@ -11,7 +11,7 @@ namespace DAL
     public class OrderDAL
     {
        
-        protected int orderNumber = 103;
+        private int orderNumber = 103;
         internal static List<Order> orderList = new List<Order>();
 
 
@@ -21,7 +21,7 @@ namespace DAL
         }
 
         //method to initialize a list of orders
-        public void InitilizeList()
+        private void InitilizeList()
         {
             StreamReader reader = new StreamReader(@"../../../DAL/ListOfOrders.txt");
             string line;
