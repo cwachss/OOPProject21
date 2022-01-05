@@ -94,7 +94,7 @@ namespace UserInterface2._0
             this.labelOrders.AutoSize = true;
             this.labelOrders.BackColor = System.Drawing.Color.White;
             this.labelOrders.Font = new System.Drawing.Font("Agency FB", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrders.Location = new System.Drawing.Point(658, 394);
+            this.labelOrders.Location = new System.Drawing.Point(660, 394);
             this.labelOrders.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelOrders.Name = "labelOrders";
             this.labelOrders.Size = new System.Drawing.Size(98, 46);
@@ -158,10 +158,10 @@ namespace UserInterface2._0
             this.groupBoxSignIn.Controls.Add(this.labelPassword);
             this.groupBoxSignIn.Controls.Add(this.labelID);
             this.groupBoxSignIn.Controls.Add(this.labelEmployeeName);
-            this.groupBoxSignIn.Location = new System.Drawing.Point(293, 136);
-            this.groupBoxSignIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxSignIn.Location = new System.Drawing.Point(293, 164);
+            this.groupBoxSignIn.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxSignIn.Name = "groupBoxSignIn";
-            this.groupBoxSignIn.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxSignIn.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxSignIn.Size = new System.Drawing.Size(248, 192);
             this.groupBoxSignIn.TabIndex = 12;
             this.groupBoxSignIn.TabStop = false;
@@ -170,7 +170,7 @@ namespace UserInterface2._0
             // buttonSignIn
             // 
             this.buttonSignIn.Location = new System.Drawing.Point(23, 153);
-            this.buttonSignIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSignIn.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSignIn.Name = "buttonSignIn";
             this.buttonSignIn.Size = new System.Drawing.Size(64, 19);
             this.buttonSignIn.TabIndex = 5;
@@ -181,7 +181,7 @@ namespace UserInterface2._0
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(23, 105);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(152, 20);
             this.textBoxPassword.TabIndex = 4;
@@ -190,7 +190,7 @@ namespace UserInterface2._0
             // textBoxID
             // 
             this.textBoxID.Location = new System.Drawing.Point(23, 53);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(152, 20);
             this.textBoxID.TabIndex = 3;
@@ -232,8 +232,8 @@ namespace UserInterface2._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(847, 451);
-            this.Controls.Add(this.groupBoxSignIn);
             this.Controls.Add(this.labelOrders);
+            this.Controls.Add(this.groupBoxSignIn);
             this.Controls.Add(this.pictureBoxOrders);
             this.Controls.Add(this.labelCustomers);
             this.Controls.Add(this.labelProducts);
