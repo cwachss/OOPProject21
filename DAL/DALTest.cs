@@ -13,15 +13,23 @@ namespace DAL
     {
         static void Main(string[] args)
         {
-            EmployeeDAL dal = new EmployeeDAL();
-            Console.WriteLine(dal.ReadEmployee(1234));
-            //Console.WriteLine(dal.ReadEmployee(134));
+            //EmployeeDAL dal = new EmployeeDAL();
+            //Console.WriteLine(dal.ReadEmployee(1234));
+            ////Console.WriteLine(dal.ReadEmployee(134));
 
-            List<Employee> employees = dal.ReadAll();
-            for (int i = 0; i < employees.Count; i++)
-            {
-                Console.WriteLine(employees[i]);
-            }
+            //List<Employee> employees = dal.ReadAll();
+            //for (int i = 0; i < employees.Count; i++)
+            //{
+            //    Console.WriteLine(employees[i]);
+            //}
+
+
+
+            OrderDAL newd = new OrderDAL();
+            newd.Create(222,4,3);
+            Console.WriteLine(newd);
+
+
             //CustomerDAL try1 = new CustomerDAL();
 
             //try1.Create("Miss Arr", 28392047, 22232123990904, 1997, 12);
