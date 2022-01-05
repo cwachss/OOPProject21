@@ -45,6 +45,7 @@ namespace UserInterface2._0
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             this.labelEmployeeName = new System.Windows.Forms.Label();
+            this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProducts)).BeginInit();
@@ -152,6 +153,7 @@ namespace UserInterface2._0
             // 
             // groupBoxSignIn
             // 
+            this.groupBoxSignIn.Controls.Add(this.checkBoxShowPass);
             this.groupBoxSignIn.Controls.Add(this.buttonSignIn);
             this.groupBoxSignIn.Controls.Add(this.textBoxPassword);
             this.groupBoxSignIn.Controls.Add(this.textBoxID);
@@ -162,14 +164,14 @@ namespace UserInterface2._0
             this.groupBoxSignIn.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxSignIn.Name = "groupBoxSignIn";
             this.groupBoxSignIn.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxSignIn.Size = new System.Drawing.Size(248, 192);
+            this.groupBoxSignIn.Size = new System.Drawing.Size(248, 203);
             this.groupBoxSignIn.TabIndex = 12;
             this.groupBoxSignIn.TabStop = false;
             this.groupBoxSignIn.Text = "Sign In";
             // 
             // buttonSignIn
             // 
-            this.buttonSignIn.Location = new System.Drawing.Point(23, 153);
+            this.buttonSignIn.Location = new System.Drawing.Point(23, 166);
             this.buttonSignIn.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSignIn.Name = "buttonSignIn";
             this.buttonSignIn.Size = new System.Drawing.Size(64, 19);
@@ -226,6 +228,17 @@ namespace UserInterface2._0
             this.labelEmployeeName.Text = "Please enter your user ID and Password";
             this.labelEmployeeName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // checkBoxShowPass
+            // 
+            this.checkBoxShowPass.AutoSize = true;
+            this.checkBoxShowPass.Location = new System.Drawing.Point(122, 127);
+            this.checkBoxShowPass.Name = "checkBoxShowPass";
+            this.checkBoxShowPass.Size = new System.Drawing.Size(53, 17);
+            this.checkBoxShowPass.TabIndex = 6;
+            this.checkBoxShowPass.Text = "Show";
+            this.checkBoxShowPass.UseVisualStyleBackColor = true;
+            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,5 +286,6 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Button buttonSignIn;
+        private System.Windows.Forms.CheckBox checkBoxShowPass;
     }
 }
