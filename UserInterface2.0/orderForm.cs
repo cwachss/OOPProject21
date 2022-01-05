@@ -98,14 +98,14 @@ namespace UserInterface2._0
                 textBoxCustomerID.Clear();
                 textBoxProductNumber.Clear();
             }
-            //catch (ProductNumberNotFound)
-            //{
-            //    MessageBox.Show("Product Not Found");
-            //}
-            //catch (CustomerNotFound)
-            //{
-            //    MessageBox.Show("Customer not found");
-            //}
+            catch (ProductNumberNotFound)
+            {
+                MessageBox.Show("Product Not Found");
+            }
+            catch (CustomerNotFound)
+            {
+                MessageBox.Show("Customer not found");
+            }
             catch
             {
                 MessageBox.Show("Please fill in all textboxes");
