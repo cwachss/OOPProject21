@@ -37,10 +37,18 @@ namespace UserInterface2._0
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBoxProducts = new System.Windows.Forms.PictureBox();
             this.pictureBoxCustomer = new System.Windows.Forms.PictureBox();
+            this.groupBoxSignIn = new System.Windows.Forms.GroupBox();
+            this.labelEmployeeName = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.buttonSignIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer)).BeginInit();
+            this.groupBoxSignIn.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelWelcome
@@ -65,6 +73,7 @@ namespace UserInterface2._0
             this.labelProducts.Size = new System.Drawing.Size(120, 46);
             this.labelProducts.TabIndex = 8;
             this.labelProducts.Text = "Products";
+            this.labelProducts.Visible = false;
             // 
             // labelCustomers
             // 
@@ -77,6 +86,7 @@ namespace UserInterface2._0
             this.labelCustomers.Size = new System.Drawing.Size(140, 46);
             this.labelCustomers.TabIndex = 9;
             this.labelCustomers.Text = "Customers";
+            this.labelCustomers.Visible = false;
             // 
             // labelOrders
             // 
@@ -89,6 +99,7 @@ namespace UserInterface2._0
             this.labelOrders.Size = new System.Drawing.Size(98, 46);
             this.labelOrders.TabIndex = 11;
             this.labelOrders.Text = "Orders";
+            this.labelOrders.Visible = false;
             // 
             // pictureBoxOrders
             // 
@@ -99,6 +110,7 @@ namespace UserInterface2._0
             this.pictureBoxOrders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxOrders.TabIndex = 10;
             this.pictureBoxOrders.TabStop = false;
+            this.pictureBoxOrders.Visible = false;
             this.pictureBoxOrders.Click += new System.EventHandler(this.pictureBoxOrders_Click);
             // 
             // pictureBoxLogo
@@ -122,6 +134,7 @@ namespace UserInterface2._0
             this.pictureBoxProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxProducts.TabIndex = 3;
             this.pictureBoxProducts.TabStop = false;
+            this.pictureBoxProducts.Visible = false;
             this.pictureBoxProducts.Click += new System.EventHandler(this.buttonProducts_Click);
             // 
             // pictureBoxCustomer
@@ -133,7 +146,76 @@ namespace UserInterface2._0
             this.pictureBoxCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCustomer.TabIndex = 2;
             this.pictureBoxCustomer.TabStop = false;
+            this.pictureBoxCustomer.Visible = false;
             this.pictureBoxCustomer.Click += new System.EventHandler(this.buttonCustomers_Click);
+            // 
+            // groupBoxSignIn
+            // 
+            this.groupBoxSignIn.Controls.Add(this.buttonSignIn);
+            this.groupBoxSignIn.Controls.Add(this.textBoxPassword);
+            this.groupBoxSignIn.Controls.Add(this.textBoxID);
+            this.groupBoxSignIn.Controls.Add(this.labelPassword);
+            this.groupBoxSignIn.Controls.Add(this.labelID);
+            this.groupBoxSignIn.Controls.Add(this.labelEmployeeName);
+            this.groupBoxSignIn.Location = new System.Drawing.Point(286, 162);
+            this.groupBoxSignIn.Name = "groupBoxSignIn";
+            this.groupBoxSignIn.Size = new System.Drawing.Size(258, 213);
+            this.groupBoxSignIn.TabIndex = 12;
+            this.groupBoxSignIn.TabStop = false;
+            this.groupBoxSignIn.Text = "Sign In";
+            // 
+            // labelEmployeeName
+            // 
+            this.labelEmployeeName.AutoSize = true;
+            this.labelEmployeeName.Location = new System.Drawing.Point(28, 32);
+            this.labelEmployeeName.Name = "labelEmployeeName";
+            this.labelEmployeeName.Size = new System.Drawing.Size(196, 13);
+            this.labelEmployeeName.TabIndex = 0;
+            this.labelEmployeeName.Text = "Please enter your user ID and Password";
+            this.labelEmployeeName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(28, 88);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(67, 13);
+            this.labelID.TabIndex = 1;
+            this.labelID.Text = "Employee ID";
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(28, 137);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(53, 13);
+            this.labelPassword.TabIndex = 2;
+            this.labelPassword.Text = "Password";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(31, 65);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(201, 20);
+            this.textBoxID.TabIndex = 3;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(31, 114);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(201, 20);
+            this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            // 
+            // buttonSignIn
+            // 
+            this.buttonSignIn.Location = new System.Drawing.Point(31, 168);
+            this.buttonSignIn.Name = "buttonSignIn";
+            this.buttonSignIn.Size = new System.Drawing.Size(86, 23);
+            this.buttonSignIn.TabIndex = 5;
+            this.buttonSignIn.Text = "Enter";
+            this.buttonSignIn.UseVisualStyleBackColor = true;
+            this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
             // MainMenu
             // 
@@ -141,6 +223,7 @@ namespace UserInterface2._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(847, 458);
+            this.Controls.Add(this.groupBoxSignIn);
             this.Controls.Add(this.labelOrders);
             this.Controls.Add(this.pictureBoxOrders);
             this.Controls.Add(this.labelCustomers);
@@ -157,6 +240,8 @@ namespace UserInterface2._0
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomer)).EndInit();
+            this.groupBoxSignIn.ResumeLayout(false);
+            this.groupBoxSignIn.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +256,12 @@ namespace UserInterface2._0
         private System.Windows.Forms.Label labelCustomers;
         private System.Windows.Forms.PictureBox pictureBoxOrders;
         private System.Windows.Forms.Label labelOrders;
+        private System.Windows.Forms.GroupBox groupBoxSignIn;
+        private System.Windows.Forms.Label labelEmployeeName;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Button buttonSignIn;
     }
 }

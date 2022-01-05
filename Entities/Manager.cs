@@ -12,7 +12,7 @@ namespace Entities
     {
         public int Experience { get; set; }
 
-        public Manager(int experience, decimal salary, string first_name, string last_name, int id) :base(salary, first_name, last_name, id)
+        public Manager(int experience, decimal salary, string first_name, string last_name, int id, string password) :base(salary, first_name, last_name, id, password)
         {
             Experience = experience;
         }
