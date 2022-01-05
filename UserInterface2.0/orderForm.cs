@@ -167,10 +167,17 @@ namespace UserInterface2._0
 
         private void PrintAllOrders()
         {
-            List<Order> orders = orderBLL.ReadAll();
-            for (int i = 0; i < orders.Count; i++)
+            try
             {
-                listBoxPrintOrders.Items.Add(orders[i]);
+                List<Order> orders = orderBLL.ReadAll();
+                for (int i = 0; i < orders.Count; i++)
+                {
+                    listBoxPrintOrders.Items.Add(orders[i]);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No orders found.");
             }
 
         }
@@ -211,6 +218,7 @@ namespace UserInterface2._0
                         listBoxOrdersFound.Items.Add(currentOrder);
                         groupBoxModifyOrder.Visible = true;
                         groupBoxModifyOrder.Text = "Order Number " + currentOrder.OrderNumber;
+                        listBoxOrdersFound.SelectedIndex = 0;
                     }
 
                 }
@@ -318,19 +326,30 @@ namespace UserInterface2._0
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             int orderNum;
-            if (IDChooser.SelectedIndex == 2)
+            
+            
+                orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+            
+
+            orderBLL.Delete(orderNum);
+            temporaryStorage.Remove(temporaryStorage[listBoxOrdersFound.SelectedIndex]);
+            if(temporaryStorage.Count != 0)
             {
-                orderNum = int.Parse(textBoxIDInput.Text);
+                buttonFindOrders_Click(sender, e);
             }
             else
             {
-                orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+                listBoxOrdersFound.Items.Clear();
             }
-
-            orderBLL.Delete(orderNum);
-
-            buttonFindOrders_Click(sender, e);
-            groupBoxModifyOrder.Visible = false;
+            if(temporaryStorage.Count == 1)
+            {
+                listBoxOrdersFound.SelectedIndex = 0;
+            }
+            else 
+            {
+                groupBoxModifyOrder.Visible = false;
+            }
+            
         }
 
 
