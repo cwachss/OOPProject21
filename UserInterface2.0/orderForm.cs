@@ -95,6 +95,8 @@ namespace UserInterface2._0
                 //update listbox to show new stock numbers (waiting on ReadAll)
                 listBoxProducts.Items.Clear();
                 PrintAllProducts();
+                textBoxCustomerID.Clear();
+                textBoxProductNumber.Clear();
             }
             //catch (ProductNumberNotFound)
             //{
