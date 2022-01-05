@@ -15,10 +15,7 @@ namespace DAL
     {
         //create list to hold the product information 
         internal static List<Product> productList = new List<Product>();
-
-        //create StreamReader object to read the list
-        StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
-
+       
         string product;
 
 
@@ -37,6 +34,9 @@ namespace DAL
         //method to initialize the list with products' information
         public void InitializeList()
         {
+            //create StreamReader object to read the list
+            StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
+
             using (reader)
             {
                 for (int i = 0; (product = reader.ReadLine()) != null; i++)
@@ -77,18 +77,21 @@ namespace DAL
             //if(productNum)
             int index = 0;
             //while loop to find id number
-            while (productList[index].ProductNumber != productNum)
+            while (index<productList.Count)
             {
-                if (index < productList.Count)
+                if (productList[index].ProductNumber == productNum)
                 {
-                    index++;
+                    break;
                 }
-                else
-                {
-                   throw new ProductNumberNotFound(); //if it's not there, throw an exception
-                }
+                   
+                index++;
+              
+            } 
+            if (index == productList.Count)
+            {
+                throw new ProductNumberNotFound(); //if it's not there, throw an exception
             }
-
+               
             Product product = new Product(productList[index]);
             return product;
         }

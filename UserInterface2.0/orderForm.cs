@@ -23,6 +23,7 @@ namespace UserInterface2._0
         public orderForm()
         {
             InitializeComponent();
+            
         }
 
         private void buttonReturnMenu_Click(object sender, EventArgs e)
@@ -100,14 +101,14 @@ namespace UserInterface2._0
                 textBoxCustomerID.Clear();
                 textBoxProductNumber.Clear();
             }
-            //catch (ProductNumberNotFound)
-            //{
-            //    MessageBox.Show("Product Not Found");
-            //}
-            //catch (CustomerNotFound)
-            //{
-            //    MessageBox.Show("Customer not found");
-            //}
+            catch (ProductNumberNotFound)
+            {
+                MessageBox.Show("Product Not Found");
+            }
+            catch (CustomerNotFound)
+            {
+                MessageBox.Show("Customer not found");
+            }
             catch
             {
                 MessageBox.Show("Please fill in all textboxes");
@@ -319,8 +320,6 @@ namespace UserInterface2._0
                 {
                     orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
                 }
-
-
                 int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
                 orderBLL.Update(orderNum, amountToOrder);
                 MessageBox.Show("Order Modified");

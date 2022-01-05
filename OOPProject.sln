@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{22EAA7F0-877F-4DA9-96C2-D04DBB28EBD8}"
 EndProject
@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{9
 	ProjectSection(ProjectDependencies) = postProject
 		{B067A3CD-99A4-4F9E-9261-380AC4070EB1} = {B067A3CD-99A4-4F9E-9261-380AC4070EB1}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterfaceLayer", "UserInterfaceLayer\UserInterfaceLayer.csproj", "{93065AB9-0FF8-445A-AB93-860438AB21C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface2._0", "UserInterface2.0\UserInterface2._0.csproj", "{1C3237F7-3707-43E1-931C-627A451C9222}"
 EndProject
@@ -42,10 +40,6 @@ Global
 		{9E6D432F-F49F-4960-AB74-AC354CCCCBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E6D432F-F49F-4960-AB74-AC354CCCCBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E6D432F-F49F-4960-AB74-AC354CCCCBD1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93065AB9-0FF8-445A-AB93-860438AB21C0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C3237F7-3707-43E1-931C-627A451C9222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C3237F7-3707-43E1-931C-627A451C9222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3237F7-3707-43E1-931C-627A451C9222}.Release|Any CPU.ActiveCfg = Release|Any CPU
