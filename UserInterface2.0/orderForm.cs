@@ -181,6 +181,7 @@ namespace UserInterface2._0
             }
 
         }
+
         private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             int listBoxIndex = listBoxProducts.SelectedIndex;
@@ -352,7 +353,15 @@ namespace UserInterface2._0
             
         }
 
-
-       
+        private void listBoxPrintOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            temporaryStorage = orderBLL.ReadAll();
+            int orderNum = temporaryStorage[listBoxPrintOrders.SelectedIndex].OrderNumber; ;
+            buttonReturnMenu_Click(sender, e);
+            buttonReadOne_Click(sender, e);
+            IDChooser.SelectedIndex = 2;
+            textBoxIDInput.Text = Convert.ToString(orderNum);
+            buttonFindOrders_Click(sender, e);
+        }
     }
 }
