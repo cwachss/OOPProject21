@@ -60,6 +60,7 @@ namespace UserInterface2._0
             this.buttonCreate = new System.Windows.Forms.Button();
             this.labelOrderTitle = new System.Windows.Forms.Label();
             this.groupBoxModifyOrder = new System.Windows.Forms.GroupBox();
+            this.labelInstructions = new System.Windows.Forms.Label();
             this.panelIDInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -455,12 +456,23 @@ namespace UserInterface2._0
             this.groupBoxModifyOrder.Text = "Order Number ________";
             this.groupBoxModifyOrder.Visible = false;
             // 
+            // labelInstructions
+            // 
+            this.labelInstructions.AutoSize = true;
+            this.labelInstructions.Location = new System.Drawing.Point(104, 354);
+            this.labelInstructions.Name = "labelInstructions";
+            this.labelInstructions.Size = new System.Drawing.Size(109, 13);
+            this.labelInstructions.TabIndex = 55;
+            this.labelInstructions.Text = "Select order to modify";
+            this.labelInstructions.Visible = false;
+            // 
             // orderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(783, 568);
+            this.Controls.Add(this.labelInstructions);
             this.Controls.Add(this.groupBoxModifyOrder);
             this.Controls.Add(this.panelIDInput);
             this.Controls.Add(this.listBoxPrintOrders);
@@ -527,5 +539,6 @@ namespace UserInterface2._0
         protected System.Windows.Forms.Button buttonCreate;
         protected System.Windows.Forms.Label labelOrderTitle;
         private System.Windows.Forms.GroupBox groupBoxModifyOrder;
+        private System.Windows.Forms.Label labelInstructions;
     }
 }

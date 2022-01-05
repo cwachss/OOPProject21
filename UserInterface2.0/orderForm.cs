@@ -64,6 +64,7 @@ namespace UserInterface2._0
             labelAmountModify.Visible = false;
             groupBoxModifyOrder.Visible = false;
             IDChooser.SelectedIndex = -1;
+            labelInstructions.Visible = false;
         }
 
         public void HideMainMenu()
@@ -262,7 +263,7 @@ namespace UserInterface2._0
             {
                 listBoxOrdersFound.Items.Add(temporaryStorage[i]);
             }
-
+            labelInstructions.Visible = true;
         }
         private void ProductOrdersFoundPrint(int productID)
         {
@@ -272,7 +273,7 @@ namespace UserInterface2._0
             {
                 listBoxOrdersFound.Items.Add(temporaryStorage[i]);
             }
-
+            labelInstructions.Visible = true;
         }
 
 
@@ -284,6 +285,7 @@ namespace UserInterface2._0
             listBoxOrdersFound.Items.Clear();
             textBoxIDInput.Clear();
             groupBoxModifyOrder.Visible = false;
+            labelInstructions.Visible = false;
         }
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
