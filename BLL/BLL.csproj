@@ -50,6 +50,7 @@
     <Compile Include="CustomerBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="ExceptionCustomerHasNoOrders.cs" />
+    <Compile Include="ExceptionNotEnoughInStock.cs" />
     <Compile Include="ExceptionProductHasNoOrders.cs" />
     <Compile Include="OrderBLL.cs" />
     <Compile Include="ProductBLL.cs" />

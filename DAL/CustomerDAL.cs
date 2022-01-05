@@ -94,7 +94,7 @@ namespace DAL
                 }
                 else
                 {
-                    throw new Exception("Customer not found.");
+                    throw new CustomerNotFound("Customer not found.");
                 }
             }
 

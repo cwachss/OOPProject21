@@ -29,6 +29,7 @@ namespace UserInterface2._0
         /// </summary>
         private new void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
             this.textBoxProductNumber = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
             this.textBoxStock = new System.Windows.Forms.TextBox();
@@ -233,6 +234,7 @@ namespace UserInterface2._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 684);
             this.Controls.Add(this.pictureBoxLogo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -34,10 +34,7 @@ namespace BLL
         /// <param name="productNum"></param>
         public Product Read(int productNum)
         {
-            
                 return productDAL.Read(productNum);
-            
-         
                
         }
         /// <summary>

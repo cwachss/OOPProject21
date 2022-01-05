@@ -46,6 +46,7 @@
     <Compile Include="CreditCardNumOutOfRange.cs" />
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="EmployeeDAL.cs" />
+    <Compile Include="CustomerNotFound.cs" />
     <Compile Include="ExceptionOrderNumInvalid.cs" />
     <Compile Include="MonthOutOfRange.cs" />
     <Compile Include="OrderDAL.cs" />
