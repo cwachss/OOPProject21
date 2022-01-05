@@ -306,8 +306,6 @@ namespace UserInterface2._0
                 {
                     orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
                 }
-
-
                 int amountToOrder = Convert.ToInt32(numericUpDown1.Value);
                 orderBLL.Update(orderNum, amountToOrder);
                 MessageBox.Show("Order Modified");

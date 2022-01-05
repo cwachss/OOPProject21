@@ -18,7 +18,6 @@ namespace BLL
         //places an order after checking if all the info is valid
         public void Create(int customerID, int productID, int amountOrdered)
         {
-
             try
             {
                 productBLL.Read(productID); //checks for the existance of the product ordered
@@ -45,8 +44,6 @@ namespace BLL
             {
                 throw new CustomerNotFound();
             }
-
-
         }
 
         //deletes order from the list and updates the stock
@@ -54,8 +51,8 @@ namespace BLL
         {
             //Waiting for critical updates in the order class
             Order order = orderDAL.ReadOrderViaOrder(orderNum);
-        Product product = productBLL.Read(order.ProductID);
-        productBLL.Update(product.ProductNumber, product.ProductName, product.CostPerUnit, (product.AmountInStock + order.AmountOrdered));
+            Product product = productBLL.Read(order.ProductID);
+            productBLL.Update(product.ProductNumber, product.ProductName, product.CostPerUnit, (product.AmountInStock + order.AmountOrdered));
             orderDAL.Delete(orderNum);
             
            

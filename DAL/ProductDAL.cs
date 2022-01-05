@@ -15,10 +15,7 @@ namespace DAL
     {
         //create list to hold the product information 
         internal static List<Product> productList = new List<Product>();
-
-        //create StreamReader object to read the list
-        StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
-
+       
         string product;
 
 
@@ -37,6 +34,9 @@ namespace DAL
         //method to initialize the list with products' information
         public void InitializeList()
         {
+            //create StreamReader object to read the list
+            StreamReader reader = new StreamReader(@"../../../DAL/ListOfProducts.txt");
+
             using (reader)
             {
                 for (int i = 0; (product = reader.ReadLine()) != null; i++)
