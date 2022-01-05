@@ -40,13 +40,14 @@ namespace UserInterface2._0
         {
             try
             {
-                buttonDelete.Enabled = true;
-                buttonModify.Enabled = true;
+               
                 Product newProduct = (productBLL.Read(int.Parse(textBoxProductNumber2.Text)));//it was getting too unwieldy so I created a product with this product's info in it. This may have been going farther than I needed to do, but i don't know.
                 textBoxProductNumber.Text = Convert.ToString(newProduct.ProductNumber);
                 textBoxPrice.Text = Convert.ToString(newProduct.CostPerUnit);
                 textBoxStock.Text = Convert.ToString(newProduct.AmountInStock);
                 textBoxName.Text = Convert.ToString(newProduct.ProductName);
+                buttonDelete.Enabled = true;
+                buttonModify.Enabled = true;
 
             }
             catch

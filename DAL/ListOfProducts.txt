@@ -1,3 +1,6 @@
 ﻿1234 bouncer 12.99 503
 8392 scarecrow 9.99 897
 2134 racer 23.89 876
+5465 doll 15.99 600
+7894 playmobile 30.99 721
+5678 teddy 10.99 250

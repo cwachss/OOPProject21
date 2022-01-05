@@ -195,10 +195,12 @@ namespace UserInterface2._0
                     }
                     else if (IDChooser.SelectedIndex == 2)
                     {
-
-                        listBoxOrdersFound.Items.Add(orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text)));
+                        temporaryStorage = new List<Order>();
+                        Order currentOrder = orderBLL.ReadOrderViaOrderNum(int.Parse(textBoxIDInput.Text));
+                        temporaryStorage.Add(currentOrder);
+                        listBoxOrdersFound.Items.Add(currentOrder);
                         groupBoxModifyOrder.Visible = true;
-                        groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+                        groupBoxModifyOrder.Text = "Order Number " + currentOrder.OrderNumber;
                     }
 
                 }
@@ -291,12 +293,14 @@ namespace UserInterface2._0
                 orderBLL.Update(orderNum, amountToOrder);
                 MessageBox.Show("Order Modified");
                 buttonFindOrders_Click(sender, e);
-
+                buttonModify.Enabled = false;
+                groupBoxModifyOrder.Visible = false;
             }
             catch
             {
-                MessageBox.Show("Invalid input.");//why is this an exception? How  would a user give in vlaid info?
+                MessageBox.Show("Not enough in stock.");//why is this an exception? How  would a user give in vlaid info?
                                                   //They need to click the item for it to even show modify!
+                                                  //if they try to request more than what is in stock:)
             }
 
         }
@@ -314,8 +318,8 @@ namespace UserInterface2._0
             }
 
             orderBLL.Delete(orderNum);
-            
-            listBoxOrdersFound.Items.Clear();
+
+            buttonFindOrders_Click(sender, e);
             groupBoxModifyOrder.Visible = false;
         }
 
