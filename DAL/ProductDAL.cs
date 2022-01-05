@@ -77,17 +77,16 @@ namespace DAL
             //if(productNum)
             int index = 0;
             //while loop to find id number
-            while (productList[index].ProductNumber != productNum)
+            while (index<productList.Count)
             {
-                if (index < productList.Count)
-                {
-                    index++;
-                }
-                else
-                {
+                if (productList[index].ProductNumber == productNum)
+                    break;
+                index++;
+              
+            } 
+            if(index==productList.Count)
                    throw new ProductNumberNotFound(); //if it's not there, throw an exception
-                }
-            }
+    
 
             Product product = new Product(productList[index]);
             return product;

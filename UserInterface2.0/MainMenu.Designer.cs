@@ -177,6 +177,7 @@ namespace UserInterface2._0
             this.buttonSignIn.Text = "Enter";
             this.buttonSignIn.UseVisualStyleBackColor = true;
             this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
+           
             // 
             // textBoxPassword
             // 

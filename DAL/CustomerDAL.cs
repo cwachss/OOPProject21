@@ -86,17 +86,16 @@ namespace DAL
             //if(productNum)
             int index = 0;
             //while loop to find id number
-            while (customerList[index].ID != idNum)
+            while (index<customerList.Count)
             {
-                if (index < customerList.Count)
+                if (customerList[index].ID == idNum)
                 {
-                    index++;
+                    break;  
                 }
-                else
-                {
-                    throw new CustomerNotFound("Customer not found.");
-                }
+                index++;
             }
+            if(index==customerList.Count)
+                throw new CustomerNotFound("Customer not found.");
 
             Customer customer = new Customer(customerList[index]);
             return customer;

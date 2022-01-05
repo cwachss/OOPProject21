@@ -25,11 +25,8 @@ namespace DAL
 
 
 
-            OrderDAL newd = new OrderDAL();
-            newd.Create(222,4,3);
-            Console.WriteLine(newd);
-
-
+           ProductDAL newpro    = new ProductDAL();
+            newpro.Read(134);
             //CustomerDAL try1 = new CustomerDAL();
 
             //try1.Create("Miss Arr", 28392047, 22232123990904, 1997, 12);
