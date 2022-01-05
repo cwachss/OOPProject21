@@ -94,8 +94,10 @@ namespace DAL
                 }
                 index++;
             }
-            if(index==customerList.Count)
+            if (index == customerList.Count)
+            {
                 throw new CustomerNotFound("Customer not found.");
+            }
 
             Customer customer = new Customer(customerList[index]);
             return customer;

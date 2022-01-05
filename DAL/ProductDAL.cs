@@ -80,14 +80,18 @@ namespace DAL
             while (index<productList.Count)
             {
                 if (productList[index].ProductNumber == productNum)
+                {
                     break;
+                }
+                   
                 index++;
               
             } 
-            if(index==productList.Count)
-                   throw new ProductNumberNotFound(); //if it's not there, throw an exception
-    
-
+            if (index == productList.Count)
+            {
+                throw new ProductNumberNotFound(); //if it's not there, throw an exception
+            }
+               
             Product product = new Product(productList[index]);
             return product;
         }
