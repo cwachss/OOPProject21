@@ -11,7 +11,9 @@ namespace BLL
     {
         static void Main(string[] args)
         {
-
+            OrderDAL orderDAL = new OrderDAL();
+            OrderBLL asdf = new OrderBLL();
+            asdf.Create(222, 1234, 9);
 
 
             /*CustomerBLL mister = new CustomerBLL();

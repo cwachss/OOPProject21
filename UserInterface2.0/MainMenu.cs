@@ -61,17 +61,30 @@ namespace UserInterface2._0
 
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-            Employee user = employeeBLL.ReadEmployee(int.Parse(textBoxID.Text));
-            if (user.Password == textBoxPassword.Text)
+            try
             {
-                groupBoxSignIn.Visible = false;
-                pictureBoxProducts.Visible = true;
-                pictureBoxCustomer.Visible = true;
-                pictureBoxOrders.Visible = true;
-                labelProducts.Visible = true;
-                labelCustomers.Visible = true;
-                labelOrders.Visible = true;
+                Employee user = employeeBLL.ReadEmployee(int.Parse(textBoxID.Text));
+                if (user.Password == textBoxPassword.Text)
+                {
+                    groupBoxSignIn.Visible = false;
+                    pictureBoxProducts.Visible = true;
+                    pictureBoxCustomer.Visible = true;
+                    pictureBoxOrders.Visible = true;
+                    labelProducts.Visible = true;
+                    labelCustomers.Visible = true;
+                    labelOrders.Visible = true;
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
+            catch 
+            {
+                MessageBox.Show("The login informtation is incorrect. Please enter you ID number and password","Error");
+            }
+ 
         }
+        
     }
 }
