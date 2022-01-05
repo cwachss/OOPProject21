@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entities;
+using BLL;
 
 namespace UserInterface2._0
 {
@@ -15,6 +17,7 @@ namespace UserInterface2._0
         ProductForm pF = FormProvider.ProductForm;
         CustomerForm cF = FormProvider.CustomerForm;
         orderForm oF = FormProvider.OrderForm;
+        EmployeeBLL employeeBLL = new EmployeeBLL();
 
         public MainMenu()
         {
@@ -54,6 +57,21 @@ namespace UserInterface2._0
         {
             MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
 
+        }
+
+        private void buttonSignIn_Click(object sender, EventArgs e)
+        {
+            Employee user = employeeBLL.ReadEmployee(int.Parse(textBoxID.Text));
+            if (user.Password == textBoxPassword.Text)
+            {
+                groupBoxSignIn.Visible = false;
+                pictureBoxProducts.Visible = true;
+                pictureBoxCustomer.Visible = true;
+                pictureBoxOrders.Visible = true;
+                labelProducts.Visible = true;
+                labelCustomers.Visible = true;
+                labelOrders.Visible = true;
+            }
         }
     }
 }

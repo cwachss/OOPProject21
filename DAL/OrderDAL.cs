@@ -11,7 +11,7 @@ namespace DAL
     public class OrderDAL
     {
        
-        private int orderNumber = 103;
+        private int orderNumber = 106;
         internal static List<Order> orderList = new List<Order>();
 
 
@@ -57,16 +57,17 @@ namespace DAL
         {
             for (int i = 0; i < orderList.Count; i++)
             {
-                if (anOrderNumber == orderList[i].OrderNumber)//checks if we've found the sought-for product number
+                if (anOrderNumber == orderList[i].OrderNumber)//checks if we've found the sought-for order number
                 {
 
                     orderList.Remove(orderList[i]);
                     break;
                 }
-                //if (i == orderList.Count)//if never found product number, it throws an exception.
-                //{
-                //    throw new ProductNumberNotFound();
-                //}//This is unnecassy for our current UI setup. We're keeping this to be used if needed another time.
+               /* if (i == orderList.Count)//if never found product number, it throws an exception.
+                {
+                    throw new ProductNumberNotFound();
+                }
+               This is unnecassy for our current UI setup. We're keeping this to be used if needed another time.*/
             }
         }
 
@@ -79,9 +80,9 @@ namespace DAL
                 orderList.Add(order);
         }
 
-        
 
-        //method that reads out a specific customer's orders
+
+        //method that reads out a specific customer's orders by returning a list of copies of requested orders
         public List<Order> ReadOrderViaCustomer(int customerID)
         {
             List<Order> customerOrders = new List<Order>();
@@ -97,7 +98,7 @@ namespace DAL
             return customerOrders;
         }
 
-        //reads out orders of a specific product
+        //reads out orders of a specific product by returning a list of copies of requested orders
         public List<Order> ReadOrderViaProduct(int productID)
         {
             List<Order> productOrders = new List<Order>();
@@ -117,7 +118,7 @@ namespace DAL
         }
 
 
-        //Checks for order by input of the order's Id number
+        //Checks for order by input of the order's Id number and returns a copy of that order
         public Order ReadOrderViaOrder(int orderNum)
         {
 
