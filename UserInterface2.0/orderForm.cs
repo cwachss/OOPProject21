@@ -63,6 +63,7 @@ namespace UserInterface2._0
             numericUpDown1.Visible = false;
             labelAmountModify.Visible = false;
             groupBoxModifyOrder.Visible = false;
+            IDChooser.SelectedIndex = -1;
         }
 
         public void HideMainMenu()
@@ -184,9 +185,14 @@ namespace UserInterface2._0
 
         private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int listBoxIndex = listBoxProducts.SelectedIndex;
-            List<Product> products = productBLL.ReadAll();
-            textBoxProductNumber.Text = Convert.ToString(products[listBoxIndex].ProductNumber);
+            try
+            {
+                int listBoxIndex = listBoxProducts.SelectedIndex;
+                List<Product> products = productBLL.ReadAll();
+                textBoxProductNumber.Text = Convert.ToString(products[listBoxIndex].ProductNumber);
+            }
+            catch { }
+            
         }
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
@@ -282,10 +288,15 @@ namespace UserInterface2._0
 
         private void listBoxOrdersFound_SelectedValueChanged(object sender, EventArgs e)
         {
-            groupBoxModifyOrder.Visible = true;
-            groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
-            numericUpDown1.Value = temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered;
-            buttonModify.Enabled = false;
+            try
+            {
+                groupBoxModifyOrder.Text = "Order Number " + temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+                groupBoxModifyOrder.Visible = true;
+                numericUpDown1.Value = temporaryStorage[listBoxOrdersFound.SelectedIndex].AmountOrdered;
+                buttonModify.Enabled = false;
+            }
+            catch { }
+           
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -355,13 +366,22 @@ namespace UserInterface2._0
 
         private void listBoxPrintOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            temporaryStorage = orderBLL.ReadAll();
-            int orderNum = temporaryStorage[listBoxPrintOrders.SelectedIndex].OrderNumber; ;
-            buttonReturnMenu_Click(sender, e);
-            buttonReadOne_Click(sender, e);
-            IDChooser.SelectedIndex = 2;
-            textBoxIDInput.Text = Convert.ToString(orderNum);
-            buttonFindOrders_Click(sender, e);
+            try
+            { 
+                temporaryStorage = orderBLL.ReadAll();
+                int orderNum = temporaryStorage[listBoxPrintOrders.SelectedIndex].OrderNumber; ;
+                buttonReturnMenu_Click(sender, e);
+                buttonReadOne_Click(sender, e);
+                IDChooser.SelectedIndex = 2;
+                textBoxIDInput.Text = Convert.ToString(orderNum);
+                buttonFindOrders_Click(sender, e);
+            }
+            catch
+            {
+                
+            }
+
+            
         }
     }
 }
