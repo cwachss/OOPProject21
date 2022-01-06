@@ -66,7 +66,7 @@ namespace UserInterface2._0
             textBoxStock.Enabled = true;
         }
 
-
+        //updates product and disenables buttons from modification
         public override void buttonUpdateProduct_Click(object sender, EventArgs e)
         {
             try
@@ -89,6 +89,7 @@ namespace UserInterface2._0
             }
         }
 
+        //deletes product
         public override void buttonDelete_Click(object sender, EventArgs e)
         {
             productBLL.Delete(int.Parse(textBoxProductNumber.Text));
@@ -102,6 +103,7 @@ namespace UserInterface2._0
             buttonModify.Enabled = false;
         }
 
+        //Hides product form nad re-shows the mainMenu
         private void ProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ResetMainMenu();
@@ -110,13 +112,14 @@ namespace UserInterface2._0
 
         }
 
+        //information about the app's company
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Toys of All Sorts is an abstract toy company by Shira Laury and Chani Wachsstock");
         }
 
 
-
+        //opens to adding a new product page
         public override void buttonCreate_Click(object sender, EventArgs e)
         {
             base.buttonCreate_Click(sender, e);
@@ -133,6 +136,7 @@ namespace UserInterface2._0
 
         }
 
+        //adds inputted product to list of products
         public override void buttonAdd_Click(object sender, EventArgs e)
         {
             //base.buttonAdd_Click(sender, e);
