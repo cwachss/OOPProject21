@@ -153,6 +153,7 @@ namespace UserInterface2._0
             }
         }
 
+        //calls method to list all the products
         public override void buttonReadAll_Click(object sender, EventArgs e)
         {
             base.buttonReadAll_Click(sender, e);
@@ -167,6 +168,8 @@ namespace UserInterface2._0
                 MessageBox.Show("No products found. Please add to inventory.", "Error");
             }
         }
+
+        //lists all the products' ToStrings
         public void PrintAll()
         {
 
@@ -176,6 +179,7 @@ namespace UserInterface2._0
             }
         }
 
+        //clears the modify product textboxes
         private void ClearGroupBoxTexboxes()
         {
             buttonDelete.Visible=false;
@@ -188,6 +192,7 @@ namespace UserInterface2._0
             textBoxPrice.Clear();
            
         }
+
 
         public override void buttonReturnMenu_Click(object sender, EventArgs e)
         {
