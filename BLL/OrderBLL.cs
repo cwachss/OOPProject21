@@ -12,8 +12,18 @@ namespace BLL
     {
 
         ProductBLL productBLL = new ProductBLL(0); //calls constructor that does not reinitialize list
-        CustomerBLL customerBLL = new CustomerBLL();
-        OrderDAL orderDAL = new OrderDAL();
+        CustomerBLL customerBLL;
+        OrderDAL orderDAL;
+
+        public OrderBLL() 
+        {
+            orderDAL = new OrderDAL();
+            customerBLL = new CustomerBLL();
+        }
+        public OrderBLL(int nonInitializerIndicator) 
+        {
+            orderDAL = new OrderDAL(0);
+        }
 
         //places an order after checking if all the info is valid
         public void Create(int customerID, int productID, int amountOrdered)

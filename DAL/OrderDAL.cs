@@ -20,6 +20,8 @@ namespace DAL
             InitilizeList();
         }
 
+        public OrderDAL(int nonInitializerIndicator) { }
+
         //method to initialize a list of orders
         private void InitilizeList()
         {

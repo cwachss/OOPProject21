@@ -8,11 +8,12 @@ namespace BLL
 {
     public class ProductBLL
     {
-        internal ProductDAL productDAL;
-
+        ProductDAL productDAL;
+        OrderBLL orderBLL;
         public ProductBLL() 
         {
             productDAL = new ProductDAL();
+            orderBLL = new OrderBLL(0);
         }
         public ProductBLL(int orderConstructorIndicator) //when I call the customerDAL constructor in the order class, I don't want it to re-intiatilize the lists or else I will have double of every product
         {
@@ -62,9 +63,15 @@ namespace BLL
         /// <param name="productNum"></param>
         public void Delete(int productNum)
         {
-              productDAL.Delete(productNum);
-           
             
+
+            List<Order> productOrders = orderBLL.ReadOrderViaProduct(productNum);
+
+            for (int i = 0; i < productOrders.Count; i++)
+            {
+                orderBLL.Delete(productOrders[i].OrderNumber);
+            }
+            productDAL.Delete(productNum);
         }
 
     }

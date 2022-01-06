@@ -19,17 +19,13 @@ namespace DAL
         string product;
 
 
-        //Shira Laury
         public ProductDAL()
         {
-            // NumberOfProducts = 0;
             InitializeList();
         }
 
-        public ProductDAL(int orderConstructorIndicator) //when I call the productDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
-        {
-
-        }
+        //when I call the productDAL constructor in the order class, I don't want it to re-intiatilize the list or else I will have double of every product
+        public ProductDAL(int orderConstructorIndicator) {  }
 
         //method to initialize the list with products' information
         public void InitializeList()
@@ -52,7 +48,7 @@ namespace DAL
 
         }//end initialize list
 
-        //Chani Wachsstock
+       
         //Create method: create a product and add to product list
         public void Create(int prodNum, string prodName, decimal cost, int stock)
         {
@@ -67,7 +63,6 @@ namespace DAL
             }
 
             productList.Add(product);
-
 
         }
 

@@ -12,10 +12,11 @@ namespace BLL
     public class CustomerBLL
     {
         CustomerDAL misterA;
-
+        OrderBLL orderBLL;
         public CustomerBLL()
         {
             misterA = new CustomerDAL();
+            orderBLL = new OrderBLL(0);
         }
        
         /// <summary>
@@ -69,6 +70,14 @@ namespace BLL
         //deletes a customer from the list
         public void Delete(int idNum)
         {
+
+            List<Order> customerOrders = orderBLL.ReadOrderViaCustomer(idNum);
+
+            for (int i = 0; i < customerOrders.Count; i++)
+            {
+                orderBLL.Delete(customerOrders[i].OrderNumber);
+            }
+
             misterA.Delete(idNum);
         }
 

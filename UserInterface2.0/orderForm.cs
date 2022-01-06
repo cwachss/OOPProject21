@@ -23,7 +23,7 @@ namespace UserInterface2._0
         public orderForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void buttonReturnMenu_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace UserInterface2._0
             {
                 MessageBox.Show("Please fill in all textboxes");
             }
-          
+
         }
 
         private void buttonReadOne_Click(object sender, EventArgs e)
@@ -194,7 +194,7 @@ namespace UserInterface2._0
                 textBoxProductNumber.Text = Convert.ToString(products[listBoxIndex].ProductNumber);
             }
             catch { }
-            
+
         }
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
@@ -238,11 +238,11 @@ namespace UserInterface2._0
             }
             catch (ExceptionCustomerHasNoOrders ex)
             {
-                MessageBox.Show("No orders for this customer yet", "Error");
+                MessageBox.Show("No orders listed under this customer ID. Please make sure this is a valid ID, or place a new order.", "Error");
             }
             catch (ExceptionProductHasNoOrders ex)
             {
-                MessageBox.Show("No orders for this product yet.", "Error");
+                MessageBox.Show("No orders listed under this product ID. Please make sure this is a valid ID, or place a new order.", "Error");
             }
             catch (ExceptionOrderNumInvalid)
             {
@@ -299,7 +299,7 @@ namespace UserInterface2._0
                 buttonModify.Enabled = false;
             }
             catch { }
-           
+
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -330,8 +330,8 @@ namespace UserInterface2._0
             catch
             {
                 MessageBox.Show("Not enough in stock.");//why is this an exception? How  would a user give in vlaid info?
-                                                  //They need to click the item for it to even show modify!
-                                                  //if they try to request more than what is in stock:)
+                                                        //They need to click the item for it to even show modify!
+                                                        //if they try to request more than what is in stock:)
             }
 
         }
@@ -339,14 +339,13 @@ namespace UserInterface2._0
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             int orderNum;
-            
-            
-                orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
-            
+
+            orderNum = temporaryStorage[listBoxOrdersFound.SelectedIndex].OrderNumber;
+
 
             orderBLL.Delete(orderNum);
             temporaryStorage.Remove(temporaryStorage[listBoxOrdersFound.SelectedIndex]);
-            if(temporaryStorage.Count != 0)
+            if (temporaryStorage.Count != 0)
             {
                 buttonFindOrders_Click(sender, e);
             }
@@ -354,21 +353,21 @@ namespace UserInterface2._0
             {
                 listBoxOrdersFound.Items.Clear();
             }
-            if(temporaryStorage.Count == 1)
+            if (temporaryStorage.Count == 1)
             {
                 listBoxOrdersFound.SelectedIndex = 0;
             }
-            else 
+            else
             {
                 groupBoxModifyOrder.Visible = false;
             }
-            
+
         }
 
         private void listBoxPrintOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 temporaryStorage = orderBLL.ReadAll();
                 int orderNum = temporaryStorage[listBoxPrintOrders.SelectedIndex].OrderNumber; ;
                 buttonReturnMenu_Click(sender, e);
@@ -379,10 +378,10 @@ namespace UserInterface2._0
             }
             catch
             {
-                
+
             }
 
-            
+
         }
     }
 }
