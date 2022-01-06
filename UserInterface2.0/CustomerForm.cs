@@ -64,7 +64,13 @@ namespace UserInterface2._0
 
                     PrintAll();
 
-                    
+                    textBoxCustomerID.Clear();
+                    textBoxFirstName.Clear();
+                    textBoxLastName.Clear();
+                    textBoxCreditCardNumber.Clear();
+                    textBoxNameOnCard.Clear();
+                    textBoxMonth.Clear();
+                    textBoxYear.Clear();
 
                     MessageBox.Show("New customer details added.", "Success!");
                 }
