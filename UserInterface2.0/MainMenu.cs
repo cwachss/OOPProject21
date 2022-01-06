@@ -86,6 +86,17 @@ namespace UserInterface2._0
  
         }
 
-       
+        //allows you to check if you typed the password correctly
+        private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxShowPass.Checked == true)
+            {
+                textBoxPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
