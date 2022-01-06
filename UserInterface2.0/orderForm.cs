@@ -74,6 +74,8 @@ namespace UserInterface2._0
             buttonReadOne.Visible = false;
             buttonReadAll.Visible = false;
         }
+
+        //opens the create new order page
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             HideMainMenu();
@@ -87,6 +89,7 @@ namespace UserInterface2._0
             labelOrderNumber.Text = "Order Number " + Convert.ToString(orderBLL.GetOrderNumber());
             PrintAllProducts();
         }
+
 
         private void buttonPlaceOrder_Click(object sender, EventArgs e)
         {
