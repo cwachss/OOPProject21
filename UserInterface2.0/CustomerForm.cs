@@ -16,10 +16,6 @@ namespace UserInterface2._0
 {
     public partial class CustomerForm : BaseForm
     {
-        /*
-         * some important notes:
-         * we need to set up the code so you cannot add a customer unless the credit card is filled out. Maybe that means having the groupbox set up differently for add, right now I set it up only for the read/delete/modify. there are ways to make things move around depending on what button you press. 
-         */
         CustomerBLL customerBLL;
         //ctor
         public CustomerForm()
@@ -306,8 +302,6 @@ namespace UserInterface2._0
             ResetAndHideEverything();
             ResetMainMenu();
             FormProvider.MainMenu.Show();
-
-
         }
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
@@ -316,6 +310,7 @@ namespace UserInterface2._0
 
         }
 
+        //Prints all products in textbox
         private void PrintAll()
         {
             textBoxPrintProducts.Clear();
